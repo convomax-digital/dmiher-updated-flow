@@ -199,7 +199,35 @@ app.use(/.*/, async (req, res) => {
   } catch (e) {
     vite?.ssrFixStacktrace(e);
     console.error(e.stack);
-    res.status(500).end(e.stack);
+    // SSR failed — never show the user a stack trace / broken page. Serve the
+    // plain SPA shell instead (empty app root, no dehydrated state): the
+    // client bundle boots and renders the page entirely client-side.
+    try {
+      let template;
+      if (!isProduction) {
+        template = await fs.readFile("./index.html", "utf-8");
+        template = await vite.transformIndexHtml(req.originalUrl, template);
+      } else {
+        template = templateHtml;
+      }
+      const nonce = crypto.randomBytes(24).toString("base64");
+      const shell = template
+        .replace(`<!--app-head-->`, "")
+        .replace(`<!--app-html-->`, "")
+        .replace(`<!--app-state-->`, "")
+        .replaceAll("__CSP_NONCE__", nonce);
+      res
+        .status(200)
+        .set({
+          "Content-Type": "text/html",
+          "Content-Security-Policy": buildCsp(nonce),
+          ...(isProduction ? SECURITY_HEADERS : {}),
+        })
+        .send(shell);
+    } catch {
+      // Even the shell failed — minimal, valid page rather than a stack dump.
+      res.status(500).set("Content-Type", "text/html").end("<!doctype html><title>Error</title><p>Something went wrong. Please refresh.</p>");
+    }
   }
 });
 

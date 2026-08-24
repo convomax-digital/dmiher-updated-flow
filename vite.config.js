@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import crypto from "node:crypto";
@@ -92,6 +92,18 @@ export default defineConfig(({ mode }) => ({
     // ORB block that otherwise drops 127.0.0.1:8000 <img> loads. Data (axios)
     // calls use the absolute API_BASE and bypass this proxy.
     proxy: {
+      // Images (/api/file/*) can go to a SECOND php dev-server instance so
+      // dozens of image requests never queue in front of data calls on the
+      // single-threaded backend worker (token/API timeouts that look like
+      // CORS errors). Opt-in via VITE_FILE_PROXY_TARGET in your local .env
+      // (e.g. http://127.0.0.1:8001 with a second `php -S` running); without
+      // it, images use the normal 8000 backend and nothing changes.
+      "/api/file": {
+        target:
+          loadEnv(mode, process.cwd(), "").VITE_FILE_PROXY_TARGET ||
+          "http://127.0.0.1:8000",
+        changeOrigin: true,
+      },
       "/api": {
         target: "http://127.0.0.1:8000",
         changeOrigin: true,
