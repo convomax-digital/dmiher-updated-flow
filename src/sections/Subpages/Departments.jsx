@@ -128,33 +128,45 @@ function DepartmentsSubpage() {
           <p className="deptpage-dept-info">{currentDept.info}</p>
         </div>
 
-        {/* HOD — render whenever we have either an image or details.
-            Previously gated on dean_image only, which hid the whole card
-            for departments whose HOD photo hasn't been uploaded yet. */}
-        {(currentDept.dean_image || currentDept.dean_details) && (
-          <div className="deptpage-hod-card">
-            <h3 className="deptpage-hod-title">
-              Head of Department
-            </h3>
+        {/* HOD — the API returns every Head of Department in a single `heads`
+            array, so we render them all (a department can have more than one
+            HOD/Dean). Falls back to the legacy singular dean_image/dean_details
+            shape for older payloads that predate the heads array. */}
+        {(() => {
+          const hodList =
+            Array.isArray(currentDept.heads) && currentDept.heads.length
+              ? currentDept.heads
+              : currentDept.dean_image || currentDept.dean_details
+                ? [{ image: currentDept.dean_image, details: currentDept.dean_details }]
+                : [];
 
-            <div className="deptpage-hod-row">
-              {/* Always render the HOD image slot. When dean_image is empty,
-                  SafeImage shows the "No image available" fallback — keeping
-                  the space reserved so an admin-uploaded photo appears here
-                  later without any layout change. */}
-              <SafeImage
-                src={currentDept.dean_image}
-                alt="Head of Department"
-                className="deptpage-hod-image"
-              />
-              {currentDept.dean_details && (
-                <div className="deptpage-hod-details text-center md:text-left">
-                  <RichTextRenderer html={currentDept.dean_details} />
+          if (!hodList.length) return null;
+
+          return (
+            <div className="deptpage-hod-card">
+              <h3 className="deptpage-hod-title">Head of Department</h3>
+
+              {hodList.map((hod, idx) => (
+                <div className="deptpage-hod-row" key={idx}>
+                  {/* Always render the HOD image slot. When the image is empty,
+                      SafeImage shows the "No image available" fallback — keeping
+                      the space reserved so an admin-uploaded photo appears here
+                      later without any layout change. */}
+                  <SafeImage
+                    src={hod.image}
+                    alt="Head of Department"
+                    className="deptpage-hod-image"
+                  />
+                  {hod.details && (
+                    <div className="deptpage-hod-details text-center md:text-left">
+                      <RichTextRenderer html={hod.details} />
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* Staff Table — the CMS now sends { columns: [{key,label}], rows: [...] }
             so the admin controls both the columns and their labels (keys can be
@@ -226,6 +238,36 @@ function DepartmentsSubpage() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          );
+        })()}
+
+        {/* Programs — the CMS/API sends programs as [{ name }]. Some legacy
+            imports still send a bare string, so normalize both into a plain
+            list of names before rendering. */}
+        {(() => {
+          const raw = currentDept.programs;
+          const programs = Array.isArray(raw)
+            ? raw
+                .map((p) => (typeof p === "string" ? p : p?.name))
+                .filter((n) => n && String(n).trim() !== "")
+            : typeof raw === "string" && raw.trim() !== ""
+              ? [raw.trim()]
+              : [];
+
+          if (!programs.length) return null;
+
+          return (
+            <div className="deptpage-programs-card">
+              <h3 className="deptpage-programs-title">Programs</h3>
+              <ul className="deptpage-programs-list">
+                {programs.map((name, idx) => (
+                  <li className="deptpage-programs-item" key={idx}>
+                    {renderIcon("book-open", 20, "deptpage-programs-icon")}
+                    <span className="deptpage-programs-name">{name}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           );
         })()}

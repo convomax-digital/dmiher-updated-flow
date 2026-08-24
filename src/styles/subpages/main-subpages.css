@@ -1130,6 +1130,13 @@
     @apply flex flex-col md:flex-row items-center gap-6;
 }
 
+/* When a department lists more than one HOD, separate consecutive rows so the
+   cards don't touch. Only applies from the second head onward, so a single-HOD
+   department keeps its original spacing. */
+.deptpage-hod-row + .deptpage-hod-row {
+    @apply mt-8 pt-8 border-t border-gray-100;
+}
+
 .deptpage-hod-image {
     @apply w-44 h-52 rounded-full object-cover shadow-lg;
 }
@@ -1161,6 +1168,27 @@
 
 .deptpage-staff-card {
     @apply bg-white rounded-xl shadow-lg p-8;
+}
+
+/* Programs — a simple card listing each program with a book icon, matching
+   the department card style used across the page. */
+.deptpage-programs-card {
+    @apply bg-white rounded-xl shadow-lg p-8 mt-6;
+}
+.deptpage-programs-title {
+    @apply text-2xl font-bold text-gray-800 mb-4;
+}
+.deptpage-programs-list {
+    @apply flex flex-col gap-3;
+}
+.deptpage-programs-item {
+    @apply flex items-center gap-3 text-gray-700;
+}
+.deptpage-programs-icon {
+    @apply text-[#122E5E] flex-shrink-0;
+}
+.deptpage-programs-name {
+    @apply text-base font-medium;
 }
 
 .deptpage-staff-title {

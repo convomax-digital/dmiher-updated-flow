@@ -2784,6 +2784,18 @@
     @apply max-w-7xl mx-auto px-5 pb-16;
 }
 
+.contact-important-html {
+    @apply text-sm leading-relaxed text-[#002b5c];
+}
+
+.contact-important-html > div > div {
+    @apply flex-col md:flex-row items-start md:items-center gap-1 md:gap-0;
+}
+
+.contact-important-html a {
+    @apply break-all;
+}
+
 .contact-important-grid-desktop {
     @apply hidden md:grid md:grid-cols-2 gap-4;
 }
