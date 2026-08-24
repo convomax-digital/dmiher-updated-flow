@@ -257,8 +257,8 @@ function HolisticInfrastructureSection({ data , college }) {
      
 
       </div>
-        <div className="holistic-cta">
- 
+        <div className="holistic-cta" style={cta?.length ? undefined : { display: "none" }}>
+
     
    {cta?.length > 0 && <div className="holistic-cta-wrapper">
       {Array.isArray(cta) &&

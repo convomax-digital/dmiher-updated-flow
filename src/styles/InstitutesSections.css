@@ -480,7 +480,15 @@
 
 .holistic-text--centered .holistic-list {
     @apply flex flex-col justify-center flex-1;
-    min-height: 500px;
+}
+
+/* The 500px min-height vertically centres the list beside the image in the
+   desktop side-by-side layout; on mobile (stacked) it just added ~500px of
+   empty space above the image, so only apply it from md up. */
+@media (min-width: 768px) {
+    .holistic-text--centered .holistic-list {
+        min-height: 500px;
+    }
 }
 
 .holistic-text--centered .holistic-item {

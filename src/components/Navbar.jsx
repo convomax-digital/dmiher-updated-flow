@@ -285,8 +285,61 @@ const Navbar = () => {
             </div>
 
             <div className="mobile-bottom-links">
-              {topLinks.map((item) =>
-                isSectionLink(item.slug) ? (
+              {topLinks.map((item) => {
+                const isParentMenu = item.type === "parent_menu";
+
+                // Parent-menu top links (e.g. Admission) open a dropdown on
+                // desktop hover; on mobile there was no way to reach their
+                // children, so make them tap-to-expand.
+                if (isParentMenu && item.children?.length) {
+                  return (
+                    <div key={item.id}>
+                      <button
+                        type="button"
+                        className="mobile-link w-full text-left"
+                        onClick={() =>
+                          setOpenSection(
+                            openSection === item.id ? null : item.id
+                          )
+                        }
+                      >
+                        {item.title}
+                      </button>
+
+                      {openSection === item.id && (
+                        <div className="pl-4 mt-1 space-y-1">
+                          {item.children.map((child, i) =>
+                            (child.items || []).map((subItem, j) =>
+                              isSectionLink(subItem.slug) ? (
+                                <a
+                                  key={`${i}-${j}`}
+                                  href={subItem.slug}
+                                  className="mobile-link"
+                                  onClick={(e) =>
+                                    handleSectionClick(e, subItem.slug)
+                                  }
+                                >
+                                  {subItem.title}
+                                </a>
+                              ) : (
+                                <Link
+                                  key={`${i}-${j}`}
+                                  to={subItem.slug}
+                                  className="mobile-link"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {subItem.title}
+                                </Link>
+                              )
+                            )
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return isSectionLink(item.slug) ? (
                   <a
                     key={item.id}
                     href={item.slug}
@@ -304,8 +357,8 @@ const Navbar = () => {
                   >
                     {item.title}
                   </Link>
-                )
-              )}
+                );
+              })}
             </div>
           </div>
         )}

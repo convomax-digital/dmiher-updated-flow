@@ -384,7 +384,10 @@ const Departments = ({ data, college, pageSlug }) => {
           <div
             className="departments-grid departments-grid-single"
             style={{
-              gridTemplateColumns: `repeat(${departments.length}, minmax(0, 1fr))`,
+              /* auto-fit + min width: all cards sit in one row on desktop but
+                 wrap to 2-3 per row on mobile instead of cramming N tiny
+                 columns (they were ~65px wide with wrapped text). */
+              gridTemplateColumns: `repeat(auto-fit, minmax(150px, 1fr))`,
             }}
           >
             {departments.map((item, idx) => (
