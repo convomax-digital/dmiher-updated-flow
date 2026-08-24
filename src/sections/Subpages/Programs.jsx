@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { Search, X, GraduationCap } from "lucide-react";
 import { useProgramsData } from "../../hooks/useProgramsData";
 import { renderIcon } from "../../utils/renderIcon";
@@ -59,13 +59,27 @@ const SubPrograms = () => {
   const { college, category, slug } = useParams();
   const resolvedSlug = college || slug;
 
+  // ?f=<faculty> — when the SAS "OUR PROGRAMS" buttons carry a faculty, show
+  // only that faculty (like the live faculty-specific pages). The single
+  // remaining institute makes the faculty tab row auto-hide (length > 1 gate).
+  const [searchParams] = useSearchParams();
+  const facultyParam = searchParams.get("f");
+
   const {
-    institutes,
+    institutes: allInstitutes,
     programs,
     settings,
     loading,
     error,
   } = useProgramsData(resolvedSlug);
+
+  const institutes = useMemo(() => {
+    if (facultyParam) {
+      const only = allInstitutes.filter((i) => i.institute_id === facultyParam);
+      if (only.length) return only;
+    }
+    return allInstitutes;
+  }, [allInstitutes, facultyParam]);
 
   const [activeInstitute, setActiveInstitute] = useState("");
   const [activeInstIndex, setActiveInstIndex] = useState(0);
@@ -76,13 +90,13 @@ const SubPrograms = () => {
 
   useEffect(() => {
     if (institutes.length > 0 && !activeInstitute) {
-      setActiveInstitute(institutes[0].page_slug);
+      setActiveInstitute(institutes[0].institute_id);
       setActiveInstIndex(0);
     }
   }, [institutes]);
 
   const currentInstitute = institutes.find(
-    (inst) => inst.page_slug === activeInstitute
+    (inst) => inst.institute_id === activeInstitute
   );
   const subTabs = currentInstitute?.tabs || [];
 
@@ -178,18 +192,18 @@ const SubPrograms = () => {
                 />
 
                 {institutes.map((inst, index) => {
-                  const isActive = activeInstitute === inst.page_slug;
+                  const isActive = activeInstitute === inst.institute_id;
                   return (
                     <button
-                      key={inst.page_slug}
-                      onClick={() => handleInstituteChange(inst.page_slug, index)}
+                      key={inst.institute_id}
+                      onClick={() => handleInstituteChange(inst.institute_id, index)}
                       className={`subprog-inst-tab ${
                         isActive
                           ? "subprog-inst-tab-active"
                           : "subprog-inst-tab-inactive"
                       }`}
                     >
-                      {inst.page_slug}
+                      {inst.institute_label || inst.page_slug}
                     </button>
                   );
                 })}

@@ -15,6 +15,7 @@ import { SECTION_COMPONENTS as CadWetLabSections } from "./sections/CadWetLab";
 
 import ErrorBoundary from "./components/ErrorBoundary";
 import PageLoader from "./components/PageLoader";
+import { ProgramFacultyProvider } from "./context/ProgramFacultyContext";
 
 const SECTION_COMPONENTS = {
   ...MainPageSections,
@@ -204,6 +205,7 @@ function PageView() {
         )}
       </Helmet>
 
+      <ProgramFacultyProvider>
       {resolvedPage.sections?.map((sec, index) => {
         const SectionComponent = SECTION_COMPONENTS[sec.section_id];
         if (!SectionComponent) return null;
@@ -224,7 +226,10 @@ function PageView() {
             <Suspense
               fallback={
                 deferred ? (
-                  <div className="page-section-defer" aria-hidden="true" />
+                  <div
+                    className="skeleton page-section-fallback"
+                    aria-hidden="true"
+                  />
                 ) : null
               }
             >
@@ -252,6 +257,7 @@ function PageView() {
           </ErrorBoundary>
         );
       })}
+      </ProgramFacultyProvider>
     </main>
   );
 }

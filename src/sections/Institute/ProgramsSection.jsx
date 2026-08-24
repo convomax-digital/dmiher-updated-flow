@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import { useProgramFaculty } from "../../context/ProgramFacultyContext";
 
 function ProgramsSection({ data, college }) {
   const { header, programs } = data || {};
@@ -7,6 +8,9 @@ function ProgramsSection({ data, college }) {
   // Resolve college slug: prop → URL fallback
   const locationSlug = useLocation().pathname.split("/")[1];
   const instituteSlug = college || locationSlug;
+
+  // When a faculty tab is active (SAS), buttons open that faculty's listing.
+  const { facultyKey } = useProgramFaculty();
 
   if (!programs?.length) return null;
 
@@ -24,11 +28,15 @@ function ProgramsSection({ data, college }) {
       ? program.category
       : [program.category].filter(Boolean);
 
-    return cats.map((cat) => ({
-      label: cat.charAt(0).toUpperCase() + cat.slice(1), // "undergraduate" → "Undergraduate"
-      category: cat,
-      link: ROUTES.programsByCategory(instituteSlug, cat),
-    }));
+    return cats.map((cat) => {
+      const base = ROUTES.programsByCategory(instituteSlug, cat);
+      return {
+        label: cat.charAt(0).toUpperCase() + cat.slice(1), // "undergraduate" → "Undergraduate"
+        category: cat,
+        // ?f=<faculty> makes the listing faculty-specific (live SAS behaviour).
+        link: facultyKey ? `${base}?f=${encodeURIComponent(facultyKey)}` : base,
+      };
+    });
   });
 
   if (!categoryCards.length) return null;
