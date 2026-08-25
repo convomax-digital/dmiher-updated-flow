@@ -32,15 +32,18 @@ function Programs({ data }) {
 
           {data?.programs?.map((program, index) => {
 
-            const slug = program.page_slug || createSlug(program.title);
+            // Resolve where the card points:
+            //  • tab_type "url"  → use the custom `link` as-is (e.g. "/sel-sc"
+            //    or a full external URL like "https://...").
+            //  • tab_type "link" (default) → internal /programs/{page_slug}.
+            const isCustomUrl = program.tab_type === "url" && program.link;
+            const destination = isCustomUrl
+              ? program.link
+              : `/programs/${program.page_slug || createSlug(program.title)}`;
+            const isExternal = /^https?:\/\//i.test(destination);
 
-            return (
-              <Link
-                key={index}
-                to={`/programs/${slug}`}
-                className="program-card"
-                style={{ background: program.color }}
-              >
+            const cardInner = (
+              <>
                 <SafeImage
                   src={program.image}
                   alt={program.title}
@@ -60,6 +63,29 @@ function Programs({ data }) {
                     />
                   </div>
                 </div>
+              </>
+            );
+
+            const commonProps = {
+              className: "program-card",
+              style: { background: program.color },
+            };
+
+            // External links open in a new tab; everything else routes
+            // client-side through React Router.
+            return isExternal ? (
+              <a
+                key={index}
+                href={destination}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...commonProps}
+              >
+                {cardInner}
+              </a>
+            ) : (
+              <Link key={index} to={destination} {...commonProps}>
+                {cardInner}
               </Link>
             );
           })}
