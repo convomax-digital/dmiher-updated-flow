@@ -82,7 +82,6 @@ const SubPrograms = () => {
   }, [allInstitutes, facultyParam]);
 
   const [activeInstitute, setActiveInstitute] = useState("");
-  const [activeInstIndex, setActiveInstIndex] = useState(0);
   const [activeSubTab, setActiveSubTab] = useState("");
   const [activeSubTabIndex, setActiveSubTabIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
@@ -91,7 +90,6 @@ const SubPrograms = () => {
   useEffect(() => {
     if (institutes.length > 0 && !activeInstitute) {
       setActiveInstitute(institutes[0].institute_id);
-      setActiveInstIndex(0);
     }
   }, [institutes]);
 
@@ -123,11 +121,6 @@ const SubPrograms = () => {
     setActiveSubTab(subTabs[0].tab_id);
     setActiveSubTabIndex(0);
   }, [activeInstitute, subTabs.length, category]);
-
-  const handleInstituteChange = (instSlug, index) => {
-    setActiveInstitute(instSlug);
-    setActiveInstIndex(index);
-  };
 
   const handleSubTabChange = (tabId, index) => {
     setActiveSubTab(tabId);
@@ -173,44 +166,11 @@ const SubPrograms = () => {
     <section className="streams-wrapper">
       <div className="container py-8">
 
-        {/* ================= INSTITUTE TABS ================= */}
-        {institutes.length > 1 && (
-          <div className="subprog-tabs-wrap">
-            <div className="subprog-tabs-card">
-              <div
-                className="subprog-tabs-grid"
-                style={{
-                  gridTemplateColumns: `repeat(${institutes.length}, minmax(0, 1fr))`,
-                }}
-              >
-                <div
-                  className="subprog-tabs-indicator subprog-tabs-indicator-blue"
-                  style={{
-                    left: `calc(${activeInstIndex * (100 / institutes.length)}%)`,
-                    width: `${100 / institutes.length}%`,
-                  }}
-                />
-
-                {institutes.map((inst, index) => {
-                  const isActive = activeInstitute === inst.institute_id;
-                  return (
-                    <button
-                      key={inst.institute_id}
-                      onClick={() => handleInstituteChange(inst.institute_id, index)}
-                      className={`subprog-inst-tab ${
-                        isActive
-                          ? "subprog-inst-tab-active"
-                          : "subprog-inst-tab-inactive"
-                      }`}
-                    >
-                      {inst.institute_label || inst.page_slug}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Faculty/institute selection happens on the main institute page
+            (e.g. SAS's OUR FACULTIES tabs → ?f=<faculty> on the button links);
+            the listing itself never shows an institute tab row — matching the
+            live site, where each faculty has its own listing. Without ?f the
+            first institute is shown. */}
 
         {/* ================= SEARCH ================= */}
         <div className="subprog-search-wrap">
