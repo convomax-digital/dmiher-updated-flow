@@ -1166,29 +1166,65 @@
     @apply w-44 h-52 flex-shrink-0 rounded-full;
 }
 
-.deptpage-staff-card {
-    @apply bg-white rounded-xl shadow-lg p-8;
+/* ---- Multiple in-charges (heads array) ----
+   A department can list several heads (one per program). Each head is a
+   full-width row (photo left, details right) stacked vertically — a two-up
+   grid squeezed the details into a narrow column and wrapped the text badly. */
+.deptpage-heads-grid {
+    @apply flex flex-col gap-8;
 }
 
-/* Programs — a simple card listing each program with a book icon, matching
-   the department card style used across the page. */
-.deptpage-programs-card {
-    @apply bg-white rounded-xl shadow-lg p-8 mt-6;
+.deptpage-head {
+    @apply flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left;
 }
+
+.deptpage-head-info {
+    @apply flex-1;
+}
+
+.deptpage-head-name {
+    @apply text-xl font-bold text-gray-800 mb-1;
+}
+
+.deptpage-head-desig {
+    @apply text-[#F04E30] font-semibold mb-1;
+}
+
+.deptpage-head-qual {
+    @apply text-gray-600 mb-1 leading-relaxed;
+}
+
+.deptpage-head-qual-label {
+    @apply font-medium text-gray-700;
+}
+
+.deptpage-head-email {
+    @apply text-[#F04E30] hover:underline break-all;
+}
+
+/* ---- Programs section ---- */
+.deptpage-programs-card {
+    @apply bg-white rounded-xl shadow p-8 mt-6;
+}
+
 .deptpage-programs-title {
     @apply text-2xl font-bold text-gray-800 mb-4;
 }
+
 .deptpage-programs-list {
-    @apply flex flex-col gap-3;
+    @apply space-y-3;
 }
+
 .deptpage-programs-item {
-    @apply flex items-center gap-3 text-gray-700;
+    @apply flex items-center gap-3 text-lg text-gray-700 bg-gray-50 rounded-lg px-4 py-3;
 }
-.deptpage-programs-icon {
+
+.deptpage-programs-item svg {
     @apply text-[#122E5E] flex-shrink-0;
 }
-.deptpage-programs-name {
-    @apply text-base font-medium;
+
+.deptpage-staff-card {
+    @apply bg-white rounded-xl shadow-lg p-8;
 }
 
 .deptpage-staff-title {

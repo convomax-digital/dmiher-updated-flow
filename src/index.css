@@ -63,6 +63,17 @@ img, video {
     contain-intrinsic-size: 1px 600px;
 }
 
+/* Suspense placeholder for a lazy section whose chunk is still loading.
+   content-visibility only sizes OFF-screen boxes, so an on-screen pending
+   section would collapse to 0px and everything below would jump when it
+   mounts. Give the placeholder real height + the standard skeleton shimmer
+   (see styles/components/skeleton.css) so staggered section loading holds
+   its space and reads as deliberate. */
+.page-section-fallback {
+    min-height: 320px;
+    border-radius: 0;
+}
+
 .container {
     @apply max-w-7xl mx-auto px-5;
 }

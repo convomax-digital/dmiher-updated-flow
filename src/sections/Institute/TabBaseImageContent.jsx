@@ -1,6 +1,7 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import RichTextRenderer from "../../components/RichTextRenderer";
 import SafeImage from "../../components/SafeImage";
+import { useProgramFaculty } from "../../context/ProgramFacultyContext";
 
 export default function TabBaseImageContent({ data }) {
   const tabs = useMemo(() => {
@@ -9,10 +10,18 @@ export default function TabBaseImageContent({ data }) {
   }, [data]);
 
   const [activeIndex, setActiveIndex] = useState(0);
-
-  if (!tabs.length) return null;
+  const { setFacultyKey } = useProgramFaculty();
 
   const activeTab = tabs[activeIndex];
+
+  // Publish the active tab's faculty key so the "OUR PROGRAMS" section can
+  // point its buttons at this faculty (like the live SAS page). Tabs without a
+  // program_key (every non-SAS use) leave the shared state untouched.
+  useEffect(() => {
+    if (activeTab?.program_key) setFacultyKey(activeTab.program_key);
+  }, [activeTab?.program_key, setFacultyKey]);
+
+  if (!tabs.length) return null;
 
   return (
     <div className="bg-white py-12 sm:py-16 px-4">
