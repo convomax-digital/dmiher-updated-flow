@@ -316,27 +316,85 @@ function DepartmentsSubpage() {
           );
         })()}
 
-        {/* USP / Department Info */}
-        {currentDept.usp?.length > 0 && (
-          <div className="deptpage-usp-card">
-            <h3 className="deptpage-usp-title">
-              Department's Information
-            </h3>
-            <div className="deptpage-usp-grid">
-              {currentDept.usp.map((u, i) => (
-                <div
-                  key={i}
-                  className="deptpage-usp-item"
-                >
-                  <div className="deptpage-usp-num">
-                    {i + 1}
+        {/* Programs — the CMS/API sends programs as [{ name }]. Some legacy
+            imports still send a bare string, so normalize both into a plain
+            list of names before rendering. */}
+        {(() => {
+          const raw = currentDept.programs;
+          const programs = Array.isArray(raw)
+            ? raw
+                .map((p) => (typeof p === "string" ? p : p?.name))
+                .filter((n) => n && String(n).trim() !== "")
+            : typeof raw === "string" && raw.trim() !== ""
+              ? [raw.trim()]
+              : [];
+
+          if (!programs.length) return null;
+
+          return (
+            <div className="deptpage-programs-card">
+              <h3 className="deptpage-programs-title">Programs</h3>
+              <ul className="deptpage-programs-list">
+                {programs.map((name, idx) => (
+                  <li className="deptpage-programs-item" key={idx}>
+                    {renderIcon("book-open", 20, "deptpage-programs-icon")}
+                    <span className="deptpage-programs-name">{name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })()}
+
+        {/* USP / Department Info — grouped. The CMS/API sends `usp_groups`,
+            each with a heading and its own points, so each group renders under
+            its own subheading with numbering that restarts per group. Falls
+            back to the legacy flat `usp` array (one heading-less group) for
+            older payloads. */}
+        {(() => {
+          const groups =
+            Array.isArray(currentDept.usp_groups) && currentDept.usp_groups.length
+              ? currentDept.usp_groups
+              : Array.isArray(currentDept.usp) && currentDept.usp.length
+                ? [{ heading: "", points: currentDept.usp }]
+                : [];
+
+          // Keep only groups that actually have non-empty points.
+          const cleanGroups = groups
+            .map((g) => ({
+              heading: g?.heading || "",
+              points: (g?.points || []).filter(
+                (p) => (p?.point ?? "").trim() !== ""
+              ),
+            }))
+            .filter((g) => g.points.length);
+
+          if (!cleanGroups.length) return null;
+
+          return (
+            <div className="deptpage-usp-card">
+              <h3 className="deptpage-usp-title">Department's Information</h3>
+
+              {cleanGroups.map((group, gi) => (
+                <div className="deptpage-usp-group" key={gi}>
+                  {group.heading && (
+                    <h4 className="deptpage-usp-group-heading">
+                      {group.heading}
+                    </h4>
+                  )}
+                  <div className="deptpage-usp-grid">
+                    {group.points.map((u, i) => (
+                      <div key={i} className="deptpage-usp-item">
+                        <div className="deptpage-usp-num">{i + 1}</div>
+                        <p className="deptpage-usp-text">{u.point}</p>
+                      </div>
+                    ))}
                   </div>
-                  <p className="deptpage-usp-text">{u.point}</p>
                 </div>
               ))}
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* Gallery */}
         {currentDept.gallery?.length > 0 && (
