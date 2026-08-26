@@ -33,10 +33,16 @@ const Outcome = ({ data }) => {
       if (icons.length <= LOGOS_PER_SLIDE) {
         renderSlides.push({ type: "icons", icons, caption, bg });
       } else {
-        for (let i = 0; i < icons.length; i += LOGOS_PER_SLIDE) {
+        // Balance the chunks so the last slide isn't a tiny leftover
+        // (19 → 10+9, not 16+3). An uneven last slide leaves a big empty
+        // area because Swiper sizes every slide to the tallest one — very
+        // visible on mobile where the 2-column grid is already tall.
+        const numChunks = Math.ceil(icons.length / LOGOS_PER_SLIDE);
+        const perChunk = Math.ceil(icons.length / numChunks);
+        for (let i = 0; i < icons.length; i += perChunk) {
           renderSlides.push({
             type: "icons",
-            icons: icons.slice(i, i + LOGOS_PER_SLIDE),
+            icons: icons.slice(i, i + perChunk),
             caption,
             bg,
           });
@@ -76,6 +82,7 @@ const Outcome = ({ data }) => {
         <Swiper
           modules={[Autoplay, Pagination]}
           slidesPerView={1}
+          autoHeight={true}
           loop={enableLoop}
           autoplay={
             hasMultipleSlides

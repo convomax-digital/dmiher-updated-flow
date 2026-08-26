@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import SafeImage from "../../components/SafeImage";
 import RichTextRenderer from "../../components/RichTextRenderer";
 import { resolveImage } from "../../utils/resolveImage";
@@ -163,6 +163,37 @@ export default function CadWLLabSection({ data }) {
       {holistic.map((group, gIdx) => {
         const infra = Array.isArray(group.infra) ? group.infra : [];
         if (!infra.length) return null;
+
+        // A row holds 4 items; beyond that they used to wrap into a lopsided
+        // extra row. Instead, page them 4-at-a-time through a slider (matching
+        // the live site) once there are more than 4.
+        const perSlide = 4;
+        const useSlider = infra.length > perSlide;
+        const chunks = [];
+        for (let i = 0; i < infra.length; i += perSlide) {
+          chunks.push(infra.slice(i, i + perSlide));
+        }
+
+        const renderRow = (items) => (
+          <ul className="cadwl-lab-infra-grid">
+            {items.map((item, idx) => (
+              <li
+                key={idx}
+                className={
+                  "cadwl-lab-infra-item" +
+                  (idx < items.length - 1
+                    ? " cadwl-lab-infra-item-divider"
+                    : "")
+                }
+              >
+                {item.description && (
+                  <RichTextRenderer html={item.description} />
+                )}
+              </li>
+            ))}
+          </ul>
+        );
+
         return (
           <div key={gIdx} className="cadwl-lab-infra-section">
             <div className="container">
@@ -175,23 +206,22 @@ export default function CadWLLabSection({ data }) {
                     </span>
                   </h3>
                 )}
-                <ul className="cadwl-lab-infra-grid">
-                  {infra.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className={
-                        "cadwl-lab-infra-item" +
-                        (idx < infra.length - 1
-                          ? " cadwl-lab-infra-item-divider"
-                          : "")
-                      }
-                    >
-                      {item.description && (
-                        <RichTextRenderer html={item.description} />
-                      )}
-                    </li>
-                  ))}
-                </ul>
+
+                {useSlider ? (
+                  <Swiper
+                    modules={[Autoplay, Pagination]}
+                    pagination={{ clickable: true }}
+                    autoplay={{ delay: 4000, disableOnInteraction: false }}
+                    slidesPerView={1}
+                    className="cadwl-lab-infra-swiper"
+                  >
+                    {chunks.map((chunk, ci) => (
+                      <SwiperSlide key={ci}>{renderRow(chunk)}</SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  renderRow(infra)
+                )}
               </div>
             </div>
           </div>
