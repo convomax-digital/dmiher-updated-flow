@@ -145,3 +145,18 @@
 .cadwl-lab-infra-item b {
     @apply font-bold;
 }
+
+/* Infra slider (>4 items): full width so the Swiper sizes to the container,
+   dots placed in normal flow below the row so they're always visible. The
+   per-slide row keeps its own top margin, so drop the grid's mt-12 inside a
+   slide to avoid doubling the gap under the heading. */
+.cadwl-lab-infra-swiper {
+    @apply w-full mt-12;
+}
+.cadwl-lab-infra-swiper .cadwl-lab-infra-grid {
+    @apply mt-0;
+}
+.cadwl-lab-infra-swiper .swiper-pagination {
+    @apply relative mt-4;
+    bottom: auto;
+}

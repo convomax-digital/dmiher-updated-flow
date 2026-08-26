@@ -2467,6 +2467,19 @@
     @apply w-full mb-4;
 }
 
+/* Desktop points slider (>5 points). Without an explicit width the Swiper
+   takes its huge intrinsic content width inside the flex-column .image-inner
+   (align-items:center), blowing the pagination bar to ~33M px so the centred
+   dots land far off-screen. w-full sizes it to the container; the pagination
+   is placed in normal flow below the last row so the dots always show. */
+.footprint-points-swiper {
+    @apply w-full;
+}
+.footprint-points-swiper .swiper-pagination {
+    @apply relative mt-2;
+    bottom: auto;
+}
+
 /* ================= MAIN HERO (MainPageSections/Hero.jsx) ================= */
 .mph-topbar {
     @apply w-full bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-1 flex flex-col sm:flex-row sm:justify-between sm:items-center z-50 gap-y-2;
