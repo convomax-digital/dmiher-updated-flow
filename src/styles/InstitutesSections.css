@@ -2,7 +2,11 @@
 
 /* ================= INSTITUTE LIGHT FILE HELPERS ================= */
 .inst-logos-section {
-    @apply mx-auto bg-gray-100;
+    @apply mx-auto bg-gray-100 py-10 md:py-14;
+}
+
+.inst-logos-header {
+    @apply mb-6;
 }
 
 .inst-logos-heading {

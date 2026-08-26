@@ -8,11 +8,17 @@ export default function Logos({ data }) {
   const {
     header = {},
     buttons = [],
-    logos = [],
+    logos: rawLogos = [],
     slider_settings = {},
   } = data || {};
 
-  const { heading } = header;
+  const { heading, title } = header;
+
+  // API sends `image`; legacy shape used `src`.
+  const logos = rawLogos.map((logo) => ({
+    ...logo,
+    src: logo.src || logo.image,
+  }));
 
   const {
     autoplay_delay = 2000,
@@ -21,15 +27,29 @@ export default function Logos({ data }) {
     desktop_slides = 4,
   } = slider_settings;
 
+  // Dynamic section background from the backend (section_style.bg_color).
+  const bgColor = data?.section_style?.bg_color;
+
   return (
-    <section className="inst-logos-section">
+    <section
+      className="inst-logos-section"
+      style={bgColor ? { backgroundColor: bgColor } : undefined}
+    >
       <div className="container">
 
-        {/* HEADING */}
-        {heading && (
-          <h2 className="inst-logos-heading">
-            {heading}
-          </h2>
+        {/* HEADING — `title` renders the left-aligned accent-line header,
+            legacy `heading` keeps the old centered style */}
+        {title ? (
+          <div className="inst-logos-header">
+            <hr className="heading-line" />
+            <h2 className="heading">{title}</h2>
+          </div>
+        ) : (
+          heading && (
+            <h2 className="inst-logos-heading">
+              {heading}
+            </h2>
+          )
         )}
 
         {/* BUTTONS */}

@@ -1060,10 +1060,14 @@
 }
 
 .joe-timeline-staircase {
-    @apply flex items-end justify-start flex-nowrap pt-4;
+    @apply flex items-start justify-start flex-nowrap pt-4;
     gap: 0;
 }
 
+/* Staircase — live-site steps each card's TOP up by 90px from oldest (left,
+   lowest) to newest (right, highest); cards keep a 200px floor and grow
+   DOWNWARD with their content. The per-card rise comes from the component as
+   --joe-step-rise (largest for the oldest card, 0 for the newest). */
 .joe-timeline-step {
     @apply p-4 shadow-md flex flex-col justify-start;
     /* live-site uses w-[210px]; allow shrinking so 6 cards fit inside the
@@ -1072,17 +1076,8 @@
     width: 210px;
     min-width: 0;
     min-height: 200px;
+    margin-top: var(--joe-step-rise, 0px);
 }
-
-/* Progressive height staircase — bottoms align (items-end), each card taller
-   than the previous so the tops climb from oldest (left) to newest (right).
-   Delta kept small so the effect is a gentle staircase, matching live-site. */
-.joe-timeline-step:nth-child(1) { min-height: 200px; }
-.joe-timeline-step:nth-child(2) { min-height: 220px; }
-.joe-timeline-step:nth-child(3) { min-height: 240px; }
-.joe-timeline-step:nth-child(4) { min-height: 260px; }
-.joe-timeline-step:nth-child(5) { min-height: 280px; }
-.joe-timeline-step:nth-child(6) { min-height: 300px; }
 
 /* The API delivers each step's HTML as
      <div class="…text-2xl">2022</div>
@@ -1114,6 +1109,7 @@
         @apply w-full;
         flex: 0 0 auto;
         min-height: auto;
+        margin-top: 0;
     }
 }
 

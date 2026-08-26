@@ -46,13 +46,18 @@ function JourneyOfExcellence({ data }) {
 
             {timelineItems.length > 0 && (
               <div className="joe-timeline-staircase">
-                {timelineItems.map((item, i) => (
+                {timelineItems.map((item, i, arr) => (
                   <div
                     key={i}
                     className="joe-timeline-step"
                     style={{
                       backgroundColor: item?.background || "#0E2D5B",
                       color: item?.text_color || "#ffffff",
+                      // Staircase rise: live site steps each card's TOP up by
+                      // exactly 90px toward the newest item (cards then grow
+                      // downward with their content). Applied via margin-top
+                      // on desktop only (see .joe-timeline-step CSS).
+                      "--joe-step-rise": `${(arr.length - 1 - i) * 90}px`,
                     }}
                   >
                     <RichTextRenderer html={item?.title || ""} />
