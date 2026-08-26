@@ -17,8 +17,38 @@ const Outcome = ({ data }) => {
   const videoData =
     data.video || data.slider.find((s) => s?.tab_type === "video") || null;
   const slides = data.slider.filter((s) => s?.tab_type !== "video");
-  const hasMultipleSlides = slides.length > 1;
-  const enableLoop = slides.length >= 3;
+
+  // Expand each "icons" slide into logo-chunk sub-slides: a 4-column grid holds
+  // 16 logos cleanly (4 rows), so a longer logo list paginates onto new slides
+  // (same bg, swiper dots) instead of overflowing one grid — mirroring the
+  // FootprintSection ("OUR TALENT ACROSS INDUSTRIES") logo slider. The caption
+  // repeats on every chunk so each slide reads as a complete panel.
+  const LOGOS_PER_SLIDE = 16;
+  const renderSlides = [];
+  slides.forEach((slide) => {
+    if (slide?.tab_type === "icons") {
+      const icons = Array.isArray(slide.icons) ? slide.icons : [];
+      const caption = slide.lable || slide.label || slide.title || "";
+      const bg = slide.bg_color;
+      if (icons.length <= LOGOS_PER_SLIDE) {
+        renderSlides.push({ type: "icons", icons, caption, bg });
+      } else {
+        for (let i = 0; i < icons.length; i += LOGOS_PER_SLIDE) {
+          renderSlides.push({
+            type: "icons",
+            icons: icons.slice(i, i + LOGOS_PER_SLIDE),
+            caption,
+            bg,
+          });
+        }
+      }
+    } else {
+      renderSlides.push({ type: "image", slide });
+    }
+  });
+
+  const hasMultipleSlides = renderSlides.length > 1;
+  const enableLoop = renderSlides.length >= 3;
 
   // ✅ Thumbnail Fix (handle string / array / fallback)
   const thumbnail = Array.isArray(videoData?.thumbnail)
@@ -55,32 +85,32 @@ const Outcome = ({ data }) => {
           pagination={hasMultipleSlides ? { clickable: true } : false}
           className="outcome-swiper"
         >
-          {slides.map((slide, index) => (
+          {renderSlides.map((rs, index) => (
             <SwiperSlide key={index}>
 
               {/* ✅ IMAGE SLIDE */}
-              {slide.tab_type === "image" && (
+              {rs.type === "image" && (
                 <div className="slide-image">
                   <SafeImage
-                    src={slide.image}
+                    src={rs.slide.image}
                     alt="slide"
                     className="slide-img"
                   />
                   <div className="slide-overlay" />
                   <div className="slide-content">
-                    <RichTextRenderer html={slide.desc} />
+                    <RichTextRenderer html={rs.slide.desc} />
                   </div>
                 </div>
               )}
 
-              {/* ✅ ICON SLIDE */}
-              {slide.tab_type === "icons" && (
+              {/* ✅ ICON SLIDE (one chunk of up to 16 logos) */}
+              {rs.type === "icons" && (
                 <div
                   className="slide-icons"
-                  style={{ backgroundColor: slide.bg_color }}
+                  style={{ backgroundColor: rs.bg }}
                 >
                   <div className="icons-grid">
-                    {slide.icons?.map((item, i) => (
+                    {rs.icons.map((item, i) => (
                       <SafeImage
                         key={i}
                         src={item.image}
@@ -91,9 +121,9 @@ const Outcome = ({ data }) => {
                     {/* CMS spells the field "lable"; the text fills the grid
                         cells after the last logo (col-span-2), matching the
                         live "LEARN FROM THE GLOBAL LEADERS" design. */}
-                    {(slide.lable || slide.label || slide.title) && (
+                    {rs.caption && (
                       <div className="icons-text">
-                        <p>{slide.lable || slide.label || slide.title}</p>
+                        <p>{rs.caption}</p>
                       </div>
                     )}
                   </div>

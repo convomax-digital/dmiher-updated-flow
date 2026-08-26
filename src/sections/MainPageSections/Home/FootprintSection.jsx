@@ -44,6 +44,18 @@ const FootprintSection = ({ data }) => {
     }
   }
 
+  // ✅ points chunking — the desktop grid is 5 columns, so 5 points fill exactly
+  // one row. Beyond 5 the extra points used to wrap into a lopsided second row;
+  // instead we page them 5-at-a-time through a slider (same stepped behaviour as
+  // the mobile view), so every point is shown cleanly.
+  const pointsPerSlide = 5;
+  const pointChunks = [];
+  if (currentTab?.points?.length) {
+    for (let i = 0; i < currentTab.points.length; i += pointsPerSlide) {
+      pointChunks.push(currentTab.points.slice(i, i + pointsPerSlide));
+    }
+  }
+
   if (tabs.length === 0) return null;
 
   return (
@@ -120,6 +132,28 @@ const FootprintSection = ({ data }) => {
                         <SwiperSlide key={index}>
                           <div className="point-mobile">
                             <RichTextRenderer html={point.text} />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : currentTab.points.length > pointsPerSlide ? (
+                    // Desktop, >5 points → page them 5-per-row through a slider.
+                    <Swiper
+                      modules={[Autoplay, Pagination]}
+                      pagination={{ clickable: true }}
+                      autoplay={{ delay: 4000, disableOnInteraction: false }}
+                      loop={pointChunks.length > 1}
+                      slidesPerView={1}
+                      className="footprint-points-swiper"
+                    >
+                      {pointChunks.map((chunk, ci) => (
+                        <SwiperSlide key={ci}>
+                          <div className="points-grid">
+                            {chunk.map((point, index) => (
+                              <div key={index} className="point-item">
+                                <RichTextRenderer html={point.text} />
+                              </div>
+                            ))}
                           </div>
                         </SwiperSlide>
                       ))}
