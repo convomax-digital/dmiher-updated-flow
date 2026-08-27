@@ -6,6 +6,11 @@ const BlockRenderer = ({ block }) => {
   const { type, props: p } = block;
 
   switch (type) {
+    // Container → columns → children layout produced by the visual builder's
+    // structure panel. Recurses back into BlockRenderer for column children.
+    case "container":
+      return <ContainerRenderer block={block} />;
+
     case "heading": {
       const level = p.level || "h2";
       const Tag = level;
@@ -883,6 +888,161 @@ const BlockRenderer = ({ block }) => {
   }
 };
 
+/* ================= CONTAINER / COLUMN LAYOUT =================
+   Mirrors the builder's ContainerPreview + DroppableColumn rendering so
+   published pages match what the admin sees on the canvas. Breakpoints:
+   mobile < 768px, tablet < 1024px (SSR-safe — defaults to desktop). */
+const useViewport = () => {
+  const [vp, setVp] = useState("desktop");
+  React.useEffect(() => {
+    const handle = () => {
+      const w = window.innerWidth;
+      setVp(w < 768 ? "mobile" : w < 1024 ? "tablet" : "desktop");
+    };
+    handle();
+    window.addEventListener("resize", handle);
+    return () => window.removeEventListener("resize", handle);
+  }, []);
+  return vp;
+};
+
+const COLUMN_PRESETS = {
+  card: {
+    backgroundColor: "#ffffff",
+    borderRadius: 12,
+    boxShadow: "0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)",
+    border: "1px solid #e5e7eb",
+  },
+  bordered: { border: "1px solid #e5e7eb", borderRadius: 8 },
+  shadow: {
+    boxShadow:
+      "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)",
+    borderRadius: 8,
+  },
+};
+
+const ColumnRenderer = ({ column, columnStyle, isStacked, viewport }) => {
+  const s = column.settings || {};
+
+  if (
+    (viewport === "mobile" && s.hideOnMobile) ||
+    (viewport === "desktop" && s.hideOnDesktop)
+  ) {
+    return null;
+  }
+
+  const vAlignMap = { top: "flex-start", center: "center", bottom: "flex-end" };
+  const hAlignMap = { left: "flex-start", center: "center", right: "flex-end" };
+
+  const style = {
+    flex: isStacked ? "1 1 100%" : `${s.width || 12} 1 0%`,
+    minWidth: 0,
+    order: isStacked && s.mobileOrder ? s.mobileOrder : undefined,
+    backgroundColor:
+      s.bgColor && s.bgColor !== "transparent" ? s.bgColor : undefined,
+    backgroundImage: s.bgImage ? `url(${s.bgImage})` : undefined,
+    backgroundSize: s.bgImage ? "cover" : undefined,
+    backgroundPosition: s.bgImage ? "center" : undefined,
+    paddingTop: s.paddingTop,
+    paddingBottom: s.paddingBottom,
+    paddingLeft: s.paddingLeft,
+    paddingRight: s.paddingRight,
+    marginTop: s.marginTop,
+    marginBottom: s.marginBottom,
+    borderWidth: s.borderWidth || undefined,
+    borderColor: s.borderWidth ? s.borderColor : undefined,
+    borderStyle: s.borderWidth ? "solid" : undefined,
+    borderRadius: s.borderRadius || undefined,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: vAlignMap[s.verticalAlign] || "flex-start",
+    alignItems: hAlignMap[s.horizontalAlign] || "stretch",
+    ...(COLUMN_PRESETS[columnStyle] || {}),
+    ...(s.bgColor && s.bgColor !== "transparent"
+      ? { backgroundColor: s.bgColor }
+      : {}),
+  };
+
+  return (
+    <div style={style} className={s.cssClass || undefined}>
+      <div style={{ width: "100%" }}>
+        {(column.children || []).map((child) => (
+          <BlockRenderer key={child.id} block={child} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ContainerRenderer = ({ block }) => {
+  const p = block.props || {};
+  const viewport = useViewport();
+
+  if (
+    (viewport === "mobile" && p.hideOnMobile) ||
+    (viewport === "desktop" && p.hideOnDesktop)
+  ) {
+    return null;
+  }
+
+  const shouldStack =
+    (viewport === "mobile" && (p.stackOnMobile ?? true)) ||
+    (viewport === "tablet" && p.stackOnTablet);
+  const shouldReverse =
+    shouldStack && viewport === "mobile" && p.reverseOnMobile;
+
+  // Outer div: background / border span the full row; inner div boxes the
+  // columns when widthMode is "boxed" (matches the builder canvas at 1200px).
+  const outerStyle = {
+    backgroundColor:
+      p.bgColor && p.bgColor !== "transparent" ? p.bgColor : undefined,
+    backgroundImage: p.bgImage ? `url(${p.bgImage})` : undefined,
+    backgroundSize: p.bgImage ? "cover" : undefined,
+    backgroundPosition: p.bgImage ? "center" : undefined,
+    paddingTop: p.paddingTop,
+    paddingBottom: p.paddingBottom,
+    paddingLeft: p.paddingLeft,
+    paddingRight: p.paddingRight,
+    marginTop: p.marginTop,
+    marginBottom: p.marginBottom,
+    borderWidth: p.borderWidth || undefined,
+    borderColor: p.borderWidth ? p.borderColor : undefined,
+    borderStyle: p.borderWidth ? p.borderStyle || "solid" : undefined,
+    borderRadius: p.borderRadius || undefined,
+    minHeight: p.minHeight || undefined,
+  };
+
+  const innerStyle = {
+    display: "flex",
+    flexWrap: shouldStack ? undefined : "wrap",
+    flexDirection: shouldStack
+      ? shouldReverse
+        ? "column-reverse"
+        : "column"
+      : "row",
+    gap: `${p.columnGap ?? 16}px`,
+    ...(p.widthMode === "full"
+      ? { width: "100%" }
+      : { maxWidth: "1200px", margin: "0 auto" }),
+  };
+
+  return (
+    <div style={outerStyle} className={p.cssClass || undefined}>
+      <div style={innerStyle}>
+        {(block.columns || []).map((column) => (
+          <ColumnRenderer
+            key={column.id}
+            column={column}
+            columnStyle={p.columnStyle || "plain"}
+            isStacked={shouldStack}
+            viewport={viewport}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const FaqItem = ({ item }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -1183,13 +1343,18 @@ function VisualPageBuilder({ data }) {
 
   if (!blocks.length) return null;
 
+  // New builder format wraps everything in container blocks, which manage
+  // their own boxed/full width — so the page wrapper stays full-bleed there.
+  // Legacy flat block lists keep the old centered 1200px wrapper.
+  const hasContainers = blocks.some((b) => b.type === "container");
+
   return (
     <div
-      style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "2rem 1rem",
-      }}
+      style={
+        hasContainers
+          ? { padding: "2rem 0" }
+          : { maxWidth: "1200px", margin: "0 auto", padding: "2rem 1rem" }
+      }
     >
       {blocks.map((block) => (
         <BlockRenderer key={block.id} block={block} />

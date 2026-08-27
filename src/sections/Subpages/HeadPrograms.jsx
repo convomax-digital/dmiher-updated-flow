@@ -7,7 +7,9 @@ import { CardSkeletonGrid } from "../../components/Skeletons/CardSkeleton";
 
 const Medicine = ({ slug: slugProp }) => {
   const { slug: slugParam } = useParams();
-  const slug = slugParam || slugProp || "medicine";
+  // Backend slugs are lowercase & the lookup is case-sensitive; the URL param
+  // can arrive in any case, so normalize (same as Programs/Departments).
+  const slug = (slugParam || slugProp || "medicine").toLowerCase();
 
   const { institutes, settings, loading, error } = useMedicineProgramsData(slug);
 

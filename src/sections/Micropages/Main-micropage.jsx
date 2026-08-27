@@ -25,23 +25,25 @@ const getRenderItems = (data) => {
      - single_img tab_type             item.image (string)
      - repeatable gallery (1 level)    item.image: [ { image: "..." } ]
      - repeatable gallery (2 levels)   item.image: [ { image: [ { image: "..." } ] } ]
+   Certificate blocks repeat the exact same nesting under the `certificate`
+   key, so the field name is a parameter.
    Returns a flat list of strings so callers can render one image or a grid. */
-const collectImageSrcs = (item) => {
+const collectImageSrcs = (item, field = "image") => {
   const out = [];
   const push = (v) => {
     if (typeof v === "string" && v.trim()) out.push(v.trim());
   };
 
   push(item?.value);
-  if (typeof item?.image === "string") push(item.image);
+  if (typeof item?.[field] === "string") push(item[field]);
 
-  if (Array.isArray(item?.image)) {
-    item.image.forEach((entry) => {
+  if (Array.isArray(item?.[field])) {
+    item[field].forEach((entry) => {
       if (typeof entry === "string") return push(entry);
-      const inner = entry?.image;
+      const inner = entry?.[field];
       if (typeof inner === "string") return push(inner);
       if (Array.isArray(inner)) {
-        inner.forEach((x) => push(typeof x === "string" ? x : x?.image));
+        inner.forEach((x) => push(typeof x === "string" ? x : x?.[field]));
       }
     });
   }
@@ -50,11 +52,9 @@ const collectImageSrcs = (item) => {
 };
 
 /* ================= IMAGE BLOCK =================
-   Layout adapts to the number of images:
-     1     → full-width, no slider
-     2     → two equal columns, no slider
-     3     → three equal columns, no slider
-     4+    → Swiper slider (3 desktop / 2 tablet / 1 mobile), loop, arrows, dots */
+   All counts render as a wrapping grid (3 per row desktop / 2 tablet /
+   1 mobile via .mp-gallery-img media widths) — no slider, so 4+ images
+   simply flow onto the next row. */
 const GalleryImage = ({ src }) => (
   <SafeImage src={src} alt="" className="mp-gallery-img" />
 );
@@ -63,36 +63,34 @@ const ImageBlock = ({ item }) => {
   const srcs = collectImageSrcs(item);
   if (!srcs.length) return null;
 
-  if (srcs.length <= 3) {
-    return (
-      <div className={`mp-gallery mp-gallery--${srcs.length} mb-6`}>
-        {srcs.map((s, i) => (
-          <GalleryImage key={i} src={s} />
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className={`mp-gallery mp-gallery--${Math.min(srcs.length, 3)} mb-6`}>
+      {srcs.map((s, i) => (
+        <GalleryImage key={i} src={s} />
+      ))}
+    </div>
+  );
+};
+
+/* ================= CERTIFICATE BLOCK =================
+   Same wrapping grid as ImageBlock, but the images render FULL SIZE —
+   natural aspect ratio, no 380px cap or 16:9 crop — since certificates
+   are documents that must stay readable. Widths split by count
+   (1 → full row, 2 → halves, 3+ → thirds, wrapping onto new rows). */
+const CertificateBlock = ({ item }) => {
+  const srcs = collectImageSrcs(item, "certificate");
+  if (!srcs.length) return null;
 
   return (
-    <div className="mb-6 mp-gallery-slider">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-        loop
-        spaceBetween={16}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {srcs.map((s, i) => (
-          <SwiperSlide key={i}>
-            <GalleryImage src={s} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div
+      className={`mp-gallery mp-cert-gallery mp-gallery--${Math.min(
+        srcs.length,
+        3
+      )} mb-6`}
+    >
+      {srcs.map((s, i) => (
+        <SafeImage key={i} src={s} alt="Certificate" className="mp-cert-img" />
+      ))}
     </div>
   );
 };
@@ -321,6 +319,29 @@ const ButtonsBlock = ({ items }) => {
   );
 };
 
+/* ================= SINGLE BUTTON BLOCK (block.btn[]) =================
+   Solid orange link buttons in a 2-per-row grid (1 on mobile); an odd
+   count centers the last button across both columns. */
+const SingleButtonBlock = ({ items }) => {
+  if (!Array.isArray(items) || !items.length) return null;
+  return (
+    <div className="mp-single-btn-grid">
+      {items.map((b, i) => (
+        <a
+          key={i}
+          href={b?.link || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mp-single-btn"
+          title={b?.label}
+        >
+          {b?.label}
+        </a>
+      ))}
+    </div>
+  );
+};
+
 const PdfButtonBlock = ({ items }) => {
   if (!Array.isArray(items) || !items.length) return null;
   return (
@@ -536,6 +557,9 @@ const MainMicropage = ({ data }) => {
               case "single_img":
                 return <ImageBlock key={key} item={item} />;
 
+              case "certificate":
+                return <CertificateBlock key={key} item={item} />;
+
               case "table":
                 return <TableBlock key={key} block={item} />;
 
@@ -613,6 +637,9 @@ const MainMicropage = ({ data }) => {
 
               case "pdf_button":
                 return <PdfButtonBlock key={key} items={item.pdf_btn || []} />;
+
+              case "single_button":
+                return <SingleButtonBlock key={key} items={item.btn || []} />;
 
               default:
                 return null;
