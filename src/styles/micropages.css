@@ -343,6 +343,33 @@
     }
 }
 
+/* ================= CERTIFICATE GALLERY =================
+   Full-size images — natural aspect ratio, no max-width cap and no 16:9
+   crop (unlike .mp-gallery-img). Widths split the row by image count:
+   1 → full width, 2 → halves, 3+ → thirds (wrapping onto new rows). */
+/* flex default align-items:stretch would stretch the shorter certificate
+   in a row and distort its aspect ratio — pin rows to the top instead. */
+.mp-cert-gallery {
+    align-items: flex-start;
+}
+
+.mp-cert-img {
+    @apply rounded-lg;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (min-width: 640px) {
+    .mp-cert-gallery.mp-gallery--2 .mp-cert-img {
+        width: calc((100% - 1rem) / 2);
+    }
+
+    .mp-cert-gallery.mp-gallery--3 .mp-cert-img {
+        width: calc((100% - 2rem) / 3);
+    }
+}
+
 /* ================= IMAGE SLIDER (4+ images) ================= */
 .mp-gallery-slider {
     position: relative;
@@ -370,6 +397,21 @@
 
 .mp-gallery-slider .swiper-pagination-bullet-active {
     background: #F04E30;
+}
+
+/* ================= SINGLE BUTTON GRID =================
+   Solid orange link buttons, 2 per row (1 on mobile); an odd count
+   centers the last button between the two columns. */
+.mp-single-btn-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto my-8;
+}
+
+.mp-single-btn {
+    @apply block bg-[#F04E30] hover:bg-[#122E5E] text-white font-oswald-medium text-lg text-center rounded-md shadow-md px-6 py-3.5 transition;
+}
+
+.mp-single-btn-grid .mp-single-btn:last-child:nth-child(odd) {
+    @apply sm:col-span-2 sm:w-1/2 sm:mx-auto;
 }
 
 /* ================= PDF BUTTON LIST ================= */

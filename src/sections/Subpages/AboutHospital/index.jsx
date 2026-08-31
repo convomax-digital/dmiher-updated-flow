@@ -8,10 +8,21 @@ import { flattenNumericKeys } from "./utils";
  * `tab_name` + `tab_type` + content. Active tab is internal state.
  */
 const AboutHospital = ({ data }) => {
-  const header = flattenNumericKeys(data?.header);
+  // Some responses double-wrap the section payload: data = { slug, cta_key,
+  // sections: [{ section_id: "about_hospital_subpage", data: { header, tabs } }] }
+  // (seen on mgac/hospital) instead of { header, tabs } directly. Unwrap the
+  // inner data so both shapes render.
+  const nested =
+    !Array.isArray(data?.tabs) && Array.isArray(data?.sections)
+      ? data.sections.find((s) => s?.section_id === "about_hospital_subpage")
+          ?.data
+      : null;
+  const d = nested || data;
+
+  const header = flattenNumericKeys(d?.header);
   const mainHeading = header?.main_heading;
   const headingType = header?.heading_type || "full";
-  const tabs = Array.isArray(data?.tabs) ? data.tabs : [];
+  const tabs = Array.isArray(d?.tabs) ? d.tabs : [];
   const [activeIdx, setActiveIdx] = useState(0);
 
   if (tabs.length === 0) return null;

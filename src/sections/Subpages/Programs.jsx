@@ -57,7 +57,11 @@ const renderEligibility = (elig) => {
 
 const SubPrograms = () => {
   const { college, category, slug } = useParams();
-  const resolvedSlug = college || slug;
+  // Backend slugs are stored lowercase and the API lookup is case-sensitive,
+  // while the URL can arrive in any case (/SHER/programs/...). Normalize —
+  // else /programs/page/SHER 404s and the page shows "Failed to load
+  // programs". `category` stays as-is: it matches program data, not a slug.
+  const resolvedSlug = (college || slug)?.toLowerCase();
 
   // ?f=<faculty> — when the SAS "OUR PROGRAMS" buttons carry a faculty, show
   // only that faculty (like the live faculty-specific pages). The single

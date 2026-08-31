@@ -64,7 +64,13 @@ const getStaffColumns = (staff = []) => {
 };
 
 function DepartmentsSubpage() {
-  const { college, deptSlug } = useParams();
+  const params = useParams();
+  // Backend slugs are stored lowercase and the API lookup is case-sensitive,
+  // while the URL can arrive in any case (/SHER/departments/...). Normalize —
+  // same as PageView does for page slugs — else /departments/SHER 404s and
+  // the page shows "No department data available".
+  const college = params.college?.toLowerCase();
+  const deptSlug = params.deptSlug?.toLowerCase();
 
   const { data: departments = [], isLoading } = useQuery({
     queryKey: ["departments", college],
