@@ -3152,8 +3152,14 @@
 }
 
 /* ================= ONE HEALTH (MainPageSections/OneHealth.jsx) ================= */
+/* Use the site-wide content width (max-w-7xl = 1280px) rather than Tailwind's
+   `container` utility, which caps at 1536px on wide screens — that made the
+   heading (and matrix) sit further out than every other section. Desktop
+   padding is zeroed (lg:px-0) so the heading lines up with the neighbouring
+   sections (Journey / Holistic sit flush at the 1280px edge); mobile/tablet
+   keep px-4 so content doesn't touch the screen edge. */
 .onehealth-section {
-    @apply my-10 flex flex-col items-start gap-10 sm:gap-14 container mx-auto px-4;
+    @apply my-10 flex flex-col items-start gap-10 sm:gap-14 max-w-7xl mx-auto px-4 lg:px-0;
 }
 
 .onehealth-heading {
