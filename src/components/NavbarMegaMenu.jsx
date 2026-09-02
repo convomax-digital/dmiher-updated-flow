@@ -69,13 +69,14 @@ const MegaMenu = ({ sections, onItemClick }) => {
     return target && target !== "/" && (cur === target || cur.startsWith(target + "/"));
   };
 
-  // Default the preview to the active institute (the page you're currently on)
-  // so its image + description show without hovering. Hovering any link still
-  // overrides it via hoveredItem.
-  const activeInstitute = (sections || [])
-    .flatMap((s) => s.items || [])
-    .find((it) => isActive(it.slug));
-  const preview = hoveredItem || activeInstitute;
+  // Preview priority: the hovered link → the active institute (the page you're
+  // currently on) → the very first institute as a sensible default, so the
+  // right panel never sits empty ("Hover on institute to preview"). Hovering
+  // any link still overrides it via hoveredItem.
+  const allItems = (sections || []).flatMap((s) => s.items || []);
+  const activeInstitute = allItems.find((it) => isActive(it.slug));
+  const firstInstitute = allItems.find((it) => it.image) || allItems[0];
+  const preview = hoveredItem || activeInstitute || firstInstitute;
 
   return (
     <div className="absolute top-[65%] left-1/2 -translate-x-1/2 mt-3 grid grid-cols-3 xl:grid-cols-3 gap-4 bg-white text-[#1f3c88] shadow-lg p-6 z-[9999] w-[850px] xl:w-[1100px] justify-between transition-all duration-300 ease-in-out">
