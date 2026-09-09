@@ -1,12 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import api from "../config/api";
+import { sortByOrder } from "../utils/programs";
 
 /**
  * Fetches /api/programs/{slug} and normalizes the nested
  * `data.data.programs_subpage` payload.
  *
  * Kept separate from `useProgramsData` so existing callers are untouched.
+ *
+ * This endpoint returns the stored blob as-is — unlike /api/programs/page/
+ * it does no sorting of its own — so tabs and their program cards are ordered
+ * here, by the `order` the admin sets in the panel.
  */
 const fetchMedicinePrograms = async (slug) => {
   const { data } = await api.get(`/programs/${slug}`);
@@ -23,8 +28,18 @@ export const useMedicineProgramsData = (slug) => {
 
   const normalized = useMemo(() => {
     const subpage = data?.data?.data?.programs_subpage || {};
+    const rawInstitutes = Array.isArray(subpage.institutes)
+      ? subpage.institutes
+      : [];
+
     return {
-      institutes: Array.isArray(subpage.institutes) ? subpage.institutes : [],
+      institutes: rawInstitutes.map((inst) => ({
+        ...inst,
+        tabs: sortByOrder(inst?.tabs || []).map((tab) => ({
+          ...tab,
+          programs: sortByOrder(tab?.programs || []),
+        })),
+      })),
       settings: subpage.settings || {},
     };
   }, [data]);
