@@ -176,30 +176,76 @@ const DeanBlock = ({ entries }) => {
    cards sit in a row on desktop (from the CMS, default 3). Mirrors the live-site
    Key Functionaries card grid. */
 const DeanCardsGrid = ({ entries, cols = 3 }) => {
+  // A dean whose entry carries a micro-page CTA (has_micro_page + cta_key) links
+  // to its own nested page — the person's card (name + photo) becomes the link.
+  // The href is built RELATIVE to the current path so /{college}/{page} grows to
+  // /{college}/{page}/{cta_key}, matching the nested slug the API exposes
+  // (e.g. about/key-functionaries/dr-lalitbhushan-s-waghmare). Mirrors the
+  // NormalCardsBlock linking pattern. Deans without a CTA stay non-clickable.
+  const { pathname } = useLocation();
+  const base = pathname.replace(/\/+$/, "");
   if (!Array.isArray(entries) || !entries.length) return null;
+
+  const getCtaKey = (d) => {
+    const cta = Array.isArray(d?.cta) ? d.cta[0] : null;
+    return cta?.has_micro_page && cta?.cta_key ? cta.cta_key : null;
+  };
+
   return (
     <div className="dean-cards-grid" style={{ "--dean-cols": cols }}>
-      {entries.map((d, i) => (
-        <div key={i} className="dean-card">
-          <SafeImage
-            src={resolveImage(d?.img)}
-            alt={d?.name || ""}
-            className="dean-card-image"
-          />
-          <div className="dean-card-body">
-            {(d?.desc || d?.qualification) && (
-              <RichTextRenderer html={d.desc || d.qualification} />
-            )}
+      {entries.map((d, i) => {
+        const body = (
+          <>
+            <SafeImage
+              src={resolveImage(d?.img)}
+              alt={d?.name || ""}
+              className="dean-card-image"
+            />
+            <div className="dean-card-body">
+              {(d?.desc || d?.qualification) && (
+                <RichTextRenderer html={d.desc || d.qualification} />
+              )}
+            </div>
+          </>
+        );
+
+        const ctaKey = getCtaKey(d);
+        if (ctaKey) {
+          const href = base ? `${base}/${ctaKey}` : `/${ctaKey}`;
+          return (
+            <Link key={i} to={href} className="dean-card dean-card--link">
+              {body}
+            </Link>
+          );
+        }
+
+        return (
+          <div key={i} className="dean-card">
+            {body}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
 
 /* ================= TEAM BLOCK (new shape: block.management_team[]) ================= */
 const TeamBlock = ({ members, cols = 3 }) => {
+  // A member whose entry carries a micro-page CTA (cta: [{ has_micro_page,
+  // cta_key }]) links to its own nested page — the whole card (photo + name)
+  // becomes the link. Members with a disabled/absent CTA (cta: { _section_disabled
+  // } or none) stay non-clickable. The href is built RELATIVE to the current path
+  // so /{college}/{page} grows to /{college}/{page}/{cta_key}, matching the nested
+  // slug the API exposes (e.g. about/key-functionaries/dr-lalitbhushan-s-waghmare).
+  const { pathname } = useLocation();
+  const base = pathname.replace(/\/+$/, "");
   if (!Array.isArray(members) || !members.length) return null;
+
+  const getCtaKey = (m) => {
+    const cta = Array.isArray(m?.cta) ? m.cta[0] : null;
+    return cta?.has_micro_page && cta?.cta_key ? cta.cta_key : null;
+  };
+
   // CMS sends a per-member display "order" (string, e.g. "1"). Sort by it;
   // members without one keep their API position, after the ordered ones.
   const sorted = [...members].sort((a, b) => {
@@ -212,22 +258,44 @@ const TeamBlock = ({ members, cols = 3 }) => {
   });
   return (
     <div className="management-team-wrapper" style={{ "--team-cols": cols }}>
-      {sorted.map((m, i) => (
-        <div key={i} className="management-team-card">
-          {m?.img && (
-            <SafeImage
-              src={resolveImage(m.img)}
-              alt=""
-              className="management-team-image"
-            />
-          )}
-          {m?.desc && (
-            <div className="management-team-info">
-              <RichTextRenderer html={m.desc} />
-            </div>
-          )}
-        </div>
-      ))}
+      {sorted.map((m, i) => {
+        const inner = (
+          <>
+            {m?.img && (
+              <SafeImage
+                src={resolveImage(m.img)}
+                alt=""
+                className="management-team-image"
+              />
+            )}
+            {m?.desc && (
+              <div className="management-team-info">
+                <RichTextRenderer html={m.desc} />
+              </div>
+            )}
+          </>
+        );
+
+        const ctaKey = getCtaKey(m);
+        if (ctaKey) {
+          const href = base ? `${base}/${ctaKey}` : `/${ctaKey}`;
+          return (
+            <Link
+              key={i}
+              to={href}
+              className="management-team-card management-team-card--link"
+            >
+              {inner}
+            </Link>
+          );
+        }
+
+        return (
+          <div key={i} className="management-team-card">
+            {inner}
+          </div>
+        );
+      })}
     </div>
   );
 };

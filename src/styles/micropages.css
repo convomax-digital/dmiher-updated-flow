@@ -180,6 +180,13 @@
     @apply border border-gray-300 rounded-sm shadow-sm pb-2 flex flex-col items-center text-center hover:shadow-md transition-shadow hover:scale-102 duration-200 cursor-pointer;
 }
 
+/* Team card that links to the member's nested micro page — reset anchor
+   defaults (color/underline) so the rich-text name keeps its styling. Hover /
+   cursor affordance already comes from .management-team-card. */
+.management-team-card--link {
+    @apply text-inherit no-underline hover:border-blue-300;
+}
+
 .management-team-image {
     /* object-center (was object-top): some official photos have the subject
        standing below a DMIHER sign, so a top-anchored crop cut off the face.
@@ -240,6 +247,13 @@
 
 .dean-card {
     @apply border border-gray-200 rounded-lg overflow-hidden bg-white flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+/* Dean card that links to the person's nested micro page — reset anchor
+   defaults (color/underline) so the name keeps its rich-text styling, and add
+   a clear clickable affordance (pointer + hover lift). */
+.dean-card--link {
+    @apply cursor-pointer text-inherit no-underline transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 hover:border-blue-300;
 }
 
 .dean-card-image {
