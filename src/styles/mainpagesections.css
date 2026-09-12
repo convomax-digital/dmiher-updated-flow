@@ -78,11 +78,14 @@
 }
 
 .icon-img {
-    @apply w-full h-[100px] object-cover;
+    @apply w-full h-[100px] object-contain;
 }
 
+/* Caption fills the remaining cells of the last row — the exact col-span is
+   applied inline based on icon count, so the grid never leaves empty gaps
+   regardless of how many logos the CMS returns. */
 .icons-text {
-    @apply col-span-2 flex items-center;
+    @apply flex items-center;
 }
 
 .icons-text p {

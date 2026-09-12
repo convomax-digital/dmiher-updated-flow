@@ -9,7 +9,14 @@ import axios from "axios";
  *                          public endpoints or X-API-KEY in api.js)
  */
 
-const API_BASE = import.meta.env.VITE_API_BASE;
+// In dev, client-side requests use a relative baseURL so they go through
+// Vite's /api proxy (see vite.config.js). Hitting VITE_API_BASE directly
+// triggers CORS because the local Laravel dev server at 127.0.0.1:8000 doesn't
+// send CORS headers. On the SSR/Node side there is no browser origin, so the
+// absolute VITE_API_BASE is used regardless of mode.
+const IS_BROWSER = typeof window !== "undefined";
+const API_BASE =
+  IS_BROWSER && import.meta.env.DEV ? "" : import.meta.env.VITE_API_BASE;
 const STATIC_TOKEN = import.meta.env.VITE_AUTH_TOKEN;
 const EMAIL = import.meta.env.VITE_AUTH_EMAIL;
 const PASSWORD = import.meta.env.VITE_AUTH_PASSWORD;

@@ -125,11 +125,22 @@ const Outcome = ({ data }) => {
                         className="icon-img"
                       />
                     ))}
-                    {/* CMS spells the field "lable"; the text fills the grid
-                        cells after the last logo (col-span-2), matching the
-                        live "LEARN FROM THE GLOBAL LEADERS" design. */}
+                    {/* CMS spells the field "lable". The caption fills the
+                        remaining cells of the last row so any icon count lines
+                        up cleanly with the 4-column grid — 4/8/12/16 icons →
+                        caption spans a full new row (4 cols), otherwise it
+                        spans (4 - count % 4) cells to finish the current row. */}
                     {rs.caption && (
-                      <div className="icons-text">
+                      <div
+                        className="icons-text"
+                        style={{
+                          gridColumn: `span ${
+                            (4 - (rs.icons.length % 4)) % 4 || 4
+                          } / span ${
+                            (4 - (rs.icons.length % 4)) % 4 || 4
+                          }`,
+                        }}
+                      >
                         <p>{rs.caption}</p>
                       </div>
                     )}
