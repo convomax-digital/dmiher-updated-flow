@@ -1,6 +1,53 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SafeImage from "../../components/SafeImage";
 import RichTextRenderer from "../../components/RichTextRenderer";
+
+/**
+ * Wraps a gallery image in a link when the CMS gave that item one.
+ *
+ * Gallery items carry an optional `link` alongside `src` and `caption`
+ * (e.g. "/photo-gallery-15"). Items without one — `link` absent, null or
+ * blank — render exactly as before, with no anchor added, so galleries that
+ * set no links are untouched.
+ *
+ * Internal paths go through react-router's <Link> so navigation stays inside
+ * the SPA; absolute URLs (and mailto:/tel:) become a normal anchor opening in
+ * a new tab. `display:block` keeps the wrapper from adding the inline
+ * whitespace an <a> would otherwise introduce, so the layout is unchanged.
+ */
+const GalleryItemLink = ({ link, caption, children }) => {
+  const href = typeof link === "string" ? link.trim() : "";
+  if (!href) return children;
+
+  const label = caption ? `Open ${caption}` : "Open linked page";
+  const style = { display: "block", color: "inherit", textDecoration: "none" };
+  const isExternal = /^(https?:)?\/\//i.test(href) || /^(mailto:|tel:)/i.test(href);
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={style}
+        aria-label={label}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      to={href.startsWith("/") ? href : `/${href}`}
+      style={style}
+      aria-label={label}
+    >
+      {children}
+    </Link>
+  );
+};
 
 const BlockRenderer = ({ block }) => {
   const { type, props: p } = block;
@@ -330,16 +377,18 @@ const BlockRenderer = ({ block }) => {
                 }}
               >
                 {item.src && (
-                  <SafeImage
-                    src={item.src}
-                    alt={item.caption || ""}
-                    style={{
-                      width: "100%",
-                      height: `${imgH}px`,
-                      objectFit: imgFit,
-                      display: "block",
-                    }}
-                  />
+                  <GalleryItemLink link={item.link} caption={item.caption}>
+                    <SafeImage
+                      src={item.src}
+                      alt={item.caption || ""}
+                      style={{
+                        width: "100%",
+                        height: `${imgH}px`,
+                        objectFit: imgFit,
+                        display: "block",
+                      }}
+                    />
+                  </GalleryItemLink>
                 )}
                 <div
                   style={{
@@ -372,16 +421,18 @@ const BlockRenderer = ({ block }) => {
           {items.map((item, i) => (
             <figure key={i} style={{ margin: 0 }}>
               {item.src && (
-                <SafeImage
-                  src={item.src}
-                  alt={item.caption || ""}
-                  style={{
-                    width: "100%",
-                    height: `${gridImgH}px`,
-                    objectFit: imgFit,
-                    borderRadius: gridRadius,
-                  }}
-                />
+                <GalleryItemLink link={item.link} caption={item.caption}>
+                  <SafeImage
+                    src={item.src}
+                    alt={item.caption || ""}
+                    style={{
+                      width: "100%",
+                      height: `${gridImgH}px`,
+                      objectFit: imgFit,
+                      borderRadius: gridRadius,
+                    }}
+                  />
+                </GalleryItemLink>
               )}
               {item.caption && (
                 <figcaption
@@ -1228,17 +1279,19 @@ const GallerySlider = ({ items, perView }) => {
               }}
             >
               {item.src && (
-                <SafeImage
-                  src={item.src}
-                  alt={item.caption || ""}
-                  style={{
-                    width: "100%",
-                    height: "180px",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                    display: "block",
-                  }}
-                />
+                <GalleryItemLink link={item.link} caption={item.caption}>
+                  <SafeImage
+                    src={item.src}
+                    alt={item.caption || ""}
+                    style={{
+                      width: "100%",
+                      height: "180px",
+                      objectFit: "cover",
+                      borderRadius: "10px",
+                      display: "block",
+                    }}
+                  />
+                </GalleryItemLink>
               )}
               {item.caption && (
                 <figcaption

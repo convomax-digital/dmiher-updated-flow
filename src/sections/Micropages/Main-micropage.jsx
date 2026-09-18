@@ -13,6 +13,7 @@ import ViewMoreButton from "../../components/UI/Buttons";
 // legacy "storage/..." records so old data keeps rendering during
 // the rollout.
 import resolveImage from "../../utils/resolveImage";
+import { sortByDisplayOrder } from "../../utils/displayOrder";
 
 /* Get renderable items from either the new (block) or legacy (content_flow) shape */
 const getRenderItems = (data) => {
@@ -246,16 +247,11 @@ const TeamBlock = ({ members, cols = 3 }) => {
     return cta?.has_micro_page && cta?.cta_key ? cta.cta_key : null;
   };
 
-  // CMS sends a per-member display "order" (string, e.g. "1"). Sort by it;
-  // members without one keep their API position, after the ordered ones.
-  const sorted = [...members].sort((a, b) => {
-    const oa = Number(a?.order);
-    const ob = Number(b?.order);
-    return (
-      (Number.isFinite(oa) ? oa : Infinity) -
-      (Number.isFinite(ob) ? ob : Infinity)
-    );
-  });
+  // The stored array is NOT in display order — the API returns it in whatever
+  // sequence the CMS saved — so this sort is what puts the grid in the order
+  // set in the admin panel. Shared with the mandatory-disclosure mapper so
+  // both sections order their items by exactly the same rules.
+  const sorted = sortByDisplayOrder(members);
   return (
     <div className="management-team-wrapper" style={{ "--team-cols": cols }}>
       {sorted.map((m, i) => {

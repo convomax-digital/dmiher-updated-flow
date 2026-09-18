@@ -1,4 +1,5 @@
 import resolveImage from "../../utils/resolveImage";
+import { sortByDisplayOrder } from "../../utils/displayOrder";
 
 /**
  * @file mapper.js
@@ -219,14 +220,20 @@ export const mapMandatoryDisclosureData = (raw, ctx = {}) => {
 
   const cards = Array.isArray(inner?.cards) ? inner.cards : [];
 
+  // Everything below is ordered by the "Display Order" set in the admin panel
+  // before it is normalised, using the same rules as the micro-page team grid
+  // (see utils/displayOrder.js). The API returns these arrays in save order,
+  // not display order. Content with no `order` set anywhere is unaffected —
+  // every item falls back to its API position, so the current sequence stands.
   if (layout === "tab_cards") {
     // In tab_cards layout the API returns `cards` as an array of tabs:
     //   [{ tab_name, tab_slug, cards: [...] }, ...]
-    const tabs = cards
+    // Both the tabs themselves and the cards inside each tab are ordered.
+    const tabs = sortByDisplayOrder(cards)
       .map((tab) => {
         if (!tab || typeof tab !== "object") return null;
         const innerCards = Array.isArray(tab.cards) ? tab.cards : [];
-        const items = innerCards
+        const items = sortByDisplayOrder(innerCards)
           .map((card) => normalizeCard(card, ctx))
           .filter((it) => it && (it.name || it.link));
         return {
@@ -240,7 +247,7 @@ export const mapMandatoryDisclosureData = (raw, ctx = {}) => {
     return { title, layout, tabs, items: [] };
   }
 
-  const items = cards
+  const items = sortByDisplayOrder(cards)
     .map((card) => normalizeCard(card, ctx))
     .filter((it) => it && (it.name || it.link));
 

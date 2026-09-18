@@ -176,6 +176,32 @@
     }
 }
 
+/* Give the team grid more room than the rest of the micro page.
+   -----------------------------------------------------------------
+   The grid sits inside .micropage-container, which caps at 72rem — so its
+   own max-w-7xl never applied. At 72rem the four columns the CMS asks for
+   come out ~258px each, which is cramped for a name plus designation plus a
+   long qualifications line.
+
+   Only THIS block is widened, not the container: .micropage-container is
+   shared by five components and also wraps the prose, whose readability
+   depends on keeping a limited line length. So the grid breaks out of the
+   container on wide screens while everything else stays put.
+
+   margin-left:50% pushes the left edge to the container's centre, and
+   translateX(-50%) pulls it back by half its own width, leaving it centred
+   on the page regardless of how much wider than the container it is. */
+@media (min-width: 1280px) {
+    .management-team-wrapper {
+        max-width: none;
+        /* Never wider than the viewport, minus a gutter so it never touches
+           the edges or triggers a horizontal scrollbar. */
+        width: min(83rem, calc(100vw - 3rem));
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 .management-team-card {
     @apply border border-gray-300 rounded-sm shadow-sm pb-2 flex flex-col items-center text-center hover:shadow-md transition-shadow hover:scale-102 duration-200 cursor-pointer;
 }
