@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import api from "../config/api";
 import resolveImage from "../utils/resolveImage";
@@ -10,8 +10,41 @@ const fetchFooter = async () => {
   return data;
 };
 
+/* A "#<section-id>" slug (Link Type = Section in admin) scrolls to that
+   section rather than routing — same rule the navbar uses. A bare "#" is not
+   a section link, it is the API's "no destination" placeholder. */
+const isSectionLink = (slug) =>
+  typeof slug === "string" && slug.startsWith("#") && slug.length > 1;
+
 const SafeLink = ({ to, children }) => {
+  const navigate = useNavigate();
+
   if (!to || to === "#") return <span className="cursor-default">{children}</span>;
+
+  // Section link → scroll instead of route. Deliberately the same behaviour as
+  // Navbar's handleSectionClick: scroll if the section is on the page we are
+  // already on, otherwise leave the target id in sessionStorage and go home,
+  // where PageView picks "dm_pending_scroll" up and scrolls once the (lazily
+  // loaded) section has mounted.
+  if (isSectionLink(to)) {
+    const handleSectionClick = (e) => {
+      e.preventDefault();
+      const id = to.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        sessionStorage.setItem("dm_pending_scroll", id);
+        navigate("/");
+      }
+    };
+
+    return (
+      <a href={to} onClick={handleSectionClick}>
+        {children}
+      </a>
+    );
+  }
 
   // External links
   if (to.startsWith("http://") || to.startsWith("https://")) {
