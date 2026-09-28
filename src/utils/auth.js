@@ -59,19 +59,40 @@ export function invalidateToken() {
   currentToken = null;
 }
 
+// Refresh the moment a hidden tab becomes visible again: its token has
+// almost certainly rotated past the 60s HMAC window while it was skipped.
+function handleVisibilityChange() {
+  if (!document.hidden) {
+    fetchToken().catch(() => {});
+  }
+}
+
 export function startTokenAutoRefresh() {
   if (refreshTimer) return;
 
   fetchToken().catch(() => {});
 
+  // Skip the refresh while the tab is hidden. Every open tab used to hit
+  // /api/auth/token every 50s forever — with many visitors that background
+  // traffic alone was a constant load on the same server that runs the
+  // dashboard. A stale token after returning is covered twice over: the
+  // visibilitychange refresh below, and the 401-retry path in config/api.js.
   refreshTimer = setInterval(() => {
+    if (typeof document !== "undefined" && document.hidden) return;
     fetchToken().catch(() => {});
   }, REFRESH_INTERVAL_MS);
+
+  if (typeof document !== "undefined") {
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+  }
 }
 
 export function stopTokenAutoRefresh() {
   if (refreshTimer) {
     clearInterval(refreshTimer);
     refreshTimer = null;
+  }
+  if (typeof document !== "undefined") {
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
   }
 }
