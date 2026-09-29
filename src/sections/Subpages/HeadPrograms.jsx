@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { Search, X, GraduationCap } from "lucide-react";
 import { useMedicineProgramsData } from "../../hooks/useMedicineProgramsData";
+import Seo from "../../components/Seo";
 import { renderIcon } from "../../utils/renderIcon";
 import { CardSkeletonGrid } from "../../components/Skeletons/CardSkeleton";
 
@@ -11,7 +12,8 @@ const Medicine = ({ slug: slugProp }) => {
   // can arrive in any case, so normalize (same as Programs/Departments).
   const slug = (slugParam || slugProp || "medicine").toLowerCase();
 
-  const { institutes, settings, loading, error } = useMedicineProgramsData(slug);
+  const { institutes, settings, meta, name, loading, error } =
+    useMedicineProgramsData(slug);
 
   const [activeInstIndex, setActiveInstIndex] = useState(0);
   const [activeSubTabIndex, setActiveSubTabIndex] = useState(0);
@@ -71,6 +73,8 @@ const Medicine = ({ slug: slugProp }) => {
 
   return (
     <section className="streams-wrapper">
+      {/* Dashboard-managed SEO for this program page (Programs CRUD). */}
+      <Seo meta={meta} fallbackTitle={name} />
       <div className="container py-8">
         {/* ================= MAIN TABS ================= */}
         {institutes.length > 0 && (

@@ -8,6 +8,7 @@ import PageLoader from "./components/PageLoader";
 import { mandatoryDisclosureConfig } from "./instituteSections/mandatoryDisclosure/config";
 import useSiteSettings from "./hooks/useSiteSettings";
 import NiaaChatbot from "./components/NiaaChatbot";
+import HomePopup from "./components/HomePopup";
 
 // Route-level code splitting: these page types are only needed when the user
 // navigates to them, so they're loaded on demand instead of bloating the
@@ -90,6 +91,7 @@ function App() {
 
       <Footer />
       <NiaaChatbot />
+      <HomePopup />
     </>
   );
 }

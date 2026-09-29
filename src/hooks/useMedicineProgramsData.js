@@ -47,6 +47,9 @@ export const useMedicineProgramsData = (slug) => {
   return {
     institutes: normalized.institutes,
     settings: normalized.settings,
+    // Dashboard-managed SEO metadata + display name of this program page.
+    meta: data?.data?.meta || {},
+    name: data?.data?.name || "",
     loading: isLoading,
     error: error ? error.message || "Failed to load programs" : null,
   };

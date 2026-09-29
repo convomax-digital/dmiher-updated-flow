@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import Seo from "../components/Seo";
 
 import ErrorBoundary from "../components/ErrorBoundary";
 import PageSkeleton from "../components/Skeletons/PageSkeleton";
@@ -67,13 +67,7 @@ function MandatoryDisclosurePage() {
 
   return (
     <main className="fade-in">
-      <Helmet>
-        <title>{data.title || "Mandatory Disclosures"}</title>
-        <meta
-          property="og:title"
-          content={data.title || "Mandatory Disclosures"}
-        />
-      </Helmet>
+      <Seo title={data.title || "Mandatory Disclosures"} />
 
       <ErrorBoundary>
         <section>

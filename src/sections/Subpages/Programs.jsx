@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { Search, X, GraduationCap } from "lucide-react";
 import { useProgramsData } from "../../hooks/useProgramsData";
+import Seo from "../../components/Seo";
 import { renderIcon } from "../../utils/renderIcon";
 import { CardSkeletonGrid } from "../../components/Skeletons/CardSkeleton";
 
@@ -168,6 +169,11 @@ const SubPrograms = () => {
 
   return (
     <section className="streams-wrapper">
+      {/* Per-page head tags: descriptive title for this college's
+          programs listing, site defaults for description/keywords. */}
+      <Seo
+        title={`Programs – ${(college || slug || "").toUpperCase()} | DMIHER`}
+      />
       <div className="container py-8">
 
         {/* Faculty/institute selection happens on the main institute page

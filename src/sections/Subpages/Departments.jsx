@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import DropdownButton from "../../components/DropDownButton";
+import Seo from "../../components/Seo";
 import { GalleryWithPopup } from "../../components/GalleryWithPopup";
 import { renderIcon } from "../../utils/renderIcon";
 import api from "../../config/api";
@@ -106,6 +107,11 @@ function DepartmentsSubpage() {
     label: d.name,
   }));
 
+  // Dashboard-managed SEO for the department currently shown
+  // (Departments CRUD → Meta Title / Keywords / Description).
+  const seoMeta = selected?.meta || {};
+  const seoFallback = selected?.name || currentDept?.name || "";
+
   // In-charge(s): institutes like SAHS list multiple heads (one per program),
   // each with their own photo/name/designation/qualification/email. Older
   // records use the single dean_image + dean_details (HTML) shape, which the
@@ -127,6 +133,8 @@ function DepartmentsSubpage() {
 
   return (
     <div className="deptpage-root fade-in">
+      {/* Dashboard-managed SEO for this department page. */}
+      <Seo meta={seoMeta} fallbackTitle={seoFallback} />
       {/* Header */}
       <header className="deptpage-header">
         <h1 className="deptpage-college-name">

@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import Seo from "./components/Seo";
 import { usePages } from "./hooks/usePages";
 import { useIndependentPages } from "./hooks/useIndependentPages";
 import { useSubpage, useNestedPage } from "./hooks/useSubpages";
@@ -182,28 +182,11 @@ function PageView() {
     );
   }
 
-  /* ================= SEO META ================= */
-  const clean = (val) => (val && val !== "null" ? val : "");
-  const meta = resolvedPage.meta || {};
-  const pageTitle = clean(meta.title) || clean(resolvedPage.title) || "DMIHER";
-  const pageDescription = clean(meta.description);
-
   /* ================= RENDER ================= */
   return (
     <main className="fade-in">
-      <Helmet>
-        <title>{pageTitle}</title>
-        {pageDescription && (
-          <meta name="description" content={pageDescription} />
-        )}
-        {clean(meta.keywords) && (
-          <meta name="keywords" content={clean(meta.keywords)} />
-        )}
-        <meta property="og:title" content={pageTitle} />
-        {pageDescription && (
-          <meta property="og:description" content={pageDescription} />
-        )}
-      </Helmet>
+      {/* Dashboard-managed SEO for THIS page; site defaults otherwise. */}
+      <Seo meta={resolvedPage.meta} fallbackTitle={resolvedPage.title} />
 
       <ProgramFacultyProvider>
       {resolvedPage.sections?.map((sec, index) => {

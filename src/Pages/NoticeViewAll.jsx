@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import api from "../config/api";
+import Seo from "../components/Seo";
 
 /* VIEW ALL page for the home BULLETIN / IMPORTANT ANNOUNCEMENTS sections.
    Reuses the same /bulletins and /announcements endpoints (now returning the
@@ -102,6 +103,14 @@ export default function NoticeViewAll({ type }) {
 
   return (
     <div className={`py-10 px-5 ${cfg.bg} text-gray-500 min-h-[60vh]`}>
+      {/* Per-page head tags so this page never inherits another page's meta. */}
+      <Seo
+        title={
+          type === "announcements"
+            ? "Important Announcements | DMIHER"
+            : "The Bulletin | DMIHER"
+        }
+      />
       <div className="container">
         {/* Header + filter */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
