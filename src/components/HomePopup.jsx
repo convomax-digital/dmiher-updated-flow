@@ -124,6 +124,9 @@ export default function HomePopup() {
         >
           ×
         </button>
+        {/* width:100% (not just max-width) so the media FILLS the card —
+            like the live site's popup — instead of floating small inside
+            the white panel while the video's own size is unknown/small. */}
         {isVideo ? (
           <video
             src={popup.media}
@@ -132,18 +135,24 @@ export default function HomePopup() {
             muted
             loop
             playsInline
+            // Media missing/unloadable (e.g. deleted on the server):
+            // close silently instead of showing an empty white card.
+            onError={close}
             style={{
-              maxWidth: "100%",
+              width: "100%",
               maxHeight: "calc(85vh - 64px)",
               display: "block",
+              borderRadius: "6px",
+              background: "#000",
             }}
           />
         ) : (
           <img
             src={popup.media}
             alt="Announcement"
+            onError={close}
             style={{
-              maxWidth: "100%",
+              width: "100%",
               maxHeight: "calc(85vh - 64px)",
               objectFit: "contain",
               display: "block",

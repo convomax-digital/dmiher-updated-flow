@@ -1,0 +1,52 @@
+/* Adani brand font (self-hosted from /public/fonts/adani/).
+   Selectable in Dashboard → Settings → Frontend Theme as the site's
+   heading/body font; loaded here once so the family is always available
+   (CSP-safe — served from our own origin, no external font host). */
+
+@font-face {
+  font-family: "Adani";
+  src: url("/fonts/adani/adani-extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adani";
+  src: url("/fonts/adani/adani-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adani";
+  src: url("/fonts/adani/adani-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adani";
+  src: url("/fonts/adani/adani-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adani";
+  src: url("/fonts/adani/adani-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adani";
+  src: url("/fonts/adani/adani-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

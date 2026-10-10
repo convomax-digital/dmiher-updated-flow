@@ -492,8 +492,15 @@ function Hero({ data, slug }) {
               >
                 <RichTextRenderer html={slide.desc} />
 
+                {/* paragraph is a rich-text field (dashboard editor): render
+                    its HTML so fonts/sizes/weights chosen in the editor —
+                    e.g. the Adani brand font — actually apply. Plain-text
+                    legacy values render unchanged. */}
                 {slide.paragraph && (
-                  <p className="hero-paragraph">{slide.paragraph}</p>
+                  <RichTextRenderer
+                    html={slide.paragraph}
+                    className="hero-paragraph"
+                  />
                 )}
 
                 {slide.cta_buttons && slide.cta_buttons.length > 0 && (

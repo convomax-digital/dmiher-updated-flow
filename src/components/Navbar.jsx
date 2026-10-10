@@ -88,9 +88,12 @@ const Navbar = () => {
               className="navbar-logo"
               // Intrinsic dimensions so the browser reserves the logo's box
               // before it loads (no CLS). CSS (w-[200px]) still controls the
-              // rendered size; these only set the aspect ratio.
-              width="1048"
-              height="354"
+              // rendered size; these only set the aspect ratio. Matches the
+              // current one-line logo artwork (icon + wordmark side by side,
+              // 1600x706) — the old 1048x354 ratio pre-reserved a too-short
+              // box and the logo jumped/stretched while loading.
+              width="1600"
+              height="706"
             />
           )}
         </Link>

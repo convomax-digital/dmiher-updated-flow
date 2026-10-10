@@ -179,7 +179,7 @@ const Footer = () => {
           )}
 
           {footer.addressDesc && (
-            <p className="mt-2 text-gray-300 text-xs">
+            <p className="mt-2 text-gray-600 text-xs">
               {footer.addressDesc}
             </p>
           )}
@@ -195,7 +195,7 @@ const Footer = () => {
                     href={item.slug}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-yellow-400 transition-colors"
+                    className="text-[#132F5C] hover:text-[#F04E30] transition-colors"
                     title={item.title}
                   >
                     {svg || (
@@ -258,7 +258,7 @@ const Footer = () => {
                   href={item.slug}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-yellow-400 transition-colors"
+                  className="text-[#132F5C] hover:text-[#F04E30] transition-colors"
                   title={item.title}
                 >
                   {svg || (
@@ -416,7 +416,7 @@ const Footer = () => {
               href={item.slug}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-yellow-400 transition-colors"
+              className="text-[#132F5C] hover:text-[#F04E30] transition-colors"
               title={item.title}
             >
               {svg || (

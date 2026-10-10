@@ -80,9 +80,14 @@ export default defineConfig(({ mode }) => ({
         // and pulls jQuery + its icon PNG from chatcdn.npfs.co — both are
         // required or the floating chat icon never renders (script/style/frame).
         "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://www.googletagmanager.com https://www.google-analytics.com https://static.getaai.com",
-        "style-src 'self' 'unsafe-inline' https://chatbot.in6.nopaperforms.com",
+        // fonts.googleapis.com: the dashboard-managed Frontend Theme loads
+        // its chosen Google Fonts stylesheets at runtime.
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://chatbot.in6.nopaperforms.com",
         "img-src 'self' https: data: http://127.0.0.1:8000",
         "font-src 'self' https: data:",
+        // media-src: the dashboard-managed Home Page Popup can serve a video
+        // from the backend (default-src 'self' would block it).
+        "media-src 'self' https: http://127.0.0.1:8000",
         "connect-src 'self' https: http://127.0.0.1:8000 ws://localhost:*",
         "frame-src 'self' https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com",
       ].join("; "),

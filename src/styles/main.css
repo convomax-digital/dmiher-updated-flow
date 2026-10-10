@@ -8,6 +8,7 @@
   --font-oswald-medium: "Oswald", sans-serif;
 }
 
+@import "./fonts-adani.css";
 @import "./mainpagesections.css";
 @import "./InstitutesSections.css";
 @import "./Responsive.css";

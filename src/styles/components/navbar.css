@@ -3,7 +3,11 @@
 @layer components {
 
     .navbar {
-        @apply fixed w-full bg-white top-0 z-[999] px-0 lg:px-15 shadow-sm h-[100px];
+        /* The bar itself spans the full viewport; the INNER wrapper is
+           capped to the site container (max-w-7xl) so the logo and nav
+           align with section content and the footer at every width —
+           no viewport-specific paddings. */
+        @apply fixed w-full bg-white top-0 z-[999] shadow-sm h-[100px];
     }
 
     .navbar-icon-row {
@@ -11,11 +15,17 @@
     }
 
     .navbar-inner {
-        @apply flex justify-between items-center px-6 h-full;
+        /* Same metrics as the site-wide .container (max-w-7xl mx-auto px-5)
+           so header, content and footer share one aligned column. */
+        @apply flex justify-between items-center h-full max-w-7xl mx-auto px-5;
     }
 
     .navbar-logo {
-        @apply w-[200px];
+        /* h-auto + object-contain: the logo (icon + wordmark in one line)
+           always keeps its own aspect ratio — it can never be squashed
+           into two visual rows or stretched, whatever size the uploaded
+           artwork is. max-h keeps it inside the 100px header bar. */
+        @apply w-[200px] h-auto max-h-[88px] object-contain;
     }
 
     .navbar-desktop {

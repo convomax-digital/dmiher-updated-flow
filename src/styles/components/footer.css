@@ -2,13 +2,17 @@
 
 @layer components {
 
-    /* COMMON */
+    /* COMMON — light footer palette on #edeeee. Horizontal padding lives
+       INSIDE the max-width wrappers below (same as .navbar-inner), so the
+       footer column lines up with the header and content at every width. */
     .footer {
-        @apply bg-[#132F5C] text-white px-6 py-10 text-sm;
+        @apply bg-[#edeeee] text-[#333f50] py-10 text-sm;
     }
 
     .footer-logo {
-        @apply w-48 mb-4;
+        /* Same guard as the navbar logo: the one-line lockup keeps its
+           aspect ratio at every breakpoint, matching the header. */
+        @apply w-48 mb-4 h-auto object-contain;
     }
 
     .footer-icons {
@@ -24,11 +28,11 @@
     }
 
     .footer-title {
-        @apply text-yellow-400 text-xl mb-2 border-b border-gray-500;
+        @apply text-[#132F5C] font-semibold text-xl mb-2 border-b border-gray-300;
     }
 
     .footer-subtitle {
-        @apply text-yellow-400 text-xl mb-2;
+        @apply text-[#132F5C] font-semibold text-xl mb-2;
     }
 
     .footer-other-grid {
@@ -41,11 +45,11 @@
     }
 
     .footer-title-mobile {
-        @apply text-yellow-400 text-xl border-t pt-2 border-gray-300;
+        @apply text-[#132F5C] font-semibold text-xl border-t pt-2 border-gray-300;
     }
 
     .footer-bottom {
-        @apply text-center text-gray-400 text-xs mt-10;
+        @apply text-center text-gray-500 text-xs mt-10;
     }
 
     /* DESKTOP */
@@ -54,11 +58,12 @@
     }
 
     .footer-grid {
-        @apply max-w-7xl mx-auto grid md:grid-cols-4 gap-5;
+        /* Identical metrics to .navbar-inner / .container. */
+        @apply max-w-7xl mx-auto px-5 grid md:grid-cols-4 gap-5;
     }
 
     .footer-address-title {
-        @apply text-xl text-yellow-400 mt-4;
+        @apply text-xl text-[#132F5C] font-semibold mt-4;
     }
 
     .footer-socials {
@@ -67,11 +72,11 @@
 
     /* MOBILE */
     .footer-mobile {
-        @apply md:hidden;
+        @apply md:hidden px-5;
     }
 
     .footer-quick-links {
-        @apply grid grid-cols-1 md:grid-cols-2 gap-2 text-yellow-400 text-lg mb-6;
+        @apply grid grid-cols-1 md:grid-cols-2 gap-2 text-[#132F5C] text-lg mb-6;
     }
 
     .footer-socials-mobile {

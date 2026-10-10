@@ -63,9 +63,14 @@ function buildCsp(nonce, scriptHashes = []) {
       // GetAAI chatbot). Niaa chatbot loads from chatbot.in6.nopaperforms.com
       // and pulls jQuery + its icon image from chatcdn.npfs.co — keep both.
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://www.googletagmanager.com https://www.google-analytics.com https://static.getaai.com",
-      "style-src 'self' 'unsafe-inline' https://chatbot.in6.nopaperforms.com",
+      // fonts.googleapis.com: the dashboard-managed Frontend Theme loads its
+      // chosen Google Fonts stylesheets at runtime.
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://chatbot.in6.nopaperforms.com",
       `img-src 'self' https: http: data:`,
       "font-src 'self' https: data:",
+      // media-src: the dashboard-managed Home Page Popup can serve a video
+      // from the backend (default-src 'self' would block it).
+      "media-src 'self' https: http:",
       `connect-src 'self' https: http: ws://localhost:* wss://localhost:* ${apiBase}`,
       "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://docs.google.com https://drive.google.com https://www.googletagmanager.com https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com",
       "frame-ancestors 'self'",
@@ -89,6 +94,8 @@ function buildCsp(nonce, scriptHashes = []) {
     `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ${FRONTEND_ORIGIN} https://chatbot.in6.nopaperforms.com`,
     `font-src 'self' data: https://fonts.gstatic.com ${FRONTEND_ORIGIN}`,
     `img-src 'self' data: ${BACKEND_ORIGIN}`,
+    // Home Page Popup videos are served from the backend's uploads folder.
+    `media-src 'self' ${BACKEND_ORIGIN}`,
     `connect-src 'self' ${BACKEND_ORIGIN} https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://api.web3forms.com https://static.getaai.com https://chatbot.in6.nopaperforms.com`,
     "frame-src 'self' https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://maps.google.com https://docs.google.com https://drive.google.com https://www.googletagmanager.com https://chatbot.in6.nopaperforms.com",
     "frame-ancestors 'self'",
