@@ -130,7 +130,7 @@ export default function GlobalOpportunities({
                     <Link
                       key={i}
                       to={`/${base}/${cta.cta_key}`}
-                      className="inline-block bg-[#F04E30] hover:bg-[#122E5E] text-white font-semibold text-base px-6 py-3 rounded-md transition-colors"
+                      className="inline-block bg-[#91288D] hover:bg-[#132F5C] text-white font-semibold text-base px-6 py-3 rounded-md transition-colors"
                     >
                       {cta.label}
                     </Link>

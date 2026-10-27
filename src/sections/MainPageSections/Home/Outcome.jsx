@@ -156,7 +156,7 @@ const Outcome = ({ data }) => {
           <div className="video-section">
             {videoHeading && (
               <h2 className="video-heading font-oswald-medium uppercase">
-                <hr className="w-16 border-[#F04E30] mb-2 border-t-4" />
+                <hr className="w-16 border-[#91288D] mb-2 border-t-4" />
                 {videoHeading}
               </h2>
             )}

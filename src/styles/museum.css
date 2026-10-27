@@ -15,10 +15,10 @@
     @apply cursor-pointer text-center py-4 max-w-[1000px] text-xl md:text-2xl transition;
 }
 .museum-colleges-tab-active {
-    @apply font-bold text-[#122E5E] border-b-4 border-[#F04E30];
+    @apply font-bold text-[#132F5C] border-b-4 border-[#91288D];
 }
 .museum-colleges-tab-inactive {
-    @apply text-[#58595B];
+    @apply text-[#555555];
 }
 
 .museum-colleges-body {
@@ -27,13 +27,13 @@
 
 /* Heading with gold rule line next to it (live-site CollegeBox style) */
 .museum-colleges-heading {
-    @apply text-3xl font-bold text-[#E1CD67] mb-6 flex items-center gap-4 flex-col md:flex-row;
+    @apply text-3xl font-bold text-[#C77ABF] mb-6 flex items-center gap-4 flex-col md:flex-row;
 }
 .museum-colleges-heading-text {
     @apply w-full md:w-auto md:whitespace-nowrap;
 }
 .museum-colleges-heading-line {
-    @apply w-full h-px mt-2 bg-[#E1CD67];
+    @apply w-full h-px mt-2 bg-[#C77ABF];
 }
 
 /* 2-column intro grid */
@@ -87,7 +87,7 @@
     opacity: 0.7;
 }
 .museum-colleges-swiper .swiper-pagination-bullet-active {
-    background: #E1CD67;
+    background: #C77ABF;
     opacity: 1;
 }
 
@@ -131,10 +131,10 @@
     @apply py-12 bg-white;
 }
 .museum-key-officials-heading {
-    @apply text-3xl md:text-4xl font-[500] text-[#707070] mb-8 tracking-wide uppercase font-oswald-medium;
+    @apply text-3xl md:text-4xl font-[500] text-[#555555] mb-8 tracking-wide uppercase font-oswald-medium;
 }
 .museum-key-officials-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-3 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-3 border-t-4;
 }
 .museum-key-officials-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
@@ -163,10 +163,10 @@
     @apply py-12 bg-white;
 }
 .museum-faqs-heading {
-    @apply text-2xl md:text-4xl text-[#707070] mb-4 font-oswald-medium font-[500] tracking-tight leading-tight;
+    @apply text-2xl md:text-4xl text-[#555555] mb-4 font-oswald-medium font-[500] tracking-tight leading-tight;
 }
 .museum-faqs-line {
-    @apply w-20 sm:w-24 border-[#F04E30] mb-2 border-t-4;
+    @apply w-20 sm:w-24 border-[#91288D] mb-2 border-t-4;
 }
 .museum-faqs-list {
     @apply max-w-4xl;
@@ -175,7 +175,7 @@
     @apply border-b border-gray-300;
 }
 .museum-faqs-question {
-    @apply w-full text-left py-3 px-2 flex justify-between items-center font-semibold text-base sm:text-lg text-[#58595B] transition;
+    @apply w-full text-left py-3 px-2 flex justify-between items-center font-semibold text-base sm:text-lg text-[#555555] transition;
 }
 .museum-faqs-question-open {
     @apply text-[#222];
@@ -184,5 +184,5 @@
     @apply text-xl font-bold;
 }
 .museum-faqs-answer {
-    @apply px-2 pb-3 text-sm text-[#58595B];
+    @apply px-2 pb-3 text-sm text-[#555555];
 }

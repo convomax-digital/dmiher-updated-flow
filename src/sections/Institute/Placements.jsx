@@ -44,7 +44,7 @@ export default function Placements({ data }) {
 
   const recruitersLabel = data?.recruiters_label || "";
 
-  // Dynamic section background (e.g. SAHS #fef5ea).
+  // Dynamic section background (e.g. SAHS #FAF1F9).
   const bgColor = data?.section_style?.bg_color;
 
   // International / National placements block (tab_type = international_national).
@@ -166,7 +166,7 @@ export default function Placements({ data }) {
           {/* National — white logo cards in a grid */}
           {nationalPlacements.length > 0 && (
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#122E5E] mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#132F5C] mb-6">
                 National Placements
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">

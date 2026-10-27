@@ -20,11 +20,11 @@
 }
 
 .up-header {
-    @apply bg-[#122E5E] text-white py-8;
+    @apply bg-[#132F5C] text-white py-8;
 }
 
 .up-header-px {
-    @apply bg-[#122E5E] text-white py-8 px-4;
+    @apply bg-[#132F5C] text-white py-8 px-4;
 }
 
 .up-header-container {
@@ -104,7 +104,7 @@
 }
 
 .up-section-title-icon {
-    @apply text-[#F04E30] mr-3;
+    @apply text-[#91288D] mr-3;
 }
 
 .up-section-title-h2 {
@@ -182,7 +182,7 @@
 
 /* Program category card */
 .up-prog-card {
-    @apply border border-gray-200 rounded-lg p-6 hover:border-[#F04E30] transition-colors;
+    @apply border border-gray-200 rounded-lg p-6 hover:border-[#91288D] transition-colors;
 }
 
 .up-prog-card-row {
@@ -190,7 +190,7 @@
 }
 
 .up-prog-card-icon {
-    @apply text-[#F04E30];
+    @apply text-[#91288D];
 }
 
 .up-prog-card-title {
@@ -214,7 +214,7 @@
 }
 
 .up-prog-seats {
-    @apply bg-[#F04E30] text-white px-3 py-1 rounded-full text-sm font-medium inline-block;
+    @apply bg-[#91288D] text-white px-3 py-1 rounded-full text-sm font-medium inline-block;
 }
 
 /* Schedule row */
@@ -227,7 +227,7 @@
 }
 
 .up-sched-icon {
-    @apply w-6 h-6 text-[#F04E30];
+    @apply w-6 h-6 text-[#91288D];
 }
 
 .up-sched-time {
@@ -239,12 +239,12 @@
 }
 
 .up-sched-duration {
-    @apply bg-[#F04E30] text-white px-3 py-1 rounded-full text-sm;
+    @apply bg-[#91288D] text-white px-3 py-1 rounded-full text-sm;
 }
 
 /* Important date row */
 .up-date-row {
-    @apply flex items-center justify-between p-4 border-l-4 border-[#F04E30] bg-gray-50;
+    @apply flex items-center justify-between p-4 border-l-4 border-[#91288D] bg-gray-50;
 }
 
 .up-date-dot-completed {
@@ -273,7 +273,7 @@
 
 /* Tip card */
 .up-tip-card {
-    @apply p-6 border border-gray-200 rounded-lg hover:border-[#F04E30] transition-colors;
+    @apply p-6 border border-gray-200 rounded-lg hover:border-[#91288D] transition-colors;
 }
 
 .up-tip-row {
@@ -281,7 +281,7 @@
 }
 
 .up-tip-icon {
-    @apply text-[#F04E30];
+    @apply text-[#91288D];
 }
 
 .up-tip-title {
@@ -294,7 +294,7 @@
 
 /* Alert/notice strip */
 .up-alert-strip {
-    @apply bg-[#122E5E] py-8 px-4;
+    @apply bg-[#132F5C] py-8 px-4;
 }
 
 .up-alert-card {
@@ -454,7 +454,7 @@
 }
 
 .up-overview-h3 {
-    @apply text-xl font-semibold text-[#707070] tracking-wider mt-4;
+    @apply text-xl font-semibold text-[#555555] tracking-wider mt-4;
 }
 
 .up-overview-list {
@@ -483,7 +483,7 @@
 }
 
 .up-elig-num {
-    @apply bg-[#F04E30] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1;
+    @apply bg-[#91288D] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1;
 }
 
 .up-elig-text {
@@ -503,11 +503,11 @@
 }
 
 .up-elig-pub-h5-orange {
-    @apply font-semibold mb-2 text-[#F04E30];
+    @apply font-semibold mb-2 text-[#91288D];
 }
 
 .up-elig-pub-h5-blue {
-    @apply font-semibold mb-2 text-[#122E5E];
+    @apply font-semibold mb-2 text-[#132F5C];
 }
 
 .up-elig-pub-desc {
@@ -524,7 +524,7 @@
 }
 
 .up-step-num {
-    @apply bg-[#F04E30] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4;
+    @apply bg-[#91288D] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4;
 }
 
 .up-step-text {
@@ -533,11 +533,11 @@
 
 /* Document item */
 .up-doc-item {
-    @apply flex items-center p-4 bg-gray-50 rounded-lg hover:bg-[#F04E30]/5 transition-colors;
+    @apply flex items-center p-4 bg-gray-50 rounded-lg hover:bg-[#91288D]/5 transition-colors;
 }
 
 .up-doc-icon {
-    @apply text-[#F04E30] mr-3;
+    @apply text-[#91288D] mr-3;
 }
 
 .up-doc-text {
@@ -559,7 +559,7 @@
 
 /* Important date card (PostDoc/PhD style) */
 .up-impdate-card {
-    @apply bg-gradient-to-br from-[#122E5E] to-[#1E3A8A] text-white p-6 rounded-lg;
+    @apply bg-gradient-to-br from-[#132F5C] to-[#2E57AA] text-white p-6 rounded-lg;
 }
 
 .up-impdate-row {
@@ -580,7 +580,7 @@
 
 /* Contact section */
 .up-contact-section {
-    @apply bg-gradient-to-r from-[#122E5E] to-[#1E3A8A] text-white rounded-xl shadow-lg p-8;
+    @apply bg-gradient-to-r from-[#132F5C] to-[#2E57AA] text-white rounded-xl shadow-lg p-8;
 }
 
 .up-contact-h3 {
@@ -613,7 +613,7 @@
 }
 
 .up-prog-cat-icon {
-    @apply text-[#F04E30] mr-3;
+    @apply text-[#91288D] mr-3;
 }
 
 .up-prog-cat-h3 {
@@ -655,11 +655,11 @@
 }
 
 .up-prog-card-blue {
-    @apply border border-gray-200 rounded-lg p-6 hover:border-[#122E5E] transition-colors;
+    @apply border border-gray-200 rounded-lg p-6 hover:border-[#132F5C] transition-colors;
 }
 
 .up-prog-card-icon-blue {
-    @apply text-[#122E5E];
+    @apply text-[#132F5C];
 }
 
 .up-prog-row {
@@ -667,7 +667,7 @@
 }
 
 .up-prog-seats-blue {
-    @apply bg-[#122E5E] text-white px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-[#132F5C] text-white px-3 py-1 rounded-full text-sm font-medium;
 }
 
 .up-prog-cutoff {
@@ -675,7 +675,7 @@
 }
 
 .up-elig-row {
-    @apply flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-[#122E5E] transition-colors;
+    @apply flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-[#132F5C] transition-colors;
 }
 
 .up-elig-row-left {
@@ -707,7 +707,7 @@
 }
 
 .up-sched-blue-icon {
-    @apply w-6 h-6 text-[#122E5E];
+    @apply w-6 h-6 text-[#132F5C];
 }
 
 .up-sched-right-stack {
@@ -715,7 +715,7 @@
 }
 
 .up-sched-duration-blue {
-    @apply bg-[#122E5E] text-white px-3 py-1 rounded-full text-sm;
+    @apply bg-[#132F5C] text-white px-3 py-1 rounded-full text-sm;
 }
 
 .up-sched-difficulty {
@@ -723,11 +723,11 @@
 }
 
 .up-date-row-blue {
-    @apply flex items-center justify-between p-4 border-l-4 border-[#122E5E] bg-gray-50;
+    @apply flex items-center justify-between p-4 border-l-4 border-[#132F5C] bg-gray-50;
 }
 
 .up-strategy-card {
-    @apply p-6 border border-gray-200 rounded-lg hover:border-[#122E5E] transition-colors;
+    @apply p-6 border border-gray-200 rounded-lg hover:border-[#132F5C] transition-colors;
 }
 
 .up-strategy-row {
@@ -735,7 +735,7 @@
 }
 
 .up-strategy-icon {
-    @apply text-[#122E5E];
+    @apply text-[#132F5C];
 }
 
 .up-strategy-title {
@@ -755,7 +755,7 @@
 }
 
 .up-strategy-bullet {
-    @apply w-2 h-2 bg-[#122E5E] rounded-full;
+    @apply w-2 h-2 bg-[#132F5C] rounded-full;
 }
 
 .up-strategy-tip-text {
@@ -785,7 +785,7 @@
 }
 
 .up-merit-thead {
-    @apply bg-[#122E5E] text-white;
+    @apply bg-[#132F5C] text-white;
 }
 
 .up-merit-th {
@@ -814,15 +814,15 @@
 }
 
 .up-round-btn-active-orange {
-    @apply bg-[#F04E30] text-white;
+    @apply bg-[#91288D] text-white;
 }
 
 .up-round-btn-active-blue {
-    @apply bg-[#122E5E] text-white;
+    @apply bg-[#132F5C] text-white;
 }
 
 .up-round-btn-active-grad {
-    @apply bg-gradient-to-r from-[#F04E30] to-[#122E5E] text-white;
+    @apply bg-gradient-to-r from-[#91288D] to-[#132F5C] text-white;
 }
 
 .up-round-btn-inactive {
@@ -830,7 +830,7 @@
 }
 
 .up-sched-row-bordered {
-    @apply flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-[#F04E30] transition-colors;
+    @apply flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:border-[#91288D] transition-colors;
 }
 
 .up-sched-right-col {
@@ -838,7 +838,7 @@
 }
 
 .up-sched-seats {
-    @apply bg-[#F04E30] text-white px-3 py-1 rounded-full text-sm mb-1;
+    @apply bg-[#91288D] text-white px-3 py-1 rounded-full text-sm mb-1;
 }
 
 .up-sched-venue {
@@ -858,7 +858,7 @@
 }
 
 .up-process-icon-wrap {
-    @apply bg-[#F04E30] text-white p-4 rounded-full inline-block mb-4 hover:bg-[#122E5E] transition-colors;
+    @apply bg-[#91288D] text-white p-4 rounded-full inline-block mb-4 hover:bg-[#132F5C] transition-colors;
 }
 
 .up-process-body {
@@ -866,7 +866,7 @@
 }
 
 .up-process-step {
-    @apply text-2xl font-bold text-[#F04E30] mb-2;
+    @apply text-2xl font-bold text-[#91288D] mb-2;
 }
 
 .up-process-title {
@@ -886,7 +886,7 @@
 }
 
 .up-doc-download-btn {
-    @apply flex items-center gap-2 bg-[#F04E30] text-white px-4 py-2 rounded-lg hover:bg-[#122E5E] transition-colors;
+    @apply flex items-center gap-2 bg-[#91288D] text-white px-4 py-2 rounded-lg hover:bg-[#132F5C] transition-colors;
 }
 
 .up-doc-row {
@@ -926,7 +926,7 @@
 }
 
 .up-contact-icon-color {
-    @apply text-[#F04E30];
+    @apply text-[#91288D];
 }
 
 .up-contact-type {
@@ -946,7 +946,7 @@
 }
 
 .up-instr-num {
-    @apply w-6 h-6 bg-[#F04E30] text-white rounded-full flex items-center justify-center text-sm font-bold mt-0.5;
+    @apply w-6 h-6 bg-[#91288D] text-white rounded-full flex items-center justify-center text-sm font-bold mt-0.5;
 }
 
 .up-instr-text {
@@ -975,7 +975,7 @@
 }
 
 .up-cutoff-value {
-    @apply font-bold text-[#F04E30];
+    @apply font-bold text-[#91288D];
 }
 
 .up-search-row {
@@ -991,7 +991,7 @@
 }
 
 .up-search-input {
-    @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F04E30] focus:border-transparent;
+    @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#91288D] focus:border-transparent;
 }
 
 .up-filter-row {
@@ -1007,7 +1007,7 @@
 }
 
 .up-filter-select {
-    @apply border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#F04E30] focus:border-transparent;
+    @apply border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#91288D] focus:border-transparent;
 }
 
 .up-merit-card {
@@ -1063,7 +1063,7 @@
 }
 
 .up-merit-score {
-    @apply font-bold text-[#F04E30];
+    @apply font-bold text-[#91288D];
 }
 
 .up-merit-cat-general {
@@ -1083,7 +1083,7 @@
 }
 
 .up-merit-notice {
-    @apply mt-8 bg-[#122E5E] rounded-xl p-6 text-white;
+    @apply mt-8 bg-[#132F5C] rounded-xl p-6 text-white;
 }
 
 .up-merit-notice-row {
@@ -1185,7 +1185,7 @@
 }
 
 .ah-vm-title-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2 mr-4;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2 mr-4;
 }
 
 .ah-vm-icon {
@@ -1226,26 +1226,26 @@
 }
 
 .ah-grey-title {
-    @apply text-2xl uppercase mt-5 md:mt-10 sm:text-3xl md:text-4xl text-[#707070] mb-2 font-[500] tracking-tight leading-tight;
+    @apply text-2xl uppercase mt-5 md:mt-10 sm:text-3xl md:text-4xl text-[#555555] mb-2 font-[500] tracking-tight leading-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .ah-grey-title-mb {
-    @apply text-2xl uppercase mt-5 md:mt-10 sm:text-3xl md:text-4xl text-[#707070] mb-4 font-[500] tracking-tight leading-tight;
+    @apply text-2xl uppercase mt-5 md:mt-10 sm:text-3xl md:text-4xl text-[#555555] mb-4 font-[500] tracking-tight leading-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .ah-grey-title-empty {
-    @apply text-2xl uppercase mt-5 sm:text-3xl md:text-4xl text-[#707070] mb-4 font-[500] tracking-tight leading-tight;
+    @apply text-2xl uppercase mt-5 sm:text-3xl md:text-4xl text-[#555555] mb-4 font-[500] tracking-tight leading-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .ah-grey-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2 mr-4;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2 mr-4;
 }
 
 .ah-grey-line-center {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2 mr-4 mx-auto;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2 mr-4 mx-auto;
 }
 
 .ah-table-wrap {
@@ -1301,7 +1301,7 @@
 }
 
 .ah-doc-link {
-    @apply text-[#F04E30] hover:underline;
+    @apply text-[#91288D] hover:underline;
 }
 
 .ah-gallery-grid {
@@ -1330,7 +1330,7 @@
 }
 
 .ah-tab-btn-active {
-    @apply bg-[#F04E30] text-white;
+    @apply bg-[#91288D] text-white;
 }
 
 .ah-tab-btn-inactive {
@@ -1397,7 +1397,7 @@
 }
 
 .dcet-syllabus-card {
-    @apply bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[#F04E30] transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    @apply bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[#91288D] transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
 }
 
 .dcet-syllabus-row {
@@ -1405,7 +1405,7 @@
 }
 
 .dcet-syllabus-icon-wrap {
-    @apply bg-orange-100 text-[#F04E30] rounded-lg p-2;
+    @apply bg-orange-100 text-[#91288D] rounded-lg p-2;
 }
 
 .dcet-syllabus-title {
@@ -1421,7 +1421,7 @@
 }
 
 .dcet-syllabus-bullet {
-    @apply w-2 h-2 bg-[#F04E30] rounded-full;
+    @apply w-2 h-2 bg-[#91288D] rounded-full;
 }
 
 .dcet-syllabus-text {
@@ -1441,7 +1441,7 @@
 }
 
 .dcet-prog-title {
-    @apply text-xl font-semibold text-[#F04E30];
+    @apply text-xl font-semibold text-[#91288D];
 }
 
 .dcet-prog-body {
@@ -1465,7 +1465,7 @@
 }
 
 .dcet-phase-icon-wrap {
-    @apply bg-[#F04E30] text-white p-4 rounded-full inline-block mb-4 group-hover:bg-[#122E5E] transition-colors duration-300;
+    @apply bg-[#91288D] text-white p-4 rounded-full inline-block mb-4 group-hover:bg-[#132F5C] transition-colors duration-300;
 }
 
 .dcet-phase-icon {
@@ -1481,7 +1481,7 @@
 }
 
 .dcet-phase-cta {
-    @apply flex items-center justify-center text-[#F04E30] group-hover:text-[#122E5E] transition-colors duration-300;
+    @apply flex items-center justify-center text-[#91288D] group-hover:text-[#132F5C] transition-colors duration-300;
 }
 
 .dcet-phase-cta-text {
@@ -1547,7 +1547,7 @@
 }
 
 .dcet-pattern-card-top {
-    @apply bg-[#122E5E] p-6 text-white relative;
+    @apply bg-[#132F5C] p-6 text-white relative;
 }
 
 .dcet-pattern-card-blob {

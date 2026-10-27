@@ -21,7 +21,7 @@
 }
 
 .tabwise-mobile-item-active {
-    @apply bg-[#F04E30] text-white font-semibold hover:bg-[#F04E30];
+    @apply bg-[#91288D] text-white font-semibold hover:bg-[#91288D];
 }
 
 @media (max-width: 768px) {
@@ -60,36 +60,36 @@
     max-width: none !important;
     width: 100%;
     text-align: left;
-    color: #707070;
+    color: #555555;
 }
 
 .micropage-container .prose h2 {
-    @apply text-2xl md:text-3xl font-[500] text-[#545454] mt-8 mb-4 font-oswald-medium;
+    @apply text-2xl md:text-3xl font-[500] text-[#393939] mt-8 mb-4 font-oswald-medium;
 }
 
 .micropage-container .prose h3 {
-    @apply text-xl md:text-2xl font-[500] text-[#545454] mt-8 mb-4 font-oswald-medium;
+    @apply text-xl md:text-2xl font-[500] text-[#393939] mt-8 mb-4 font-oswald-medium;
 }
 
 .micropage-container .prose h4 {
-    @apply text-lg md:text-xl font-semibold text-[#545454] mt-6 mb-3;
+    @apply text-lg md:text-xl font-semibold text-[#393939] mt-6 mb-3;
 }
 
 .micropage-container .prose h5,
 .micropage-container .prose h6 {
-    @apply text-base font-semibold text-[#545454] mt-4 mb-2;
+    @apply text-base font-semibold text-[#393939] mt-4 mb-2;
 }
 
 .micropage-container .prose p {
-    @apply text-base md:text-[17px] leading-relaxed mb-4 text-[#707070];
+    @apply text-base md:text-[17px] leading-relaxed mb-4 text-[#555555];
 }
 
 .micropage-container .prose ol {
-    @apply list-decimal pl-6 mb-4 space-y-2 text-[#707070];
+    @apply list-decimal pl-6 mb-4 space-y-2 text-[#555555];
 }
 
 .micropage-container .prose ul {
-    @apply list-disc pl-6 mb-4 space-y-2 text-[#707070];
+    @apply list-disc pl-6 mb-4 space-y-2 text-[#555555];
 }
 
 .micropage-container .prose ol ol,
@@ -104,11 +104,11 @@
 }
 
 .micropage-container .prose a {
-    @apply text-[#F04E30] underline hover:text-[#122E5E];
+    @apply text-[#91288D] underline hover:text-[#132F5C];
 }
 
 .micropage-container .prose strong {
-    @apply font-semibold text-[#545454];
+    @apply font-semibold text-[#393939];
 }
 
 .micropage-container .prose table {
@@ -121,19 +121,19 @@
 }
 
 .micropage-title {
-    @apply text-3xl uppercase tracking-wide text-[#707070] mb-8 font-[500];
+    @apply text-3xl uppercase tracking-wide text-[#555555] mb-8 font-[500];
 }
 
 .micropage-title-line {
-    @apply w-16 border-[#F04E30] mb-3 border-t-4;
+    @apply w-16 border-[#91288D] mb-3 border-t-4;
 }
 
 .micropage-heading {
-    @apply text-xl font-semibold text-[#545454] mt-10 mb-4;
+    @apply text-xl font-semibold text-[#393939] mt-10 mb-4;
 }
 
 .micropage-paragraph {
-    @apply text-[15px] text-[#545454] mb-4 leading-relaxed;
+    @apply text-[15px] text-[#393939] mb-4 leading-relaxed;
 }
 
 .micropage-image-wrapper {
@@ -326,11 +326,11 @@
 .micropage-button-card {
     @apply flex items-center gap-4 p-5 min-h-[100px] rounded-2xl bg-white shadow-md
            border border-gray-200 transition-all duration-300
-           hover:shadow-xl hover:bg-[#fef7f6] no-underline;
+           hover:shadow-xl hover:bg-[#FAF1F9] no-underline;
 }
 
 .micropage-button-icon {
-    @apply text-[#F04E30] w-6 h-6 min-w-6;
+    @apply text-[#91288D] w-6 h-6 min-w-6;
 }
 
 .micropage-button-label {
@@ -421,7 +421,7 @@
 
 .mp-gallery-slider .swiper-button-prev,
 .mp-gallery-slider .swiper-button-next {
-    color: #F04E30;
+    color: #91288D;
     background: rgba(255, 255, 255, 0.9);
     width: 36px;
     height: 36px;
@@ -436,7 +436,7 @@
 }
 
 .mp-gallery-slider .swiper-pagination-bullet-active {
-    background: #F04E30;
+    background: #91288D;
 }
 
 /* ================= SINGLE BUTTON GRID =================
@@ -447,7 +447,7 @@
 }
 
 .mp-single-btn {
-    @apply block bg-[#F04E30] hover:bg-[#122E5E] text-white font-oswald-medium text-lg text-center rounded-md shadow-md px-6 py-3.5 transition;
+    @apply block bg-[#91288D] hover:bg-[#132F5C] text-white font-oswald-medium text-lg text-center rounded-md shadow-md px-6 py-3.5 transition;
 }
 
 .mp-single-btn-grid .mp-single-btn:last-child:nth-child(odd) {
@@ -460,13 +460,13 @@
 }
 
 .pdf-btn-item {
-    @apply flex items-center gap-3 px-5 py-3 rounded-lg font-semibold text-[#122E5E] no-underline transition-all duration-200;
+    @apply flex items-center gap-3 px-5 py-3 rounded-lg font-semibold text-[#132F5C] no-underline transition-all duration-200;
     background-color: #dff0fe;
 }
 
 .pdf-btn-item:hover {
     @apply text-white;
-    background-color: #F04E30;
+    background-color: #91288D;
 }
 
 .pdf-btn-icon {

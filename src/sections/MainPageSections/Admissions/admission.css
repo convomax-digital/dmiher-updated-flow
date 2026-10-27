@@ -11,11 +11,11 @@
 }
 
 .feature-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4;
 }
 
 .feature-title {
-    @apply text-3xl md:text-4xl font-[500] uppercase text-[#707070];
+    @apply text-3xl md:text-4xl font-[500] uppercase text-[#555555];
 }
 
 .feature-mobile {
@@ -60,7 +60,7 @@
 }
 
 .steps-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-4;
 }
 
 .steps-title {
@@ -72,7 +72,7 @@
 }
 
 .step-card {
-    @apply relative basis-0 min-w-[14.6%] max-w-[200px] max-sm:min-w-[220px] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:text-center max-sm:pb-12 max-sm:mb-12 max-sm:border-b max-sm:border-b-[#E1CD67];
+    @apply relative basis-0 min-w-[14.6%] max-w-[200px] max-sm:min-w-[220px] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:text-center max-sm:pb-12 max-sm:mb-12 max-sm:border-b max-sm:border-b-[#C77ABF];
 }
 
 .step-number {
@@ -92,7 +92,7 @@
 }
 
 .step-title {
-    @apply text-xs sm:text-sm font-bold text-[#E1CD67] leading-tight mb-2;
+    @apply text-xs sm:text-sm font-bold text-[#C77ABF] leading-tight mb-2;
 }
 
 .final-step {
@@ -117,7 +117,7 @@
 
 
 .intl-section {
-    @apply relative bg-[#122E5E] text-white px-4 py-10 md:py-20 bg-no-repeat bg-center;
+    @apply relative bg-[#132F5C] text-white px-4 py-10 md:py-20 bg-no-repeat bg-center;
     background-size: 70%;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .intl-line {
-    @apply w-12 border-[#F04E30] mb-3 border-t-4 mx-auto sm:mx-0;
+    @apply w-12 border-[#91288D] mb-3 border-t-4 mx-auto sm:mx-0;
 }
 
 .intl-stats-wrapper {
@@ -235,7 +235,7 @@
 }
 
 .admission-icon-wrapper {
-    @apply w-10 h-10 rounded-md bg-[#F04E30] flex items-center justify-center mb-4;
+    @apply w-10 h-10 rounded-md bg-[#91288D] flex items-center justify-center mb-4;
 }
 
 .admission-icon {
@@ -247,7 +247,7 @@
 }
 
 .admission-btn {
-    @apply mt-auto text-center bg-[#F04E30] hover:bg-[#0C2C5B] text-white text-sm font-semibold py-2 rounded-md transition;
+    @apply mt-auto text-center bg-[#91288D] hover:bg-[#132F5C] text-white text-sm font-semibold py-2 rounded-md transition;
 }
 
 
@@ -262,11 +262,11 @@
 }
 
 .why-title {
-    @apply text-3xl md:text-4xl tracking-wide text-[#707070] font-[500] mb-10;
+    @apply text-3xl md:text-4xl tracking-wide text-[#555555] font-[500] mb-10;
 }
 
 .why-line {
-    @apply border-t-4 border-[#EE4B2B] w-20 mb-2;
+    @apply border-t-4 border-[#7E2279] w-20 mb-2;
 }
 
 .why-slider {
@@ -320,11 +320,11 @@
 }
 
 .campus-title {
-    @apply text-3xl md:text-4xl tracking-wide font-[500] text-[#707070];
+    @apply text-3xl md:text-4xl tracking-wide font-[500] text-[#555555];
 }
 
 .campus-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4;
 }
 
 .campus-controls {
@@ -376,7 +376,7 @@
 }
 
 .campus-important-title {
-    @apply text-3xl font-[500] tracking-wide text-[#707070] mb-6;
+    @apply text-3xl font-[500] tracking-wide text-[#555555] mb-6;
 }
 
 .campus-important-grid {

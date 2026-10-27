@@ -9,8 +9,8 @@ const UsefulLinks = ({ data }) => {
   return (
     <div className="py-15 bg-white">
       <div className="container">
-        <h2 className="text-3xl sm:text-4xl ml-4 md:ml-0 font-[500] font-oswald-medium tracking-wider mb-10 text-[#707070]">
-          <hr className="w-12 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+        <h2 className="text-3xl sm:text-4xl ml-4 md:ml-0 font-[500] font-oswald-medium tracking-wider mb-10 text-[#555555]">
+          <hr className="w-12 sm:w-20 border-[#91288D] mb-2 border-t-4" />
           {heading}
         </h2>
 

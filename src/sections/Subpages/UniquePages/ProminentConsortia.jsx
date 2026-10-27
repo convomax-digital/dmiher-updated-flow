@@ -41,7 +41,7 @@ export default function ProminentConsortia({ data = {} }) {
   const header = data.header || {};
   const consortia = arr(data.consortia);
 
-  const bgColor = header.bg_color || "#122E5E";
+  const bgColor = header.bg_color || "#132F5C";
   const textColor = header.text_color || "#E8C539";
   const heading = header.heading || "Prominent Consortia";
 

@@ -195,7 +195,7 @@ const Footer = () => {
                     href={item.slug}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#132F5C] hover:text-[#F04E30] transition-colors"
+                    className="text-[#132F5C] hover:text-[#91288D] transition-colors"
                     title={item.title}
                   >
                     {svg || (
@@ -258,7 +258,7 @@ const Footer = () => {
                   href={item.slug}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#132F5C] hover:text-[#F04E30] transition-colors"
+                  className="text-[#132F5C] hover:text-[#91288D] transition-colors"
                   title={item.title}
                 >
                   {svg || (
@@ -416,7 +416,7 @@ const Footer = () => {
               href={item.slug}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#132F5C] hover:text-[#F04E30] transition-colors"
+              className="text-[#132F5C] hover:text-[#91288D] transition-colors"
               title={item.title}
             >
               {svg || (

@@ -25,8 +25,8 @@ const TIMELINE_STYLE = {
 
 const Banner = ({ children, theme = "navy" }) => {
   const cls = theme === "gold"
-    ? "bg-gradient-to-r from-[#e5cf60] to-[#e5cf60] text-[#58595B]"
-    : "bg-gradient-to-r from-[#122E5E] to-[#1E3A8A] text-white";
+    ? "bg-gradient-to-r from-[#C77ABF] to-[#C77ABF] text-[#555555]"
+    : "bg-gradient-to-r from-[#132F5C] to-[#2E57AA] text-white";
   return (
     <section className={`${cls} rounded-xl shadow-lg p-8`}>
       {children}
@@ -71,7 +71,7 @@ function DMIHERConferences({ data }) {
   return (
     <main className="w-full">
       {/* Hero strip */}
-      <div className="bg-[#122E5E] shadow-xl border-b border-gray-100">
+      <div className="bg-[#132F5C] shadow-xl border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-6 text-center">
           <p className="text-5xl font-bold text-white">International Conference</p>
         </div>
@@ -89,7 +89,7 @@ function DMIHERConferences({ data }) {
         {data.about_feat && (
           <Banner theme="gold">
             <h3 className="text-2xl font-bold mb-6 text-gray-700">About FEAT</h3>
-            <p className="leading-relaxed text-[#58595B]" style={{ fontFamily: "Arial, sans-serif" }}>
+            <p className="leading-relaxed text-[#555555]" style={{ fontFamily: "Arial, sans-serif" }}>
               {data.about_feat}
             </p>
           </Banner>
@@ -134,7 +134,7 @@ function DMIHERConferences({ data }) {
           <a
             href={resolveImage(submission.ppt_template_url)}
             download
-            className="bg-[#F04E30] hover:bg-[#122E5E] text-white text-base sm:text-xl font-medium px-6 sm:px-8 py-2 min-w-[220px] rounded-md shadow-md inline-flex items-center justify-center gap-x-2"
+            className="bg-[#91288D] hover:bg-[#132F5C] text-white text-base sm:text-xl font-medium px-6 sm:px-8 py-2 min-w-[220px] rounded-md shadow-md inline-flex items-center justify-center gap-x-2"
           >
             <FileDown className="w-6 h-6 min-w-6" />
             {submission.ppt_template_label || "Template for PPT"}
@@ -202,7 +202,7 @@ function DMIHERConferences({ data }) {
       {/* Finance committee */}
       {Array.isArray(data.finance_committee) && data.finance_committee.length > 0 && (
         <div className="max-w-6xl mx-auto py-8 rounded-lg p-6 mb-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-[#707070] mb-4">Finance Committee</h3>
+          <h3 className="text-2xl font-semibold text-[#555555] mb-4">Finance Committee</h3>
           <div className="overflow-x-auto rounded-xl">
             <table className="w-full text-left border border-gray-200">
               <thead>
@@ -431,7 +431,7 @@ function DMIHERConferences({ data }) {
             {Array.isArray(data.contacts) && data.contacts.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {data.contacts.map((c, i) => (
-                  <div key={i} className="text-[#122E5E] bg-white rounded-3xl p-6 shadow-lg">
+                  <div key={i} className="text-[#132F5C] bg-white rounded-3xl p-6 shadow-lg">
                     <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{c.name}</h3>
                     <div className="space-y-3">
                       {c.email && (

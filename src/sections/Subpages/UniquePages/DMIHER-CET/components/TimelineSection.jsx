@@ -49,7 +49,7 @@ const TimelineSection = ({ header, bannerText, bannerIcon, phases = [], collegeS
     <div className="dcet-section-plain">
       <div className="dcet-container">
         {bannerText ? (
-          <div className="bg-white/10 text-[#707070] rounded-lg p-6 max-w-2xl mb-8">
+          <div className="bg-white/10 text-[#555555] rounded-lg p-6 max-w-2xl mb-8">
             <div className="text-3xl font-bold flex items-center gap-2 text-gray-800">
               {bannerIcon ? renderIcon(bannerIcon, 40, "w-10 h-10 p-1") : <Calendar className="w-10 h-10 p-1" />}
               <span>{bannerText}</span>

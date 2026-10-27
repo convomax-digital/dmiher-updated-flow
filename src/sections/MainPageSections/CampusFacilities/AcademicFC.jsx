@@ -18,7 +18,7 @@ const AcademicFC = ({ data }) => {
     <section
       className="afc-section"
       style={{
-        backgroundColor: data?.basic?.bg_color || "#122E5E",
+        backgroundColor: data?.basic?.bg_color || "#132F5C",
         color: data?.basic?.text_color || "#ffffff",
       }}
     >
@@ -35,7 +35,7 @@ const AcademicFC = ({ data }) => {
                   className="afc-heading-line"
                   style={{
                     borderColor:
-                      data?.basic?.accent_color || "#F04E30",
+                      data?.basic?.accent_color || "#91288D",
                   }}
                 />
 
@@ -111,7 +111,7 @@ const AcademicFC = ({ data }) => {
                     className="afc-right-empty-icon"
                     style={{
                       color:
-                        data?.basic?.accent_color || "#F04E30",
+                        data?.basic?.accent_color || "#91288D",
                     }}
                   />
                   <span className="afc-right-empty-text">

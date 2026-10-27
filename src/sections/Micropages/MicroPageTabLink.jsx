@@ -95,7 +95,7 @@ const MicroPageTabLink = ({ data, college }) => {
                 onClick={() => go(tab.cta_key)}
                 className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
                   isActive
-                    ? "bg-[#F04E30] text-white"
+                    ? "bg-[#91288D] text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-[#112a62] hover:text-white"
                 }`}
               >

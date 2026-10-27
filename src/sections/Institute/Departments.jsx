@@ -17,7 +17,7 @@ import "swiper/css/pagination";
 const getDepartmentCardStyle = (image) => {
   const resolvedImage = resolveImage(image);
   if (!resolvedImage) {
-    return { backgroundColor: "#122E5E" };
+    return { backgroundColor: "#132F5C" };
   }
 
   return {
@@ -179,7 +179,7 @@ const AboutGrid = ({ grid, parent }) => {
 
       {/* Helper text above buttons */}
       {ctaText && (
-        <p className="text-center text-[#58595B] text-sm md:text-base mt-8">
+        <p className="text-center text-[#555555] text-sm md:text-base mt-8">
           {ctaText}
         </p>
       )}
@@ -200,7 +200,7 @@ const AboutGrid = ({ grid, parent }) => {
                 disabled={!isClickable || isPending}
                 className={`px-10 py-3 min-w-[260px] text-base font-semibold text-center rounded-full shadow-md transition-all duration-300 ${
                   isClickable
-                    ? "bg-[#122E5E] text-white hover:bg-[#F04E30] hover:scale-105 cursor-pointer"
+                    ? "bg-[#132F5C] text-white hover:bg-[#91288D] hover:scale-105 cursor-pointer"
                     : "bg-gray-200 text-gray-400 cursor-not-allowed"
                 }`}
               >

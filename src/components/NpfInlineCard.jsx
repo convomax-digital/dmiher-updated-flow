@@ -17,7 +17,7 @@ import { getNonce } from "../context/NonceContext";
  * Props (all optional except widgetId):
  *   widgetId    — data-w from the NPF embed code (required)
  *   title       — header strip text (default "ENQUIRE NOW")
- *   titleBg     — header background colour (default #F04E30)
+ *   titleBg     — header background colour (default #91288D)
  *   titleColor  — header text colour (default #FFFFFF)
  *   width       — card width in px (default 400)
  *   height     — card height in px (default 440); the form body fills this
@@ -30,7 +30,7 @@ const NPF_SCRIPT = "https://widgets.in6.nopaperforms.com/emwgts.js";
 export default function NpfInlineCard({
   widgetId,
   title = "ENQUIRE NOW",
-  titleBg = "#F04E30",
+  titleBg = "#91288D",
   titleColor = "#FFFFFF",
   width = 400,
   height = 440,

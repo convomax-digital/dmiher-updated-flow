@@ -25,6 +25,10 @@
 @import "./cadwl.css";
 @import "./CampusLife.css";
 
+/* Last import on purpose: the brand button gradient has to come after
+   every section stylesheet that sets a flat fill on a CTA. */
+@import "./components/buttons.css";
+
 /* ================= LOADER (canonical app spinner) ================= */
 /* Grey ring with a maroon arc — used everywhere (PageLoader, Loader,
    section loading states). Lives in the globally-imported main.css so it
@@ -85,7 +89,7 @@
 }
 
 .mslider-label {
-    @apply text-[#58595B] text-lg font-semibold;
+    @apply text-[#555555] text-lg font-semibold;
 }
 
 /* ================= SAFE IMAGE PLACEHOLDER ================= */

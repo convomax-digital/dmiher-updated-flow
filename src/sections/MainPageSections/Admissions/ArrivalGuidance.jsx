@@ -17,8 +17,8 @@ const ArrivalGuidance = ({ data }) => {
         <div className="w-full pb-6 lg:pb-10">
           {heading && (
             <div className="mb-2">
-              <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#707070] font-[600] whitespace-pre-line">
-                <div className="border-t-4 border-[#EE4B2B] w-20 mb-2"></div>
+              <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-[600] whitespace-pre-line">
+                <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
                 {heading}
               </h2>
             </div>
@@ -35,12 +35,12 @@ const ArrivalGuidance = ({ data }) => {
                 {tabs.map((tab, i) => (
                   <button
                     key={i}
-                    className="pb-2 relative text-[#707070]"
+                    className="pb-2 relative text-[#555555]"
                     onClick={() => setActiveIdx(i)}
                   >
                     {tab.label}
                     {activeIdx === i && (
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#EE4B2B]"></div>
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#7E2279]"></div>
                     )}
                   </button>
                 ))}
@@ -58,8 +58,8 @@ const ArrivalGuidance = ({ data }) => {
             <div className="mt-15">
               {stepsSection.heading && (
                 <div className="mb-10">
-                  <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#707070] font-[600]">
-                    <div className="border-t-4 border-[#EE4B2B] w-20 mb-2"></div>
+                  <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-[600]">
+                    <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
                     {stepsSection.heading}
                   </h2>
                 </div>
@@ -68,7 +68,7 @@ const ArrivalGuidance = ({ data }) => {
                 {steps.map((step, i) => (
                   <div key={i} className="flex flex-col md:flex-row items-center">
                     <div className="bg-white mb-5 md:mb-0 px-10 py-6 shadow-sm font-oswald-medium">
-                      <div className="text-xl text-[#707070] font-light">
+                      <div className="text-xl text-[#555555] font-light">
                         <RichTextRenderer html={step.note || ""} />
                       </div>
                     </div>

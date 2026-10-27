@@ -8,6 +8,38 @@
 
 @theme {
   --font-oswald-medium: "Oswald", sans-serif;
+
+  /* ── Brand palette (AIHER) ─────────────────────────────────────────
+     Single source of truth for the site's brand colours. The literal
+     HEX values below are also what the components use inline (Tailwind
+     arbitrary values like `text-[#91288D]`), so a future theme change
+     means: update these tokens, then run the same find-and-replace of
+     the old literals across src/.
+
+     Replaced the previous DMIHER palette:
+       #F04E30 orange → #91288D purple      (primary / CTA)
+       #FF4F37        → #A32E9E             (lighter accent)
+       #EE4B2B        → #7E2279             (hover / pressed)
+       #122E5E navy   → #132F5C             (headings, dark sections)
+       #1B2A4A        → #0E2446             (deepest navy)
+       #223971        → #2E57AA             (secondary blue)
+       #E1CD67 gold   → #C77ABF             (accent on dark backgrounds)
+       #707070 grey   → #555555             (body text)
+       #545454        → #393939             (strong text)
+     ------------------------------------------------------------------ */
+  --color-brand: #91288D;
+  --color-brand-light: #A32E9E;
+  --color-brand-dark: #7E2279;
+  --color-brand-tint: #FAF1F9;
+  --color-brand-soft: #C77ABF;
+
+  --color-navy: #132F5C;
+  --color-navy-deep: #0E2446;
+  --color-blue: #2E57AA;
+
+  --color-ink: #393939;
+  --color-body: #555555;
+  --color-surface: #F1F1F2;
 }
 
 /* @import "../styles/InstituteSections/Banner.css"; */
@@ -21,12 +53,17 @@
    showing through between sections. */
 :root {
     color-scheme: light;
+
+    /* Pale banner strip ("Admissions open for …") that sits directly above
+       or below the hero, matching aiher.edu.in's .admissions-strip-background:
+       a soft blue→lilac wash carrying dark grey text, not a brand fill. */
+    --strip-gradient: linear-gradient(90deg, #E0E6F2 0%, #EEDFEE 100%);
 }
 
 html, body {
     @apply overflow-x-hidden;
     background-color: #ffffff;
-    color: #58595B;
+    color: #555555;
     /* Belt-and-braces guard: some CMS-driven content sets fixed pixel widths
        that push the viewport wider than the screen on mobile. Clamping the
        body to 100vw kills the horizontal scroll bar even if a child leaks. */
@@ -109,7 +146,7 @@ h6 {
     /* Increased from 154px */
     height: 115px;
     /* Increased from 98px */
-    background: #f04e30;
+    background: #91288D;
     box-sizing: border-box;
     display: block;
     position: relative;
@@ -140,7 +177,7 @@ h6 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #707070;
+    color: #555555;
     text-align: center;
     padding: 0 8px;
     font-size: 15px;

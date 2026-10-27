@@ -11,7 +11,7 @@ const DALVisionMission = ({ data }) => {
         <div className="bg-[#F7941D] p-5 sm:p-8 md:p-12 shadow-md min-h-[370px] text-white">
           <div className="flex justify-between items-start mb-2">
             <div className="pt-5 sm:pt-12">
-              <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+              <hr className="w-16 sm:w-20 border-[#91288D] mb-2 border-t-4" />
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide font-oswald-medium">
                 {vision.title || "Vision"}
               </h2>
@@ -30,10 +30,10 @@ const DALVisionMission = ({ data }) => {
         </div>
 
         {/* Mission */}
-        <div className="bg-[#707070] p-6 sm:p-8 text-white shadow-md min-h-[360px]">
+        <div className="bg-[#555555] p-6 sm:p-8 text-white shadow-md min-h-[360px]">
           <div className="flex justify-between items-start mb-2">
             <div className="pt-5 sm:pt-16">
-              <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+              <hr className="w-16 sm:w-20 border-[#91288D] mb-2 border-t-4" />
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide font-oswald-medium">
                 {mission.title || "Mission"}
               </h2>

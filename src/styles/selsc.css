@@ -9,13 +9,13 @@
     @apply py-16 text-center bg-white;
 }
 .selsc-details-title {
-    @apply flex flex-wrap items-center justify-center sm:justify-between text-[#F04E30] font-oswald-medium tracking-wider uppercase mb-6 text-center;
+    @apply flex flex-wrap items-center justify-center sm:justify-between text-[#91288D] font-oswald-medium tracking-wider uppercase mb-6 text-center;
 }
 .selsc-details-title > span {
     @apply px-4 whitespace-normal text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
 }
 .selsc-details-line {
-    @apply hidden sm:block flex-grow border-t border-[#F04E30];
+    @apply hidden sm:block flex-grow border-t border-[#91288D];
 }
 .selsc-details-links {
     @apply mx-auto w-fit my-2;
@@ -27,7 +27,7 @@
     @apply text-gray-500;
 }
 .selsc-details-main {
-    @apply font-oswald-medium text-3xl md:text-4xl font-[500] text-[#707070] mt-5 mb-4;
+    @apply font-oswald-medium text-3xl md:text-4xl font-[500] text-[#555555] mt-5 mb-4;
 }
 .selsc-details-desc {
     @apply text-[#333] max-w-[1000px] mx-auto;
@@ -38,7 +38,7 @@
     @apply bg-no-repeat bg-center bg-cover relative z-0;
 }
 .selsc-simulation-overlay {
-    @apply bg-[#0c2c5b]/90;
+    @apply bg-[#132F5C]/90;
 }
 .selsc-simulation-inner {
     @apply relative z-20 py-12;
@@ -47,7 +47,7 @@
     @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-white inline-block pb-1;
 }
 .selsc-simulation-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-simulation-grid {
     @apply grid lg:grid-cols-2 xl:grid-cols-3 my-12 text-white gap-12;
@@ -56,7 +56,7 @@
     @apply border border-white/30 h-fit p-4 rounded;
 }
 .selsc-simulation-col-title {
-    @apply text-[#F04E30] border-b border-white/50 pb-1 text-lg font-semibold;
+    @apply text-[#91288D] border-b border-white/50 pb-1 text-lg font-semibold;
 }
 .selsc-simulation-col-desc {
     @apply text-base my-2;
@@ -82,7 +82,7 @@
     @apply flex justify-between items-start mb-2;
 }
 .selsc-vm-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4;
 }
 .selsc-vm-title {
     @apply text-2xl sm:text-3xl text-gray-700 font-bold uppercase tracking-wide font-oswald-medium;
@@ -91,22 +91,22 @@
     @apply w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain;
 }
 .selsc-vm-desc {
-    @apply space-y-1 text-xl pb-2 text-[#58595B] mt-4;
+    @apply space-y-1 text-xl pb-2 text-[#555555] mt-4;
     font-family: Arial, sans-serif;
 }
 
 /* ───────── 4. INFRASTRUCTURE ───────── */
 .selsc-infra {
-    @apply bg-[#fef5eb] py-16;
+    @apply bg-[#FAF1F9] py-16;
 }
 .selsc-infra-top {
     @apply flex items-start justify-between gap-4 mb-8;
 }
 .selsc-infra-heading {
-    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#707070] pb-1 inline-block;
+    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#555555] pb-1 inline-block;
 }
 .selsc-infra-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-infra-nav-wrap {
     @apply flex gap-2 shrink-0;
@@ -134,13 +134,13 @@
     @apply flex flex-col flex-1 pt-4;
 }
 .selsc-infra-card-title {
-    @apply text-xl font-semibold mb-2 text-[#122E5E];
+    @apply text-xl font-semibold mb-2 text-[#132F5C];
 }
 .selsc-infra-card-desc {
-    @apply text-[#58595B] text-sm flex-grow mb-3 leading-relaxed;
+    @apply text-[#555555] text-sm flex-grow mb-3 leading-relaxed;
 }
 .selsc-infra-card-cta {
-    @apply mt-auto inline-block self-start px-5 py-2 bg-[#F04E30] hover:bg-[#122E5E]
+    @apply mt-auto inline-block self-start px-5 py-2 bg-[#91288D] hover:bg-[#132F5C]
            text-white text-sm rounded font-semibold transition;
 }
 
@@ -162,7 +162,7 @@
     @apply w-full h-full object-cover;
 }
 .selsc-infra-inner-btn {
-    @apply absolute z-20 w-8 h-8 rounded-full bg-[#122E5E] hover:bg-[#F04E30]
+    @apply absolute z-20 w-8 h-8 rounded-full bg-[#132F5C] hover:bg-[#91288D]
            text-white flex items-center justify-center transition;
     top: 50%;
     transform: translateY(-50%);
@@ -183,16 +183,16 @@
     @apply bg-white rounded-xl p-4 pb-10 max-w-2xl w-full mx-4 relative;
 }
 .selsc-infra-popup-close {
-    @apply absolute top-2 right-2 text-[#707070] hover:text-black;
+    @apply absolute top-2 right-2 text-[#555555] hover:text-black;
 }
 .selsc-infra-popup-title {
-    @apply text-lg font-semibold text-[#122E5E] mb-3;
+    @apply text-lg font-semibold text-[#132F5C] mb-3;
 }
 .selsc-infra-popup-img {
     @apply w-full h-96 object-cover rounded-lg mb-4;
 }
 .selsc-infra-popup-desc {
-    @apply text-[#58595B] text-sm mt-4;
+    @apply text-[#555555] text-sm mt-4;
 }
 
 /* ───────── 5. COLLABORATIONS ───────── */
@@ -200,10 +200,10 @@
     @apply py-16 bg-white;
 }
 .selsc-collab-heading {
-    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#707070] inline-block pb-1;
+    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#555555] inline-block pb-1;
 }
 .selsc-collab-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-collab-grid {
     @apply grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-center mt-12 justify-center;
@@ -220,16 +220,16 @@
     @apply bg-[#fcfbf2] py-12;
 }
 .selsc-learners-heading {
-    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#707070] inline-block pb-1;
+    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#555555] inline-block pb-1;
 }
 .selsc-learners-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-learners-subtitle {
-    @apply text-[#122E5E] py-4 text-xl;
+    @apply text-[#132F5C] py-4 text-xl;
 }
 .selsc-learners-grid {
-    @apply flex gap-12 flex-wrap text-[#58595B];
+    @apply flex gap-12 flex-wrap text-[#555555];
 }
 .selsc-learners-col ul {
     @apply list-disc pl-5;
@@ -243,10 +243,10 @@
     @apply py-24 bg-white;
 }
 .selsc-training-heading {
-    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#707070] inline-block pb-1;
+    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#555555] inline-block pb-1;
 }
 .selsc-training-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-training-swiper {
     @apply mt-4;
@@ -255,10 +255,10 @@
     @apply bg-[#ecf6ff] p-4 mb-8 flex flex-col min-h-[380px];
 }
 .selsc-training-card-title {
-    @apply text-[#F04E30] font-bold text-xl border-b pb-2 border-gray-300;
+    @apply text-[#91288D] font-bold text-xl border-b pb-2 border-gray-300;
 }
 .selsc-training-card-desc {
-    @apply text-[#58595B] text-sm py-2 flex-grow;
+    @apply text-[#555555] text-sm py-2 flex-grow;
 }
 .selsc-training-card-desc ul {
     @apply list-disc pl-5 mt-1;
@@ -266,13 +266,13 @@
 
 /* ───────── 8. PROGRAMS & COURSES ───────── */
 .selsc-programs {
-    @apply bg-[#122e5e] py-16 text-white;
+    @apply bg-[#132F5C] py-16 text-white;
 }
 .selsc-programs-heading {
     @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-white inline-block pb-1;
 }
 .selsc-programs-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-programs-subtitle {
     @apply text-white py-2 pt-3 text-2xl;
@@ -293,10 +293,10 @@
     @apply p-4;
 }
 .selsc-programs-card-title {
-    @apply text-[#F04E30] text-xl font-semibold mb-2 leading-tight;
+    @apply text-[#91288D] text-xl font-semibold mb-2 leading-tight;
 }
 .selsc-programs-card-desc {
-    @apply text-[#58595B] text-sm mb-4;
+    @apply text-[#555555] text-sm mb-4;
 }
 .selsc-programs-card-desc ul {
     @apply list-disc pl-4 mt-1;
@@ -307,19 +307,19 @@
     @apply py-16 bg-white;
 }
 .selsc-fr-heading {
-    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#707070] inline-block pb-1;
+    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#555555] inline-block pb-1;
 }
 .selsc-fr-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-fr-subtitle {
-    @apply text-lg mt-3 mb-2 text-[#58595B];
+    @apply text-lg mt-3 mb-2 text-[#555555];
 }
 .selsc-fr-desc {
-    @apply text-sm text-[#58595B];
+    @apply text-sm text-[#555555];
 }
 .selsc-fr-grid {
-    @apply text-[#58595B] text-xl mt-8 grid lg:grid-cols-3 gap-4;
+    @apply text-[#555555] text-xl mt-8 grid lg:grid-cols-3 gap-4;
 }
 .selsc-fr-item {
     @apply pr-4 max-lg:mb-2 max-lg:pb-2 max-lg:border-b lg:border-r last:border-r-0;
@@ -336,16 +336,16 @@
     @apply py-16 bg-white;
 }
 .selsc-sl-heading {
-    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#707070] inline-block pb-1;
+    @apply text-3xl md:text-4xl font-medium font-oswald-medium uppercase text-[#555555] inline-block pb-1;
 }
 .selsc-sl-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4 h-2;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4 h-2;
 }
 .selsc-sl-nav {
     @apply flex justify-between items-start gap-2 my-4;
 }
 .selsc-sl-intro {
-    @apply text-[#58595B] max-w-3xl;
+    @apply text-[#555555] max-w-3xl;
 }
 .selsc-sl-btns {
     @apply flex gap-2 items-center ml-auto;

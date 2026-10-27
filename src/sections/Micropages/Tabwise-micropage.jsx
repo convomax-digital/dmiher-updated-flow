@@ -168,7 +168,7 @@ const TabMenu = ({ data }) => {
                 type="button"
                 className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
                   isTabActive(tab)
-                    ? "bg-[#F04E30] text-white"
+                    ? "bg-[#91288D] text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-[#112a62] hover:text-white"
                 }`}
                 onClick={() => handleTabClick(tab, i)}
@@ -188,7 +188,7 @@ const TabMenu = ({ data }) => {
                       onClick={() => handleDropdownItem(item)}
                       className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
                         activeTab === item.page_slug
-                          ? "bg-orange-50 text-[#F04E30] font-semibold"
+                          ? "bg-orange-50 text-[#91288D] font-semibold"
                           : ""
                       }`}
                     >

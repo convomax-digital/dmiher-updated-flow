@@ -30,8 +30,8 @@ export default function KeyFunctionTabs({ data }) {
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <h1 className="text-3xl md:text-4xl font-[500] mb-5 text-[#707070]">
-          <hr className="w-16 border-[#F04E30] mb-3 border-t-4" />
+        <h1 className="text-3xl md:text-4xl font-[500] mb-5 text-[#555555]">
+          <hr className="w-16 border-[#91288D] mb-3 border-t-4" />
           {data?.header?.title}
         </h1>
 
@@ -48,7 +48,7 @@ export default function KeyFunctionTabs({ data }) {
                 onClick={() => setActiveTab(tab)}
                 className={`pb-2 w-full min-h-[3.5rem] ${
                   activeTab?.name[0] === tab.name[0]
-                    ? "text-[#0a2c61] font-semibold"
+                    ? "text-[#132F5C] font-semibold"
                     : ""
                 }`}
               >
@@ -59,7 +59,7 @@ export default function KeyFunctionTabs({ data }) {
 
               {/* Active underline */}
               {activeTab?.name[0] === tab.name[0] && (
-                <div className="absolute bottom-0 left-0 w-[90%] h-[3px] bg-[#0a2c61]" />
+                <div className="absolute bottom-0 left-0 w-[90%] h-[3px] bg-[#132F5C]" />
               )}
             </div>
           ))}

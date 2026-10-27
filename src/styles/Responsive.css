@@ -178,7 +178,7 @@
     }
 
     .tab-title-active {
-        @apply text-[#707070];
+        @apply text-[#555555];
     }
 
     .tab-underline-active {
@@ -190,7 +190,7 @@
     }
 
     .footprint-blue-section {
-        @apply bg-[#122E5E] mt-6 sm:mt-8 rounded-none sm:rounded-2xl w-full;
+        @apply bg-[#132F5C] mt-6 sm:mt-8 rounded-none sm:rounded-2xl w-full;
     }
 
     .footprint-image {
@@ -696,7 +696,7 @@
 
 @media (min-width: 768px) {
     .placements-item {
-        @apply border-r-1 border-[#707070] last:border-r-0;
+        @apply border-r-1 border-[#555555] last:border-r-0;
     }
 }
 

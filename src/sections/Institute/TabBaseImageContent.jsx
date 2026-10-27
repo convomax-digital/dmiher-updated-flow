@@ -27,8 +27,8 @@ export default function TabBaseImageContent({ data }) {
     <div className="bg-white py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {data?.header?.heading && (
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-oswald-medium font-bold text-[#707070] uppercase mb-8 sm:mb-10">
-            <hr className="w-16 border-[#F04E30] mb-3 border-t-4" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-oswald-medium font-bold text-[#555555] uppercase mb-8 sm:mb-10">
+            <hr className="w-16 border-[#91288D] mb-3 border-t-4" />
             {data.header.heading}
           </h2>
         )}
@@ -40,13 +40,13 @@ export default function TabBaseImageContent({ data }) {
               onClick={() => setActiveIndex(index)}
               className={`relative px-4 sm:px-6 py-3 text-sm sm:text-base font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer ${
                 activeIndex === index
-                  ? "text-[#122E5E]"
-                  : "text-[#58595B] hover:text-[#122E5E]"
+                  ? "text-[#132F5C]"
+                  : "text-[#555555] hover:text-[#132F5C]"
               }`}
             >
               {tab.label}
               {activeIndex === index && (
-                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#F04E30]" />
+                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#91288D]" />
               )}
             </button>
           ))}

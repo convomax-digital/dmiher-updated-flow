@@ -1,5 +1,5 @@
 .functional {
-    @apply bg-gray-100 text-[#58595B] py-16 font-[Arial];
+    @apply bg-gray-100 text-[#555555] py-16 font-[Arial];
 }
 
 .functional-container {
@@ -90,7 +90,7 @@
 }
 
 .iqac-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-4;
 }
 
 .iqac-title {
@@ -102,7 +102,7 @@
 }
 
 .iqac-btn {
-    @apply py-3 px-6 text-white text-sm sm:text-base rounded shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-[#f04e30] bg-[#0f2c5c];
+    @apply py-3 px-6 text-white text-sm sm:text-base rounded shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-[#91288D] bg-[#132F5C];
 }
 
 
@@ -111,7 +111,7 @@
 }
 
 .iqac-annual-title {
-    @apply text-[#0f2c5c] text-xl font-bold mb-2;
+    @apply text-[#132F5C] text-xl font-bold mb-2;
 }
 
 .iqac-reports {
@@ -119,9 +119,9 @@
 }
 
 .iqac-report-btn {
-    @apply flex items-center gap-2 bg-sky-200 text-[#F04E30] hover:bg-[#F04E30] hover:text-white px-6 py-3 rounded-md shadow-md transition hover:scale-105 w-[150px];
+    @apply flex items-center gap-2 bg-sky-200 text-[#91288D] hover:bg-[#91288D] hover:text-white px-6 py-3 rounded-md shadow-md transition hover:scale-105 w-[150px];
 }
 
 .iqac-icon {
-    @apply w-5 h-5 text-[#0B2A6D];
+    @apply w-5 h-5 text-[#1A3C73];
 }

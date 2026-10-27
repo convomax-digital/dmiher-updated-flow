@@ -54,8 +54,8 @@ const TabbedCards = ({ tabs }) => {
               className={[
                 "px-4 py-2 rounded-full text-sm font-semibold border transition",
                 isActive
-                  ? "bg-[#F04E30] text-white border-[#F04E30] shadow"
-                  : "bg-white text-gray-700 border-gray-200 hover:border-[#F04E30] hover:text-[#F04E30]",
+                  ? "bg-[#91288D] text-white border-[#91288D] shadow"
+                  : "bg-white text-gray-700 border-gray-200 hover:border-[#91288D] hover:text-[#91288D]",
               ].join(" ")}
             >
               {capitalize(tab.name || tab.slug || `Tab ${idx + 1}`)}
@@ -93,8 +93,8 @@ const MandatoryDisclosure = ({ data }) => {
   return (
     <section className="bg-[#FAFAF6] py-12">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl pt-5 pb-5 font-[500] text-[#707070] font-oswald-medium uppercase mb-5 tracking-wide">
-          <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+        <h2 className="text-3xl md:text-4xl pt-5 pb-5 font-[500] text-[#555555] font-oswald-medium uppercase mb-5 tracking-wide">
+          <hr className="w-16 sm:w-20 border-[#91288D] mb-2 border-t-4" />
           {title}
         </h2>
 

@@ -57,8 +57,8 @@ const ViewCertificateButton = ({ cert, base, variant = "card" }) => {
 
   const cls =
     variant === "modal"
-      ? "w-full hover:bg-gray-100 bg-[#F04E30] hover:text-gray-700 text-white py-2 px-4 rounded-lg transition-all duration-300 font-medium block text-center"
-      : "w-full bg-gray-100 hover:bg-[#F04E30] text-gray-700 hover:text-white py-2 px-4 rounded-lg transition-all duration-300 font-medium block text-center";
+      ? "w-full hover:bg-gray-100 bg-[#91288D] hover:text-gray-700 text-white py-2 px-4 rounded-lg transition-all duration-300 font-medium block text-center"
+      : "w-full bg-gray-100 hover:bg-[#91288D] text-gray-700 hover:text-white py-2 px-4 rounded-lg transition-all duration-300 font-medium block text-center";
 
   return link.external ? (
     <a href={link.href} target="_blank" rel="noopener noreferrer" className={cls}>
@@ -86,7 +86,7 @@ const CertCard = ({ cert, base, onPreview }) => {
             <div className="absolute bottom-4 right-4">
               <button
                 onClick={() => onPreview(cert)}
-                className="bg-[#F04E30] hover:bg-[#122E5E] text-white p-2 rounded-full transition-colors duration-300"
+                className="bg-[#91288D] hover:bg-[#132F5C] text-white p-2 rounded-full transition-colors duration-300"
                 aria-label="Preview certificate"
               >
                 <FaEye className="w-5 h-5" />
@@ -97,7 +97,7 @@ const CertCard = ({ cert, base, onPreview }) => {
             <div className="absolute top-4 left-4">
               <span
                 className="px-3 py-1 rounded-full text-xs font-semibold text-white"
-                style={{ backgroundColor: cert.badge_color || "#122E5E" }}
+                style={{ backgroundColor: cert.badge_color || "#132F5C" }}
               >
                 {cert.badge}
               </span>
@@ -111,7 +111,7 @@ const CertCard = ({ cert, base, onPreview }) => {
             {cert?.title}
           </h3>
           {cert?.year && (
-            <span className="text-[#F04E30] font-bold text-sm bg-[#F04E30]/10 px-2 py-1 rounded whitespace-nowrap ml-2">
+            <span className="text-[#91288D] font-bold text-sm bg-[#91288D]/10 px-2 py-1 rounded whitespace-nowrap ml-2">
               {cert.year}
             </span>
           )}
@@ -156,13 +156,13 @@ const CertModal = ({ cert, base, onClose }) => {
           {cert?.badge && (
             <span
               className="px-3 py-1 rounded-full text-sm font-semibold text-white"
-              style={{ backgroundColor: cert.badge_color || "#122E5E" }}
+              style={{ backgroundColor: cert.badge_color || "#132F5C" }}
             >
               {cert.badge}
             </span>
           )}
           {cert?.year && (
-            <span className="text-[#F04E30] font-bold bg-[#F04E30]/10 px-3 py-1 rounded-full">
+            <span className="text-[#91288D] font-bold bg-[#91288D]/10 px-3 py-1 rounded-full">
               {cert.year}
             </span>
           )}
@@ -220,7 +220,7 @@ const CertificateGallery = ({ data, college }) => {
             return (
               <div key={yi} className="mb-12">
                 {yearGroup.title && (
-                  <h1 className="text-3xl md:text-4xl font-bold text-[#122E5E] text-center mb-2">
+                  <h1 className="text-3xl md:text-4xl font-bold text-[#132F5C] text-center mb-2">
                     {yearGroup.title}
                   </h1>
                 )}
@@ -236,7 +236,7 @@ const CertificateGallery = ({ data, college }) => {
                       if (!certs.length) return null;
                       return (
                         <div key={yci} className="mb-10">
-                          <h2 className="text-xl font-bold text-[#122E5E] mb-8 border-b-4 border-[#F04E30] pb-2 inline-block">
+                          <h2 className="text-xl font-bold text-[#132F5C] mb-8 border-b-4 border-[#91288D] pb-2 inline-block">
                             {yc.year}
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -277,8 +277,8 @@ const CertificateGallery = ({ data, college }) => {
               onClick={() => setActiveKey(f.key)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeKey === f.key
-                  ? "bg-[#F04E30] text-white shadow-lg transform scale-105"
-                  : "bg-white text-gray-700 hover:bg-[#122E5E] hover:text-white shadow-md"
+                  ? "bg-[#91288D] text-white shadow-lg transform scale-105"
+                  : "bg-white text-gray-700 hover:bg-[#132F5C] hover:text-white shadow-md"
               }`}
             >
               {f.label}

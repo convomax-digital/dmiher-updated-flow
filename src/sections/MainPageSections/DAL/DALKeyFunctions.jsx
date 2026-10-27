@@ -15,8 +15,8 @@ const DALKeyFunctions = ({ data }) => {
     <div className="bg-[#f0efef] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {heading && (
-          <h1 className="text-3xl md:text-4xl font-[500] mb-5 font-oswald-medium text-[#707070] text-left">
-            <hr className="w-16 sm:w-20 border-[#F04E30] mb-3 border-t-4 lg:mx-0" />
+          <h1 className="text-3xl md:text-4xl font-[500] mb-5 font-oswald-medium text-[#555555] text-left">
+            <hr className="w-16 sm:w-20 border-[#91288D] mb-3 border-t-4 lg:mx-0" />
             <RichTextRenderer html={heading} />
           </h1>
         )}
@@ -36,7 +36,7 @@ const DALKeyFunctions = ({ data }) => {
               <button
                 onClick={() => setActiveIdx(index)}
                 className={`pb-2 w-full whitespace-normal break-words transition-all duration-300 min-h-[3.5rem] ${
-                  activeIdx === index ? "text-[#0a2c61] font-[600]" : ""
+                  activeIdx === index ? "text-[#132F5C] font-[600]" : ""
                 }`}
               >
                 {(tab.name || []).map((line, i) => (
@@ -44,7 +44,7 @@ const DALKeyFunctions = ({ data }) => {
                 ))}
               </button>
               {activeIdx === index && (
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 lg:left-[0.3rem] lg:translate-x-0 w-[90%] h-[3px] bg-[#0a2c61]" />
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 lg:left-[0.3rem] lg:translate-x-0 w-[90%] h-[3px] bg-[#132F5C]" />
               )}
             </div>
           ))}

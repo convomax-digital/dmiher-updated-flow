@@ -471,7 +471,7 @@ const NormalCardsBlock = ({ cards }) => {
   };
 
   const Card = ({ title }) => (
-    <div className="flex items-center justify-center text-center bg-[#122E5E] hover:bg-[#0d2147] text-white rounded-lg h-40 px-5 font-semibold leading-snug transition-colors cursor-pointer">
+    <div className="flex items-center justify-center text-center bg-[#132F5C] hover:bg-[#0d2147] text-white rounded-lg h-40 px-5 font-semibold leading-snug transition-colors cursor-pointer">
       {title}
     </div>
   );

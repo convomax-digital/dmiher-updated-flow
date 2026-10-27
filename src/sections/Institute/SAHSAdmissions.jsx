@@ -49,22 +49,22 @@ export default function SAHSAdmissions({ data }) {
     <section className="sahs-adm-section py-10 px-4 md:px-0 bg-white">
       <div className="mx-auto">
         {/* Heading w/ red lines */}
-        <h2 className="sahs-adm-heading flex flex-wrap items-center justify-center sm:justify-between text-[#F04E30] font-oswald-medium text-3xl tracking-wider uppercase mb-6 text-center">
-          <hr className="hidden sm:block flex-grow border-t border-[#F04E30]" />
+        <h2 className="sahs-adm-heading flex flex-wrap items-center justify-center sm:justify-between text-[#91288D] font-oswald-medium text-3xl tracking-wider uppercase mb-6 text-center">
+          <hr className="hidden sm:block flex-grow border-t border-[#91288D]" />
           <span className="px-4 whitespace-normal text-3xl md:text-4xl">
             {heading}
           </span>
-          <hr className="hidden sm:block flex-grow border-t border-[#F04E30]" />
+          <hr className="hidden sm:block flex-grow border-t border-[#91288D]" />
         </h2>
 
         {/* Sub-heading */}
-        <h1 className="sahs-adm-subheading text-2xl sm:text-3xl md:text-4xl font-[500] font-oswald-medium text-[#58595B] uppercase leading-snug mb-6 text-center">
+        <h1 className="sahs-adm-subheading text-2xl sm:text-3xl md:text-4xl font-[500] font-oswald-medium text-[#555555] uppercase leading-snug mb-6 text-center">
           {subHeading}
         </h1>
 
         {/* Overview */}
         {description && (
-          <div className="sahs-adm-description text-[#58595B] font-[Arial] tracking-wide max-w-3xl mx-auto text-center">
+          <div className="sahs-adm-description text-[#555555] font-[Arial] tracking-wide max-w-3xl mx-auto text-center">
             <RichTextRenderer html={description} />
           </div>
         )}
@@ -73,7 +73,7 @@ export default function SAHSAdmissions({ data }) {
         <div className="sahs-adm-programs mt-10 flex flex-col items-center">
           {programs.length > 0 && (
             <>
-              <h3 className="text-xl font-bold text-[#F04E30] mb-2 uppercase">
+              <h3 className="text-xl font-bold text-[#91288D] mb-2 uppercase">
                 Programs Offered
               </h3>
               <ul className="flex flex-wrap justify-center gap-8 mb-6">
@@ -112,11 +112,11 @@ export default function SAHSAdmissions({ data }) {
             {ctaLabel}
           </a>
           {email && (
-            <div className="sahs-adm-email mt-2 text-[#707070] text-base">
+            <div className="sahs-adm-email mt-2 text-[#555555] text-base">
               <span className="font-bold">Email:</span>{" "}
               <a
                 href={`mailto:${email}`}
-                className="underline text-[#269BFF] hover:text-[#F04E30]"
+                className="underline text-[#269BFF] hover:text-[#91288D]"
               >
                 {email}
               </a>

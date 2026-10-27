@@ -76,8 +76,8 @@ const AlumniTestimonials = ({ data }) => {
   return (
     <div className="pt-16 pb-10 flex justify-center" style={{ backgroundColor: "#f4f4f4" }}>
       <div className="mx-auto max-w-7xl w-full px-4">
-        <h2 className="text-3xl sm:text-4xl ml-4 md:ml-0 font-[500] font-oswald-medium tracking-wider mb-10 text-[#707070]">
-          <hr className="w-12 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+        <h2 className="text-3xl sm:text-4xl ml-4 md:ml-0 font-[500] font-oswald-medium tracking-wider mb-10 text-[#555555]">
+          <hr className="w-12 sm:w-20 border-[#91288D] mb-2 border-t-4" />
           {heading}
         </h2>
 
@@ -123,7 +123,7 @@ const AlumniTestimonials = ({ data }) => {
             >
               {detailSlides.map((html, idx) => (
                 <SwiperSlide key={idx}>
-                  <div className="max-w-3xl mx-auto text-center text-[16px] text-[#707070] px-4">
+                  <div className="max-w-3xl mx-auto text-center text-[16px] text-[#555555] px-4">
                     <RichTextRenderer html={html} />
                   </div>
                 </SwiperSlide>
@@ -161,7 +161,7 @@ const AlumniTestimonials = ({ data }) => {
                   )}
 
                   <div
-                    className={`text-[16px] text-[#707070] ${
+                    className={`text-[16px] text-[#555555] ${
                       t.image ? "max-w-2xl text-left" : "max-w-3xl text-center mx-auto"
                     }`}
                   >
@@ -176,7 +176,7 @@ const AlumniTestimonials = ({ data }) => {
                       </p>
                     )}
                     {t.info && (
-                      <p className="text-sm text-[#707070] italic mt-1">
+                      <p className="text-sm text-[#555555] italic mt-1">
                         {t.info}
                       </p>
                     )}

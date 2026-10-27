@@ -13,7 +13,7 @@
 }
 
 .steps-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-4;
 }
 
 .steps-title {
@@ -25,7 +25,7 @@
 }
 
 .step-card {
-    @apply relative flex-1 min-w-0 basis-0 max-md:flex-none max-md:w-full max-md:min-w-[220px] max-md:flex max-md:flex-col max-md:items-start max-md:pb-8 max-md:mb-8 max-md:border-b max-md:border-b-[#E1CD67]/40;
+    @apply relative flex-1 min-w-0 basis-0 max-md:flex-none max-md:w-full max-md:min-w-[220px] max-md:flex max-md:flex-col max-md:items-start max-md:pb-8 max-md:mb-8 max-md:border-b max-md:border-b-[#C77ABF]/40;
 }
 
 .step-top {
@@ -37,16 +37,16 @@
 }
 
 .step-icon {
-    @apply w-12 h-12 sm:w-14 sm:h-14 mb-5 sm:mb-6 relative z-10 rounded-full bg-[#E1CD67] text-[#0D2B5E] flex items-center justify-center shrink-0;
+    @apply w-12 h-12 sm:w-14 sm:h-14 mb-5 sm:mb-6 relative z-10 rounded-full bg-[#C77ABF] text-[#132F5C] flex items-center justify-center shrink-0;
 }
 
 .step-card:first-child .step-icon,
 .step-card:last-child .step-icon {
-    @apply bg-[#F04E30] text-white;
+    @apply bg-[#91288D] text-white;
 }
 
 .step-line-horizontal {
-    @apply absolute h-[1.5px] bg-[#E1CD67] hidden md:block;
+    @apply absolute h-[1.5px] bg-[#C77ABF] hidden md:block;
     left: 4.25rem;
     right: 0.5rem;
     top: 3rem;
@@ -62,11 +62,11 @@
 }
 
 .step-points :where(h1, h2, h3, h4, h5, h6) {
-    @apply text-[#E1CD67] font-bold leading-tight mb-2 text-sm sm:text-base;
+    @apply text-[#C77ABF] font-bold leading-tight mb-2 text-sm sm:text-base;
 }
 
 .step-card:last-child .step-points :where(h1, h2, h3, h4, h5, h6) {
-    @apply text-[#F04E30];
+    @apply text-[#91288D];
 }
 
 .step-points p {

@@ -57,12 +57,12 @@ export default function FormSubmissionProcess({ data = {} }) {
                   className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
                 >
                   <div className="flex items-start">
-                    <div className="bg-[#122E5E] text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
+                    <div className="bg-[#132F5C] text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
                       {i + 1}
                     </div>
                     <div className="flex-1 min-w-0">
                       {step.title && (
-                        <h3 className="text-xl font-semibold text-[#122E5E] mb-3 flex items-center">
+                        <h3 className="text-xl font-semibold text-[#132F5C] mb-3 flex items-center">
                           {step.icon && (
                             <span className="mr-2 shrink-0">
                               {renderIcon(step.icon, 20, "")}
@@ -114,7 +114,7 @@ export default function FormSubmissionProcess({ data = {} }) {
               title={timeline.section_title}
               icon={timeline.section_icon}
             />
-            <div className="bg-[#122E5E] rounded-lg p-6">
+            <div className="bg-[#132F5C] rounded-lg p-6">
               <div className="coe-timeline-grid text-center text-black">
                 {tlItems.map((t, i) => (
                   <div key={i} className="bg-white bg-opacity-20 rounded-lg p-4">

@@ -50,7 +50,7 @@ function ThrustAreas({ data }) {
               const style = {
                 gridColumn: `span ${cols}`,
                 gridRow: `span ${rows}`,
-                backgroundColor: box?.background_color || "#1A2F4D",
+                backgroundColor: box?.background_color || "#0E2446",
                 color: box?.text_color || "#ffffff",
               };
               return (
@@ -69,8 +69,8 @@ function ThrustAreas({ data }) {
                 key={`b-${i}`}
                 className="thrust-areas-banner-box"
                 style={{
-                  backgroundColor: box?.background_color || "#E1CD67",
-                  color: box?.text_color || "#1a2f4d",
+                  backgroundColor: box?.background_color || "#C77ABF",
+                  color: box?.text_color || "#0E2446",
                 }}
               >
                 <RichTextRenderer html={box?.description || ""} />

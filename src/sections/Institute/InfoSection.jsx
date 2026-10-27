@@ -184,7 +184,7 @@ function InfoPopup({ title, subtitle, sections, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header bar with close button */}
-        <div className="bg-[#122E5E] h-10 flex items-center justify-end px-4 sticky top-0 z-10">
+        <div className="bg-[#132F5C] h-10 flex items-center justify-end px-4 sticky top-0 z-10">
           <button
             type="button"
             onClick={onClose}
@@ -197,8 +197,8 @@ function InfoPopup({ title, subtitle, sections, onClose }) {
 
         {/* Title + Subtitle re-display */}
         {(title || subtitle) && (
-          <h2 className="flex flex-wrap mt-5 items-center justify-center sm:justify-between text-[#F04E30] font-oswald-medium text-3xl tracking-wider uppercase mb-6 text-center px-4">
-            <hr className="hidden sm:block flex-grow border-t border-[#F04E30]" />
+          <h2 className="flex flex-wrap mt-5 items-center justify-center sm:justify-between text-[#91288D] font-oswald-medium text-3xl tracking-wider uppercase mb-6 text-center px-4">
+            <hr className="hidden sm:block flex-grow border-t border-[#91288D]" />
             <span className="px-4 whitespace-normal text-sm sm:text-lg md:text-xl lg:text-2xl">
               {title}
               {subtitle && (
@@ -207,7 +207,7 @@ function InfoPopup({ title, subtitle, sections, onClose }) {
                 </p>
               )}
             </span>
-            <hr className="hidden sm:block flex-grow border-t border-[#F04E30]" />
+            <hr className="hidden sm:block flex-grow border-t border-[#91288D]" />
           </h2>
         )}
 
@@ -327,8 +327,8 @@ function InfoPopup({ title, subtitle, sections, onClose }) {
 // Reusable section heading: orange line + uppercase grey title (live-site style)
 function SectionHeading({ children }) {
   return (
-    <h2 className="text-3xl uppercase md:text-4xl text-left font-[500] text-[#707070] mb-5 tracking-wider font-oswald-medium">
-      <hr className="w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+    <h2 className="text-3xl uppercase md:text-4xl text-left font-[500] text-[#555555] mb-5 tracking-wider font-oswald-medium">
+      <hr className="w-16 sm:w-20 border-[#91288D] mb-2 border-t-4" />
       {children}
     </h2>
   );

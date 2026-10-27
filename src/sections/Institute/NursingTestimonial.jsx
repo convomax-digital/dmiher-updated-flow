@@ -94,12 +94,12 @@ export default function NursingTestimonial({ data }) {
                   />
                 )}
                 <div className="max-w-xl font-[Arial] text-base">
-                  <p className="mb-4 text-[#58595B]">{t.para}</p>
+                  <p className="mb-4 text-[#555555]">{t.para}</p>
                   {t.name && (
                     <p className="font-[600] text-base mt-1">{t.name}</p>
                   )}
                   {t.info && (
-                    <pre className="font-[Arial] text-[#707070] leading-5 mt-2 whitespace-pre-wrap">
+                    <pre className="font-[Arial] text-[#555555] leading-5 mt-2 whitespace-pre-wrap">
                       {t.info}
                     </pre>
                   )}

@@ -15,8 +15,8 @@ const CriterionContent = ({ criterion }) => {
   return (
     <div className="px-6 bg-white max-w-6xl mx-auto">
       <div className="my-10">
-        <h2 className="text-3xl font-oswald-medium sm:text-5xl font-[500] text-[#545454] uppercase relative">
-          <span className="block border-t-4 border-[#F04E30] w-24 mb-4"></span>
+        <h2 className="text-3xl font-oswald-medium sm:text-5xl font-[500] text-[#393939] uppercase relative">
+          <span className="block border-t-4 border-[#91288D] w-24 mb-4"></span>
           {title}
         </h2>
       </div>

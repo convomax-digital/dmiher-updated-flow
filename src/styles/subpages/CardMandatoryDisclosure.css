@@ -1,5 +1,5 @@
 .mandatory-card {
-    @apply flex items-start gap-4 p-6 w-full rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#fef7f6];
+    @apply flex items-start gap-4 p-6 w-full rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#FAF1F9];
 }
 
 .mandatory-card.clickable {
@@ -7,7 +7,7 @@
 }
 
 .card-icon-wrapper {
-    @apply bg-[#F04E30]/10 text-[#F04E30] rounded-full p-3;
+    @apply bg-[#91288D]/10 text-[#91288D] rounded-full p-3;
 }
 
 .card-icon {
@@ -67,7 +67,7 @@
 
 /* LINK CARD */
 .popup-link-card {
-    @apply flex items-center justify-center gap-2 w-full h-[60px] text-base font-medium text-white bg-[#102B64] rounded transition hover:bg-[#F04E30];
+    @apply flex items-center justify-center gap-2 w-full h-[60px] text-base font-medium text-white bg-[#132F5C] rounded transition hover:bg-[#91288D];
 }
 
 .popup-link-icon {
@@ -101,11 +101,11 @@
 
 /* ================= HEADING ================= */
 .mandatory-heading {
-    @apply text-3xl font-[500] text-[#707070] uppercase mb-5 tracking-wide pt-5 pb-5;
+    @apply text-3xl font-[500] text-[#555555] uppercase mb-5 tracking-wide pt-5 pb-5;
 }
 
 .mandatory-heading-line {
-    @apply w-16 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 border-[#91288D] mb-2 border-t-4;
 }
 
 /* ================= GRID ================= */
@@ -115,7 +115,7 @@
 
 /* ================= CARD ================= */
 .disclosure-card {
-    @apply flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#fef7f6];
+    @apply flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#FAF1F9];
 }
 
 .disclosure-card.disabled {
@@ -124,7 +124,7 @@
 
 /* ================= ICON ================= */
 .disclosure-icon-wrapper {
-    @apply bg-[#F04E30]/10 text-[#F04E30] rounded-full p-3 flex items-center justify-center;
+    @apply bg-[#91288D]/10 text-[#91288D] rounded-full p-3 flex items-center justify-center;
 }
 
 .disclosure-icon-wrapper svg {

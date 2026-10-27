@@ -12,7 +12,7 @@
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-    color: #707070;
+    color: #555555;
     font-size: 1.875rem;
     line-height: 1.2;
     display: inline-block;
@@ -57,7 +57,7 @@
 
 /* ================= 2. INFO ================= */
 .cli-section {
-    width: 100%; padding: 4rem 1rem; text-align: center; color: #707070;
+    width: 100%; padding: 4rem 1rem; text-align: center; color: #555555;
 }
 @media (min-width: 768px) { .cli-section { padding: 5rem 1rem; } }
 .cli-title {
@@ -73,10 +73,10 @@
 /* ================= 3. REASONS ================= */
 .clr-section { padding: 4rem 1rem; background-color: #FAFAF6; display: flex; justify-content: center; }
 .clr-container { width: 100%; }
-.clr-heading-line { border-top: 4px solid #F04E30; width: 5rem; margin-bottom: 0.5rem; }
-.clr-sub { font-size: 1.25rem; color: #122E5E; max-width: 24rem; }
+.clr-heading-line { border-top: 4px solid #91288D; width: 5rem; margin-bottom: 0.5rem; }
+.clr-sub { font-size: 1.25rem; color: #132F5C; max-width: 24rem; }
 @media (min-width: 768px) { .clr-sub { font-size: 1.5rem; } }
-.clr-desc { font-size: 0.875rem; color: #707070; max-width: 48rem; margin-bottom: 2.5rem; }
+.clr-desc { font-size: 0.875rem; color: #555555; max-width: 48rem; margin-bottom: 2.5rem; }
 @media (min-width: 768px) { .clr-desc { font-size: 1rem; } }
 .clr-swiper-wrap { position: relative; margin-left: auto; margin-right: auto; }
 .clr-slide { display: flex !important; justify-content: center; align-items: center; }
@@ -106,7 +106,7 @@
 }
 @media (min-width: 768px) { .cli-immersive-right { margin-top: 5rem; } }
 .cli-immersive-head { margin-bottom: 1.5rem; }
-.cli-immersive .heading-line { width: 5rem; border-top: 4px solid #F04E30; margin-bottom: 1rem; }
+.cli-immersive .heading-line { width: 5rem; border-top: 4px solid #91288D; margin-bottom: 1rem; }
 .cli-immersive-desc { font-size: 1rem; margin-top: 0.5rem; }
 .cli-immersive-tab { border-top: 1px solid #d1d5db; margin-top: 1.25rem; }
 .cli-immersive-tab:first-of-type { margin-top: 1.5rem; }
@@ -122,10 +122,10 @@
 .cli-immersive-items > div { padding: 0.125rem 0; }
 .cli-immersive-cta {
     display: inline-block; margin: 0.5rem 0 1rem; padding: 0.5rem 1.5rem;
-    background-color: #F04E30; color: #fff; border-radius: 0.25rem;
+    background-color: #91288D; color: #fff; border-radius: 0.25rem;
     font-size: 0.875rem; font-weight: 600; transition: all 0.2s;
 }
-.cli-immersive-cta:hover { background-color: #122E5E; transform: scale(1.05); }
+.cli-immersive-cta:hover { background-color: #132F5C; transform: scale(1.05); }
 .cli-immersive-swiper, .cli-immersive-img { width: 100%; height: 100%; object-fit: cover; }
 .cli-immersive-empty { width: 100%; height: 100%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #6b7280; }
 
@@ -146,7 +146,7 @@
     font-size: 1.875rem; display: inline-block; color: #fff;
 }
 @media (min-width: 768px) { .cla-heading { font-size: 2.25rem; } }
-.cla-heading-line { width: 5rem; border-top: 4px solid #F04E30; margin-bottom: 1rem; }
+.cla-heading-line { width: 5rem; border-top: 4px solid #91288D; margin-bottom: 1rem; }
 .cla-desc { font-size: 1rem; margin-top: 0.5rem; }
 .cla-tab { border-top: 1px solid #d1d5db; }
 .cla-tab-btn {
@@ -157,13 +157,13 @@
 .cla-tab-btn:hover { color: #e5e7eb; }
 .cla-items { padding: 1rem 0 1rem 1rem; font-size: 0.875rem; color: #fff; }
 .cla-item { display: flex; align-items: flex-start; margin-bottom: 0.5rem; }
-.cla-bullet { margin-right: 0.5rem; color: #F04E30; }
+.cla-bullet { margin-right: 0.5rem; color: #91288D; }
 .cla-img { width: 100%; height: 100%; object-fit: cover; transition: all 0.3s; }
 .cla-empty {
-    width: 100%; height: 100%; background: linear-gradient(135deg, #122E5E, #1a3a70);
+    width: 100%; height: 100%; background: linear-gradient(135deg, #132F5C, #1a3a70);
     display: flex; align-items: center; justify-content: center; flex-direction: column;
 }
-.cla-empty-icon { width: 4rem; height: 4rem; margin-bottom: 1rem; color: #F04E30; }
+.cla-empty-icon { width: 4rem; height: 4rem; margin-bottom: 1rem; color: #91288D; }
 
 /* ================= 6. INFRASTRUCTURE ================= */
 .clinf-section { padding: 2rem 0.5rem; background-color: #fff; font-family: 'Oswald', sans-serif; }
@@ -174,7 +174,7 @@
 @media (min-width: 1024px) { .clinf-grid { grid-template-columns: repeat(2, 1fr); } }
 .clinf-card { display: flex; flex-direction: column; width: 100%; min-width: 0; }
 .clinf-title {
-    color: #223971; font-size: 1.125rem; margin-bottom: 0.5rem; padding: 0 0.5rem;
+    color: #2E57AA; font-size: 1.125rem; margin-bottom: 0.5rem; padding: 0 0.5rem;
 }
 @media (min-width: 640px) { .clinf-title { font-size: 1.25rem; margin-bottom: 0.75rem; } }
 @media (min-width: 768px) { .clinf-title { font-size: 1.5rem; } }
@@ -197,14 +197,14 @@
 /* ================= 7. WELLBEING ================= */
 .clw-section { background-color: #eaf4ff; padding: 2.5rem 0; }
 .clw-head { margin-bottom: 2.5rem; }
-.clw-heading-line { width: 5rem; border-top: 4px solid #F04E30; margin-bottom: 1rem; }
-.clw-desc { font-size: 1rem; color: #707070; margin-top: 0.5rem; max-width: 48rem; }
+.clw-heading-line { width: 5rem; border-top: 4px solid #91288D; margin-bottom: 1rem; }
+.clw-desc { font-size: 1rem; color: #555555; margin-top: 0.5rem; max-width: 48rem; }
 .clw-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
 @media (min-width: 640px) { .clw-grid { gap: 1.5rem; } }
 @media (min-width: 768px) { .clw-grid { gap: 2rem; } }
 @media (min-width: 1024px) { .clw-grid { grid-template-columns: repeat(2, 1fr); } }
 .clw-card { display: flex; flex-direction: column; width: 100%; }
-.clw-title { color: #223971; font-family: 'Oswald', sans-serif; font-size: 1.125rem; margin-bottom: 0.5rem; padding: 0 0.5rem; }
+.clw-title { color: #2E57AA; font-family: 'Oswald', sans-serif; font-size: 1.125rem; margin-bottom: 0.5rem; padding: 0 0.5rem; }
 @media (min-width: 768px) { .clw-title { font-size: 1.5rem; } }
 .clw-swiper-wrap { position: relative; width: 100%; }
 .clw-swiper {
@@ -226,8 +226,8 @@
 /* ================= 8. HOSTEL ================= */
 .clho-section { padding: 4rem 1rem; }
 .clho-head { margin-bottom: 2.5rem; }
-.clho-heading-line { width: 5rem; border-top: 4px solid #F04E30; margin-bottom: 1rem; }
-.clho-desc { font-size: 1rem; color: #707070; margin-top: 0.5rem; max-width: 48rem; }
+.clho-heading-line { width: 5rem; border-top: 4px solid #91288D; margin-bottom: 1rem; }
+.clho-desc { font-size: 1rem; color: #555555; margin-top: 0.5rem; max-width: 48rem; }
 .clho-grid {
     display: grid; grid-template-columns: 1fr; gap: 1.25rem;
     max-width: 72rem; margin: 0 auto;

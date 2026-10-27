@@ -23,8 +23,8 @@ const SocialLinks = ({ data }) => {
   return (
     <div className="pt-16 flex justify-center">
       <div className="mx-auto container">
-        <h2 className="text-3xl sm:text-4xl mx-auto ml-4 md:ml-0 font-[500] font-oswald-medium tracking-wider mb-10 text-[#707070] uppercase">
-          <hr className="w-12 sm:w-20 border-[#F04E30] mb-2 border-t-4" />
+        <h2 className="text-3xl sm:text-4xl mx-auto ml-4 md:ml-0 font-[500] font-oswald-medium tracking-wider mb-10 text-[#555555] uppercase">
+          <hr className="w-12 sm:w-20 border-[#91288D] mb-2 border-t-4" />
           {heading}
         </h2>
 

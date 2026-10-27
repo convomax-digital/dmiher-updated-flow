@@ -108,7 +108,7 @@ export default function SAHSCollaborations({ data }) {
 
   return (
     <section className="sahs-collab-section bg-[#f7fafd] py-20">
-      <h1 className="sahs-collab-title text-2xl sm:text-3xl md:text-4xl font-[500] font-oswald-medium text-[#58595B] uppercase leading-snug mb-6 text-center">
+      <h1 className="sahs-collab-title text-2xl sm:text-3xl md:text-4xl font-[500] font-oswald-medium text-[#555555] uppercase leading-snug mb-6 text-center">
         {heading}
       </h1>
 
@@ -117,14 +117,14 @@ export default function SAHSCollaborations({ data }) {
             contains the "Collaborations" heading + paragraph); fall back to a
             plain sub-heading when no description is set. */}
         <div className="mb-12">
-          <hr className="w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4" />
+          <hr className="w-16 sm:w-20 border-[#91288D] mb-4 border-t-4" />
           {description ? (
             <div
-              className="sahs-collab-description text-[#707070] font-[Arial]"
+              className="sahs-collab-description text-[#555555] font-[Arial]"
               dangerouslySetInnerHTML={{ __html: description }}
             />
           ) : (
-            <h2 className="sahs-collab-heading text-3xl md:text-4xl font-[500] text-[#707070] uppercase font-oswald-medium leading-tight">
+            <h2 className="sahs-collab-heading text-3xl md:text-4xl font-[500] text-[#555555] uppercase font-oswald-medium leading-tight">
               {subHeading}
             </h2>
           )}
@@ -133,7 +133,7 @@ export default function SAHSCollaborations({ data }) {
         {/* National Partners */}
         {nationalPartners.length > 0 && (
           <div className="mb-14">
-            <h3 className="sahs-collab-partners-heading text-xl sm:text-2xl font-bold text-[#122E5E] mb-6 text-center">
+            <h3 className="sahs-collab-partners-heading text-xl sm:text-2xl font-bold text-[#132F5C] mb-6 text-center">
               National Developmental Partners
             </h3>
             <Swiper
@@ -186,7 +186,7 @@ export default function SAHSCollaborations({ data }) {
                       className="h-20 object-contain mx-auto"
                     />
                   </div>
-                  <span className="text-xs text-[#707070] font-semibold">
+                  <span className="text-xs text-[#555555] font-semibold">
                     {p.name}
                   </span>
                 </div>
@@ -222,13 +222,13 @@ export default function SAHSCollaborations({ data }) {
               </div>
 
               <div className="lg:w-2/2 w-full">
-                {/* <h4 className="font-bold text-[#707070] text-lg mb-2">
+                {/* <h4 className="font-bold text-[#555555] text-lg mb-2">
                   {max.partner_label ||
                     "Skills and Knowledge Partner: Max Healthcare Education"}
                 </h4> */}
                 {max.description && (
                   <p
-                    className="text-[#707070] text-sm mb-4"
+                    className="text-[#555555] text-sm mb-4"
                     dangerouslySetInnerHTML={{ __html: max.description }}
                   />
                 )}
@@ -238,7 +238,7 @@ export default function SAHSCollaborations({ data }) {
                       href={(max.cta_link || "/programs").trim()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#F04E30] hover:bg-[#122E5E] text-white font-semibold px-6 py-3 rounded-md transition-colors"
+                      className="inline-block bg-[#91288D] hover:bg-[#132F5C] text-white font-semibold px-6 py-3 rounded-md transition-colors"
                     >
                       {(max.cta_label || "Explore Programs").trim()}
                     </a>

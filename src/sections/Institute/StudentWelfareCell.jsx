@@ -58,7 +58,7 @@ export default function StudentWelfareCell({
       <div className="flex flex-col md:flex-row items-center gap-10 mt-6">
         {/* Description */}
         {description && (
-          <div className="w-full md:w-1/3 text-[#58595B]">
+          <div className="w-full md:w-1/3 text-[#555555]">
             <RichTextRenderer html={description} />
           </div>
         )}
@@ -87,7 +87,7 @@ export default function StudentWelfareCell({
         <div className="flex justify-center mt-6">
           <Link
             to={`/${base}/${cta_key}`}
-            className="inline-block bg-[#F04E30] hover:bg-[#122E5E] text-white font-semibold px-8 py-3 rounded-md transition-colors"
+            className="inline-block bg-[#91288D] hover:bg-[#132F5C] text-white font-semibold px-8 py-3 rounded-md transition-colors"
           >
             {label}
           </Link>

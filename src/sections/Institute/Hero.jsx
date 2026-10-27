@@ -271,7 +271,7 @@ function Hero({ data, slug }) {
 
             // Plain text item. Phone => clickable tel link, otherwise a link if
             // a url exists, else static text. Color comes from data (navy default).
-            const textStyle = { color: btn.text_color || "#122E5E" };
+            const textStyle = { color: btn.text_color || "#132F5C" };
             if (isPhone) {
               return (
                 <a key={index} href={href} className="hero-topbar-text" style={textStyle}>
@@ -340,7 +340,7 @@ function Hero({ data, slug }) {
                 const href = buttonHref(btn);
                 const label = buttonText(btn);
                 const isPill = (Boolean(btn.bg_color) && !isPhone) || isNpf;
-                const textStyle = { color: btn.text_color || "#122E5E" };
+                const textStyle = { color: btn.text_color || "#132F5C" };
 
                 if (isNpf) {
                   return (
@@ -442,6 +442,12 @@ function Hero({ data, slug }) {
           // otherwise the desktop image is used everywhere. No JS / no layout
           // shift — the source is chosen before the image even loads.
           const mobileSrc = resolveImage(slide.img_mobile);
+          // Which side the slide's copy sits on. Drives BOTH the content box and
+          // the overlay, so the dark end of the wash always lands under the
+          // text and the photo stays clear on the other side (as on aiher.edu.in).
+          const textPos = ["right", "center", "bottom"].includes(slide.textPosition)
+            ? slide.textPosition
+            : "left";
           return (
             <div
               key={idx}
@@ -477,19 +483,9 @@ function Hero({ data, slug }) {
                 <div className="hero-bg-fallback" />
               )}
 
-              <div className="hero-overlay" />
+              <div className={`hero-overlay hero-overlay-${textPos}`} />
 
-              <div
-                className={`hero-content ${
-                  slide.textPosition === "right"
-                    ? "hero-content-right"
-                    : slide.textPosition === "center"
-                    ? "hero-content-center"
-                    : slide.textPosition === "bottom"
-                    ? "hero-content-bottom"
-                    : "hero-content-left"
-                }`}
-              >
+              <div className={`hero-content hero-content-${textPos}`}>
                 <RichTextRenderer html={slide.desc} />
 
                 {/* paragraph is a rich-text field (dashboard editor): render
@@ -569,7 +565,7 @@ function Hero({ data, slug }) {
             <NpfInlineCard
               widgetId={enquiryForm.widget_id}
               title={enquiryForm.title || "ENQUIRE NOW"}
-              titleBg={enquiryForm.title_bg_color || "#F04E30"}
+              titleBg={enquiryForm.title_bg_color || "#91288D"}
               titleColor={enquiryForm.title_text_color || "#FFFFFF"}
               width={enquiryForm.data_width || 400}
               height={enquiryForm.data_height || 540}

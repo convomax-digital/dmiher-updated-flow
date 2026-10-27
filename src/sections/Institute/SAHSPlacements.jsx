@@ -44,8 +44,8 @@ export default function SAHSPlacements({ data }) {
   return (
     <section className="sahs-plc-section bg-[#FAF8F0] py-20">
       <div className="container">
-        <h2 className="sahs-plc-heading text-3xl md:text-4xl font-oswald-medium font-[500] text-[#707070] mb-6">
-          <hr className="w-16 border-[#F04E30] border-t-4 mb-3" />
+        <h2 className="sahs-plc-heading text-3xl md:text-4xl font-oswald-medium font-[500] text-[#555555] mb-6">
+          <hr className="w-16 border-[#91288D] border-t-4 mb-3" />
           {heading}
         </h2>
         {description && (
@@ -57,7 +57,7 @@ export default function SAHSPlacements({ data }) {
         {medianPackage && (
           <p className="sahs-plc-median text-md text-gray-500 mb-10">
             The median package for international placements currently stands at{" "}
-            <span className="font-bold text-[#F04E30]">{medianPackage}</span>,
+            <span className="font-bold text-[#91288D]">{medianPackage}</span>,
             reflecting the global value of a DMIHER Allied Health Sciences
             education.
           </p>
@@ -101,7 +101,7 @@ export default function SAHSPlacements({ data }) {
         {/* National Placements */}
         {national.length > 0 && (
           <div>
-            <h3 className="sahs-plc-nat-title text-xl sm:text-2xl font-bold text-[#122E5E] mb-6">
+            <h3 className="sahs-plc-nat-title text-xl sm:text-2xl font-bold text-[#132F5C] mb-6">
               National Placements
             </h3>
             <Swiper

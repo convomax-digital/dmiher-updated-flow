@@ -47,7 +47,7 @@ const FloatingButtons = ({ data }) => {
     <>
       <div className="fb-rail">
         {buttons.map((btn, idx) => {
-          const bgColor = btn.bg_color || "#122E5E";
+          const bgColor = btn.bg_color || "#132F5C";
           const baseClass =
             "pointer-events-auto inline-block text-white text-sm px-6 py-2 [writing-mode:vertical-rl] rotate-180";
 

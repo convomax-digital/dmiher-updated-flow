@@ -1,0 +1,144 @@
+/* ──────────────────────────────────────────────────────────────────────
+   Brand button gradient (AIHER)
+
+   Every filled call-to-action on the site uses one gradient instead of a
+   flat brand fill:  teal → blue → purple, left to right. Hover collapses
+   it to solid brand purple with a soft drop shadow.
+
+   It is applied as `background-image`, NOT `background-color`, on purpose:
+   a background image paints OVER whatever background-color the element
+   already has. That means the rule needs no !important and still wins for
+
+     - Tailwind arbitrary fills written in JSX   (bg-[#91288D], bg-[#132F5C])
+     - the named button classes defined in CSS   (.admission-btn, .cta, …)
+     - CMS-authored inline colours coming from the dashboard
+       (.hero-apply-btn / .hero-mobile-apply get style="background-color:…")
+
+   Elements WITHOUT a brand fill — slider arrows, close icons, the mobile
+   nav toggle, ghost/outline buttons — are not listed here and keep their
+   own look.
+   ────────────────────────────────────────────────────────────────────── */
+
+:root {
+    --btn-gradient: linear-gradient(90deg, #1DA1B4 0%, #2E57AA 45%, #91288D 100%);
+    --btn-gradient-hover: linear-gradient(90deg, #91288D 0%, #91288D 100%);
+    --btn-gradient-shadow: 0 6px 14px rgba(145, 40, 141, .25);
+}
+
+/* Filled CTAs written inline in JSX as Tailwind arbitrary values.
+   Scoped to a/button so brand-coloured cards, bars and section panels
+   keep their flat fill. */
+a[class*="bg-[#91288D]"],
+button[class*="bg-[#91288D]"],
+a[class*="bg-[#91288d]"],
+button[class*="bg-[#91288d]"],
+a[class*="bg-[#A32E9E]"],
+button[class*="bg-[#A32E9E]"],
+a[class*="bg-[#7E2279]"],
+button[class*="bg-[#7E2279]"],
+a[class*="bg-[#132F5C]"],
+button[class*="bg-[#132F5C]"],
+a[class*="bg-[#132f5c]"],
+button[class*="bg-[#132f5c]"],
+
+/* The same treatment, for the buttons that get their fill from a named
+   class in one of the section stylesheets. */
+.btn-adani-cta,
+.btn-primary,
+.cta,
+.about-btn,
+.admission-btn,
+.alumni-btn,
+.center-extra-btn,
+.cert-card-view-btn,
+.exam-btn,
+.hero-apply-btn,
+.hero-mobile-apply,
+.hero-phone-btn,
+.holistic-cta-button,
+.inst-cta-btn,
+.inst-logos-btn,
+.iqac-btn,
+.iqac-report-btn,
+.modal-btn,
+.mp-single-btn,
+.mph-apply-btn,
+.mph-mobile-apply,
+.mph-phone-btn,
+.our-hospitals-content-cta,
+.preview-btn,
+.selsc-infra-card-cta,
+.selsc-infra-inner-btn,
+.stream-apply-btn,
+.subprog-card-cta,
+.up-doc-download-btn,
+.view-btn,
+.button-center,
+.button-item,
+/* Active tab / filter pills share the CTA treatment, as on aiher.edu.in. */
+.ah-tab-btn-active,
+.topui-category-btn-active,
+.up-round-btn-active-blue,
+.up-round-btn-active-orange,
+/* Floating side rail (Announcements / Admission Enquiry). Their fill is
+   CMS-authored as an inline background-color, so there is no class to
+   list — target the rail's own children instead. */
+.fb-rail > a,
+.fb-rail > button {
+    background-image: var(--btn-gradient);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-color: transparent;
+    transition: background-image .3s, box-shadow .3s;
+}
+
+a[class*="bg-[#91288D]"]:hover,
+button[class*="bg-[#91288D]"]:hover,
+a[class*="bg-[#91288d]"]:hover,
+button[class*="bg-[#91288d]"]:hover,
+a[class*="bg-[#A32E9E]"]:hover,
+button[class*="bg-[#A32E9E]"]:hover,
+a[class*="bg-[#7E2279]"]:hover,
+button[class*="bg-[#7E2279]"]:hover,
+a[class*="bg-[#132F5C]"]:hover,
+button[class*="bg-[#132F5C]"]:hover,
+a[class*="bg-[#132f5c]"]:hover,
+button[class*="bg-[#132f5c]"]:hover,
+.btn-adani-cta:hover,
+.btn-adani-cta:focus-visible,
+.btn-primary:hover,
+.cta:hover,
+.about-btn:hover,
+.admission-btn:hover,
+.alumni-btn:hover,
+.center-extra-btn:hover,
+.cert-card-view-btn:hover,
+.exam-btn:hover,
+.hero-apply-btn:hover,
+.hero-mobile-apply:hover,
+.hero-phone-btn:hover,
+.holistic-cta-button:hover,
+.inst-cta-btn:hover,
+.inst-logos-btn:hover,
+.iqac-btn:hover,
+.iqac-report-btn:hover,
+.modal-btn:hover,
+.mp-single-btn:hover,
+.mph-apply-btn:hover,
+.mph-mobile-apply:hover,
+.mph-phone-btn:hover,
+.our-hospitals-content-cta:hover,
+.preview-btn:hover,
+.selsc-infra-card-cta:hover,
+.selsc-infra-inner-btn:hover,
+.stream-apply-btn:hover,
+.subprog-card-cta:hover,
+.up-doc-download-btn:hover,
+.view-btn:hover,
+.button-center:hover,
+.button-item:hover,
+.fb-rail > a:hover,
+.fb-rail > button:hover {
+    background-image: var(--btn-gradient-hover);
+    box-shadow: var(--btn-gradient-shadow);
+}

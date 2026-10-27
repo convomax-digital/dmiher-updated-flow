@@ -213,7 +213,7 @@ function ElectivesOffered({ data: propData, college: propCollege }) {
                     {/* Content */}
                     <div className="course-card-body">
                       {course.name && (
-                        <h3 className="course-card-name group-hover:text-[#F04E30]">
+                        <h3 className="course-card-name group-hover:text-[#91288D]">
                           {course.name}
                         </h3>
                       )}
@@ -238,7 +238,7 @@ function ElectivesOffered({ data: propData, college: propCollege }) {
 
                       {course.badge_text && (
                         <div className="course-card-badge-row">
-                          <div className="course-card-badge group-hover:from-[#F04E30]/10 group-hover:to-[#122E5E]/10">
+                          <div className="course-card-badge group-hover:from-[#91288D]/10 group-hover:to-[#132F5C]/10">
                             <BadgeIcon className="course-card-badge-icon" />
                             {course.badge_text}
                           </div>
@@ -299,7 +299,7 @@ function ElectivesOffered({ data: propData, college: propCollege }) {
                   key={i}
                   className="bg-white rounded-3xl shadow-xl p-8 text-center border border-gray-100 transition-transform hover:scale-105"
                 >
-                  <div className="bg-gradient-to-r from-[#F04E30] to-[#122E5E] p-4 rounded-full shadow-lg mx-auto w-fit mb-6">
+                  <div className="bg-gradient-to-r from-[#91288D] to-[#132F5C] p-4 rounded-full shadow-lg mx-auto w-fit mb-6">
                     <HighlightIcon className="h-8 w-8 text-white" />
                   </div>
                   {cat.content && (
@@ -314,7 +314,7 @@ function ElectivesOffered({ data: propData, college: propCollege }) {
         {(header?.heading || header?.description) && (
           <div className="text-center max-w-7xl mx-auto px-4 mb-10">
             {header.heading && (
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#F04E30] to-[#122E5E] bg-clip-text text-transparent mb-2">
+              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#91288D] to-[#132F5C] bg-clip-text text-transparent mb-2">
                 {header.heading}
               </h2>
             )}

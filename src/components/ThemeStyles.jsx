@@ -5,9 +5,6 @@ import useSiteSettings from "../hooks/useSiteSettings";
  * Applies the dashboard-managed Frontend Theme (Settings → Frontend Theme)
  * to the public site at runtime:
  *
- *  - Button colors (background / hover / text) for the site's PRIMARY
- *    action buttons — the red "Apply Now"-style CTAs (Tailwind bg-red-5xx/
- *    6xx/7xx utilities on <a>/<button>) and the hero `.btn-primary`.
  *  - Default fonts: headings (h1–h6) and body text. Elements that declare
  *    their own font (e.g. editor text given a specific font) keep it.
  *  - Loads the chosen Google Fonts stylesheets on demand.
@@ -20,46 +17,9 @@ import useSiteSettings from "../hooks/useSiteSettings";
 const STYLE_ID = "dm-theme-styles";
 const FONT_LINK_ATTR = "data-dm-theme-font";
 
-// The site's primary action buttons: the brand-orange CTAs (the custom
-// .hero-apply-btn class and Tailwind arbitrary-value bg-[#F04E30] used by
-// "Apply Now"-style buttons across sections), the hero .btn-primary, and
-// red bg-red-5xx/6xx/7xx utility CTAs.
-const CTA_BASES = [
-  ".hero-apply-btn",
-  ".btn-primary",
-  'a[class*="bg-[#F04E30]"]',
-  'button[class*="bg-[#F04E30]"]',
-  'a[class*="bg-[#f04e30]"]',
-  'button[class*="bg-[#f04e30]"]',
-  'a[class*="bg-red-5"]',
-  'button[class*="bg-red-5"]',
-  'a[class*="bg-red-6"]',
-  'button[class*="bg-red-6"]',
-  'a[class*="bg-red-7"]',
-  'button[class*="bg-red-7"]',
-];
-
-const CTA_SELECTOR = CTA_BASES.join(", ");
-const CTA_HOVER_SELECTOR = CTA_BASES.map((s) => s + ":hover").join(", ");
-
-const HEX = /^#[0-9a-fA-F]{6}$/;
-
 function buildCss(theme) {
   const rules = [];
-  const btn = theme?.button || {};
   const fonts = theme?.fonts || {};
-
-  const ctaProps = [];
-  if (HEX.test(btn.bg || "")) ctaProps.push(`background: ${btn.bg} !important`);
-  if (HEX.test(btn.text || "")) ctaProps.push(`color: ${btn.text} !important`);
-  if (ctaProps.length) {
-    rules.push(`${CTA_SELECTOR} { ${ctaProps.join("; ")}; }`);
-  }
-  if (HEX.test(btn.hover || "")) {
-    rules.push(
-      `${CTA_HOVER_SELECTOR} { background: ${btn.hover} !important; }`
-    );
-  }
 
   if (fonts.heading) {
     rules.push(

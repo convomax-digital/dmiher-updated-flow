@@ -35,7 +35,7 @@ export default function ClinicalResearch({ data, pageSlug, instituteSlug }) {
           {cta?.label && (cta.cta_key || cta.key) && slug && (
             <Link
               to={`/${slug}/${cta.cta_key || cta.key}`}
-              className="mt-2 mb-4 px-6 py-2 inline-block bg-[#F04E30] hover:bg-[#122E5E] hover:scale-105 transition-transform duration-200 text-white rounded font-semibold"
+              className="mt-2 mb-4 px-6 py-2 inline-block bg-[#91288D] hover:bg-[#132F5C] hover:scale-105 transition-transform duration-200 text-white rounded font-semibold"
             >
               {cta.label}
             </Link>

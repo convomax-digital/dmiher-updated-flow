@@ -12,15 +12,15 @@ const GlobalKeyFactors = ({ data }) => {
   if (!cards.length) return null;
 
   return (
-    <div className="px-5 py-8 md:py-15 md:px-10 bg-[#fef5eb] flex justify-center">
+    <div className="px-5 py-8 md:py-15 md:px-10 bg-[#FAF1F9] flex justify-center">
       <div className="w-full container">
         <div className="mb-10">
-          <div className="border-t-4 border-[#F04E30] w-20 mb-4"></div>
-          <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#707070] font-[500]">
+          <div className="border-t-4 border-[#91288D] w-20 mb-4"></div>
+          <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-[500]">
             {heading}
           </h2>
           {subheading && (
-            <p className="text-xl text-[#122E5E] font-oswald-light mt-2">
+            <p className="text-xl text-[#132F5C] font-oswald-light mt-2">
               {subheading}
             </p>
           )}
@@ -43,7 +43,7 @@ const GlobalKeyFactors = ({ data }) => {
         >
           {cards.map((card, i) => {
             const bg = card.bg_color || "#269BFF";
-            const titleColor = card.title_color || "#122E5E";
+            const titleColor = card.title_color || "#132F5C";
             return (
               <SwiperSlide key={i}>
                 <div

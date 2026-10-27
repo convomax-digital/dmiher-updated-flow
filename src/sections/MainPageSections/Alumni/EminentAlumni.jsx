@@ -102,7 +102,7 @@ const EminentAlumni = ({ data }) => {
       {/* Header */}
       <div className="alumni-header">
         <h2 className="alumni-title">
-          <span className="block border-t-4 border-[#F04E30] w-24 mb-4"></span>
+          <span className="block border-t-4 border-[#91288D] w-24 mb-4"></span>
           {data?.basic?.title || "Eminent Alumni"}
         </h2>
 

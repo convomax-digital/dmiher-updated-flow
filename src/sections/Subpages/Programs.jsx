@@ -321,7 +321,7 @@ const SubPrograms = () => {
                           e.preventDefault();
                           window.open(applyUrl, "_blank", "noopener,noreferrer");
                         }}
-                        className="block w-full text-center bg-[#F04E30] text-white font-medium py-2.5 sm:py-3 px-4 sm:px-5 rounded-lg hover:bg-[#122E5E] transform hover:scale-[1.02] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base cursor-pointer"
+                        className="block w-full text-center bg-[#91288D] text-white font-medium py-2.5 sm:py-3 px-4 sm:px-5 rounded-lg hover:bg-[#132F5C] transform hover:scale-[1.02] transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base cursor-pointer"
                       >
                         {settings.apply_label || "Apply Now"}
                       </a>

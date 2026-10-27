@@ -153,7 +153,7 @@ function VisionMissionView({ tab }) {
         />
         <Card
           title={mission.title}
-          bgColor={mission.bg_color || "#707070"}
+          bgColor={mission.bg_color || "#555555"}
           icon={mission.icon}
           textHtml={mission.text}
         />
@@ -162,7 +162,7 @@ function VisionMissionView({ tab }) {
       {(quality.text || orgValues.length > 0 || objectives.length > 0) && (
         <div
           className="ah-vm-quality-card"
-          style={{ backgroundColor: quality.bg_color || "#122E5E" }}
+          style={{ backgroundColor: quality.bg_color || "#132F5C" }}
         >
           <div className="ah-vm-row">
             <h2 className="ah-vm-title-white">

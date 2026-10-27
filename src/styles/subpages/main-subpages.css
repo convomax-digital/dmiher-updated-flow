@@ -12,7 +12,7 @@
 
 /* ===== HEADER ===== */
 .electives-header {
-    @apply bg-[#102B64] py-8 shadow-lg;
+    @apply bg-[#132F5C] py-8 shadow-lg;
 }
 
 .electives-title {
@@ -30,7 +30,7 @@
 }
 
 .elective-card-header {
-    @apply bg-[#102B64] text-white p-6 rounded-t-3xl flex items-center gap-4;
+    @apply bg-[#132F5C] text-white p-6 rounded-t-3xl flex items-center gap-4;
 }
 
 .elective-icon {
@@ -47,7 +47,7 @@
 }
 
 .elective-name {
-    @apply text-lg font-bold text-gray-800 mb-4 leading-snug hover:text-[#F04E30];
+    @apply text-lg font-bold text-gray-800 mb-4 leading-snug hover:text-[#91288D];
 }
 
 .elective-badge {
@@ -58,7 +58,7 @@
 
 /* ================= MANDATORY DISCLOSURE ================= */
 .mandatory-card {
-    @apply flex items-start gap-4 p-6 w-full rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#fef7f6];
+    @apply flex items-start gap-4 p-6 w-full rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#FAF1F9];
 }
 
 .mandatory-card.clickable {
@@ -66,7 +66,7 @@
 }
 
 .card-icon-wrapper {
-    @apply bg-[#F04E30]/10 text-[#F04E30] rounded-full p-3;
+    @apply bg-[#91288D]/10 text-[#91288D] rounded-full p-3;
 }
 
 .card-icon {
@@ -123,7 +123,7 @@
 }
 
 .popup-link-card {
-    @apply flex items-center justify-center gap-2 w-full h-[60px] text-base font-medium text-white bg-[#102B64] rounded transition hover:bg-[#F04E30];
+    @apply flex items-center justify-center gap-2 w-full h-[60px] text-base font-medium text-white bg-[#132F5C] rounded transition hover:bg-[#91288D];
 }
 
 .popup-link-icon {
@@ -160,7 +160,7 @@
 }
 
 .disclosure-card {
-    @apply flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#fef7f6];
+    @apply flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl hover:bg-[#FAF1F9];
 }
 
 .disclosure-card.disabled {
@@ -168,7 +168,7 @@
 }
 
 .disclosure-icon-wrapper {
-    @apply bg-[#F04E30]/10 text-[#F04E30] rounded-full p-3 flex items-center justify-center;
+    @apply bg-[#91288D]/10 text-[#91288D] rounded-full p-3 flex items-center justify-center;
 }
 
 .disclosure-icon-wrapper svg {
@@ -200,7 +200,7 @@
 }
 
 .jnmc-header {
-    @apply bg-[#102B64] text-white py-8;
+    @apply bg-[#132F5C] text-white py-8;
 }
 
 .jnmc-header-title {
@@ -216,7 +216,7 @@
 }
 
 .department-header {
-    @apply bg-[#102B64] text-white rounded-xl shadow-lg p-8 text-center;
+    @apply bg-[#132F5C] text-white rounded-xl shadow-lg p-8 text-center;
 }
 
 .department-header-title {
@@ -249,7 +249,7 @@
 }
 
 .hod-designation {
-    @apply text-[#F04E30] font-semibold mb-2;
+    @apply text-[#91288D] font-semibold mb-2;
 }
 
 .hod-qualification {
@@ -285,7 +285,7 @@
 }
 
 .usp-index {
-    @apply w-6 h-6 bg-[#F04E30] text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5;
+    @apply w-6 h-6 bg-[#91288D] text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5;
 }
 
 .usp-text {
@@ -349,7 +349,7 @@
 }
 
 .streams-tab-indicator {
-    @apply absolute inset-y-0 bg-[#F04E30] rounded-xl transition-all;
+    @apply absolute inset-y-0 bg-[#91288D] rounded-xl transition-all;
 }
 
 .streams-tab {
@@ -385,11 +385,11 @@
 }
 
 .stream-apply-btn {
-    @apply w-full mt-auto bg-[#F04E30] text-white py-3 rounded-lg transition-all;
+    @apply w-full mt-auto bg-[#91288D] text-white py-3 rounded-lg transition-all;
 }
 
 .stream-apply-btn:hover {
-    @apply bg-[#102B64];
+    @apply bg-[#132F5C];
 }
 
 /* ================= Transcripts  ================= */
@@ -399,7 +399,7 @@
 }
 
 .transcript-header {
-    @apply bg-[#102B64] py-10 text-center shadow-lg;
+    @apply bg-[#132F5C] py-10 text-center shadow-lg;
 }
 
 .transcript-title {
@@ -412,7 +412,7 @@
 
 /* ===== Unified Transcript hero + sections (TranscriptSubpage) ===== */
 .transcript-hero {
-    @apply bg-[#122E5E] shadow-xl border-b border-gray-100 py-12 text-center;
+    @apply bg-[#132F5C] shadow-xl border-b border-gray-100 py-12 text-center;
 }
 
 .transcript-hero-title {
@@ -428,7 +428,7 @@
 }
 
 .transcript-section-title {
-    @apply text-3xl md:text-4xl font-bold text-[#122E5E];
+    @apply text-3xl md:text-4xl font-bold text-[#132F5C];
 }
 
 .transcript-section-subtitle {
@@ -484,7 +484,7 @@
 }
 
 .course-card-header {
-    @apply bg-[#102B64] p-6 text-white;
+    @apply bg-[#132F5C] p-6 text-white;
 }
 
 .course-header-left {
@@ -508,7 +508,7 @@
 }
 
 .course-title {
-    @apply text-xl font-bold text-gray-800 mb-3 transition hover:text-[#F04E30];
+    @apply text-xl font-bold text-gray-800 mb-3 transition hover:text-[#91288D];
 }
 
 .course-university {
@@ -516,11 +516,11 @@
 }
 
 .university-icon {
-    @apply bg-[#F04E30]/10 p-2 rounded-lg;
+    @apply bg-[#91288D]/10 p-2 rounded-lg;
 }
 
 .university-icon svg {
-    @apply w-4 h-4 text-[#F04E30];
+    @apply w-4 h-4 text-[#91288D];
 }
 
 .powered-by {
@@ -532,7 +532,7 @@
 }
 
 .course-meta svg {
-    @apply w-3 h-3 text-[#F04E30];
+    @apply w-3 h-3 text-[#91288D];
 }
 
 /* -------- Dropdown -------- */
@@ -550,7 +550,7 @@
 }
 
 .topui-category-title {
-    @apply text-3xl font-bold bg-gradient-to-r from-[#F04E30] to-[#102B64] bg-clip-text text-transparent mb-4;
+    @apply text-3xl font-bold bg-gradient-to-r from-[#91288D] to-[#132F5C] bg-clip-text text-transparent mb-4;
 }
 
 .topui-category-subtitle {
@@ -566,7 +566,7 @@
 }
 
 .topui-category-btn-active {
-    @apply bg-[#102B64] text-white;
+    @apply bg-[#132F5C] text-white;
 }
 
 
@@ -575,7 +575,7 @@
 }
 
 .topui-heading-title {
-    @apply text-4xl font-bold text-[#102B64] mb-4;
+    @apply text-4xl font-bold text-[#132F5C] mb-4;
 }
 
 .topui-heading-subtitle {
@@ -613,11 +613,11 @@
 }
 
 .accreditation-tab {
-    @apply px-6 py-2 rounded-full font-semibold bg-white text-gray-700 shadow-md transition hover:bg-[#102B64] hover:text-white;
+    @apply px-6 py-2 rounded-full font-semibold bg-white text-gray-700 shadow-md transition hover:bg-[#132F5C] hover:text-white;
 }
 
 .accreditation-tab.active {
-    @apply bg-[#F04E30] text-white scale-105 shadow-lg;
+    @apply bg-[#91288D] text-white scale-105 shadow-lg;
 }
 
 
@@ -638,7 +638,7 @@
 }
 
 .preview-btn {
-    @apply absolute bottom-4 right-4 bg-[#F04E30] text-white p-2 rounded-full hover:bg-[#102B64];
+    @apply absolute bottom-4 right-4 bg-[#91288D] text-white p-2 rounded-full hover:bg-[#132F5C];
 }
 
 .badge {
@@ -662,7 +662,7 @@
 }
 
 .card-body .year {
-    @apply text-sm font-bold text-[#F04E30] mb-2;
+    @apply text-sm font-bold text-[#91288D] mb-2;
 }
 
 .card-body p {
@@ -670,7 +670,7 @@
 }
 
 .view-btn {
-    @apply mt-auto bg-gray-100 text-gray-700 py-2 rounded-lg text-center hover:bg-[#F04E30] hover:text-white transition;
+    @apply mt-auto bg-gray-100 text-gray-700 py-2 rounded-lg text-center hover:bg-[#91288D] hover:text-white transition;
 }
 
 .accreditation-modal {
@@ -690,7 +690,7 @@
 }
 
 .modal-btn {
-    @apply mt-4 inline-block bg-[#F04E30] text-white px-5 py-2 rounded-lg hover:bg-[#102B64];
+    @apply mt-4 inline-block bg-[#91288D] text-white px-5 py-2 rounded-lg hover:bg-[#132F5C];
 }
 
 @media (min-width: 640px) {
@@ -726,7 +726,7 @@
 }
 
 .knowmore-dean-info {
-    @apply text-[#707070] leading-relaxed;
+    @apply text-[#555555] leading-relaxed;
 }
 
 .knowmore-dean-name {
@@ -937,11 +937,11 @@
 }
 
 .subprog-tabs-indicator-blue {
-    @apply bg-[#122E5E];
+    @apply bg-[#132F5C];
 }
 
 .subprog-tabs-indicator-orange {
-    @apply bg-[#F04E30];
+    @apply bg-[#91288D];
 }
 
 .subprog-inst-tab {
@@ -953,7 +953,7 @@
 }
 
 .subprog-inst-tab-inactive {
-    @apply text-gray-600 hover:text-white hover:bg-[#F04E30];
+    @apply text-gray-600 hover:text-white hover:bg-[#91288D];
 }
 
 .subprog-search-wrap {
@@ -992,7 +992,7 @@
 }
 
 .subprog-subtab-inactive {
-    @apply text-gray-600 hover:text-white hover:bg-[#122E5E];
+    @apply text-gray-600 hover:text-white hover:bg-[#132F5C];
 }
 
 .subprog-subtab-label {
@@ -1052,7 +1052,7 @@
 }
 
 .subprog-card-cta {
-    @apply w-full bg-[#F04E30] text-white py-2.5 rounded-lg hover:bg-[#122E5E] transition-all duration-300 mt-auto;
+    @apply w-full bg-[#91288D] text-white py-2.5 rounded-lg hover:bg-[#132F5C] transition-all duration-300 mt-auto;
 }
 
 .subprog-empty {
@@ -1074,11 +1074,11 @@
 }
 
 .medicine-tab-active {
-    @apply font-[500] text-[#122E5E] border-b-4 border-[#F04E30];
+    @apply font-[500] text-[#132F5C] border-b-4 border-[#91288D];
 }
 
 .medicine-tab-inactive {
-    @apply text-[#58595B];
+    @apply text-[#555555];
 }
 
 /* ================= DEPARTMENTS PAGE (Subpages/Departments.jsx) ================= */
@@ -1087,7 +1087,7 @@
 }
 
 .deptpage-header {
-    @apply bg-[#122E5E] text-white py-8 text-center;
+    @apply bg-[#132F5C] text-white py-8 text-center;
 }
 
 .deptpage-college-name {
@@ -1103,7 +1103,7 @@
 }
 
 .deptpage-dept-card {
-    @apply bg-[#122E5E] text-white rounded-xl p-8 mt-6 text-center;
+    @apply bg-[#132F5C] text-white rounded-xl p-8 mt-6 text-center;
 }
 
 .deptpage-dept-row {
@@ -1149,7 +1149,7 @@
     @apply text-xl font-bold text-gray-800 mb-2;
 }
 .deptpage-hod-details p:nth-child(2) {
-    @apply text-[#F04E30] font-semibold mb-2;
+    @apply text-[#91288D] font-semibold mb-2;
 }
 .deptpage-hod-details p:nth-child(n+3) {
     @apply text-gray-600 mb-1;
@@ -1187,7 +1187,7 @@
 }
 
 .deptpage-head-desig {
-    @apply text-[#F04E30] font-semibold mb-1;
+    @apply text-[#91288D] font-semibold mb-1;
 }
 
 .deptpage-head-qual {
@@ -1199,7 +1199,7 @@
 }
 
 .deptpage-head-email {
-    @apply text-[#F04E30] hover:underline break-all;
+    @apply text-[#91288D] hover:underline break-all;
 }
 
 /* ---- Programs section ---- */
@@ -1220,7 +1220,7 @@
 }
 
 .deptpage-programs-item svg {
-    @apply text-[#122E5E] flex-shrink-0;
+    @apply text-[#132F5C] flex-shrink-0;
 }
 
 .deptpage-staff-card {
@@ -1286,7 +1286,7 @@
 }
 
 .deptpage-usp-num {
-    @apply flex-shrink-0 w-6 h-6 bg-[#F04E30] text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5;
+    @apply flex-shrink-0 w-6 h-6 bg-[#91288D] text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5;
 }
 
 .deptpage-usp-text {
@@ -1318,7 +1318,7 @@
 }
 
 .course-card-header {
-    @apply bg-[#122E5E] hover:bg-[#F04E30] cursor-pointer p-6 text-white relative overflow-hidden;
+    @apply bg-[#132F5C] hover:bg-[#91288D] cursor-pointer p-6 text-white relative overflow-hidden;
 }
 
 .course-card-header-row {
@@ -1374,11 +1374,11 @@
 }
 
 .course-card-univ-icon-wrap {
-    @apply bg-[#F04E30]/10 p-2 rounded-lg mr-3 mt-1;
+    @apply bg-[#91288D]/10 p-2 rounded-lg mr-3 mt-1;
 }
 
 .course-card-univ-icon {
-    @apply h-4 w-4 text-[#F04E30];
+    @apply h-4 w-4 text-[#91288D];
 }
 
 .course-card-univ-label {
@@ -1398,7 +1398,7 @@
 }
 
 .course-card-badge-icon {
-    @apply h-3 w-3 mr-2 text-[#F04E30];
+    @apply h-3 w-3 mr-2 text-[#91288D];
 }
 
 .course-empty-text {

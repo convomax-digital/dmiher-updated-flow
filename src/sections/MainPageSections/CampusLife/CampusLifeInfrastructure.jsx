@@ -46,7 +46,7 @@ const CampusLifeInfrastructure = ({ data }) => {
                   </h2>
                 )}
                 {item.description && (
-                  <p className="mt-3 text-[#58595B] font-[Arial] max-w-4xl">
+                  <p className="mt-3 text-[#555555] font-[Arial] max-w-4xl">
                     {item.description}
                   </p>
                 )}

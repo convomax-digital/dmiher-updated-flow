@@ -7,7 +7,7 @@ const KeyIndicatorBlock = ({ title, subSections }) => {
   return (
     <div className="my-2">
       {title ? (
-        <h3 className="text-2xl text-[#545454] my-5 font-oswald-medium">
+        <h3 className="text-2xl text-[#393939] my-5 font-oswald-medium">
           {title}
         </h3>
       ) : null}

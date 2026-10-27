@@ -15,7 +15,7 @@ import RichTextRenderer from "../../components/RichTextRenderer";
  *       image:       "assets/.../1.jpg" | null,
  *       link:        "https://...",   // CTA target
  *       label:       "AVBRH Hospital",// CTA label
- *       bg_color:    "#fef5ea"        // content-box background
+ *       bg_color:    "#FAF1F9"        // content-box background
  *     }
  *   }
  *
@@ -56,7 +56,7 @@ export default function AffiliatedHospital({ data }) {
         {/* Content */}
         <div
           className={`w-full ${hasImage ? "md:w-1/2" : ""} p-8 flex flex-col justify-center`}
-          style={{ background: bg_color || "#fef5ea" }}
+          style={{ background: bg_color || "#FAF1F9" }}
         >
           {description && <RichTextRenderer html={description} />}
 
@@ -65,7 +65,7 @@ export default function AffiliatedHospital({ data }) {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block self-start mt-4 bg-[#F04E30] hover:bg-[#122E5E] text-white font-semibold px-6 py-3 rounded-md transition-colors"
+              className="inline-block self-start mt-4 bg-[#91288D] hover:bg-[#132F5C] text-white font-semibold px-6 py-3 rounded-md transition-colors"
             >
               {label}
             </a>

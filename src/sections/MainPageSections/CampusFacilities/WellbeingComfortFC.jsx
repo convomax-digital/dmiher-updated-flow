@@ -17,7 +17,7 @@ const WellbeingComfortFC = ({ data }) => {
       className="wfc-section"
       style={{
         backgroundColor: basic.bg_color || "#eaf4ff",
-        color: basic.text_color || "#707070",
+        color: basic.text_color || "#555555",
       }}
     >
       <div className="container">
@@ -45,7 +45,7 @@ const WellbeingComfortFC = ({ data }) => {
               <h3
                 className="wfc-card-title"
                 style={{
-                  color: basic.card_title_color || "#223971",
+                  color: basic.card_title_color || "#2E57AA",
                 }}
               >
                 {section.title}

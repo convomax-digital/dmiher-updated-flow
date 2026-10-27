@@ -187,7 +187,7 @@ const BlockRenderer = ({ block }) => {
                 style={{
                   fontSize: `${p.headingSize || 24}px`,
                   fontWeight: p.headingWeight || 700,
-                  color: p.headingColor || "#1B2A4A",
+                  color: p.headingColor || "#0E2446",
                   marginBottom: "0.75rem",
                 }}
               >
@@ -211,7 +211,7 @@ const BlockRenderer = ({ block }) => {
                   display: "inline-block",
                   marginTop: "1rem",
                   padding: "0.6rem 1.5rem",
-                  background: "#1B2A4A",
+                  background: "#0E2446",
                   color: "#fff",
                   borderRadius: "6px",
                   textDecoration: "none",
@@ -239,9 +239,9 @@ const BlockRenderer = ({ block }) => {
       };
       const variants = {
         primary: {
-          background: "#1B2A4A",
+          background: "#0E2446",
           color: "#fff",
-          borderColor: "#1B2A4A",
+          borderColor: "#0E2446",
         },
         secondary: {
           background: "#e5e7eb",
@@ -250,12 +250,12 @@ const BlockRenderer = ({ block }) => {
         },
         outline: {
           background: "transparent",
-          color: "#1B2A4A",
-          borderColor: "#1B2A4A",
+          color: "#0E2446",
+          borderColor: "#0E2446",
         },
         ghost: {
           background: "transparent",
-          color: "#1B2A4A",
+          color: "#0E2446",
           borderColor: "transparent",
           textDecoration: "underline",
         },
@@ -326,7 +326,7 @@ const BlockRenderer = ({ block }) => {
                   style={{
                     fontSize: "1.1rem",
                     fontWeight: 600,
-                    color: "#1B2A4A",
+                    color: "#0E2446",
                     marginBottom: "0.5rem",
                   }}
                 >
@@ -345,7 +345,7 @@ const BlockRenderer = ({ block }) => {
     case "gallery": {
       const items = Array.isArray(p.items) ? p.items : [];
       const cols = parseInt(p.columns || "3", 10);
-      const capBg = p.captionColor || "#1B2A4A";
+      const capBg = p.captionColor || "#0E2446";
       const capFg = p.captionTextColor || "#ffffff";
       // Image sizing / fit are prop-driven so a gallery can match the source
       // design (the live facility galleries use object-fit: contain, 400px
@@ -540,7 +540,7 @@ const BlockRenderer = ({ block }) => {
               style={{
                 fontSize: "1.5rem",
                 fontWeight: 700,
-                color: "#1B2A4A",
+                color: "#0E2446",
                 marginBottom: "1rem",
               }}
             >
@@ -555,7 +555,7 @@ const BlockRenderer = ({ block }) => {
             }}
           >
             <thead>
-              <tr style={{ background: "#1B2A4A", color: "#fff" }}>
+              <tr style={{ background: "#0E2446", color: "#fff" }}>
                 {headers.map((h, i) => (
                   <th
                     key={i}
@@ -603,7 +603,7 @@ const BlockRenderer = ({ block }) => {
               style={{
                 fontSize: "1.5rem",
                 fontWeight: 700,
-                color: "#1B2A4A",
+                color: "#0E2446",
                 marginBottom: "1rem",
               }}
             >
@@ -618,7 +618,7 @@ const BlockRenderer = ({ block }) => {
             }}
           >
             <thead>
-              <tr style={{ background: "#1B2A4A", color: "#fff" }}>
+              <tr style={{ background: "#0E2446", color: "#fff" }}>
                 {headers.map((h, i) => (
                   <th
                     key={i}
@@ -686,7 +686,7 @@ const BlockRenderer = ({ block }) => {
                 style={{
                   fontSize: "2rem",
                   fontWeight: 700,
-                  color: "#1B2A4A",
+                  color: "#0E2446",
                 }}
               >
                 {item.value || "0"}
@@ -716,7 +716,7 @@ const BlockRenderer = ({ block }) => {
               style={{
                 fontSize: "1.5rem",
                 fontWeight: 700,
-                color: "#1B2A4A",
+                color: "#0E2446",
                 marginBottom: "1rem",
               }}
             >
@@ -916,7 +916,7 @@ const BlockRenderer = ({ block }) => {
                     style={{
                       background:
                         p.striped && ri % 2 === 1 ? "#f9fafb" : "#fff",
-                      color: "#1B2A4A",
+                      color: "#0E2446",
                     }}
                   >
                     {auto && <td style={cellCss}>{ri + 1}</td>}
@@ -1172,7 +1172,7 @@ const AccordionItem = ({ item, defaultOpen }) => {
           textAlign: "left",
           fontSize: "0.95rem",
           fontWeight: 600,
-          color: "#1B2A4A",
+          color: "#0E2446",
         }}
       >
         <span>{item.title || "Section"}</span>
@@ -1327,7 +1327,7 @@ const TabsBlock = ({ items, activeColor, inactiveColor, underlineColor, alignmen
   const [active, setActive] = useState(0);
   if (!items.length) return null;
 
-  const activeCol = activeColor || "#1B2A4A";
+  const activeCol = activeColor || "#0E2446";
   const inactiveCol = inactiveColor || "#888";
   const underline = underlineColor || "#c8102e";
   const justify =

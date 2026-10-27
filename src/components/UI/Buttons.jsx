@@ -9,7 +9,7 @@ const ViewMoreButton = ({
   target = "",
 }) => {
   const baseClasses =
-    "mt-2 mb-4 px-6 py-2 bg-[#F04E30] hover:bg-[#122E5E] hover:scale-105 transition-transform duration-200 text-white rounded font-semibold ";
+    "mt-2 mb-4 px-6 py-2 bg-[#91288D] hover:bg-[#132F5C] hover:scale-105 transition-transform duration-200 text-white rounded font-semibold ";
 
   if (href) {
     return (
@@ -28,7 +28,7 @@ const ViewMoreButton = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full bg-gray-100 hover:bg-[#F04E30] text-gray-700 hover:text-white py-2 px-4 rounded-lg transition-all duration-300 font-medium block text-center"
+        className="w-full bg-gray-100 hover:bg-[#91288D] text-gray-700 hover:text-white py-2 px-4 rounded-lg transition-all duration-300 font-medium block text-center"
       >
         {label}
       </a>

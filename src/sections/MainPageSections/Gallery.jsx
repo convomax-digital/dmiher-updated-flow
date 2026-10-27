@@ -113,7 +113,7 @@ function Gallery({ data }) {
 
         {/* Active tab description */}
         {activeSection && tabs_descriptions[activeSection] && (
-          <p className="gallery-description text-[#707070] text-sm sm:text-base max-w-3xl mb-6 leading-relaxed">
+          <p className="gallery-description text-[#555555] text-sm sm:text-base max-w-3xl mb-6 leading-relaxed">
             {tabs_descriptions[activeSection]}
           </p>
         )}

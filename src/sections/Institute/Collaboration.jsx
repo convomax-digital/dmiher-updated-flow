@@ -242,7 +242,7 @@ const Collabaration = ({ data }) => {
               return (
                 <div className="p-10" key={sectionIdx}>
                   <div className="h-1 w-16 bg-[#e8502e] mb-3"></div>
-                  <h2 className="text-3xl md:text-4xl font-medium text-[#707070] uppercase font-oswald-medium leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-medium text-[#555555] uppercase font-oswald-medium leading-tight">
                     {section.heading ||
                       section.title ||
                       "RESEARCH & COLLABORATIONS"}
@@ -256,12 +256,12 @@ const Collabaration = ({ data }) => {
                       <div key={itemKey}>
                         <button
                           className={`w-full text-left py-3 border-gray-300 flex justify-between items-center text-base sm:text-lg ${isOpen
-                            ? "text-[#58595B]"
-                            : "text-[#58595B] border-b-2 border-[#58595B]"
+                            ? "text-[#555555]"
+                            : "text-[#555555] border-b-2 border-[#555555]"
                             }`}
                           onClick={() => setOpenIdx(isOpen ? -1 : itemKey)}
                         >
-                          <span className="font-oswald-light text-2xl text-[#58595B]">
+                          <span className="font-oswald-light text-2xl text-[#555555]">
                             {item.question || item.title || item.heading}
                           </span>
                           <span className="text-xl font-bold">
@@ -269,7 +269,7 @@ const Collabaration = ({ data }) => {
                           </span>
                         </button>
                         {isOpen && (
-                          <div className="pb-3 font-[Arial] text-sm text-[#58595B] border-b-2">
+                          <div className="pb-3 font-[Arial] text-sm text-[#555555] border-b-2">
                             {getAccordionContent(item)}
                           </div>
                         )}

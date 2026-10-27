@@ -118,7 +118,7 @@ function HomeANNOUNCEMENTS() {
             </button>
             <Link
               to={`/announcements?tab=${encodeURIComponent(activeCategory)}`}
-              className="text-[#F04E30] font-semibold text-sm ml-1 cursor-pointer hover:underline whitespace-nowrap"
+              className="text-[#91288D] font-semibold text-sm ml-1 cursor-pointer hover:underline whitespace-nowrap"
             >
               VIEW ALL
             </Link>
@@ -130,7 +130,7 @@ function HomeANNOUNCEMENTS() {
           {visibleItems.map((item, index) => (
             <ul
               key={index}
-              className="text-[#707070] max-lg:border-b max-lg:pb-2 lg:border-r max-lg:border-gray-200 border-gray-300 last:border-b-0 sm:last:border-r-0 pr-6 pl-6 pb-4 sm:pb-0"
+              className="text-[#555555] max-lg:border-b max-lg:pb-2 lg:border-r max-lg:border-gray-200 border-gray-300 last:border-b-0 sm:last:border-r-0 pr-6 pl-6 pb-4 sm:pb-0"
             >
               <a
                 href={item.url}

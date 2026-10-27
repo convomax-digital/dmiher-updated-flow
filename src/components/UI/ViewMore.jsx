@@ -8,7 +8,7 @@ const ViewMoreButton = ({
   target = "",
 }) => {
   const baseClasses =
-    "mt-2 mb-4 px-6 py-2 bg-[#F04E30] hover:bg-[#122E5E] hover:scale-105 transition-transform duration-200 text-white rounded font-semibold ";
+    "mt-2 mb-4 px-6 py-2 bg-[#91288D] hover:bg-[#132F5C] hover:scale-105 transition-transform duration-200 text-white rounded font-semibold ";
 
   if (href) {
     return (

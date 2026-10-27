@@ -12,20 +12,20 @@ const DALNurturingEcosystem = ({ data }) => {
     <div className="w-full px-4 py-12 sm:py-16">
       <div className="max-w-5xl mx-auto text-center">
         {heading && (
-          <h2 className="text-3xl md:text-4xl font-[500] text-[#707070] tracking-wide uppercase font-oswald-medium">
+          <h2 className="text-3xl md:text-4xl font-[500] text-[#555555] tracking-wide uppercase font-oswald-medium">
             {heading}
           </h2>
         )}
         {subheading && (
-          <p className="text-base text-[#707070] mt-3">{subheading}</p>
+          <p className="text-base text-[#555555] mt-3">{subheading}</p>
         )}
         {bold_intro && (
-          <p className="text-sm font-semibold text-[#0a2c61] mt-6">
+          <p className="text-sm font-semibold text-[#132F5C] mt-6">
             {bold_intro}
           </p>
         )}
         {description && (
-          <div className="text-sm text-[#707070] mt-3 leading-7">
+          <div className="text-sm text-[#555555] mt-3 leading-7">
             <RichTextRenderer html={description} />
           </div>
         )}

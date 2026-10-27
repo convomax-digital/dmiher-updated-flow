@@ -14,7 +14,7 @@ const TINYMCE_BASE = `${API_BASE}/files/js/tinymce`;
 const TINYMCE_SRC = `${TINYMCE_BASE}/tinymce.min.js`;
 
 const inputClass =
-  "w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F04E30]";
+  "w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#91288D]";
 
 export default function RichTextEditor({ value, onChange, placeholder }) {
   const areaRef = useRef(null);

@@ -21,7 +21,7 @@ const TabContent = ({ content }) => {
   const html = content?.html || "";
 
   return (
-    <div className="text-[#707070]">
+    <div className="text-[#555555]">
       {description && (
         <div className="text-base">
           <RichTextRenderer html={description} />
@@ -229,8 +229,8 @@ const DALFellowship = ({ data }) => {
   return (
     <div className="my-10 max-w-7xl mx-auto px-4 md:px-0">
       {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-[500] text-[#707070] mb-6 tracking-wide uppercase font-oswald-medium">
-        <hr className="w-16 sm:w-20 border-[#F04E30] mb-3 border-t-4" />
+      <h2 className="text-3xl md:text-4xl font-[500] text-[#555555] mb-6 tracking-wide uppercase font-oswald-medium">
+        <hr className="w-16 sm:w-20 border-[#91288D] mb-3 border-t-4" />
         {header.title || "Fellowship Courses at (SOAS)"}
       </h2>
 
@@ -242,8 +242,8 @@ const DALFellowship = ({ data }) => {
             onClick={() => setActiveIdx(i)}
             className={`px-5 py-2 text-sm md:text-base font-medium transition-colors border-b-2 ${
               activeIdx === i
-                ? "border-[#F04E30] text-[#F04E30]"
-                : "border-transparent text-[#707070] hover:text-[#F04E30]"
+                ? "border-[#91288D] text-[#91288D]"
+                : "border-transparent text-[#555555] hover:text-[#91288D]"
             }`}
           >
             {tab.label}

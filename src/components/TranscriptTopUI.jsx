@@ -54,8 +54,8 @@ const TopUI = ({
               onClick={() => setSelectedCategory(cat)}
               className={`px-12 py-4 m-1 font-bold text-lg transition-all duration-300 rounded-2xl transform hover:scale-105 ${
                 selectedCategory === cat
-                  ? "bg-[#F04E30] text-white shadow-lg scale-105"
-                  : "text-gray-600 hover:bg-[#122E5E] hover:text-white hover:shadow-md"
+                  ? "bg-[#91288D] text-white shadow-lg scale-105"
+                  : "text-gray-600 hover:bg-[#132F5C] hover:text-white hover:shadow-md"
               }`}
             >
               <MapPin className="h-5 w-5 inline mr-2" />

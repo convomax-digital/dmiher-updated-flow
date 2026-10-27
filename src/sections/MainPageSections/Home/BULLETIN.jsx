@@ -109,7 +109,7 @@ function HomeBulletin() {
             </button>
             <Link
               to={`/bulletin?tab=${encodeURIComponent(activeTab)}`}
-              className="text-[#F04E30] font-semibold text-sm ml-1 cursor-pointer hover:underline whitespace-nowrap"
+              className="text-[#91288D] font-semibold text-sm ml-1 cursor-pointer hover:underline whitespace-nowrap"
             >
               VIEW ALL
             </Link>
@@ -128,7 +128,7 @@ function HomeBulletin() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base md:text-xl cursor-pointer text-[#707070] leading-tight hover:underline block"
+                  className="text-base md:text-xl cursor-pointer text-[#555555] leading-tight hover:underline block"
                   style={{
                     fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
                   }}
@@ -137,7 +137,7 @@ function HomeBulletin() {
                 </a>
               ) : (
                 <h3
-                  className="text-base md:text-xl cursor-pointer hover:underline text-[#707070] leading-tight"
+                  className="text-base md:text-xl cursor-pointer hover:underline text-[#555555] leading-tight"
                   style={{
                     fontFamily: '"Helvetica LT Std", "Condensed", sans-serif',
                   }}

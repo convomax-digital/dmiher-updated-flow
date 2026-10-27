@@ -97,8 +97,8 @@ const MegaMenu = ({ sections, onItemClick }) => {
                     onClick={(e) => onItemClick && onItemClick(e, item.slug)}
                     className={`text-sm font-semibold block transition-colors duration-200 ${
                       isActive(item.slug)
-                        ? "text-[#ff4f37]"
-                        : "text-[#58595B] hover:text-[#ff4f37]"
+                        ? "text-[#A32E9E]"
+                        : "text-[#555555] hover:text-[#A32E9E]"
                     }`}
                   >
                     {item.title}
@@ -120,11 +120,11 @@ const MegaMenu = ({ sections, onItemClick }) => {
               className="w-full max-w-[400px] transition-opacity duration-300"
             />
 
-            <h5 className="text-[#ff4f37] my-2 text-sm font-bold uppercase transition-all duration-300">
+            <h5 className="text-[#A32E9E] my-2 text-sm font-bold uppercase transition-all duration-300">
               {preview.title}
             </h5>
 
-            <p className="text-[#58595B] text-base transition-all duration-300">
+            <p className="text-[#555555] text-base transition-all duration-300">
               {preview.description}
             </p>
 

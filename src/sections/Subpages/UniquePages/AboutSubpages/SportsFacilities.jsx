@@ -36,8 +36,8 @@ export default function SportsFacilities({ data = {} }) {
       {/* HERO */}
       {(hero.heading || hero.description) && (
         <div className="container py-14">
-          <h2 className="text-3xl md:text-4xl font-[500] text-[#707070] tracking-wide uppercase font-oswald-medium">
-            <hr className="w-16 sm:w-20 border-[#F04E30] mb-3 border-t-4" />
+          <h2 className="text-3xl md:text-4xl font-[500] text-[#555555] tracking-wide uppercase font-oswald-medium">
+            <hr className="w-16 sm:w-20 border-[#91288D] mb-3 border-t-4" />
             {hero.heading}
           </h2>
           {hero.description && (
@@ -64,7 +64,7 @@ export default function SportsFacilities({ data = {} }) {
             </div>
             {commitment.description && (
               <RichTextRenderer
-                className="text-base md:text-lg leading-relaxed text-[#707070]"
+                className="text-base md:text-lg leading-relaxed text-[#555555]"
                 html={commitment.description}
               />
             )}
@@ -140,13 +140,13 @@ export default function SportsFacilities({ data = {} }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
               {gallery.heading && (
-                <h2 className="text-3xl md:text-4xl font-[500] text-[#707070] font-oswald-medium uppercase">
-                  <hr className="w-16 sm:w-20 border-[#F04E30] mb-3 border-t-4" />
+                <h2 className="text-3xl md:text-4xl font-[500] text-[#555555] font-oswald-medium uppercase">
+                  <hr className="w-16 sm:w-20 border-[#91288D] mb-3 border-t-4" />
                   {gallery.heading}
                 </h2>
               )}
               {gallery.subtitle && (
-                <p className="mt-2 text-[#707070]">{gallery.subtitle}</p>
+                <p className="mt-2 text-[#555555]">{gallery.subtitle}</p>
               )}
             </div>
 

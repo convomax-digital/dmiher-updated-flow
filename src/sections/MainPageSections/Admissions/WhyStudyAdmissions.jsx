@@ -22,7 +22,7 @@ const HighlightCard = ({ item }) => (
         {item.title && (
           <h3
             className="mb-1 text-6xl font-bold font-HelveticaLTStd-BoldCond"
-            style={{ color: item.titleColor || "#F04E30" }}
+            style={{ color: item.titleColor || "#91288D" }}
           >
             {item.title}
             {item.superscript && (
@@ -33,7 +33,7 @@ const HighlightCard = ({ item }) => (
         {item.subtitle && (
           <p
             className="text-2xl font-bold mt-1"
-            style={{ color: item.titleColor || "#F04E30" }}
+            style={{ color: item.titleColor || "#91288D" }}
           >
             {item.subtitle}
           </p>
@@ -58,7 +58,7 @@ const HighlightCard = ({ item }) => (
     {item.footerText && (
       <div
         className="h-24 text-white text-lg font-normal p-2 text-center flex items-center justify-center"
-        style={{ background: item.footerBg || "#122E5E" }}
+        style={{ background: item.footerBg || "#132F5C" }}
       >
         <p className="leading-snug line-clamp-3">{item.footerText}</p>
       </div>
@@ -93,8 +93,8 @@ const WhyStudyAdmissions = ({ data }) => {
   return (
     <section ref={sectionRef} className="pt-10 bg-[#FAFAF6] flex justify-center">
       <div className="w-full mx-auto max-w-7xl px-5">
-        <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-wide text-[#707070] font-[500] mb-10 whitespace-pre-line">
-          <div className="border-t-4 border-[#EE4B2B] w-20 mb-2"></div>
+        <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-wide text-[#555555] font-[500] mb-10 whitespace-pre-line">
+          <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
           {heading}
         </h2>
 

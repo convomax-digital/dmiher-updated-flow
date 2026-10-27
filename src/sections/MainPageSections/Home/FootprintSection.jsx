@@ -105,7 +105,7 @@ const FootprintSection = ({ data }) => {
             <div
               className="image-container"
               style={{
-                backgroundColor: currentTab.bg_color || "#122E5E",
+                backgroundColor: currentTab.bg_color || "#132F5C",
               }}
             >
               <div className="image-inner">

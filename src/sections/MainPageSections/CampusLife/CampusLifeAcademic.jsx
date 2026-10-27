@@ -21,8 +21,8 @@ const CampusLifeAcademic = ({ data }) => {
   // First tab open by default; -1 = all collapsed.
   const [activeIdx, setActiveIdx] = useState(0);
 
-  const bg = data?.section_style?.bg_color || data?.bg_color || "#122E5E";
-  const accent = data?.accent_color || "#F04E30";
+  const bg = data?.section_style?.bg_color || data?.bg_color || "#132F5C";
+  const accent = data?.accent_color || "#91288D";
 
   if (!tabs.length) return null;
 

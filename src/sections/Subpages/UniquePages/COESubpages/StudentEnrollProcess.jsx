@@ -258,7 +258,7 @@ export default function StudentEnrollProcess({ data = {} }) {
                       key={i}
                       href={resolveImage(d.file)}
                       onClick={(e) => saveFile(e, resolveImage(d.file), d.label)}
-                      className="bg-transparent border-2 border-gray-800 text-gray-800 px-6 py-2 rounded-lg font-semibold flex items-center justify-center hover:bg-[#F04E30] hover:border-[#F04E30] hover:text-white transition-all duration-300"
+                      className="bg-transparent border-2 border-gray-800 text-gray-800 px-6 py-2 rounded-lg font-semibold flex items-center justify-center hover:bg-[#91288D] hover:border-[#91288D] hover:text-white transition-all duration-300"
                     >
                       <Download className="w-4 h-4 mr-2" />
                       {d.label || "Download"}

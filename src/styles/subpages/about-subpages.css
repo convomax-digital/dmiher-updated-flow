@@ -5,33 +5,33 @@
      - sections/Subpages/UniquePages/AboutSubpages/SportsFacilities.jsx
    Holds the brand-colour accents that were previously written as inline styles,
    so colours are tracked in one place. Layout stays as Tailwind utilities in the
-   components. Brand palette: navy #122E5E · orange #F04E30 · gold #E1CD67 ·
-   grey #707070.
+   components. Brand palette: navy #132F5C · orange #91288D · gold #C77ABF ·
+   grey #555555.
    ========================================================================== */
 
 /* ---- Sports Facilities ------------------------------------------------------ */
 .sports-commitment-icon {
-    background-color: #f04e30;
+    background-color: #91288D;
 }
 
 .sports-heading-navy {
-    color: #122e5e;
+    color: #132F5C;
 }
 
 .sports-text-muted {
-    color: #707070;
+    color: #555555;
 }
 
 .sports-partner-icon {
-    background-color: #122e5e;
+    background-color: #132F5C;
 }
 
 .sports-badge {
-    background-color: #f04e30;
+    background-color: #91288D;
     color: #ffffff;
 }
 
 .sports-view-link {
-    background-color: #e1cd67;
-    color: #122e5e;
+    background-color: #C77ABF;
+    color: #132F5C;
 }

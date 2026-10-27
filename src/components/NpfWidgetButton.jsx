@@ -50,7 +50,7 @@ export default function NpfWidgetButton({
               style={{ width: "100%", minHeight: h }}
             />
           ) : (
-            <p style={{ color: "#707070" }}>Form widget ID not configured.</p>
+            <p style={{ color: "#555555" }}>Form widget ID not configured.</p>
           )}
         </div>
       </PopupModal>

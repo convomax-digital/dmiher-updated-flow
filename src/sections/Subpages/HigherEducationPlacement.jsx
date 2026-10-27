@@ -126,7 +126,7 @@ function HigherEducationPlacement({ data: propData, college, pageSlug: propPageS
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       {/* ============ HERO STATS ============ */}
-      <section className="py-16 bg-[#122E5E]">
+      <section className="py-16 bg-[#132F5C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             {hero.heading && (
@@ -180,8 +180,8 @@ function HigherEducationPlacement({ data: propData, college, pageSlug: propPageS
                     key={i}
                     className="w-40 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 text-center border border-blue-100 hover:shadow-lg transition-all duration-300"
                   >
-                    <Icon className="h-8 w-8 text-[#122E5E] mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-[#122E5E] mb-1">
+                    <Icon className="h-8 w-8 text-[#132F5C] mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-[#132F5C] mb-1">
                       {loc.value}
                     </div>
                     <div className="text-sm text-gray-600 font-medium">

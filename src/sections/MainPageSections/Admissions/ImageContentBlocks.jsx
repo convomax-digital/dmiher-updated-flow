@@ -38,7 +38,7 @@ const ImageContentBlocks = ({ data }) => {
             >
               {block.heading && (
                 <div className="mb-2">
-                  <h2 className="text-3xl text-[#122E5E] mb-2 font-oswald-medium font-light tracking-tight leading-tight">
+                  <h2 className="text-3xl text-[#132F5C] mb-2 font-oswald-medium font-light tracking-tight leading-tight">
                     {block.heading}
                   </h2>
                 </div>
@@ -51,7 +51,7 @@ const ImageContentBlocks = ({ data }) => {
               {showCta && (
                 <Link
                   to={block.url}
-                  className="inline-block px-4 py-2 bg-[#F04E30] text-white rounded text-sm font-semibold transition hover:bg-[#d13d22]"
+                  className="inline-block px-4 py-2 bg-[#91288D] text-white rounded text-sm font-semibold transition hover:bg-[#d13d22]"
                 >
                   {block.label}
                 </Link>

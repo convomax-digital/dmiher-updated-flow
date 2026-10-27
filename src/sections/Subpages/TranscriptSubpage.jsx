@@ -113,7 +113,7 @@ function TranscriptSubpage({ data }) {
                         {/* Body */}
                         <div className="course-card-body">
                           {course.title && (
-                            <h3 className="course-card-name group-hover:text-[#F04E30]">
+                            <h3 className="course-card-name group-hover:text-[#91288D]">
                               {course.title}
                             </h3>
                           )}
@@ -136,7 +136,7 @@ function TranscriptSubpage({ data }) {
 
                           {course.badge && (
                             <div className="course-card-badge-row">
-                              <div className="course-card-badge group-hover:from-[#F04E30]/10 group-hover:to-[#122E5E]/10">
+                              <div className="course-card-badge group-hover:from-[#91288D]/10 group-hover:to-[#132F5C]/10">
                                 <Star className="course-card-badge-icon" />
                                 {course.badge}
                               </div>

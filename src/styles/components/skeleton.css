@@ -166,7 +166,7 @@
 
 .error-boundary-btn {
   padding: 0.5rem 1.5rem;
-  background: #F04E30;
+  background: #91288D;
   color: white;
   border: none;
   border-radius: 8px;
@@ -176,7 +176,7 @@
 }
 
 .error-boundary-btn:hover {
-  background: #122E5E;
+  background: #132F5C;
 }
 
 /* ============== FADE-IN ANIMATION ============== */

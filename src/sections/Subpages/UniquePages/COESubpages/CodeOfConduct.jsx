@@ -74,7 +74,7 @@ export default function CodeOfConduct({ data = {} }) {
               {bellItems.length > 0 && (
                 <div className="bg-white rounded-lg shadow-md p-6 border mb-6 hover:shadow-lg transition-all duration-300">
                   {bell_schedule.card_title && (
-                    <h4 className="text-xl font-semibold text-[#122E5E] mb-4 flex items-center">
+                    <h4 className="text-xl font-semibold text-[#132F5C] mb-4 flex items-center">
                       {bell_schedule.card_icon && (
                         <span className="mr-2 shrink-0">
                           {renderIcon(bell_schedule.card_icon, 20, "")}
@@ -110,7 +110,7 @@ export default function CodeOfConduct({ data = {} }) {
                       className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg transition-all duration-300"
                     >
                       {c.title && (
-                        <h4 className="text-lg font-semibold text-[#122E5E] mb-4 flex items-center">
+                        <h4 className="text-lg font-semibold text-[#132F5C] mb-4 flex items-center">
                           {c.icon && (
                             <span className="mr-2 shrink-0">
                               {renderIcon(c.icon, 20, "")}
@@ -193,7 +193,7 @@ export default function CodeOfConduct({ data = {} }) {
                       className="bg-white rounded-lg shadow-md p-6 border hover:shadow-lg transition-all duration-300"
                     >
                       {c.title && (
-                        <h4 className="text-lg font-semibold text-[#122E5E] mb-4 flex items-center">
+                        <h4 className="text-lg font-semibold text-[#132F5C] mb-4 flex items-center">
                           {c.icon && (
                             <span className="mr-2 shrink-0">
                               {renderIcon(c.icon, 20, "")}
@@ -260,7 +260,7 @@ export default function CodeOfConduct({ data = {} }) {
               {(governing_bylaw.title || governing_bylaw.description) && (
                 <WhiteCard title={governing_bylaw.title} icon={governing_bylaw.icon}>
                   {governing_bylaw.description && (
-                    <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-[#122E5E]">
+                    <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-[#132F5C]">
                       <RichTextRenderer html={governing_bylaw.description} />
                     </div>
                   )}
@@ -276,7 +276,7 @@ export default function CodeOfConduct({ data = {} }) {
                   <div className="space-y-4">
                     {reportSteps.map((s, i) => (
                       <div key={i} className="flex items-start">
-                        <div className="bg-[#122E5E] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-4 flex-shrink-0 mt-1">
+                        <div className="bg-[#132F5C] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-4 flex-shrink-0 mt-1">
                           {i + 1}
                         </div>
                         <p className="text-gray-700">

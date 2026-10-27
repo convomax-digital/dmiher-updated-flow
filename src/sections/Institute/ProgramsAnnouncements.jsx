@@ -26,7 +26,7 @@
 //               onClick={() => openPopup(btn.type)}
 //               className="announce-btn"
 //             >
-//               <FileText className="text-[#F04E30] w-6 h-6 min-w-6" />
+//               <FileText className="text-[#91288D] w-6 h-6 min-w-6" />
 //               <div className="announce-btn-text">{btn.label}</div>
 //             </button>
 //           ))}
@@ -167,7 +167,7 @@ const ProgramsAnnouncements = ({ data }) => {
                 onClick={() => handleClick(card)}
                 className="announce-btn"
               >
-                <FileText className="text-[#F04E30] w-6 h-6 min-w-6" />
+                <FileText className="text-[#91288D] w-6 h-6 min-w-6" />
                 <div className="announce-btn-text">{card.title}</div>
               </button>
             ))}
@@ -236,7 +236,7 @@ const Popup = ({ name, docs = [], onClose }) => {
                   href={doc.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-2 w-full h-[60px] text-base font-medium text-white bg-[#122E5E] rounded hover:bg-[#F04E30] transition ${
+                  className={`flex items-center justify-center gap-2 w-full h-[60px] text-base font-medium text-white bg-[#132F5C] rounded hover:bg-[#91288D] transition ${
                     !multi ? "max-w-xs mx-auto" : ""
                   } ${
                     isSingleInLastRow ? "md:col-span-2 md:max-w-xs md:mx-auto" : ""

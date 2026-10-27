@@ -16,10 +16,10 @@
     @apply cursor-pointer text-center py-4 max-w-[1000px] text-xl md:text-2xl transition;
 }
 .cadwl-lab-tab-active {
-    @apply font-bold text-[#122E5E] border-b-4 border-[#F04E30];
+    @apply font-bold text-[#132F5C] border-b-4 border-[#91288D];
 }
 .cadwl-lab-tab-inactive {
-    @apply text-[#58595B];
+    @apply text-[#555555];
 }
 
 /* Body wrapper */
@@ -29,10 +29,10 @@
 
 /* Section heading with red rule above */
 .cadwl-lab-heading {
-    @apply text-2xl sm:text-3xl md:text-4xl text-[#707070] mb-2 font-oswald-medium font-[500] tracking-tight leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl text-[#555555] mb-2 font-oswald-medium font-[500] tracking-tight leading-tight;
 }
 .cadwl-lab-heading-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2;
 }
 .cadwl-lab-heading-text {
     @apply whitespace-pre-line block;
@@ -43,10 +43,10 @@
     @apply flex flex-col md:flex-row gap-10 py-4 items-start;
 }
 .cadwl-lab-text {
-    @apply flex-1 text-[#58595B] text-base leading-relaxed min-w-[300px];
+    @apply flex-1 text-[#555555] text-base leading-relaxed min-w-[300px];
 }
 .cadwl-lab-location {
-    @apply text-lg sm:text-xl font-bold text-[#122E5E] mb-2;
+    @apply text-lg sm:text-xl font-bold text-[#132F5C] mb-2;
 }
 .cadwl-lab-desc {
     @apply mb-4 text-sm leading-relaxed;
@@ -82,7 +82,7 @@
     @apply w-full h-full object-cover;
 }
 .cadwl-lab-swiper .swiper-pagination-bullet-active {
-    background: #F04E30;
+    background: #91288D;
 }
 
 /* Key Officials */
@@ -90,7 +90,7 @@
     @apply mt-12;
 }
 .cadwl-lab-officials-heading {
-    @apply text-xl font-bold text-[#122E5E] mb-6;
+    @apply text-xl font-bold text-[#132F5C] mb-6;
 }
 .cadwl-lab-officials-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6;
@@ -106,7 +106,7 @@
     @apply w-full p-4;
 }
 .cadwl-lab-official-role {
-    @apply text-[#F04E30] font-semibold mb-1;
+    @apply text-[#91288D] font-semibold mb-1;
 }
 .cadwl-lab-official-rule {
     @apply border-t border-black/40 my-2;
@@ -115,7 +115,7 @@
     @apply font-bold;
 }
 .cadwl-lab-official-details {
-    @apply text-sm text-[#58595B];
+    @apply text-sm text-[#555555];
 }
 .cadwl-lab-official-details p {
     @apply mb-0;
@@ -131,13 +131,13 @@
     @apply mt-0;
 }
 .cadwl-lab-infra-heading {
-    @apply text-2xl sm:text-3xl md:text-4xl text-[#707070] mb-2 font-oswald-medium font-[500] tracking-tight leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl text-[#555555] mb-2 font-oswald-medium font-[500] tracking-tight leading-tight;
 }
 .cadwl-lab-infra-grid {
     @apply mt-12 flex flex-wrap gap-4;
 }
 .cadwl-lab-infra-item {
-    @apply text-lg sm:text-xl text-[#58595B] sm:max-w-[250px] pb-4 sm:pr-4 mr-4 w-full sm:w-auto;
+    @apply text-lg sm:text-xl text-[#555555] sm:max-w-[250px] pb-4 sm:pr-4 mr-4 w-full sm:w-auto;
 }
 .cadwl-lab-infra-item-divider {
     @apply max-sm:border-b sm:border-r border-black/50;

@@ -29,7 +29,7 @@ function PdfPopup({ item, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
-          <h3 className="text-lg font-bold text-[#f04e30]">{item.label}</h3>
+          <h3 className="text-lg font-bold text-[#91288D]">{item.label}</h3>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 text-2xl leading-none cursor-pointer"
@@ -44,7 +44,7 @@ function PdfPopup({ item, onClose }) {
               href={pdf.file}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-[#122E5E] text-white rounded-lg px-4 py-3 text-sm font-medium hover:bg-[#1a3f7a] transition-colors"
+              className="flex items-center justify-center gap-2 bg-[#132F5C] text-white rounded-lg px-4 py-3 text-sm font-medium hover:bg-[#1a3f7a] transition-colors"
             >
               <LucideIcons.FileText size={16} />
               {pdf.label}
@@ -87,8 +87,8 @@ export default function MandatoryDisclosure({
           <div className="flex flex-wrap justify-left gap-4 mt-6">
             {items.map((item, i) => {
               const inner = (
-                <div className="font-oswald-medium flex items-center gap-2.5 px-6 py-3 bg-[#b8e6fe] text-[#f04e30] rounded-lg font-normal text-sm sm:text-base hover:bg-[#f04e30] hover:text-[#fff] transition-colors cursor-pointer">
-                  <span className="text-[#122e5e]">{item.icon && <BoxIcon name={item.icon} size={18} />}</span>
+                <div className="font-oswald-medium flex items-center gap-2.5 px-6 py-3 bg-[#b8e6fe] text-[#91288D] rounded-lg font-normal text-sm sm:text-base hover:bg-[#91288D] hover:text-[#fff] transition-colors cursor-pointer">
+                  <span className="text-[#132F5C]">{item.icon && <BoxIcon name={item.icon} size={18} />}</span>
                   
                   {item.label}
                 </div>

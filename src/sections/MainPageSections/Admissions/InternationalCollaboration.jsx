@@ -8,7 +8,7 @@ export default function InternationalCollaborations({ data }) {
     <div
       className="relative text-white px-4 py-10 md:py-20"
           style={{
-              backgroundColor: "#122E5E",
+              backgroundColor: "#132F5C",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "70%",

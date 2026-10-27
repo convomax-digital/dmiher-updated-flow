@@ -23,7 +23,7 @@ export default function PdfLinkList({ data = {} }) {
         {items.map((item, i) => {
           const href = item.pdf ? resolveImage(item.pdf) : null;
           const row = (
-            <div className="w-full bg-white border border-gray-300 rounded-md px-5 py-3.5 text-[#1a4b7c] hover:bg-gray-50 hover:border-[#122E5E] transition-colors">
+            <div className="w-full bg-white border border-gray-300 rounded-md px-5 py-3.5 text-[#1a4b7c] hover:bg-gray-50 hover:border-[#132F5C] transition-colors">
               {item.title}
             </div>
           );

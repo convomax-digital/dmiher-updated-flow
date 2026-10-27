@@ -14,7 +14,7 @@ const ActivitiesAndAnnouncements = ({ data }) => {
   return (
     <section
       className="alumni-activities-section"
-      style={{ backgroundColor: data?.basic?.bg_color || "#fee8d2" }}
+      style={{ backgroundColor: data?.basic?.bg_color || "#F3DCF0" }}
     >
       <div className="alumni-activities-container">
 

@@ -38,8 +38,8 @@ function InstituteCampusTabsNav({ data }) {
             key={idx}
             className={`cursor-pointer text-center ${textSize} py-4 ${maxWidth} max-sm:w-full max-sm:border-b ${
               isActive
-                ? `${activeWeight} text-[#122E5E] border-b-4 border-[#F04E30]`
-                : "text-[#58595B]"
+                ? `${activeWeight} text-[#132F5C] border-b-4 border-[#91288D]`
+                : "text-[#555555]"
             }`}
           >
             <Link

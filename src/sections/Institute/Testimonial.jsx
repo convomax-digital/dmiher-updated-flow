@@ -19,7 +19,7 @@ const testimonialHtml = (t) => {
   if (t?.desc) html += t.desc;
   if (t?.name) html += `<p style="font-weight:600;margin-top:0.5rem;">${t.name}</p>`;
   const meta = [t?.info, t?.batch].filter(Boolean).join(" | ");
-  if (meta) html += `<p style="color:#707070;">${meta}</p>`;
+  if (meta) html += `<p style="color:#555555;">${meta}</p>`;
   return html;
 };
 

@@ -125,7 +125,7 @@ const Navbar = () => {
                               key={subItem.id}
                               to={subItem.slug}
                               onClick={(e) => handleMegaItemClick(e, subItem.slug)}
-                              className="block py-1 text-sm hover:text-[#F04E30]"
+                              className="block py-1 text-sm hover:text-[#91288D]"
                             >
                               {subItem.title}
                             </Link>

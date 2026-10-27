@@ -99,7 +99,7 @@ function CampusFacilities({ data }) {
             />
 
             {tab.description && (
-              <p className="cf-tab-description text-[#707070] text-sm sm:text-base max-w-3xl mb-5 leading-relaxed">
+              <p className="cf-tab-description text-[#555555] text-sm sm:text-base max-w-3xl mb-5 leading-relaxed">
                 {tab.description}
               </p>
             )}

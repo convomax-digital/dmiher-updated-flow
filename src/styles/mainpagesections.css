@@ -67,7 +67,7 @@
 }
 
 .slide-icons {
-    @apply bg-[#E1CD67] h-full flex items-center justify-center p-[40px] rounded-[16px];
+    @apply bg-[#C77ABF] h-full flex items-center justify-center p-[40px] rounded-[16px];
 }
 
 /* Global-leaders logo grid — same layout as the live site: a fixed 4-column
@@ -89,7 +89,7 @@
 }
 
 .icons-text p {
-    @apply text-[20px] font-bold text-[#707070] leading-[1.4];
+    @apply text-[20px] font-bold text-[#555555] leading-[1.4];
 }
 
 .video-section {
@@ -97,7 +97,7 @@
 }
 
 .video-heading {
-    @apply text-[32px] font-medium mb-[40px] text-[#707070];
+    @apply text-[32px] font-medium mb-[40px] text-[#555555];
 }
 
 .video-thumbnail-wrapper {
@@ -144,7 +144,7 @@
 }
 
 .home-steps-heading-text {
-    @apply text-2xl md:text-5xl p-6 md:p-10 text-[#707070] mb-4 leading-snug;
+    @apply text-2xl md:text-5xl p-6 md:p-10 text-[#555555] mb-4 leading-snug;
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
 }
@@ -158,23 +158,23 @@
 }
 
 .counter-circle {
-    @apply bg-[#E1CD67] rounded-full w-32 h-32 md:w-36 md:h-36 flex items-center justify-center shadow-md;
+    @apply bg-[#C77ABF] rounded-full w-32 h-32 md:w-36 md:h-36 flex items-center justify-center shadow-md;
 }
 
 .counter-value {
-    @apply text-4xl text-[#122E5E];
+    @apply text-4xl text-[#132F5C];
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
 }
 
 .counter-label {
-    @apply mt-2 text-2xl text-[#122E5E] text-center max-w-[9rem];
+    @apply mt-2 text-2xl text-[#132F5C] text-center max-w-[9rem];
     font-weight: 600;
     font-family: 'Oswald', sans-serif;
 }
 
 .home-steps-paragraphs {
-    @apply mt-8 text-[#58595B] max-w-3xl mx-auto text-base;
+    @apply mt-8 text-[#555555] max-w-3xl mx-auto text-base;
 }
 
 .home-steps-text {
@@ -206,7 +206,7 @@
 }
 
 .view-all-link {
-    @apply text-[#F04E30] font-semibold text-sm hover:underline whitespace-nowrap;
+    @apply text-[#91288D] font-semibold text-sm hover:underline whitespace-nowrap;
 }
 
 .announcement-grid {
@@ -223,7 +223,7 @@
 
 .announcement-item a,
 .announcement-item h3 {
-    @apply text-xl text-[#707070];
+    @apply text-xl text-[#555555];
 }
 
 .date {
@@ -252,7 +252,7 @@
 }
 
 .bulletin-item {
-    @apply border-r pr-3 last:border-0 text-[#707070];
+    @apply border-r pr-3 last:border-0 text-[#555555];
 }
 
 .bulletin-item a {
@@ -363,11 +363,11 @@
 }
 
 .reco-subheading {
-    @apply text-xl font-semibold text-[#707070] mb-3;
+    @apply text-xl font-semibold text-[#555555] mb-3;
 }
 
 .reco-text {
-    @apply text-[#707070] mb-3;
+    @apply text-[#555555] mb-3;
 }
 
 .reco-text-strong {
@@ -375,12 +375,12 @@
 }
 
 .reco-list {
-    @apply list-disc list-inside text-[#58595B] space-y-1;
+    @apply list-disc list-inside text-[#555555] space-y-1;
 }
 
 /* ===================== THE EDGE ===================== */
 .edge-section {
-    @apply bg-white py-12 text-[#707070] font-sans;
+    @apply bg-white py-12 text-[#555555] font-sans;
 }
 
 .edge-header {
@@ -472,7 +472,7 @@
 
 /* ===================== RESEARCH Opportunity ===================== */
 .research-op-section {
-    @apply bg-white py-12 text-[#707070];
+    @apply bg-white py-12 text-[#555555];
 }
 
 
@@ -530,7 +530,7 @@
 }
 
 .sdg-title {
-    @apply text-xl text-[#707070] leading-snug mt-4;
+    @apply text-xl text-[#555555] leading-snug mt-4;
 }
 
 .sdg-right {
@@ -547,7 +547,7 @@
 }
 
 .funded-desc {
-    @apply text-[#707070] max-w-3xl mb-4;
+    @apply text-[#555555] max-w-3xl mb-4;
 }
 
 .funded-grid {
@@ -608,15 +608,15 @@
 }
 
 /* .infograph-title {
-    @apply text-3xl md:text-4xl font-[500] text-[#707070] uppercase mb-4 ;
+    @apply text-3xl md:text-4xl font-[500] text-[#555555] uppercase mb-4 ;
 }
 
 .infograph-line {
-    @apply w-16 sm:w-20 border-[#F04E30] border-t-4 mb-2;
+    @apply w-16 sm:w-20 border-[#91288D] border-t-4 mb-2;
 } */
 
 .infograph-subtitle {
-    @apply text-xl font-semibold text-[#707070] mt-6 mb-8;
+    @apply text-xl font-semibold text-[#555555] mt-6 mb-8;
 }
 
 
@@ -646,15 +646,15 @@
 }
 
 .alliances-heading {
-    @apply text-3xl font-[500] tracking-normal text-[#707070] mb-4;
+    @apply text-3xl font-[500] tracking-normal text-[#555555] mb-4;
 }
 
 .alliances-heading-line {
-    @apply border-t-4 border-[#EE4B2B] w-20 mb-2;
+    @apply border-t-4 border-[#7E2279] w-20 mb-2;
 }
 
 .alliances-text {
-    @apply max-w-xl text-[#58595B];
+    @apply max-w-xl text-[#555555];
 }
 
 .alliances-list {
@@ -700,11 +700,11 @@
 }
 
 .enquiry-card:hover {
-    @apply bg-[#fef7f6];
+    @apply bg-[#FAF1F9];
 }
 
 .enquiry-icon-wrap {
-    @apply bg-[#F04E30]/10 text-[#F04E30] rounded-full p-3;
+    @apply bg-[#91288D]/10 text-[#91288D] rounded-full p-3;
 }
 
 .enquiry-icon {
@@ -728,7 +728,7 @@
 }
 
 .enquiry-modal-title {
-    @apply text-xl font-semibold mb-4 text-[#F04E30];
+    @apply text-xl font-semibold mb-4 text-[#91288D];
 }
 
 .npf-container {
@@ -737,7 +737,7 @@
 
 /* ================= IQAC Functional units ================= */
 .functional-section {
-    @apply bg-gray-100 py-16 font-[Arial] text-[#58595B];
+    @apply bg-gray-100 py-16 font-[Arial] text-[#555555];
 }
 
 
@@ -747,7 +747,7 @@
 }
 
 .functional-description {
-    @apply mt-4 max-w-3xl text-sm text-[#58595B];
+    @apply mt-4 max-w-3xl text-sm text-[#555555];
 }
 
 .functional-grid {
@@ -832,11 +832,11 @@
 }
 
 .iqac-btn {
-    @apply py-3 w-[320px] text-white text-sm rounded shadow-md bg-[#0f2c5c] transition-all duration-200 transform;
+    @apply py-3 w-[320px] text-white text-sm rounded shadow-md bg-[#132F5C] transition-all duration-200 transform;
 }
 
 .iqac-btn:hover {
-    @apply scale-105 bg-[#f04e30];
+    @apply scale-105 bg-[#91288D];
 }
 
 /* ================= REPORTS ================= */
@@ -845,7 +845,7 @@
 }
 
 .iqac-reports-title {
-    @apply text-[#0f2c5c] text-xl font-bold mb-2 ml-10;
+    @apply text-[#132F5C] text-xl font-bold mb-2 ml-10;
 }
 
 .iqac-report-list {
@@ -853,11 +853,11 @@
 }
 
 .iqac-report-item {
-    @apply flex items-center gap-2 bg-sky-200 text-[#F04E30] px-6 py-3 w-[150px] rounded-md shadow-md transition;
+    @apply flex items-center gap-2 bg-sky-200 text-[#91288D] px-6 py-3 w-[150px] rounded-md shadow-md transition;
 }
 
 .iqac-report-item:hover {
-    @apply bg-[#F04E30] text-white scale-105;
+    @apply bg-[#91288D] text-white scale-105;
 }
 
 /* ================= ABOUT  ================= */
@@ -900,7 +900,7 @@
 }
 
 .about-btn {
-    @apply px-6 py-3 rounded-full text-white bg-[#122E5E] hover:bg-[#F04E30] font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-md text-center block cursor-pointer;
+    @apply px-6 py-3 rounded-full text-white bg-[#132F5C] hover:bg-[#91288D] font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-md text-center block cursor-pointer;
 }
 
 /* ================= COMMITTEES ================= */
@@ -909,11 +909,11 @@
 }
 
 .committees-title {
-    @apply text-3xl font-[500] text-[#707070] uppercase mb-5 tracking-wide;
+    @apply text-3xl font-[500] text-[#555555] uppercase mb-5 tracking-wide;
 }
 
 .committees-underline {
-    @apply w-16 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 border-[#91288D] mb-2 border-t-4;
 }
 
 .committees-grid {
@@ -921,11 +921,11 @@
 }
 
 .committee-card {
-    @apply flex items-start gap-4 p-6 rounded-2xl bg-white shadow-md border border-gray-200 transition-all duration-300 hover:shadow-xl hover:bg-[#fef7f6];
+    @apply flex items-start gap-4 p-6 rounded-2xl bg-white shadow-md border border-gray-200 transition-all duration-300 hover:shadow-xl hover:bg-[#FAF1F9];
 }
 
 .committee-icon {
-    @apply bg-[#F04E30]/10 text-[#F04E30] rounded-full p-3;
+    @apply bg-[#91288D]/10 text-[#91288D] rounded-full p-3;
 }
 
 .committee-name {
@@ -942,7 +942,7 @@
 }
 
 .core-values-title {
-    @apply text-3xl font-[500] text-[#707070];
+    @apply text-3xl font-[500] text-[#555555];
 }
 
 .core-values-slide {
@@ -950,7 +950,7 @@
 }
 
 .core-values-number {
-    @apply flex-shrink-0 w-10 h-10 rounded-full bg-[#58595B] opacity-40 text-white flex items-center justify-center text-xl mr-4;
+    @apply flex-shrink-0 w-10 h-10 rounded-full bg-[#555555] opacity-40 text-white flex items-center justify-center text-xl mr-4;
 }
 
 .core-values-arrows-mobile {
@@ -994,7 +994,7 @@
 }
 
 .core-objectives-title {
-    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#707070] tracking-wider mb-2 max-w-4xl leading-tight;
+    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#555555] tracking-wider mb-2 max-w-4xl leading-tight;
 }
 
 .core-objectives-subtitle {
@@ -1035,11 +1035,11 @@
 }
 
 .joe-underline {
-    @apply w-16 border-[#F04E30] mb-6 border-t-[3px];
+    @apply w-16 border-[#91288D] mb-6 border-t-[3px];
 }
 
 .joe-title {
-    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#707070] tracking-wider mb-4 max-w-4xl leading-tight;
+    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#555555] tracking-wider mb-4 max-w-4xl leading-tight;
 }
 
 .joe-description {
@@ -1055,7 +1055,7 @@
 }
 
 .joe-timeline-title {
-    @apply text-2xl sm:text-[26px] font-oswald-medium font-bold text-[#0E2D5B] whitespace-nowrap;
+    @apply text-2xl sm:text-[26px] font-oswald-medium font-bold text-[#132F5C] whitespace-nowrap;
 }
 
 .joe-timeline-line {
@@ -1121,7 +1121,7 @@
 }
 
 .joe-dispensation-title {
-    @apply flex items-center gap-4 text-2xl sm:text-[26px] font-oswald-medium font-bold text-[#0E2D5B] mb-4;
+    @apply flex items-center gap-4 text-2xl sm:text-[26px] font-oswald-medium font-bold text-[#132F5C] mb-4;
 }
 
 .joe-dispensation-line {
@@ -1177,11 +1177,11 @@
 }
 
 .fdp-activities-underline {
-    @apply w-16 border-[#F04E30] mb-4 border-t-[3px];
+    @apply w-16 border-[#91288D] mb-4 border-t-[3px];
 }
 
 .fdp-activities-title {
-    @apply text-3xl sm:text-4xl font-[500] font-oswald-medium uppercase text-[#707070] mb-4 relative;
+    @apply text-3xl sm:text-4xl font-[500] font-oswald-medium uppercase text-[#555555] mb-4 relative;
 }
 
 .fdp-activities-description {
@@ -1234,11 +1234,11 @@
 }
 
 .thrust-areas-underline {
-    @apply w-16 border-[#F04E30] mb-6 border-t-[3px];
+    @apply w-16 border-[#91288D] mb-6 border-t-[3px];
 }
 
 .thrust-areas-title {
-    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#707070] tracking-wider mb-12;
+    @apply text-3xl md:text-4xl font-[500] font-oswald-medium uppercase text-[#555555] tracking-wider mb-12;
 }
 
 .thrust-areas-grid {
@@ -1272,7 +1272,7 @@
 
 .thrust-areas-banner-box h3 {
     @apply text-2xl md:text-3xl font-[300] font-oswald-medium text-center;
-    color: #1a2f4d;
+    color: #0E2446;
 }
 
 @media (max-width: 767px) {
@@ -1296,7 +1296,7 @@
 
 /* ================= EXCELLENCE ================= */
 .excellence-wrapper {
-    @apply max-w-6xl px-5 mx-auto text-center bg-white text-[#707070];
+    @apply max-w-6xl px-5 mx-auto text-center bg-white text-[#555555];
 }
 
 .excellence-title {
@@ -1312,11 +1312,11 @@
 }
 
 .excellence-highlight-title {
-    @apply text-2xl font-bold text-[#122E5E];
+    @apply text-2xl font-bold text-[#132F5C];
 }
 
 .excellence-highlight-sub {
-    @apply text-[15px] text-[#122E5E] mt-1 font-[500];
+    @apply text-[15px] text-[#132F5C] mt-1 font-[500];
 }
 
 .excellence-grid {
@@ -1324,7 +1324,7 @@
 }
 
 .excellence-card {
-    @apply p-4 h-full flex flex-col items-center border border-b-0 border-[#58595B];
+    @apply p-4 h-full flex flex-col items-center border border-b-0 border-[#555555];
 }
 
 
@@ -1343,7 +1343,7 @@
 }
 
 .excellence-card-desc {
-    @apply text-xs text-[#58595B] text-center;
+    @apply text-xs text-[#555555] text-center;
 }
 
 /* ================= Vision and mission ================= */
@@ -1377,7 +1377,7 @@
 }
 
 .mission-card {
-    @apply bg-[#e5cf60] text-[#3a3a3a];
+    @apply bg-[#C77ABF] text-[#3a3a3a];
 }
 
 /* Watermark icon — top-right corner, faded */
@@ -1409,7 +1409,7 @@
 }
 
 .section-line {
-    @apply w-10 border-t-[3px] border-[#F04E30];
+    @apply w-10 border-t-[3px] border-[#91288D];
     margin: 0 0 14px 0;
 }
 
@@ -1479,7 +1479,7 @@
 
 /* ================= DMIHER Journey ================= */
 .dmiher-journey-wrapper {
-    @apply min-h-[1000px] overflow-x-hidden relative bg-[#122E5E];
+    @apply min-h-[1000px] overflow-x-hidden relative bg-[#132F5C];
 }
 
 .dmiher-journey-container {
@@ -1543,7 +1543,7 @@
 }
 
 .sdg-card-rank {
-    @apply text-[#707070] text-sm;
+    @apply text-[#555555] text-sm;
 }
 
 .sdg-footer-score {
@@ -1583,7 +1583,7 @@
 }
 
 .cf-section-title {
-    @apply text-3xl md:text-4xl mt-3 text-[#707070] uppercase;
+    @apply text-3xl md:text-4xl mt-3 text-[#555555] uppercase;
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
 }
@@ -1593,7 +1593,7 @@
 }
 
 .cf-subtitle {
-    @apply text-sm sm:text-lg text-[#F04E30] font-medium;
+    @apply text-sm sm:text-lg text-[#91288D] font-medium;
 }
 
 .cf-divider {
@@ -1609,7 +1609,7 @@
 }
 
 .cf-view-all {
-    @apply text-[#F04E30] ml-2 font-semibold sm:text-base text-sm hover:underline whitespace-nowrap;
+    @apply text-[#91288D] ml-2 font-semibold sm:text-base text-sm hover:underline whitespace-nowrap;
     font-family: "Helvetica LT Std", "Condensed", sans-serif;
 }
 
@@ -1689,7 +1689,7 @@
 }
 
 .tab-title-active {
-    @apply text-[#707070];
+    @apply text-[#555555];
 }
 
 .tab-title-inactive {
@@ -1785,16 +1785,16 @@
 
 
 .important-contacts-heading {
-    @apply text-3xl font-[500] text-[#707070] mb-4 uppercase;
+    @apply text-3xl font-[500] text-[#555555] mb-4 uppercase;
 }
 
 .important-contacts-heading-line {
-    @apply w-16 h-2 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 h-2 border-[#91288D] mb-2 border-t-4;
 }
 
 
 .important-contacts-phone {
-    @apply bg-[#F04E30] text-white py-2 px-5 mb-8 flex items-center justify-center font-semibold text-base cursor-pointer;
+    @apply bg-[#91288D] text-white py-2 px-5 mb-8 flex items-center justify-center font-semibold text-base cursor-pointer;
 }
 
 .important-contacts-grid {
@@ -1810,7 +1810,7 @@
 }
 
 .important-contact-title-text {
-    @apply text-[#F04E30] font-semibold text-sm leading-snug;
+    @apply text-[#91288D] font-semibold text-sm leading-snug;
 }
 
 .important-contact-body {
@@ -1818,11 +1818,11 @@
 }
 
 .important-contact-text {
-    @apply text-sm text-[#707070];
+    @apply text-sm text-[#555555];
 }
 
 .important-contact-label {
-    @apply font-bold text-[#707070];
+    @apply font-bold text-[#555555];
 }
 
 
@@ -1831,15 +1831,15 @@
 }
 
 .centers-heading {
-    @apply text-2xl text-[#707070] mb-8 font-[500] tracking-tight leading-tight uppercase;
+    @apply text-2xl text-[#555555] mb-8 font-[500] tracking-tight leading-tight uppercase;
 }
 
 .centers-heading-line {
-    @apply block border-t-4 border-[#F04E30] w-20 mb-2 mr-4;
+    @apply block border-t-4 border-[#91288D] w-20 mb-2 mr-4;
 }
 
 .centers-description {
-    @apply text-[#58595B] max-w-[1000px];
+    @apply text-[#555555] max-w-[1000px];
 }
 
 .centers-list {
@@ -1847,11 +1847,11 @@
 }
 
 .centers-item {
-    @apply text-[#58595B];
+    @apply text-[#555555];
 }
 
 .center-extra-btn {
-    @apply px-12 py-3 w-[300px] mt-5 flex rounded-md text-blue-900 bg-blue-100 shadow-md hover:bg-[#F04E30] hover:text-white font-semibold transition hover:scale-105 justify-center duration-200 transform;
+    @apply px-12 py-3 w-[300px] mt-5 flex rounded-md text-blue-900 bg-blue-100 shadow-md hover:bg-[#91288D] hover:text-white font-semibold transition hover:scale-105 justify-center duration-200 transform;
 }
 
 
@@ -1883,7 +1883,7 @@
 }
 
 .admission-icon {
-    @apply w-10 h-10 mb-4 rounded-md bg-[#F04E30] text-white flex items-center justify-center;
+    @apply w-10 h-10 mb-4 rounded-md bg-[#91288D] text-white flex items-center justify-center;
 }
 
 .admission-card-title {
@@ -1891,7 +1891,7 @@
 }
 
 .admission-btn {
-    @apply mt-auto text-center bg-[#F04E30] text-white text-sm font-semibold py-2 rounded-md transition-colors duration-300 hover:bg-[#0C2C5B];
+    @apply mt-auto text-center bg-[#91288D] text-white text-sm font-semibold py-2 rounded-md transition-colors duration-300 hover:bg-[#132F5C];
 }
 
 
@@ -1900,7 +1900,7 @@
 
 /* ================= IQAC ================= */
 .functional {
-    @apply bg-gray-100 text-[#58595B] py-16 font-[Arial];
+    @apply bg-gray-100 text-[#555555] py-16 font-[Arial];
 }
 
 .functional-container {
@@ -1970,7 +1970,7 @@
 }
 
 .iqac-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-4;
 }
 
 .iqac-title {
@@ -1982,7 +1982,7 @@
 }
 
 .iqac-btn {
-    @apply py-3 px-6 text-white text-sm sm:text-base rounded shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-[#f04e30] bg-[#0f2c5c];
+    @apply py-3 px-6 text-white text-sm sm:text-base rounded shadow-md transition-all duration-200 transform hover:scale-105 hover:bg-[#91288D] bg-[#132F5C];
 }
 
 .iqac-btn.disabled {
@@ -1994,7 +1994,7 @@
 }
 
 .iqac-annual-title {
-    @apply text-[#0f2c5c] text-xl font-bold mb-2;
+    @apply text-[#132F5C] text-xl font-bold mb-2;
 }
 
 .iqac-reports {
@@ -2002,20 +2002,20 @@
 }
 
 .iqac-report-btn {
-    @apply flex items-center gap-2 bg-sky-200 text-[#F04E30] hover:bg-[#F04E30] hover:text-white px-6 py-3 rounded-md shadow-md transition hover:scale-105 w-[150px];
+    @apply flex items-center gap-2 bg-sky-200 text-[#91288D] hover:bg-[#91288D] hover:text-white px-6 py-3 rounded-md shadow-md transition hover:scale-105 w-[150px];
 }
 
 .iqac-icon {
-    @apply w-5 h-5 text-[#0B2A6D];
+    @apply w-5 h-5 text-[#1A3C73];
 }
 
 .iqac-minutes-popup-btn {
-    @apply flex items-center gap-2 bg-[#0B2A6D] text-white px-6 py-3 rounded-lg shadow-md transition hover:bg-[#1a3f8a] hover:scale-105 font-medium text-sm no-underline;
+    @apply flex items-center gap-2 bg-[#1A3C73] text-white px-6 py-3 rounded-lg shadow-md transition hover:bg-[#1a3f8a] hover:scale-105 font-medium text-sm no-underline;
 }
 
 /* ================= ACTIVITIES AND ANNOUNCEMENTS ================= */
 .section-bg {
-    @apply bg-[#fee8d2] py-8 sm:py-10;
+    @apply bg-[#F3DCF0] py-8 sm:py-10;
 }
 
 .container-custom {
@@ -2023,7 +2023,7 @@
 }
 
 .section-title {
-    @apply text-2xl sm:text-3xl md:text-4xl font-[500] text-[#707070] tracking-wider;
+    @apply text-2xl sm:text-3xl md:text-4xl font-[500] text-[#555555] tracking-wider;
 }
 
 .card {
@@ -2035,7 +2035,7 @@
 }
 
 .view-all-btn {
-    @apply text-[#f2542d] text-xs sm:text-sm font-semibold hover:underline;
+    @apply text-[#91288D] text-xs sm:text-sm font-semibold hover:underline;
 }
 
 .news-item {
@@ -2078,11 +2078,11 @@
 }
 
 .alumni-title {
-    @apply text-3xl sm:text-4xl font-[500] text-[#545454] uppercase;
+    @apply text-3xl sm:text-4xl font-[500] text-[#393939] uppercase;
 }
 
 .alumni-btn {
-    @apply px-4 py-1 border border-[#F04E30] text-[#F04E30] rounded-full hover:bg-[#F04E30] hover:text-white transition;
+    @apply px-4 py-1 border border-[#91288D] text-[#91288D] rounded-full hover:bg-[#91288D] hover:text-white transition;
 }
 
 .alumni-grid {
@@ -2129,7 +2129,7 @@
 }
 
 .exam-title {
-    @apply text-2xl sm:text-3xl md:text-4xl text-[#707070] mb-2 uppercase pb-10 font-[500];
+    @apply text-2xl sm:text-3xl md:text-4xl text-[#555555] mb-2 uppercase pb-10 font-[500];
 }
 
 .exam-grid {
@@ -2141,11 +2141,11 @@
 }
 
 .exam-name {
-    @apply font-semibold text-[#58595B] text-[16px];
+    @apply font-semibold text-[#555555] text-[16px];
 }
 
 .exam-designation {
-    @apply text-sm text-[#58595B] mt-1;
+    @apply text-sm text-[#555555] mt-1;
 }
 
 .exam-email {
@@ -2153,7 +2153,7 @@
 }
 
 .exam-btn {
-    @apply bg-[#002D62] hover:bg-[#f2542d] hover:scale-105 text-white px-16 py-3 rounded-md transition;
+    @apply bg-[#002D62] hover:bg-[#91288D] hover:scale-105 text-white px-16 py-3 rounded-md transition;
 }
 
 /* ================= RECOGNITIONS / RANKINGS ================= */
@@ -2166,12 +2166,12 @@
 }
 
 .recog-heading {
-    @apply text-2xl sm:text-3xl 2xl:text-4xl mb-6 font-[500] text-[#707070] leading-tight;
+    @apply text-2xl sm:text-3xl 2xl:text-4xl mb-6 font-[500] text-[#555555] leading-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .recog-heading-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-4;
 }
 
 .recog-heading-break {
@@ -2216,7 +2216,7 @@
 }
 
 .recog-naac-cgpa {
-    @apply block text-[#122E5E] text-3xl md:text-2xl xl:text-4xl 2xl:text-5xl;
+    @apply block text-[#132F5C] text-3xl md:text-2xl xl:text-4xl 2xl:text-5xl;
 }
 
 .recog-naac-desc {
@@ -2260,7 +2260,7 @@
 }
 
 .recog-nirf-label {
-    @apply block text-lg md:text-lg xl:text-lg 2xl:text-2xl text-[#707070] mt-1 leading-tight;
+    @apply block text-lg md:text-lg xl:text-lg 2xl:text-2xl text-[#555555] mt-1 leading-tight;
 }
 
 .recog-the {
@@ -2276,7 +2276,7 @@
 }
 
 .recog-the-title {
-    @apply text-3xl xl:text-4xl 2xl:text-5xl text-start text-[#707070] mt-1 xl:mt-1 font-sans leading-tight;
+    @apply text-3xl xl:text-4xl 2xl:text-5xl text-start text-[#555555] mt-1 xl:mt-1 font-sans leading-tight;
 }
 
 /* ----- Image Slide ----- */
@@ -2306,7 +2306,7 @@
 }
 
 .recog-grid-name {
-    @apply text-lg sm:text-xl text-[#122E5E];
+    @apply text-lg sm:text-xl text-[#132F5C];
     font-family: "Oswald", sans-serif;
 }
 
@@ -2344,12 +2344,12 @@
 }
 
 .ri-heading {
-    @apply text-[#707070] text-2xl sm:text-3xl md:text-4xl uppercase font-[500];
+    @apply text-[#555555] text-2xl sm:text-3xl md:text-4xl uppercase font-[500];
     font-family: "Oswald", sans-serif;
 }
 
 .ri-heading-line {
-    @apply w-20 h-1 bg-[#F04E30] mb-2;
+    @apply w-20 h-1 bg-[#91288D] mb-2;
 }
 
 .ri-main {
@@ -2485,7 +2485,8 @@
 
 /* ================= MAIN HERO (MainPageSections/Hero.jsx) ================= */
 .mph-topbar {
-    @apply w-full bg-[#E1CD67] text-gray-600 text-[11px] sm:text-sm px-3 py-1 flex flex-col sm:flex-row sm:justify-between sm:items-center z-50 gap-y-2;
+    @apply w-full text-gray-600 text-[11px] sm:text-sm px-3 py-1 flex flex-col sm:flex-row sm:justify-between sm:items-center z-50 gap-y-2;
+    background: var(--strip-gradient);
 }
 
 .mph-admission-text {
@@ -2505,11 +2506,11 @@
 }
 
 .mph-apply-btn {
-    @apply flex items-center rounded-[10px] text-xl bg-[#F04E30] hover:bg-[#122E5E] text-white px-3 py-2 space-x-3 font-semibold;
+    @apply flex items-center rounded-[10px] text-xl bg-[#91288D] hover:bg-[#132F5C] text-white px-3 py-2 space-x-3 font-semibold;
 }
 
 .mph-phone-btn {
-    @apply flex items-center uppercase rounded-[10px] font-[500] text-base hover:bg-[#F04E30] bg-[#122E5E] text-white px-3 py-2 space-x-3;
+    @apply flex items-center uppercase rounded-[10px] font-[500] text-base hover:bg-[#91288D] bg-[#132F5C] text-white px-3 py-2 space-x-3;
 }
 
 .mph-phone-icon {
@@ -2541,7 +2542,7 @@
 }
 
 .mph-mobile-apply {
-    @apply flex-1 flex justify-center items-center rounded-[10px] text-sm bg-[#F04E30] hover:bg-[#122E5E] text-white px-1 py-2 font-semibold;
+    @apply flex-1 flex justify-center items-center rounded-[10px] text-sm bg-[#91288D] hover:bg-[#132F5C] text-white px-1 py-2 font-semibold;
 }
 
 .mph-mobile-phone-link {
@@ -2549,7 +2550,7 @@
 }
 
 .mph-mobile-phone {
-    @apply w-full flex justify-center items-center uppercase rounded-[10px] font-[500] text-sm hover:bg-[#F04E30] bg-[#122E5E] text-white px-2 py-2;
+    @apply w-full flex justify-center items-center uppercase rounded-[10px] font-[500] text-sm hover:bg-[#91288D] bg-[#132F5C] text-white px-2 py-2;
 }
 
 .mph-mobile-phone-text {
@@ -2688,12 +2689,12 @@
 
 /* ================= CONTACT US (MainPageSections/Contact/ContactUS.jsx) ================= */
 .contact-section-heading {
-    @apply text-3xl md:text-4xl uppercase font-[500] text-[#707070] pt-20 mb-4 tracking-wider;
+    @apply text-3xl md:text-4xl uppercase font-[500] text-[#555555] pt-20 mb-4 tracking-wider;
     font-family: "Oswald", sans-serif;
 }
 
 .contact-section-heading-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-4;
 }
 
 .contact-tabs-wrapper {
@@ -2891,11 +2892,11 @@
 }
 
 .alumni-activities-heading {
-    @apply text-2xl sm:text-3xl md:text-4xl font-[500] text-[#707070] tracking-wider mb-6;
+    @apply text-2xl sm:text-3xl md:text-4xl font-[500] text-[#555555] tracking-wider mb-6;
 }
 
 .alumni-activities-heading-line {
-    @apply w-12 sm:w-20 border-[#F04E30] mb-3 border-t-4;
+    @apply w-12 sm:w-20 border-[#91288D] mb-3 border-t-4;
 }
 
 .alumni-activities-grid {
@@ -2915,7 +2916,7 @@
 }
 
 .alumni-activities-view-all {
-    @apply text-[#f2542d] text-sm font-semibold hover:underline;
+    @apply text-[#91288D] text-sm font-semibold hover:underline;
 }
 
 .alumni-activities-news-item {
@@ -2992,7 +2993,7 @@
 }
 
 .djourney-mobile-heading-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-4 border-t-8;
+    @apply w-16 sm:w-20 border-[#91288D] mb-4 border-t-8;
 }
 
 .djourney-mobile-track {
@@ -3042,7 +3043,7 @@
 }
 
 .intl-collab-heading-line {
-    @apply w-12 border-[#F04E30] mb-3 border-t-4 mx-auto sm:mx-0;
+    @apply w-12 border-[#91288D] mb-3 border-t-4 mx-auto sm:mx-0;
 }
 
 .intl-collab-stats-wrap {
@@ -3115,7 +3116,7 @@
 }
 
 .fcards-subtitle {
-    @apply text-center text-[#58595B] text-sm md:text-base mt-2 mb-6;
+    @apply text-center text-[#555555] text-sm md:text-base mt-2 mb-6;
 }
 
 .fcards-track-wrap {
@@ -3166,11 +3167,11 @@
 }
 
 .onehealth-heading {
-    @apply text-3xl md:text-4xl font-[500] text-[#58595B];
+    @apply text-3xl md:text-4xl font-[500] text-[#555555];
 }
 
 .onehealth-heading-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4;
 }
 
 .onehealth-body {
@@ -3192,7 +3193,7 @@
 /* Cap the label width so long entries wrap to two lines beside the diamond,
    matching the live-site legend column (instead of one long full-width line). */
 .onehealth-legend-text {
-    @apply text-[#58595B] text-sm md:text-lg max-w-[300px];
+    @apply text-[#555555] text-sm md:text-lg max-w-[300px];
 }
 
 .onehealth-grid-wrap {
@@ -3200,11 +3201,11 @@
 }
 
 .onehealth-grid-vline {
-    @apply absolute top-[-40px] w-px bg-[#707070];
+    @apply absolute top-[-40px] w-px bg-[#555555];
 }
 
 .onehealth-grid-hline {
-    @apply absolute left-[-40px] h-px bg-[#707070];
+    @apply absolute left-[-40px] h-px bg-[#555555];
 }
 
 .onehealth-diamond {
@@ -3212,7 +3213,7 @@
 }
 
 .onehealth-grid-label {
-    @apply absolute text-sm text-[#58595B];
+    @apply absolute text-sm text-[#555555];
 }
 
 /* Mobile/tablet: the matrix has fixed pixel geometry, so let it scroll sideways
@@ -3247,11 +3248,11 @@
 }
 
 .hlp-title {
-    @apply text-4xl font-medium text-[#58595B] uppercase;
+    @apply text-4xl font-medium text-[#555555] uppercase;
 }
 
 .hlp-title-line {
-    @apply w-16 sm:w-20 border-[#F04E30] mb-2 border-t-4;
+    @apply w-16 sm:w-20 border-[#91288D] mb-2 border-t-4;
 }
 
 .hlp-sub-row {
@@ -3303,11 +3304,11 @@
 }
 
 .hlp-slide-title {
-    @apply text-base font-medium text-[#58595B];
+    @apply text-base font-medium text-[#555555];
 }
 
 .hlp-slide-desc {
-    @apply text-sm text-[#58595B] mt-1;
+    @apply text-sm text-[#555555] mt-1;
 }
 
 /* ================= OUR HOSPITALS (MainPageSections/Hospital/TeachingHospitals/OurHospitals.jsx) ================= */
@@ -3316,16 +3317,16 @@
 }
 
 .our-hospitals-heading {
-    @apply text-2xl sm:text-3xl md:text-4xl text-[#707070] mb-2 font-[500] tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl text-[#555555] mb-2 font-[500] tracking-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .our-hospitals-heading-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2 mr-4;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2 mr-4;
 }
 
 .our-hospitals-subheading {
-    @apply text-[#122E5E] text-xl;
+    @apply text-[#132F5C] text-xl;
 }
 
 .our-hospitals-tabs {
@@ -3337,7 +3338,7 @@
 }
 
 .our-hospitals-tab-active {
-    @apply opacity-100 scale-105 border-b-4 border-[#F04E30];
+    @apply opacity-100 scale-105 border-b-4 border-[#91288D];
 }
 
 .our-hospitals-tab-inactive {
@@ -3349,7 +3350,7 @@
 }
 
 .our-hospitals-fallback {
-    @apply h-20 flex items-center justify-center text-[#122E5E] font-semibold;
+    @apply h-20 flex items-center justify-center text-[#132F5C] font-semibold;
 }
 
 .our-hospitals-content {
@@ -3373,7 +3374,7 @@
 }
 
 .our-hospitals-content-cta {
-    @apply inline-flex items-center gap-2 mt-6 px-6 py-3 bg-[#122E5E] hover:bg-[#F04E30] text-white text-sm font-semibold rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105;
+    @apply inline-flex items-center gap-2 mt-6 px-6 py-3 bg-[#132F5C] hover:bg-[#91288D] text-white text-sm font-semibold rounded-full shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105;
 }
 
 .our-hospitals-content-cta-icon {
@@ -3567,12 +3568,12 @@
 }
 
 .mri-heading {
-    @apply text-[#707070] text-2xl sm:text-3xl md:text-4xl uppercase font-[500];
+    @apply text-[#555555] text-2xl sm:text-3xl md:text-4xl uppercase font-[500];
     font-family: "Oswald", sans-serif;
 }
 
 .mri-heading-line {
-    @apply w-20 h-1 bg-[#F04E30] mb-2;
+    @apply w-20 h-1 bg-[#91288D] mb-2;
 }
 
 .mri-main {
@@ -3651,7 +3652,7 @@
 }
 
 .ciqa-link {
-    @apply px-12 py-3 w-[300px] mt-5 flex rounded-md text-blue-900 bg-blue-100 shadow-md hover:bg-[#F04E30] hover:text-white transition hover:scale-105 justify-center duration-200 transform;
+    @apply px-12 py-3 w-[300px] mt-5 flex rounded-md text-blue-900 bg-blue-100 shadow-md hover:bg-[#91288D] hover:text-white transition hover:scale-105 justify-center duration-200 transform;
     font-family: "Oswald", sans-serif;
 }
 
@@ -3661,20 +3662,20 @@
 }
 
 .diff-hospitals-left {
-    @apply flex-1 text-[#58595B];
+    @apply flex-1 text-[#555555];
 }
 
 .diff-hospitals-title {
-    @apply text-2xl sm:text-3xl md:text-4xl text-[#707070] mb-2 font-[500] tracking-tight leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl text-[#555555] mb-2 font-[500] tracking-tight leading-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .diff-hospitals-title-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2 mr-4;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2 mr-4;
 }
 
 .diff-hospitals-subtitle {
-    @apply text-[#122E5E] text-xl mb-4;
+    @apply text-[#132F5C] text-xl mb-4;
 }
 
 .diff-hospitals-points-wrap {
@@ -3690,7 +3691,7 @@
 }
 
 .diff-hospitals-point-title {
-    @apply font-semibold text-[#122E5E];
+    @apply font-semibold text-[#132F5C];
 }
 
 .diff-hospitals-right {
@@ -3727,11 +3728,11 @@
 }
 
 .hd-heading {
-    @apply text-2xl max-w-[500px] font-bold text-[#122E5E] mb-6;
+    @apply text-2xl max-w-[500px] font-bold text-[#132F5C] mb-6;
 }
 
 .hd-desc {
-    @apply text-sm leading-relaxed text-[#58595B];
+    @apply text-sm leading-relaxed text-[#555555];
 }
 
 /* ================= TEACHING HOSPITALS (Hospital/TeachingHospitals/TeachingHospitals.jsx) ================= */
@@ -3745,11 +3746,11 @@
 }
 
 .th-tab-active {
-    @apply font-bold text-[#122E5E] border-b-4 border-[#F04E30];
+    @apply font-bold text-[#132F5C] border-b-4 border-[#91288D];
 }
 
 .th-tab-inactive {
-    @apply text-[#58595B];
+    @apply text-[#555555];
 }
 
 .th-section-wrap {
@@ -3757,12 +3758,12 @@
 }
 
 .th-heading {
-    @apply text-2xl sm:text-3xl md:text-4xl text-[#707070] mb-2 font-[500] tracking-tight leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl text-[#555555] mb-2 font-[500] tracking-tight leading-tight;
     font-family: "Oswald", sans-serif;
 }
 
 .th-heading-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2 mr-4;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2 mr-4;
 }
 
 .th-content {
@@ -3771,7 +3772,7 @@
 
 /* ================= EXAM CELL OFFICIALS (helper) ================= */
 .exam-title-line {
-    @apply block border-t-4 border-[#F04E30] w-20 sm:w-24 mb-2;
+    @apply block border-t-4 border-[#91288D] w-20 sm:w-24 mb-2;
 }
 
 .exam-btn-wrap {
@@ -3796,11 +3797,11 @@
 }
 
 .cert-gallery-tab {
-    @apply px-5 py-2 rounded-full text-sm sm:text-base font-medium text-[#122E5E] bg-transparent border border-transparent hover:bg-white transition-all cursor-pointer;
+    @apply px-5 py-2 rounded-full text-sm sm:text-base font-medium text-[#132F5C] bg-transparent border border-transparent hover:bg-white transition-all cursor-pointer;
 }
 
 .cert-gallery-tab-active {
-    @apply bg-[#F04E30] text-white shadow-md hover:bg-[#F04E30];
+    @apply bg-[#91288D] text-white shadow-md hover:bg-[#91288D];
 }
 
 .cert-gallery-grid {
@@ -3836,11 +3837,11 @@
 }
 
 .cert-card-title {
-    @apply text-sm font-semibold text-[#122E5E] leading-snug;
+    @apply text-sm font-semibold text-[#132F5C] leading-snug;
 }
 
 .cert-card-year {
-    @apply text-xs font-medium bg-[#fdecd8] text-[#F04E30] px-2 py-0.5 rounded-full whitespace-nowrap flex-shrink-0;
+    @apply text-xs font-medium bg-[#fdecd8] text-[#91288D] px-2 py-0.5 rounded-full whitespace-nowrap flex-shrink-0;
 }
 
 .cert-card-desc {
@@ -3852,7 +3853,7 @@
 }
 
 .cert-card-view-btn {
-    @apply w-full text-center text-xs font-medium text-[#122E5E] bg-[#f3f4f6] hover:bg-[#122E5E] hover:text-white transition-colors py-2 rounded-md cursor-pointer;
+    @apply w-full text-center text-xs font-medium text-[#132F5C] bg-[#f3f4f6] hover:bg-[#132F5C] hover:text-white transition-colors py-2 rounded-md cursor-pointer;
 }
 
 /* ================= IQAC YEAR TABLE =================
@@ -3884,7 +3885,7 @@
 }
 
 .iqac-year-td {
-    @apply px-6 py-3 text-[#122E5E];
+    @apply px-6 py-3 text-[#132F5C];
 }
 
 /* =====================================================================

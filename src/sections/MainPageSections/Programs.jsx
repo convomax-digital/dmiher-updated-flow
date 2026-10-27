@@ -8,8 +8,8 @@ function Programs({ data }) {
   if (!data) return null;
 
   const heading = data?.header?.heading;
-  const bgColor = data?.header?.color || "#122E5E";
-  const heading_color = data?.header?.heading_color || "#122E5E";
+  const bgColor = data?.header?.color || "#132F5C";
+  const heading_color = data?.header?.heading_color || "#132F5C";
 
 
   // function to generate slug if API missing it

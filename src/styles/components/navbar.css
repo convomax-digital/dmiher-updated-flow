@@ -7,7 +7,7 @@
            capped to the site container (max-w-7xl) so the logo and nav
            align with section content and the footer at every width —
            no viewport-specific paddings. */
-        @apply fixed w-full bg-white top-0 z-[999] shadow-sm h-[100px];
+        @apply fixed w-full bg-white top-0 z-[999] shadow-sm h-[101px];
     }
 
     .navbar-icon-row {
@@ -17,7 +17,8 @@
     .navbar-inner {
         /* Same metrics as the site-wide .container (max-w-7xl mx-auto px-5)
            so header, content and footer share one aligned column. */
-        @apply flex justify-between items-center h-full max-w-7xl mx-auto px-5;
+        @apply flex justify-between items-center gap-6 h-full max-w-7xl mx-auto px-5;
+        position: relative;
     }
 
     .navbar-logo {
@@ -29,11 +30,15 @@
     }
 
     .navbar-desktop {
-        @apply hidden lg:flex flex-col items-end w-full h-[100px] pb-[5px];
+        /* Two stacked rows pinned to the bottom-right of the bar: the
+           utility row (Announcements / Contact / Login) sits above the
+           primary nav, exactly as on aiher.edu.in. */
+        @apply hidden lg:flex flex-col items-end justify-end w-full h-full min-w-0;
     }
 
     .navbar-top-links {
-        @apply flex gap-2 pb-4 text-[14px] font-[500] mt-auto text-[#707070];
+        @apply flex items-center gap-3 text-[14px] font-[600] text-[#393939];
+        min-height: 46px;
     }
 
     .navbar-top-links img {
@@ -41,24 +46,53 @@
     }
 
     .top-links {
-        @apply border-r-2 last:border-0 hover:underline pr-2 border-[#707070];
+        @apply border-r-2 last:border-0 hover:underline pr-3 whitespace-nowrap border-[#393939];
     }
 
     .navbar-main {
-        @apply flex gap-10 text-[#1f3c88];
+        @apply flex items-stretch;
+        /* Collapses the gap on narrower desktops before the links wrap. */
+        gap: clamp(0px, 1vw, 16px);
     }
 
+    /* Primary nav link — AIHER styling: compact uppercase label with a
+       gradient underline that wipes in from the left on hover/active.
+       The underline is a ::after bar rather than a border so the wipe can
+       animate and so it sits flush with the bottom of the 54px row. */
     .nav-link {
-        @apply items-start pb-[2px] text-[18px] border-b-[5px] border-transparent hover:border-[#ff4f37];
+        @apply relative inline-flex items-center gap-[7px] px-[14px] text-[14px] font-[600] uppercase whitespace-nowrap text-black;
+        min-height: 54px;
+        transition: color .2s;
     }
 
-    .nav-link-active {
-        @apply border-[#ff4f37] border-b-[5px];
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0180A2 0%, #006DB6 22%, #8E278F 90%);
+        transform: scaleX(0);
+        transform-origin: 0 center;
+        transition: transform .25s;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after,
+    .nav-link-active::after {
+        transform: scaleX(1);
+    }
+
+    .navbar a:focus-visible,
+    .navbar button:focus-visible {
+        outline: 2px solid #006DB6;
+        outline-offset: 3px;
     }
 
     /* Mobile */
     .mobile-menu-full {
-        @apply fixed inset-0 bg-[#122e5e] pt-15 px-4 gap-2 text-white z-[1000] overflow-y-auto;
+        @apply fixed inset-0 bg-[#132F5C] pt-15 px-4 gap-2 text-white z-[1000] overflow-y-auto;
     }
 
     .mobile-btn {
@@ -136,7 +170,7 @@
     }
 
     .mega-link {
-        @apply text-sm text-gray-600 hover:text-[#ff4f37];
+        @apply text-sm text-gray-600 hover:text-[#A32E9E];
     }
 
     /* Right preview */
@@ -149,7 +183,7 @@
     }
 
     .mega-preview-title {
-        @apply text-[#ff4f37] font-bold text-sm;
+        @apply text-[#A32E9E] font-bold text-sm;
     }
 
     .mega-preview-desc {

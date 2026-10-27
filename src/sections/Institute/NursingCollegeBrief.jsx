@@ -45,7 +45,7 @@ export default function NursingCollegeBrief({ data }) {
         ) : (
           // Legacy fallback: separate title lines + plain paragraph.
           <>
-            <h3 className="text-[#122E5E] font-oswald-medium text-2xl font-bold mb-4">
+            <h3 className="text-[#132F5C] font-oswald-medium text-2xl font-bold mb-4">
               {content.title_line1}
               {content.title_line2 && (
                 <>
@@ -54,7 +54,7 @@ export default function NursingCollegeBrief({ data }) {
                 </>
               )}
             </h3>
-            <p className="text-[#58595B] text-base mb-6">{content.para}</p>
+            <p className="text-[#555555] text-base mb-6">{content.para}</p>
           </>
         )}
       </div>

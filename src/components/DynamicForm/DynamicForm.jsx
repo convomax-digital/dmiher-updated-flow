@@ -11,10 +11,10 @@ import "./DynamicForm.css";
  * (12=full, 6=half, 4=third) controls how many sit in one row — all managed
  * from the dashboard. Submits to /api/forms/{slug}/submit.
  */
-const BRAND = { orange: "#F04E30", navy: "#122E5E" };
+const BRAND = { orange: "#91288D", navy: "#132F5C" };
 
 const inputClass =
-  "w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F04E30]";
+  "w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#91288D]";
 
 export default function DynamicForm({ slug }) {
   const { data: form, isLoading, isError } = useFormDefinition(slug);
@@ -159,8 +159,8 @@ export default function DynamicForm({ slug }) {
           {/* Form title + description are grid items too, so their width
               (set in the dashboard) controls how much space they take. */}
           <div style={{ gridColumn: `span ${titleSpan}` }} className="mb-1">
-            <h2 className="text-3xl md:text-4xl font-[500] text-[#707070] tracking-wide uppercase">
-              <hr className="w-16 sm:w-20 border-[#F04E30] mb-3 border-t-4" />
+            <h2 className="text-3xl md:text-4xl font-[500] text-[#555555] tracking-wide uppercase">
+              <hr className="w-16 sm:w-20 border-[#91288D] mb-3 border-t-4" />
               {form.title}
             </h2>
           </div>
@@ -179,7 +179,7 @@ export default function DynamicForm({ slug }) {
                   style={{ gridColumn: `span ${hspan}` }}
                   className="mt-6"
                 >
-                  <h3 className="text-2xl font-[500] text-[#545454] mb-1">
+                  <h3 className="text-2xl font-[500] text-[#393939] mb-1">
                     {f.label}
                   </h3>
                   {f.description && (
@@ -242,7 +242,7 @@ export default function DynamicForm({ slug }) {
                                   value={o}
                                   checked={values[f.key] === o}
                                   onChange={() => setValue(f.key, o)}
-                                  className="h-4 w-4 text-[#F04E30] focus:ring-[#F04E30] border-gray-300"
+                                  className="h-4 w-4 text-[#91288D] focus:ring-[#91288D] border-gray-300"
                                 />
                                 <span className="ml-2 text-gray-700">{o}</span>
                               </label>
@@ -266,7 +266,7 @@ export default function DynamicForm({ slug }) {
                                     values[f.key].includes(o)
                                   }
                                   onChange={() => toggleMulti(f.key, o)}
-                                  className="h-4 w-4 text-[#F04E30] focus:ring-[#F04E30] border-gray-300 rounded"
+                                  className="h-4 w-4 text-[#91288D] focus:ring-[#91288D] border-gray-300 rounded"
                                 />
                                 <span className="ml-2 text-gray-700">{o}</span>
                               </label>
