@@ -94,7 +94,7 @@ const WhyStudyAdmissions = ({ data }) => {
     <section ref={sectionRef} className="pt-10 bg-[#FAFAF6] flex justify-center">
       <div className="w-full mx-auto max-w-7xl px-5">
         <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-wide text-[#555555] font-[500] mb-10 whitespace-pre-line">
-          <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
+          <div className="border-t-4 border-[#91288D] w-20 mb-2"></div>
           {heading}
         </h2>
 

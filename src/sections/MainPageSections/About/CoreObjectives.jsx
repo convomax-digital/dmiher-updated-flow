@@ -2,7 +2,7 @@ import RichTextRenderer from "../../../components/RichTextRenderer";
 
 // Live-site badge colors: yellow first three, orange for the fourth. Falls back
 // to the array for any additional objectives so the pattern keeps repeating.
-const NUMBER_COLORS = ["#C77ABF", "#C77ABF", "#C77ABF", "#E34A2A"];
+const NUMBER_COLORS = ["#91288D", "#91288D", "#91288D", "#E34A2A"];
 
 function CoreObjectives({ data }) {
   const heading = data?.header?.heading || "";

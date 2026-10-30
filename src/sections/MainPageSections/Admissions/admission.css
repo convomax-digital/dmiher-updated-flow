@@ -72,7 +72,7 @@
 }
 
 .step-card {
-    @apply relative basis-0 min-w-[14.6%] max-w-[200px] max-sm:min-w-[220px] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:text-center max-sm:pb-12 max-sm:mb-12 max-sm:border-b max-sm:border-b-[#C77ABF];
+    @apply relative basis-0 min-w-[14.6%] max-w-[200px] max-sm:min-w-[220px] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:text-center max-sm:pb-12 max-sm:mb-12 max-sm:border-b max-sm:border-b-[#91288D];
 }
 
 .step-number {
@@ -92,7 +92,7 @@
 }
 
 .step-title {
-    @apply text-xs sm:text-sm font-bold text-[#C77ABF] leading-tight mb-2;
+    @apply text-xs sm:text-sm font-bold text-[#91288D] leading-tight mb-2;
 }
 
 .final-step {
@@ -266,7 +266,7 @@
 }
 
 .why-line {
-    @apply border-t-4 border-[#7E2279] w-20 mb-2;
+    @apply border-t-4 border-[#91288D] w-20 mb-2;
 }
 
 .why-slider {

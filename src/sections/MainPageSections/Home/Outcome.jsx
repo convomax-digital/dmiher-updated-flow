@@ -18,50 +18,31 @@ const Outcome = ({ data }) => {
     data.video || data.slider.find((s) => s?.tab_type === "video") || null;
   const slides = data.slider.filter((s) => s?.tab_type !== "video");
 
-  // Expand each "icons" slide into logo-chunk sub-slides: a 4-column grid holds
-  // 16 logos cleanly (4 rows), so a longer logo list paginates onto new slides
-  // (same bg, swiper dots) instead of overflowing one grid — mirroring the
-  // FootprintSection ("OUR TALENT ACROSS INDUSTRIES") logo slider. The caption
-  // repeats on every chunk so each slide reads as a complete panel.
-  const LOGOS_PER_SLIDE = 16;
-  const renderSlides = [];
-  slides.forEach((slide) => {
-    if (slide?.tab_type === "icons") {
-      const icons = Array.isArray(slide.icons) ? slide.icons : [];
-      const caption = slide.lable || slide.label || slide.title || "";
-      const bg = slide.bg_color;
-      if (icons.length <= LOGOS_PER_SLIDE) {
-        renderSlides.push({ type: "icons", icons, caption, bg });
-      } else {
-        // Balance the chunks so the last slide isn't a tiny leftover
-        // (19 → 10+9, not 16+3). An uneven last slide leaves a big empty
-        // area because Swiper sizes every slide to the tallest one — very
-        // visible on mobile where the 2-column grid is already tall.
-        const numChunks = Math.ceil(icons.length / LOGOS_PER_SLIDE);
-        const perChunk = Math.ceil(icons.length / numChunks);
-        for (let i = 0; i < icons.length; i += perChunk) {
-          renderSlides.push({
-            type: "icons",
-            icons: icons.slice(i, i + perChunk),
-            caption,
-            bg,
-          });
+  // Each "icons" entry is ONE slide holding every logo it carries — the same
+  // single panel the live site shows. These used to be split into 16-logo
+  // chunks, which turned one logo wall into several near-identical slides;
+  // the grid now shrinks its rows to fit instead (see .icons-grid).
+  const renderSlides = slides.map((slide) =>
+    slide?.tab_type === "icons"
+      ? {
+          type: "icons",
+          icons: Array.isArray(slide.icons) ? slide.icons : [],
+          // CMS spells the field "lable".
+          caption: slide.lable || slide.label || slide.title || "",
+          bg: slide.bg_color,
         }
-      }
-    } else {
-      renderSlides.push({ type: "image", slide });
-    }
-  });
+      : { type: "image", slide }
+  );
 
   const hasMultipleSlides = renderSlides.length > 1;
   const enableLoop = renderSlides.length >= 3;
 
-  // ✅ Thumbnail Fix (handle string / array / fallback)
+  //  Thumbnail Fix (handle string / array / fallback)
   const thumbnail = Array.isArray(videoData?.thumbnail)
     ? videoData.thumbnail[0]
     : videoData?.thumbnail || "";
 
-  // ✅ Extract YouTube ID (supports full URL or ID)
+  //  Extract YouTube ID (supports full URL or ID)
   const getYoutubeId = (url) => {
     if (!url) return "";
     if (url.length === 11) return url;
@@ -82,7 +63,6 @@ const Outcome = ({ data }) => {
         <Swiper
           modules={[Autoplay, Pagination]}
           slidesPerView={1}
-          autoHeight={true}
           loop={enableLoop}
           autoplay={
             hasMultipleSlides
@@ -95,7 +75,7 @@ const Outcome = ({ data }) => {
           {renderSlides.map((rs, index) => (
             <SwiperSlide key={index}>
 
-              {/* ✅ IMAGE SLIDE */}
+              {/*  IMAGE SLIDE */}
               {rs.type === "image" && (
                 <div className="slide-image">
                   <SafeImage
@@ -110,7 +90,7 @@ const Outcome = ({ data }) => {
                 </div>
               )}
 
-              {/* ✅ ICON SLIDE (one chunk of up to 16 logos) */}
+              {/*  ICON SLIDE (one chunk of up to 16 logos) */}
               {rs.type === "icons" && (
                 <div
                   className="slide-icons"
@@ -151,7 +131,7 @@ const Outcome = ({ data }) => {
           ))}
         </Swiper>
 
-        {/* ✅ VIDEO SECTION */}
+        {/*  VIDEO SECTION */}
         {youtubeId && (
           <div className="video-section">
             {videoHeading && (

@@ -12,7 +12,7 @@ import "swiper/css/navigation";
  * Museum — Campus tabs (Jigyasa / Swadhyay). Mirrors the live-site
  * CollegeBox layout 1:1:
  *   • 2-column grid (text left, image carousel right)
- *   • Heading in #C77ABF (gold) with a horizontal gold rule next to it
+ *   • Heading in #91288D (gold) with a horizontal gold rule next to it
  *   • Highlights in a 5-column row with vertical white/20 dividers
  *
  * Data shape (section_key: museum_colleges)

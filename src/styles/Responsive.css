@@ -69,10 +69,10 @@
         @apply grid-cols-3;
     }
 
-    /* Fixed, smaller tile height so logos shrink uniformly on tablet instead
-       of keeping their natural size (h-auto) — that left the rows uneven. */
+    /* Cap rather than fix the tile height: the row is flexible, so the logo
+       fills it and shrinks further once the list runs to many rows. */
     .icon-img {
-        @apply object-contain h-[80px];
+        @apply object-contain h-full max-h-[80px];
     }
 
     .slide-content {
@@ -96,7 +96,7 @@
     }
 
     .icon-img {
-        @apply h-[60px] object-contain rounded-[6px] p-[6px];
+        @apply h-full max-h-[60px] object-contain rounded-[6px] p-[6px];
         background-color: #fff;
     }
 
@@ -516,6 +516,10 @@
 
     .program-icon {
         @apply w-12 h-12;
+    }
+
+    .program-icon svg {
+        @apply w-6 h-6;
     }
 }
 

@@ -25,7 +25,7 @@ const TIMELINE_STYLE = {
 
 const Banner = ({ children, theme = "navy" }) => {
   const cls = theme === "gold"
-    ? "bg-gradient-to-r from-[#C77ABF] to-[#C77ABF] text-[#555555]"
+    ? "bg-gradient-to-r from-[#91288D] to-[#91288D] text-[#555555]"
     : "bg-gradient-to-r from-[#132F5C] to-[#2E57AA] text-white";
   return (
     <section className={`${cls} rounded-xl shadow-lg p-8`}>

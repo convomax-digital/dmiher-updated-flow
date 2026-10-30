@@ -16,22 +16,23 @@
      means: update these tokens, then run the same find-and-replace of
      the old literals across src/.
 
+     Brand purple is ONE value, #91288D. Earlier there were lighter /
+     darker / softer variants (#A32E9E, #7E2279, #C77ABF); they have all
+     been folded into the single brand purple.
+
      Replaced the previous DMIHER palette:
-       #F04E30 orange → #91288D purple      (primary / CTA)
-       #FF4F37        → #A32E9E             (lighter accent)
-       #EE4B2B        → #7E2279             (hover / pressed)
-       #122E5E navy   → #132F5C             (headings, dark sections)
-       #1B2A4A        → #0E2446             (deepest navy)
-       #223971        → #2E57AA             (secondary blue)
-       #E1CD67 gold   → #C77ABF             (accent on dark backgrounds)
-       #707070 grey   → #555555             (body text)
-       #545454        → #393939             (strong text)
+       #F04E30 orange, #FF4F37, #EE4B2B → #91288D   (primary / CTA / hover)
+       #E1CD67 gold                     → #91288D   (accent on dark sections)
+       #122E5E navy, #102B64, #0F2C5C   → #132F5C   (headings, dark sections)
+       #1B2A4A                          → #0E2446   (deepest navy)
+       #223971                          → #2E57AA   (secondary blue)
+       #707070, #58595B grey            → #555555   (body text)
+       #545454                          → #393939   (strong text)
      ------------------------------------------------------------------ */
   --color-brand: #91288D;
-  --color-brand-light: #A32E9E;
-  --color-brand-dark: #7E2279;
+  /* Pale purple wash — a tint, not the brand colour; used for soft
+     backgrounds where solid purple would swallow the text on top. */
   --color-brand-tint: #FAF1F9;
-  --color-brand-soft: #C77ABF;
 
   --color-navy: #132F5C;
   --color-navy-deep: #0E2446;
@@ -58,6 +59,15 @@
        or below the hero, matching aiher.edu.in's .admissions-strip-background:
        a soft blue→lilac wash carrying dark grey text, not a brand fill. */
     --strip-gradient: linear-gradient(90deg, #E0E6F2 0%, #EEDFEE 100%);
+
+    /* Dark feature-section wash (Dean's Message), from aiher.edu.in's
+       .bg-adani-dark-gradient: near-black into brand blue into brand purple,
+       on a diagonal. Sits under white body copy. */
+    --section-dark-gradient: linear-gradient(120deg, rgba(0, 0, 0, .95) 0%, rgba(46, 87, 170, .75) 55%, rgba(145, 40, 141, .9) 100%);
+
+    /* Thin accent gradient — the nav-link underline and the programme tiles'
+       hover outline/text both use it (aiher.edu.in uses one gradient for both). */
+    --brand-line-gradient: linear-gradient(90deg, #0180A2 0%, #006DB6 22%, #91288D 90%);
 }
 
 html, body {
@@ -146,7 +156,11 @@ h6 {
     /* Increased from 154px */
     height: 115px;
     /* Increased from 98px */
-    background: #91288D;
+    /* The visible "outline" of the speech-bubble tile: this box is the border,
+       the white .clip-path-message-inner sits 3px/4px inside it. Dark grey at
+       rest, brand gradient on hover — as on aiher.edu.in. */
+    background: #393939;
+    transition: background .25s;
     box-sizing: border-box;
     display: block;
     position: relative;
@@ -177,10 +191,28 @@ h6 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #555555;
+    color: #393939;
     text-align: center;
     padding: 0 8px;
     font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* Hover / keyboard focus: the outline picks up the brand gradient and the
+   label is painted with the same gradient instead of flat grey. */
+.clip-path-message:hover,
+.clip-path-message:focus-within {
+    background: var(--brand-line-gradient);
+}
+
+.clip-path-message:hover .clip-path-message-inner span,
+.clip-path-message:focus-within .clip-path-message-inner span {
+    background: var(--brand-line-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 

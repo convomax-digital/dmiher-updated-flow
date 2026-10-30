@@ -36,8 +36,11 @@
 }
 
 .outcome-swiper {
-    @apply max-w-5xl mx-auto;
-    height: 65vh;
+    /* Fills the site container (max-w-7xl) rather than stopping at 1024px —
+       the live site's slider is uncapped and grows with the viewport, so the
+       narrower max-w-5xl made this section read as inset next to it. */
+    @apply w-full mx-auto;
+    height: 70vh;
 }
 
 @media (max-width: 768px) {
@@ -67,18 +70,27 @@
 }
 
 .slide-icons {
-    @apply bg-[#C77ABF] h-full flex items-center justify-center p-[40px] rounded-[16px];
+    /* Pale wash behind the partner logos, same one the banner strip uses.
+       The CMS supplies the real colour per slide (bg_color); this is only the
+       fallback, and it used to be solid brand purple, which swallowed the
+       white logo tiles. */
+    @apply h-full flex items-center justify-center p-6 rounded-[16px];
+    background: var(--strip-gradient);
 }
 
-/* Global-leaders logo grid — same layout as the live site: a fixed 4-column
-   grid, 5px gaps, cells vertically centred, and each logo constrained to a
-   100px-tall cell. The trailing "LEARN FROM..." caption spans two cells. */
+/* Global-leaders logo grid — a fixed 4-column grid that fills the slide.
+   grid-auto-rows:1fr makes every row share the panel height equally, so the
+   logos scale down as rows are added instead of overflowing: with a 100px
+   fixed cell height, five rows ran past the bottom of the slide and the top
+   of the grid was cut off. The trailing "LEARN FROM..." caption fills the
+   rest of the last row (col-span set inline from the icon count). */
 .icons-grid {
-    @apply grid grid-cols-4 gap-[5px] max-w-[1200px] w-full items-center;
+    @apply grid grid-cols-4 gap-3 p-5 max-w-6xl w-full h-full items-center;
+    grid-auto-rows: minmax(0, 1fr);
 }
 
 .icon-img {
-    @apply w-full h-[100px] object-contain;
+    @apply w-full h-full object-contain;
 }
 
 /* Caption fills the remaining cells of the last row — the exact col-span is
@@ -158,11 +170,14 @@
 }
 
 .counter-circle {
-    @apply bg-[#C77ABF] rounded-full w-32 h-32 md:w-36 md:h-36 flex items-center justify-center shadow-md;
+    @apply bg-[#91288D] rounded-full w-32 h-32 md:w-36 md:h-36 flex items-center justify-center shadow-md;
 }
 
 .counter-value {
-    @apply text-4xl text-[#132F5C];
+    /* Sits inside the filled .counter-circle, so it reads white.
+       .counter-label below the circle is on the page background and keeps
+       its dark colour. */
+    @apply text-4xl text-white;
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
 }
@@ -301,7 +316,7 @@
 }
 
 .research-section {
-    @apply bg-[#fbf7e6] text-gray-800 py-12;
+    @apply bg-[#f3f3f3] text-gray-800 py-12;
 }
 
 .research-grid {
@@ -325,7 +340,7 @@
 }
 
 .research-highlight {
-    @apply text-red-600 font-bold;
+    @apply text-[#91288D] font-bold;
 }
 
 /* ================= MOBILE SLIDER ================= */
@@ -343,7 +358,7 @@
 
 /* ===================== RESEARCH ECHOSYSTEM ===================== */
 .reco-section {
-    @apply bg-gray-100 py-12 mx-auto;
+    @apply bg-[#f3f3f3] py-12 mx-auto;
 }
 
 .reco-layout {
@@ -518,7 +533,7 @@
 
 /* ===================== SDG ===================== */
 .sdg-section {
-    @apply bg-[#e9f4fc] py-12;
+    @apply bg-[#f3f3f3] py-12;
 }
 
 .sdg-layout {
@@ -543,7 +558,7 @@
 
 /* ================= FUNDED PROJECTS ================= */
 .funded-section {
-    @apply bg-gray-50 py-12;
+    @apply bg-[#f3f3f3] py-12;
 }
 
 .funded-desc {
@@ -650,7 +665,7 @@
 }
 
 .alliances-heading-line {
-    @apply border-t-4 border-[#7E2279] w-20 mb-2;
+    @apply border-t-4 border-[#91288D] w-20 mb-2;
 }
 
 .alliances-text {
@@ -1377,7 +1392,7 @@
 }
 
 .mission-card {
-    @apply bg-[#C77ABF] text-[#3a3a3a];
+    @apply bg-[#91288D] text-[#3a3a3a];
 }
 
 /* Watermark icon — top-right corner, faded */
@@ -1774,7 +1789,11 @@
 }
 
 .program-icon {
-    @apply w-10 h-10 object-contain;
+    @apply w-10 h-10 rounded-full bg-[#91288D] text-white flex items-center justify-center shrink-0;
+}
+
+.program-icon svg {
+    @apply w-5 h-5;
 }
 
 /* ================= IMPORTANT CONTACTS ================= */
@@ -1958,7 +1977,7 @@
 
 
 .iqac-section {
-    @apply bg-[#eaf3fb] py-16 px-4 font-[Arial];
+    @apply bg-[#f3f3f3] py-16 px-4 font-[Arial];
 }
 
 .iqac-container {
@@ -2212,7 +2231,7 @@
 }
 
 .recog-naac-grade {
-    @apply text-[#E60019] font-bold text-3xl md:text-2xl xl:text-4xl 2xl:text-5xl;
+    @apply text-[#91288D] font-bold text-3xl md:text-2xl xl:text-4xl 2xl:text-5xl;
 }
 
 .recog-naac-cgpa {
@@ -2252,7 +2271,7 @@
 }
 
 .recog-nirf-num {
-    @apply text-8xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#E60019] not-italic block;
+    @apply text-8xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-[#91288D] not-italic block;
 }
 
 .recog-nirf-suffix {
@@ -2272,7 +2291,7 @@
 }
 
 .recog-the-rank {
-    @apply text-5xl xl:text-6xl 2xl:text-7xl text-start text-[#E60019] leading-tight font-[500] not-italic block;
+    @apply text-5xl xl:text-6xl 2xl:text-7xl text-start text-[#91288D] leading-tight font-[500] not-italic block;
 }
 
 .recog-the-title {

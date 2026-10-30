@@ -69,7 +69,7 @@ function ThrustAreas({ data }) {
                 key={`b-${i}`}
                 className="thrust-areas-banner-box"
                 style={{
-                  backgroundColor: box?.background_color || "#C77ABF",
+                  backgroundColor: box?.background_color || "#91288D",
                   color: box?.text_color || "#0E2446",
                 }}
               >

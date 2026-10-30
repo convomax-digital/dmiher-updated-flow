@@ -19,7 +19,7 @@ import resolveImage from "../../utils/resolveImage";
  *         text:        "<HTML markup with spans for size/weight variants>",
  *         image:       "assets/.../optional.png",   // optional logo/icon inside card
  *         bg_color:    "#132F5C",
- *         text_color:  "#C77ABF"
+ *         text_color:  "#91288D"
  *       },
  *       ...
  *     ]
@@ -41,7 +41,7 @@ export default function NursingAdvantage({ data }) {
     <div className="px-5 py-5 md:py-12 md:px-10 bg-[#FAFAF6] flex justify-center">
       <div className="container">
         <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-[500] mb-10 whitespace-pre-line">
-          <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
+          <div className="border-t-4 border-[#91288D] w-20 mb-2"></div>
           {heading}
         </h2>
 

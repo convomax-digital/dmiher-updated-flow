@@ -81,6 +81,15 @@ export function ArrowRight(props) {
   );
 }
 
+export function ArrowUpRight(props) {
+  return (
+    <Icon strokeWidth="2.5" {...props}>
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </Icon>
+  );
+}
+
 export function ImageOff(props) {
   return (
     <Icon {...props}>

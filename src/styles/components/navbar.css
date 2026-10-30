@@ -72,7 +72,7 @@
         right: 0;
         bottom: 0;
         height: 4px;
-        background: linear-gradient(90deg, #0180A2 0%, #006DB6 22%, #8E278F 90%);
+        background: var(--brand-line-gradient);
         transform: scaleX(0);
         transform-origin: 0 center;
         transition: transform .25s;
@@ -170,28 +170,7 @@
     }
 
     .mega-link {
-        @apply text-sm text-gray-600 hover:text-[#A32E9E];
-    }
-
-    /* Right preview */
-    .mega-preview {
-        @apply col-span-1;
-    }
-
-    .mega-preview-img {
-        @apply w-full h-[180px] object-cover mb-2;
-    }
-
-    .mega-preview-title {
-        @apply text-[#A32E9E] font-bold text-sm;
-    }
-
-    .mega-preview-desc {
-        @apply text-sm text-gray-600;
-    }
-
-    .mega-preview-placeholder {
-        @apply text-sm text-gray-400;
+        @apply text-sm text-gray-600 hover:text-[#91288D];
     }
 
 }

@@ -11,7 +11,7 @@ const AdvantageIndia = ({ data }) => {
       <div className="w-full container bg-white py-10 px-5">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-semibold mb-10">
-          <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
+          <div className="border-t-4 border-[#91288D] w-20 mb-2"></div>
           {heading}
         </h2>
 

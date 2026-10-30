@@ -25,7 +25,7 @@
 }
 
 .step-card {
-    @apply relative flex-1 min-w-0 basis-0 max-md:flex-none max-md:w-full max-md:min-w-[220px] max-md:flex max-md:flex-col max-md:items-start max-md:pb-8 max-md:mb-8 max-md:border-b max-md:border-b-[#C77ABF]/40;
+    @apply relative flex-1 min-w-0 basis-0 max-md:flex-none max-md:w-full max-md:min-w-[220px] max-md:flex max-md:flex-col max-md:items-start max-md:pb-8 max-md:mb-8 max-md:border-b max-md:border-b-[#91288D]/40;
 }
 
 .step-top {
@@ -37,7 +37,7 @@
 }
 
 .step-icon {
-    @apply w-12 h-12 sm:w-14 sm:h-14 mb-5 sm:mb-6 relative z-10 rounded-full bg-[#C77ABF] text-[#132F5C] flex items-center justify-center shrink-0;
+    @apply w-12 h-12 sm:w-14 sm:h-14 mb-5 sm:mb-6 relative z-10 rounded-full bg-[#91288D] text-[#132F5C] flex items-center justify-center shrink-0;
 }
 
 .step-card:first-child .step-icon,
@@ -46,7 +46,7 @@
 }
 
 .step-line-horizontal {
-    @apply absolute h-[1.5px] bg-[#C77ABF] hidden md:block;
+    @apply absolute h-[1.5px] bg-[#91288D] hidden md:block;
     left: 4.25rem;
     right: 0.5rem;
     top: 3rem;
@@ -62,7 +62,7 @@
 }
 
 .step-points :where(h1, h2, h3, h4, h5, h6) {
-    @apply text-[#C77ABF] font-bold leading-tight mb-2 text-sm sm:text-base;
+    @apply text-[#91288D] font-bold leading-tight mb-2 text-sm sm:text-base;
 }
 
 .step-card:last-child .step-points :where(h1, h2, h3, h4, h5, h6) {

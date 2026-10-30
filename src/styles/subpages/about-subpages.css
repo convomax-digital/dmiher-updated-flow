@@ -5,7 +5,7 @@
      - sections/Subpages/UniquePages/AboutSubpages/SportsFacilities.jsx
    Holds the brand-colour accents that were previously written as inline styles,
    so colours are tracked in one place. Layout stays as Tailwind utilities in the
-   components. Brand palette: navy #132F5C · orange #91288D · gold #C77ABF ·
+   components. Brand palette: navy #132F5C · orange #91288D · gold #91288D ·
    grey #555555.
    ========================================================================== */
 
@@ -32,6 +32,6 @@
 }
 
 .sports-view-link {
-    background-color: #C77ABF;
+    background-color: #91288D;
     color: #132F5C;
 }

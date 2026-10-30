@@ -92,7 +92,7 @@ export default function ClinicalResearch({ data = {} }) {
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold mb-6 leading-tight">
               {get(hero, "heading")}{" "}
-              <span className="text-[#C77ABF]">{get(hero, "highlighted_text")}</span>
+              <span className="text-[#91288D]">{get(hero, "highlighted_text")}</span>
             </h1>
             {get(hero, "description") && (
               <p className="text-xl leading-relaxed opacity-90">{hero.description}</p>
@@ -102,7 +102,7 @@ export default function ClinicalResearch({ data = {} }) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 {heroStats.slice(0, 3).map((s, i) => (
                   <div key={i} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all">
-                    <div className="text-3xl font-bold text-[#C77ABF]">{s.value}</div>
+                    <div className="text-3xl font-bold text-[#91288D]">{s.value}</div>
                     <div className="text-sm opacity-90">{s.label}</div>
                   </div>
                 ))}
@@ -112,7 +112,7 @@ export default function ClinicalResearch({ data = {} }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                 {heroStats.slice(3).map((s, i) => (
                   <div key={i} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all">
-                    <div className="text-3xl font-bold text-[#C77ABF]">{s.value}</div>
+                    <div className="text-3xl font-bold text-[#91288D]">{s.value}</div>
                     <div className="text-sm opacity-90">{s.label}</div>
                   </div>
                 ))}
@@ -154,7 +154,7 @@ export default function ClinicalResearch({ data = {} }) {
 
           {activeOverviewTab === "overview" && (
             <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-r from-[#132F5C]/10 to-[#C77ABF]/10 rounded-xl p-8 shadow-lg">
+              <div className="bg-gradient-to-r from-[#132F5C]/10 to-[#91288D]/10 rounded-xl p-8 shadow-lg">
                 {[overviewContent.paragraph_1, overviewContent.paragraph_2, overviewContent.paragraph_3]
                   .filter(Boolean)
                   .map((p, i) => (
@@ -182,7 +182,7 @@ export default function ClinicalResearch({ data = {} }) {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {coreFunctions.map((f, i) => (
-                  <div key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#C77ABF]">
+                  <div key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#91288D]">
                     <h3 className="text-xl font-bold text-[#132F5C] mb-3">{f.title}</h3>
                     <p className="text-gray-700 leading-relaxed">{f.description}</p>
                   </div>
@@ -243,7 +243,7 @@ export default function ClinicalResearch({ data = {} }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {expertiseItems.map((it, i) => (
                   <div key={i} className="flex items-start space-x-3 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <CheckCircle className="h-6 w-6 text-[#C77ABF] mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-[#91288D] mt-1 flex-shrink-0" />
                     <p className="text-gray-700 leading-relaxed">{it.text}</p>
                   </div>
                 ))}
@@ -262,7 +262,7 @@ export default function ClinicalResearch({ data = {} }) {
             </div>
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
               {differentiators.map((d, i) => (
-                <div key={i} className="flex items-start space-x-4 p-6 bg-gradient-to-r from-[#132F5C]/5 to-[#C77ABF]/10 rounded-lg">
+                <div key={i} className="flex items-start space-x-4 p-6 bg-gradient-to-r from-[#132F5C]/5 to-[#91288D]/10 rounded-lg">
                   <Award className="h-6 w-6 text-[#91288D] mt-1 flex-shrink-0" />
                   <p className="text-gray-700 leading-relaxed">{d.text}</p>
                 </div>
@@ -279,20 +279,20 @@ export default function ClinicalResearch({ data = {} }) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
                 <div className="flex items-center space-x-3 mb-6">
-                  <Target className="h-8 w-8 text-[#C77ABF]" />
+                  <Target className="h-8 w-8 text-[#91288D]" />
                   <h2 className="text-3xl font-bold">{get(vision, "heading", "Our Vision")}</h2>
                 </div>
                 <p className="text-lg leading-relaxed opacity-90">{get(vision, "description")}</p>
               </div>
               <div>
                 <div className="flex items-center space-x-3 mb-6">
-                  <Heart className="h-8 w-8 text-[#C77ABF]" />
+                  <Heart className="h-8 w-8 text-[#91288D]" />
                   <h2 className="text-3xl font-bold">{get(mission, "heading", "Our Mission")}</h2>
                 </div>
                 <ul className="space-y-4">
                   {missionPoints.map((p, i) => (
                     <li key={i} className="flex items-start space-x-3">
-                      <div className="h-2 w-2 bg-[#C77ABF] rounded-full mt-3 flex-shrink-0" />
+                      <div className="h-2 w-2 bg-[#91288D] rounded-full mt-3 flex-shrink-0" />
                       <p className="opacity-90 leading-relaxed">{p.text}</p>
                     </li>
                   ))}
@@ -403,14 +403,14 @@ export default function ClinicalResearch({ data = {} }) {
             {activeTestimonialTab === "pi" && piTestimonials.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {piTestimonials.map((t, i) => (
-                  <div key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all border-l-4 border-[#C77ABF]">
+                  <div key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all border-l-4 border-[#91288D]">
                     <div className="flex items-center space-x-3 mb-4">
                       <UserCheck className="h-6 w-6 text-[#132F5C]" />
                       <div>
                         <h4 className="font-bold text-[#132F5C]">{t.name}</h4>
                         <p className="text-sm text-gray-600">{t.role}</p>
                         {t.department && (
-                          <span className="inline-block bg-[#C77ABF]/20 text-[#132F5C] text-xs px-2 py-1 rounded-full mt-1">{t.department}</span>
+                          <span className="inline-block bg-[#91288D]/20 text-[#132F5C] text-xs px-2 py-1 rounded-full mt-1">{t.department}</span>
                         )}
                       </div>
                     </div>
@@ -442,9 +442,9 @@ export default function ClinicalResearch({ data = {} }) {
                   {successStories.length > 0 ? (
                     successStories.map((s, idx) => (
                       <SwiperSlide key={idx}>
-                        <div className="bg-gradient-to-r from-[#132F5C]/10 to-[#C77ABF]/10 rounded-xl p-8 shadow-lg">
+                        <div className="bg-gradient-to-r from-[#132F5C]/10 to-[#91288D]/10 rounded-xl p-8 shadow-lg">
                           <div className="flex items-center space-x-3 mb-6">
-                            <Star className="h-8 w-8 text-[#C77ABF]" />
+                            <Star className="h-8 w-8 text-[#91288D]" />
                             <div>
                               <h3 className="text-2xl font-bold text-[#132F5C]">{s.name}</h3>
                               <p className="text-[#91288D] font-medium">{s.professor}</p>
@@ -453,7 +453,7 @@ export default function ClinicalResearch({ data = {} }) {
                           {s.value && (
                             <div className="rounded-lg p-3 mb-3">
                               <div className="flex items-center space-x-4 mb-4">
-                                <div className="bg-[#C77ABF] text-[#132F5C] font-bold text-2xl w-16 h-16 rounded-full flex items-center justify-center">
+                                <div className="bg-[#91288D] text-[#132F5C] font-bold text-2xl w-16 h-16 rounded-full flex items-center justify-center">
                                   {s.value}
                                 </div>
                                 <div>
@@ -632,13 +632,13 @@ export default function ClinicalResearch({ data = {} }) {
                   <div className="space-y-3">
                     {contactPerson.email && (
                       <div className="flex items-center justify-center space-x-2">
-                        <Mail className="h-4 w-4 text-[#C77ABF]" />
+                        <Mail className="h-4 w-4 text-[#91288D]" />
                         <a href={`mailto:${contactPerson.email}`} className="text-[#132F5C] hover:underline">{contactPerson.email}</a>
                       </div>
                     )}
                     {contactPerson.phone && (
                       <div className="flex items-center justify-center space-x-2">
-                        <Phone className="h-4 w-4 text-[#C77ABF]" />
+                        <Phone className="h-4 w-4 text-[#91288D]" />
                         <a href={`tel:${contactPerson.phone}`} className="text-[#132F5C] hover:underline">{contactPerson.phone}</a>
                       </div>
                     )}
@@ -649,7 +649,7 @@ export default function ClinicalResearch({ data = {} }) {
               {get(contactAddress, "address") && (
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 flex-1 max-w-md">
                   <h3 className="text-lg font-medium mb-3 flex items-center justify-center space-x-2 text-[#132F5C]">
-                    <Building className="h-5 w-5 text-[#C77ABF]" />
+                    <Building className="h-5 w-5 text-[#91288D]" />
                     <span>{get(contactAddress, "heading", "Clinical Trial Centre Address")}</span>
                   </h3>
                   <p className="text-sm font-light text-gray-700 leading-relaxed whitespace-pre-line">{contactAddress.address}</p>
@@ -659,7 +659,7 @@ export default function ClinicalResearch({ data = {} }) {
               {get(gcpNote, "description") && (
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 flex-1 max-w-md">
                   <h3 className="text-lg font-medium mb-3 flex items-center justify-center space-x-2 text-[#132F5C]">
-                    <FileText className="h-5 w-5 text-[#C77ABF]" />
+                    <FileText className="h-5 w-5 text-[#91288D]" />
                     <span>{get(gcpNote, "heading", "ICH GCP Certificates")}</span>
                   </h3>
                   <p className="text-sm font-light text-gray-700">{gcpNote.description}</p>
@@ -670,7 +670,7 @@ export default function ClinicalResearch({ data = {} }) {
             {locations.length > 0 && (
               <div className="mt-8 bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
                 <h3 className="text-lg font-medium mb-4 flex items-center justify-center space-x-2 text-[#132F5C]">
-                  <MapPin className="h-5 w-5 text-[#C77ABF]" />
+                  <MapPin className="h-5 w-5 text-[#91288D]" />
                   <span>Clinical Trial Center Address</span>
                 </h3>
                 <div className="flex flex-wrap justify-center gap-2 mb-4">

@@ -18,7 +18,7 @@ const ArrivalGuidance = ({ data }) => {
           {heading && (
             <div className="mb-2">
               <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-[600] whitespace-pre-line">
-                <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
+                <div className="border-t-4 border-[#91288D] w-20 mb-2"></div>
                 {heading}
               </h2>
             </div>
@@ -40,7 +40,7 @@ const ArrivalGuidance = ({ data }) => {
                   >
                     {tab.label}
                     {activeIdx === i && (
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#7E2279]"></div>
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#91288D]"></div>
                     )}
                   </button>
                 ))}
@@ -59,7 +59,7 @@ const ArrivalGuidance = ({ data }) => {
               {stepsSection.heading && (
                 <div className="mb-10">
                   <h2 className="text-3xl md:text-4xl font-oswald-medium tracking-normal text-[#555555] font-[600]">
-                    <div className="border-t-4 border-[#7E2279] w-20 mb-2"></div>
+                    <div className="border-t-4 border-[#91288D] w-20 mb-2"></div>
                     {stepsSection.heading}
                   </h2>
                 </div>

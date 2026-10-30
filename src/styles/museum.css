@@ -27,13 +27,13 @@
 
 /* Heading with gold rule line next to it (live-site CollegeBox style) */
 .museum-colleges-heading {
-    @apply text-3xl font-bold text-[#C77ABF] mb-6 flex items-center gap-4 flex-col md:flex-row;
+    @apply text-3xl font-bold text-[#91288D] mb-6 flex items-center gap-4 flex-col md:flex-row;
 }
 .museum-colleges-heading-text {
     @apply w-full md:w-auto md:whitespace-nowrap;
 }
 .museum-colleges-heading-line {
-    @apply w-full h-px mt-2 bg-[#C77ABF];
+    @apply w-full h-px mt-2 bg-[#91288D];
 }
 
 /* 2-column intro grid */
@@ -87,7 +87,7 @@
     opacity: 0.7;
 }
 .museum-colleges-swiper .swiper-pagination-bullet-active {
-    background: #C77ABF;
+    background: #91288D;
     opacity: 1;
 }
 

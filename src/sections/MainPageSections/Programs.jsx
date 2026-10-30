@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import icon from "../../../public/programicon.png";
 import SafeImage from "../../components/SafeImage";
+import { ArrowUpRight } from "../../components/icons";
 
 function Programs({ data }) {
 
@@ -56,11 +56,12 @@ function Programs({ data }) {
                   </h6>
 
                   <div className="program-icon-wrapper">
-                    <img
-                      src={icon}
-                      alt="icon"
-                      className="program-icon"
-                    />
+                    {/* Brand-coloured disc with an inline arrow (as on
+                        aiher.edu.in). Was a flat PNG, which meant an extra
+                        request and a colour that CSS could not theme. */}
+                    <span className="program-icon" aria-hidden="true">
+                      <ArrowUpRight />
+                    </span>
                   </div>
                 </div>
               </>
