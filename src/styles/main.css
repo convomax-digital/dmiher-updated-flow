@@ -143,3 +143,84 @@
     background-color: #6B7280;
     transform: scale(1.1);
 }
+
+/* ===================================================================
+   HEADING ACCENT LINES — REMOVED
+   -------------------------------------------------------------------
+   The short coloured stub that used to sit directly above section
+   headings (purple #91288D in most sections, red in a few) is hidden
+   site-wide. The markup is left in place so the CMS-driven sections
+   don't need touching; hiding it here also drops its bottom margin,
+   so the heading closes up cleanly.
+
+   Deliberately NOT hidden — these share the "line" name but are
+   structural, not heading accents:
+     .info-title-line / .selsc-details-line  rules flanking a centred title
+     .coursera-line-*                        connector lines in the flow diagram
+     .joe-timeline-line / .joe-dispensation-line
+     .onehealth-grid-vline / .onehealth-grid-hline
+     .intl-collab-line-top / .intl-collab-line-bottom
+     .streams-tab-indicator / .subprog-tabs-indicator*   pill tab highlights
+     .museum-colleges-heading-line           full-width hairline divider
+   Last block in the last-imported stylesheet, so it wins source order.
+   =================================================================== */
+.heading-line,
+.cadwl-lab-heading-line,
+.clr-heading-line,
+.cla-heading-line,
+.clw-heading-line,
+.clho-heading-line,
+.deans-heading-line,
+.hlh-line,
+.coursera-heading-line,
+.education-heading-line,
+.announce-heading-line,
+.alliances-heading-line,
+.committees-underline,
+.core-objectives-underline,
+.joe-underline,
+.fdp-activities-underline,
+.thrust-areas-underline,
+.section-line,
+.cf-section-line,
+.important-contacts-heading-line,
+.centers-heading-line,
+.functional-line,
+.iqac-line,
+.recog-heading-line,
+.ri-heading-line,
+.contact-section-heading-line,
+.alumni-activities-heading-line,
+.djourney-mobile-heading-line,
+.intl-collab-heading-line,
+.onehealth-heading-line,
+.hlp-title-line,
+.our-hospitals-heading-line,
+.afc-heading-line,
+.mri-heading-line,
+.diff-hospitals-title-line,
+.th-heading-line,
+.exam-title-line,
+.edge-title-line,
+.funded-line,
+.infograph-line,
+.micropage-title-line,
+.museum-key-officials-line,
+.museum-faqs-line,
+.selsc-simulation-line,
+.selsc-vm-line,
+.selsc-infra-line,
+.selsc-collab-line,
+.selsc-learners-line,
+.selsc-training-line,
+.selsc-programs-line,
+.selsc-fr-line,
+.selsc-sl-line,
+.mandatory-heading-line,
+.ah-vm-title-line,
+.ah-grey-line,
+.ah-grey-line-center,
+.tab-indicator,
+.tab-underline {
+    display: none;
+}

@@ -1685,8 +1685,24 @@
     @apply flex flex-col sm:flex-row gap-4 lg:gap-10 w-full;
 }
 
+/* Tab strip styling mirrors aiher.edu.in: the selected tab's title is filled
+   with the brand gradient and carries a matching 4px gradient rule beneath it,
+   while unselected tabs sit in flat grey. `.tab-static` is the single-tab
+   variant, which renders a plain wrapper instead of a <button>. */
+.tab-button,
+.tab-static {
+    @apply w-full sm:w-auto text-start relative pb-2 border-b-4 border-transparent transition-all duration-300;
+}
+
 .tab-button {
-    @apply w-full sm:w-auto text-start relative pb-2 cursor-pointer;
+    @apply cursor-pointer;
+}
+
+/* The active/inactive flag lives on the title, so the underline is pulled up
+   onto the tab via :has() rather than duplicating state on the wrapper. */
+.tab-button:has(.tab-title-active),
+.tab-static:has(.tab-title-active) {
+    border-image: linear-gradient(to right, #0097B2, #4267C8, #91288D) 1;
 }
 
 .tab-indicator {
@@ -1704,11 +1720,14 @@
 }
 
 .tab-title-active {
-    @apply text-[#555555];
+    background: linear-gradient(to right, #0097B2, #4267C8, #91288D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .tab-title-inactive {
-    @apply text-gray-300;
+    @apply text-[#C1C1C1];
 }
 
 .image-container {

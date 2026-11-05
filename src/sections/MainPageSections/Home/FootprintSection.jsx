@@ -63,7 +63,7 @@ const FootprintSection = ({ data }) => {
 
       {/* ================= TABS ================= */}
       {tabs.length === 1 ? (
-        <div className="pb-2">
+        <div className="tab-static">
           <div className="tab-indicator tab-indicator-active" />
           <h2 className="tab-title tab-title-active">
             {tabs[0].title || "Tab"}
@@ -174,7 +174,19 @@ const FootprintSection = ({ data }) => {
 
           {/* LOGOS */}
           {currentTab.logos?.length > 0 && (
-            <div className="logos-container">
+            // Same CMS-driven background as the image tab. A tab that ships
+            // logos instead of an image never renders .image-container, so
+            // without this its bg_color had nowhere to land. Left undefined
+            // when the CMS sends no colour, so .logos-container keeps its
+            // own default fill.
+            <div
+              className="logos-container"
+              style={
+                currentTab.bg_color
+                  ? { backgroundColor: currentTab.bg_color }
+                  : undefined
+              }
+            >
               <Swiper
                 modules={[Autoplay, Pagination]}
                 autoplay={{ delay: 4000 }}

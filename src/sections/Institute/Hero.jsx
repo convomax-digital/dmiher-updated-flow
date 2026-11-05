@@ -445,6 +445,10 @@ function Hero({ data, slug }) {
           // Which side the slide's copy sits on. Drives BOTH the content box and
           // the overlay, so the dark end of the wash always lands under the
           // text and the photo stays clear on the other side (as on aiher.edu.in).
+          // `none` (Text Position → None in the dashboard) marks a banner that
+          // carries its own artwork and no copy, so there's nothing to protect
+          // and no overlay is drawn — the image shows at full contrast.
+          const showOverlay = slide.textPosition !== "none";
           const textPos = ["right", "center", "bottom"].includes(slide.textPosition)
             ? slide.textPosition
             : "left";
@@ -483,7 +487,9 @@ function Hero({ data, slug }) {
                 <div className="hero-bg-fallback" />
               )}
 
-              <div className={`hero-overlay hero-overlay-${textPos}`} />
+              {showOverlay && (
+                <div className={`hero-overlay hero-overlay-${textPos}`} />
+              )}
 
               <div className={`hero-content hero-content-${textPos}`}>
                 <RichTextRenderer html={slide.desc} />
