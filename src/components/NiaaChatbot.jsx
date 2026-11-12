@@ -57,14 +57,14 @@ const NIAA_STYLES = `
   }
 
   /* Hide panel while we wait for auto-open to settle */
-  .npf_chatbots.niaa-settling {
+  .npf_ai_agents.niaa-settling {
     opacity: 0 !important;
     pointer-events: none !important;
     transition: none !important;
   }
 
   /* Niaa chatbot panel styling */
-  .npf_chatbots.active {
+  .npf_ai_agents.active {
     display: block !important;
     position: fixed !important;
     bottom: 80px !important;
@@ -80,7 +80,7 @@ const NIAA_STYLES = `
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18) !important;
     overflow: hidden !important;
   }
-  .npf_chatbots iframe#chatbox_frame {
+  .npf_ai_agents iframe#chatbox_frame {
     max-height: 520px !important;
     height: 520px !important;
     width: 100% !important;
@@ -111,7 +111,7 @@ const NIAA_STYLES = `
       width: 27px;
       height: 27px;
     }
-    .npf_chatbots.active {
+    .npf_ai_agents.active {
       bottom: 75px !important;
       right: 10px !important;
       max-height: 460px !important;
@@ -119,7 +119,7 @@ const NIAA_STYLES = `
       max-width: 350px !important;
       width: 350px !important;
     }
-    .npf_chatbots iframe#chatbox_frame {
+    .npf_ai_agents iframe#chatbox_frame {
       max-height: 460px !important;
       height: 460px !important;
     }
@@ -145,7 +145,7 @@ const NIAA_STYLES = `
       width: 27px;
       height: 27px;
     }
-    .npf_chatbots.active {
+    .npf_ai_agents.active {
       bottom: 70px !important;
       right: 8px !important;
       left: 8px !important;
@@ -154,7 +154,7 @@ const NIAA_STYLES = `
       max-width: none !important;
       width: auto !important;
     }
-    .npf_chatbots iframe#chatbox_frame {
+    .npf_ai_agents iframe#chatbox_frame {
       max-height: 75vh !important;
       height: 75vh !important;
     }
@@ -213,8 +213,12 @@ const NiaaChatbot = () => {
     if (!niaa?.enabled || !niaa?.widget_id || !niaa?.script_url) return;
     if (typeof document === "undefined") return;
 
+    // The agent script locates its mount point with
+    // jQuery(".npf_ai_agents").data("w") — the class name and the data-w
+    // attribute below are its contract, not ours. (The older generation of
+    // this widget used .npf_chatbots; the current one never looks for it.)
     const container = document.createElement("div");
-    container.className = "npf_chatbots";
+    container.className = "npf_ai_agents";
     container.setAttribute("data-w", niaa.widget_id);
     container.style.display = "none";
     document.body.appendChild(container);

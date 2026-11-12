@@ -29,7 +29,15 @@ function InfoSection({ data }) {
     content,
   } = item;
 
-  const mainDesc = institute_desc || non_desc || desc;
+  // `desc` is the only paragraph the dashboard still edits (institute_info's
+  // schema has a single "Paragraph" editor bound to it). `institute_desc` and
+  // `non_desc` are frozen leftovers from the old per-layout fields — nothing
+  // writes them any more, so a page that still carries one would otherwise
+  // pin itself to pre-CMS copy and silently discard every dashboard edit
+  // (SPDC: the Adani font set in the editor never reached the page). Dashboard
+  // content wins; the legacy keys stay only as a fallback for rows that have
+  // never been re-saved and so have no `desc` at all.
+  const mainDesc = desc || institute_desc || non_desc;
 
   // Inline view-more blocks: tab_type === "view" with a description.
   const expandedBlocks = Array.isArray(content)

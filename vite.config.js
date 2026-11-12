@@ -76,20 +76,22 @@ export default defineConfig(({ mode }) => ({
         // Third-party hosts mirrored from server.js dev CSP so plain `vite dev`
         // (no SSR) and `dev:ssr` agree. NoPaperForms enquiry widget needs its
         // script + frame allowed; GA/GTM/GetAAI follow the prod whitelist.
-        // Niaa chatbot: the widget script loads from chatbot.in6.nopaperforms.com
-        // and pulls jQuery + its icon PNG from chatcdn.npfs.co — both are
-        // required or the floating chat icon never renders (script/style/frame).
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://www.googletagmanager.com https://www.google-analytics.com https://static.getaai.com",
+        // Niaa chatbot: the current agent is served from a per-agent random
+        // subdomain of agent.mymio.ai (script, chat iframe and a blob worker);
+        // the nopaperforms.com / npfs.co hosts are the previous generation of
+        // the same widget. Without these the floating chat icon never renders.
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://*.agent.mymio.ai https://miocdn.npfs.co https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://www.googletagmanager.com https://www.google-analytics.com https://static.getaai.com",
+        "worker-src 'self' blob:",
         // fonts.googleapis.com: the dashboard-managed Frontend Theme loads
         // its chosen Google Fonts stylesheets at runtime.
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://chatbot.in6.nopaperforms.com",
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.agent.mymio.ai https://chatbot.in6.nopaperforms.com",
         "img-src 'self' https: data: http://127.0.0.1:8000",
         "font-src 'self' https: data:",
         // media-src: the dashboard-managed Home Page Popup can serve a video
         // from the backend (default-src 'self' would block it).
         "media-src 'self' https: http://127.0.0.1:8000",
         "connect-src 'self' https: http://127.0.0.1:8000 ws://localhost:*",
-        "frame-src 'self' https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com",
+        "frame-src 'self' https://*.agent.mymio.ai https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com",
       ].join("; "),
     } : {},
     // Dev-only: proxy /api to the Laravel backend so image (<img>) requests

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "./icons";
 import { useQuery } from "@tanstack/react-query";
 import MegaMenu from "./NavbarMegaMenu";
@@ -17,6 +17,19 @@ const Navbar = () => {
   const [activeMega, setActiveMega] = useState(null);
   const [closeTimeout, setCloseTimeout] = useState(null);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  /* Marks the open page inside the utility-row dropdown (Admissions), the
+     same way MegaMenu marks the open institute: exact slug or any sub-route.
+     Without it the sheet gives no clue which of its pages you are on. */
+  const isTopDropdownActive = (slug) => {
+    const norm = (v) => (v || "").replace(/\/+$/, "").toLowerCase();
+    const cur = norm(pathname);
+    const target = norm(slug);
+    return Boolean(
+      target && target !== "/" && (cur === target || cur.startsWith(target + "/"))
+    );
+  };
 
   /* ================= SECTION LINK HANDLING =================
      A "#<section-id>" slug (Link Type = Section in admin) should scroll to
@@ -118,19 +131,37 @@ const Navbar = () => {
                     </Link>
 
                     {activeMega === item.id && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white border shadow-lg p-4 z-[9999] w-[300px] transition-all duration-200">
-                        {item.children.map((child) =>
-                          child.items?.map((subItem) => (
-                            <Link
-                              key={subItem.id}
-                              to={subItem.slug}
-                              onClick={(e) => handleMegaItemClick(e, subItem.slug)}
-                              className="block py-1 text-sm hover:text-[#91288D]"
-                            >
-                              {subItem.title}
-                            </Link>
-                          ))
-                        )}
+                      // Same skin as the ACADEMICS mega sheet (see
+                      // .nav-dropdown-panel), just sized for a short list.
+                      // right-0 puts its right edge on the trigger's, the
+                      // same anchor the reference uses.
+                      <div className="nav-dropdown-panel navbar-dropdown absolute top-full right-0 py-4 px-5 z-[9999]">
+                        <ul className="nav-dropdown-list">
+                          {item.children.map((child) =>
+                            child.items?.map((subItem) => (
+                              <li key={subItem.id}>
+                                <Link
+                                  to={subItem.slug}
+                                  onClick={(e) =>
+                                    handleMegaItemClick(e, subItem.slug)
+                                  }
+                                  className={`nav-dropdown-item ${
+                                    isTopDropdownActive(subItem.slug)
+                                      ? "is-active"
+                                      : ""
+                                  }`}
+                                  aria-current={
+                                    isTopDropdownActive(subItem.slug)
+                                      ? "page"
+                                      : undefined
+                                  }
+                                >
+                                  {subItem.title}
+                                </Link>
+                              </li>
+                            ))
+                          )}
+                        </ul>
                       </div>
                     )}
                   </div>
@@ -176,7 +207,13 @@ const Navbar = () => {
               return (
                 <div
                   key={item.id}
-                  className="relative"
+                  // Mega items deliberately get NO `relative`: their panel is
+                  // pinned to the right edge of `.navbar-inner` (the header
+                  // container), not to this item's box, exactly as on
+                  // aiher.edu.in. A relative wrapper here would re-anchor it
+                  // under the hovered label. The panel is still a DOM child,
+                  // so hovering it does not fire this element's mouseleave.
+                  className={isMega ? undefined : "relative"}
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -200,12 +237,10 @@ const Navbar = () => {
                   )}
 
                   {isMega && activeMega === item.id && (
-                    <div className="absolute left-0 top-full bg-white shadow-lg z-50 transition-all duration-200">
-                      <MegaMenu
-                        sections={item.children}
-                        onItemClick={handleMegaItemClick}
-                      />
-                    </div>
+                    <MegaMenu
+                      sections={item.children}
+                      onItemClick={handleMegaItemClick}
+                    />
                   )}
                 </div>
               );

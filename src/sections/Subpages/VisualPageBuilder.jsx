@@ -863,8 +863,8 @@ const BlockRenderer = ({ block }) => {
             <thead>
               <tr
                 style={{
-                  background: p.headerColor || "#facc15",
-                  color: p.headerTextColor || "#111111",
+                  background: p.headerColor || "#91288D",
+                  color: p.headerTextColor || "#ffffff",
                 }}
               >
                 {auto && (
@@ -898,8 +898,8 @@ const BlockRenderer = ({ block }) => {
                         colSpan={totalCols}
                         style={{
                           ...cellCss,
-                          background: p.headerColor || "#facc15",
-                          color: p.headerTextColor || "#111111",
+                          background: p.headerColor || "#91288D",
+                          color: p.headerTextColor || "#ffffff",
                           fontWeight: 700,
                           textAlign: "center",
                         }}

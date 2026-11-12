@@ -6,6 +6,12 @@ import { Link, useLocation } from "react-router-dom";
  * The right-hand preview panel (institute image + description) was removed —
  * the menu is now purely a list of links, so nothing here reads `item.image`
  * or `item.description` any more.
+ *
+ * The panel is the positioned element itself (see .navbar-mega-menu). It
+ * anchors to `.navbar-inner`, the header's max-w-7xl container, NOT to the
+ * hovered nav item — matching aiher.edu.in, where the sheet is flush with the
+ * right edge of that container whichever menu opened it. Navbar therefore
+ * renders mega items without `position: relative` on their wrapper.
  */
 const MegaMenu = ({ sections, onItemClick }) => {
   const { pathname } = useLocation();
@@ -22,38 +28,36 @@ const MegaMenu = ({ sections, onItemClick }) => {
   const columns = sections?.length || 0;
 
   return (
-    <div
-      // Width follows the number of campus groups instead of the old fixed
-      // 850/1100px, which was sized around the preview panel that used to
-      // occupy the third column.
-      className="absolute top-[65%] left-1/2 -translate-x-1/2 mt-3 grid gap-4 w-max max-w-[90vw] bg-white text-[#1f3c88] shadow-lg p-6 z-[9999] transition-all duration-300 ease-in-out"
-      style={{ gridTemplateColumns: `repeat(${columns || 1}, minmax(0, 1fr))` }}
-    >
-      {sections.map((section) => (
-        <div key={section.campus} className="px-4 min-w-[220px]">
-          <h4 className="text-md font-semibold mb-2 underline">
-            {section.campus}
-          </h4>
+    <div className="nav-dropdown-panel navbar-mega-menu">
+      <div
+        className="navbar-mega-grid"
+        style={{
+          gridTemplateColumns: `repeat(${columns || 1}, minmax(0, 1fr))`,
+        }}
+      >
+        {sections.map((section) => (
+          <div key={section.campus}>
+            <h4 className="nav-dropdown-heading">{section.campus}</h4>
 
-          <ul className="space-y-1">
-            {section.items.map((item) => (
-              <li key={item.id}>
-                <Link
-                  to={item.slug || "/"}
-                  onClick={(e) => onItemClick && onItemClick(e, item.slug)}
-                  className={`text-sm font-semibold block transition-colors duration-200 ${
-                    isActive(item.slug)
-                      ? "text-[#91288D]"
-                      : "text-[#555555] hover:text-[#91288D]"
-                  }`}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+            <ul className="nav-dropdown-list">
+              {section.items.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    to={item.slug || "/"}
+                    onClick={(e) => onItemClick && onItemClick(e, item.slug)}
+                    className={`nav-dropdown-item ${
+                      isActive(item.slug) ? "is-active" : ""
+                    }`}
+                    aria-current={isActive(item.slug) ? "page" : undefined}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

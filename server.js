@@ -43,6 +43,16 @@ function sha256(content) {
 const FRONTEND_ORIGIN = "https://www.dmiher.edu.in";
 const BACKEND_ORIGIN = "https://admin.dmiher.edu.in";
 
+// Niaa AI assistant. The dashboard (Settings → Widgets) stores the script URL,
+// and each agent is served from its own random subdomain of agent.mymio.ai
+// (e.g. 5l255gl2vk.in6.agent.mymio.ai), so the wildcard keeps the CSP valid if
+// that URL is ever re-pointed from the dashboard. The older nopaperforms.com /
+// npfs.co hosts below are the previous generation of the same widget and are
+// kept so an un-migrated deployment doesn't break.
+const NIAA_HOST = "https://*.agent.mymio.ai";
+// The agent script self-loads jQuery from this CDN before it will build its UI.
+const NIAA_CDN = "https://miocdn.npfs.co";
+
 function buildCsp(nonce, scriptHashes = []) {
   const hashList = scriptHashes.map((h) => `'sha256-${h}'`).join(" ");
   if (!isProduction) {
@@ -62,17 +72,18 @@ function buildCsp(nonce, scriptHashes = []) {
       // doesn't silently block them (NoPaperForms enquiry widget, GA, GTM,
       // GetAAI chatbot). Niaa chatbot loads from chatbot.in6.nopaperforms.com
       // and pulls jQuery + its icon image from chatcdn.npfs.co — keep both.
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://www.googletagmanager.com https://www.google-analytics.com https://static.getaai.com",
+      `script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: ${NIAA_HOST} ${NIAA_CDN} https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://www.googletagmanager.com https://www.google-analytics.com https://static.getaai.com`,
+      "worker-src 'self' blob:",
       // fonts.googleapis.com: the dashboard-managed Frontend Theme loads its
       // chosen Google Fonts stylesheets at runtime.
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://chatbot.in6.nopaperforms.com",
+      `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ${NIAA_HOST} https://chatbot.in6.nopaperforms.com`,
       `img-src 'self' https: http: data:`,
       "font-src 'self' https: data:",
       // media-src: the dashboard-managed Home Page Popup can serve a video
       // from the backend (default-src 'self' would block it).
       "media-src 'self' https: http:",
       `connect-src 'self' https: http: ws://localhost:* wss://localhost:* ${apiBase}`,
-      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://docs.google.com https://drive.google.com https://www.googletagmanager.com https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com",
+      `frame-src 'self' ${NIAA_HOST} https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://docs.google.com https://drive.google.com https://www.googletagmanager.com https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com`,
       "frame-ancestors 'self'",
       "form-action 'self' https://api.web3forms.com",
       "object-src 'none'",
@@ -90,14 +101,15 @@ function buildCsp(nonce, scriptHashes = []) {
   // integrations DMIHER actually uses; dropping them would break the site.
   return [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' ${hashList} https://www.googletagmanager.com https://www.google-analytics.com https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://static.getaai.com`.replace(/\s+/g, " "),
-    `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ${FRONTEND_ORIGIN} https://chatbot.in6.nopaperforms.com`,
-    `font-src 'self' data: https://fonts.gstatic.com ${FRONTEND_ORIGIN}`,
-    `img-src 'self' data: ${BACKEND_ORIGIN}`,
+    `script-src 'self' 'nonce-${nonce}' ${hashList} ${NIAA_HOST} ${NIAA_CDN} https://www.googletagmanager.com https://www.google-analytics.com https://widgets.in6.nopaperforms.com https://chatbot.in6.nopaperforms.com https://chatcdn.npfs.co https://static.getaai.com`.replace(/\s+/g, " "),
+    "worker-src 'self' blob:",
+    `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ${NIAA_HOST} ${FRONTEND_ORIGIN} https://chatbot.in6.nopaperforms.com`,
+    `font-src 'self' data: https://fonts.gstatic.com ${NIAA_HOST} ${FRONTEND_ORIGIN}`,
+    `img-src 'self' data: ${NIAA_HOST} ${BACKEND_ORIGIN}`,
     // Home Page Popup videos are served from the backend's uploads folder.
     `media-src 'self' ${BACKEND_ORIGIN}`,
-    `connect-src 'self' ${BACKEND_ORIGIN} https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://api.web3forms.com https://static.getaai.com https://chatbot.in6.nopaperforms.com`,
-    "frame-src 'self' https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://maps.google.com https://docs.google.com https://drive.google.com https://www.googletagmanager.com https://chatbot.in6.nopaperforms.com",
+    `connect-src 'self' ${BACKEND_ORIGIN} ${NIAA_HOST} https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://api.web3forms.com https://static.getaai.com https://chatbot.in6.nopaperforms.com`,
+    `frame-src 'self' ${NIAA_HOST} https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://maps.google.com https://docs.google.com https://drive.google.com https://www.googletagmanager.com https://chatbot.in6.nopaperforms.com`,
     "frame-ancestors 'self'",
     "form-action 'self' https://api.web3forms.com",
     "object-src 'none'",

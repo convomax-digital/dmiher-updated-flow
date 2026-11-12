@@ -52,16 +52,14 @@ const DeansMessage = ({ data, pageSlug, college }) => {
             />
 
             {main.desc && (
-              <div className="deans-info">
+              <div className="deans-info text-white">
                 <RichTextRenderer html={main.desc} />
               </div>
             )}
 
-            {/* BUTTON CTAs (e.g. Key Officials) — only when backend provides them.
-                Wrapped in a flex column so multiple buttons stack with spacing
-                and don't merge with the inline email/description above. */}
+            
             {buttonContent?.cta?.length > 0 && (
-              <div className="mt-4 flex flex-col items-center lg:items-start gap-3">
+              <div className="mt-4 flex flex-col items-center lg:items-start gap-3 text-white">
                 {buttonContent.cta
                   .map((btn, i) => {
                     const btnLink =

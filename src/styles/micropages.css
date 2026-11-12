@@ -152,8 +152,10 @@
     @apply min-w-full text-left text-base text-gray-700;
 }
 
+/* Brand purple, not the old amber. White label rather than black: on
+   #91288D white clears 7.2:1 while black only manages 2.9:1. */
 .micropage-th {
-    @apply bg-[#facc15] text-black font-semibold px-4 py-3 border border-gray-200;
+    @apply bg-[#91288D] text-white font-semibold px-4 py-3 border border-gray-200;
 }
 
 .micropage-tr {

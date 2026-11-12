@@ -150,27 +150,96 @@
         @apply mt-6 text-yellow-400 font-semibold text-sm;
     }
 
-    /* Mega Menu */
-    .mega-menu {
-        @apply absolute mt-1 bg-white shadow-lg p-6 grid grid-cols-3 gap-6 z-50;
-        right: calc(var(--spacing, 0.25rem) * -115);
-        width: 1000px;
+    /* ================= HEADER DROPDOWNS =================
+       Both header dropdowns — the ACADEMICS mega sheet and the smaller
+       Admissions list in the utility row — share one skin, copied from
+       aiher.edu.in: a flat #EDEEEE panel, grey-on-grey type, and a black 2px
+       underline that wipes in under the hovered or current link, the same wipe
+       the top-level .nav-link uses. Only the geometry differs per panel, so
+       the shared look lives on .nav-dropdown-panel and each panel class below
+       sets just its own size and anchor. */
+    .nav-dropdown-panel {
+        background-color: #EDEEEE;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        /* The Admissions panel sits inside .top-links, which is nowrap to keep
+           the utility-row labels on one line. Left inherited, a long entry
+           ("Directorate of Advanced Learning (Fellowship | Ph.D.)") runs past
+           the sheet and raises a horizontal scrollbar instead of wrapping. */
+        white-space: normal;
     }
 
-    .mega-menu-left {
-        @apply col-span-2 grid grid-cols-2 gap-6;
+    /* 101px (the header height) recurs below: it caps both panels so a long
+       list scrolls inside the sheet instead of running off the screen. */
+    .navbar-mega-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 9999;
+        /* Pinned to the RIGHT edge of the header container (not to the hovered
+           nav item) and capped at the reference width. The viewport fallback
+           keeps a 24px gutter on each side on narrower desktops. */
+        width: min(1030px, 100vw - 48px);
+        max-height: calc(100dvh - 101px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
     }
 
-    .mega-heading {
-        @apply font-semibold underline mb-2;
+    /* Utility-row dropdown (Admissions). Anchored to its own trigger rather
+       than the header container, since it is a short list, not a sheet. */
+    .navbar-dropdown {
+        width: 300px;
+        max-height: calc(100dvh - 101px);
+        overflow-y: auto;
     }
 
-    .mega-list {
-        @apply space-y-1;
+    .navbar-mega-grid {
+        /* Column count is set inline from the number of campus groups, so a
+           third campus needs no CSS change. */
+        @apply grid gap-16 py-10 px-6 md:px-10 max-w-7xl mx-auto;
     }
 
-    .mega-link {
-        @apply text-sm text-gray-600 hover:text-[#91288D];
+    /* No font-family here: a site-wide `body *` rule already forces Adani with
+       !important, so any stack declared on these rules would be dead code. */
+    .nav-dropdown-heading {
+        @apply text-[16px] font-[600] text-[#666666] pb-[10px] mb-[14px] border-b border-[#C1C1C1];
+        letter-spacing: 0.01em;
+    }
+
+    .nav-dropdown-list {
+        @apply flex flex-col gap-3;
+    }
+
+    /* inline-block, not block: the underline must stop at the end of the
+       label instead of running the full column width. */
+    .nav-dropdown-item {
+        @apply relative inline-block text-[16px] font-[400] text-[#666666] pb-[2px];
+        line-height: 1.35;
+        transition: color 0.2s;
+    }
+
+    .nav-dropdown-item::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: #000000;
+        transform: scaleX(0);
+        transform-origin: 0 center;
+        transition: transform 0.2s;
+    }
+
+    .nav-dropdown-item:hover,
+    .nav-dropdown-item:focus-visible,
+    .nav-dropdown-item.is-active {
+        color: #000000;
+    }
+
+    .nav-dropdown-item:hover::after,
+    .nav-dropdown-item:focus-visible::after,
+    .nav-dropdown-item.is-active::after {
+        transform: scaleX(1);
     }
 
 }
