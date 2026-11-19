@@ -3783,12 +3783,23 @@
     @apply cursor-pointer text-center py-4 max-w-[1000px] text-2xl;
 }
 
+/* Matches aiher.edu.in: the active tab's label is filled with the brand
+   gradient and carries the same gradient as a 4px rule beneath it. Only the
+   bottom border has a width, so border-image paints just that edge. This is
+   the same treatment the International Footprint tabs use. */
 .th-tab-active {
-    @apply font-bold text-[#132F5C] border-b-4 border-[#91288D];
+    @apply font-bold border-b-4 border-transparent;
+    background: linear-gradient(to right, #0097B2, #4267C8, #91288D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border-image: linear-gradient(to right, #0097B2, #4267C8, #91288D) 1;
 }
 
+/* Was #555555 — too dark next to a gradient label; the reference uses this
+   much lighter grey so the active tab clearly wins. */
 .th-tab-inactive {
-    @apply text-[#555555];
+    @apply text-[#C1C1C1];
 }
 
 .th-section-wrap {
@@ -3910,8 +3921,10 @@
     @apply w-full text-left text-base text-gray-700 border-collapse;
 }
 
+/* Brand purple, matching the micro-page tables. White label, not black:
+   on #91288D white clears 7.3:1 while black manages only 2.9:1. */
 .iqac-year-th {
-    @apply bg-[#F5C518] text-black font-semibold px-6 py-3;
+    @apply bg-[#91288D] text-white font-semibold px-6 py-3;
 }
 
 .iqac-year-tr {

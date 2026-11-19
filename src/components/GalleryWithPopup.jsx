@@ -107,6 +107,10 @@ export function GalleryWithPopup({ data }) {
           }}
         >
           {images.map((img, idx) => {
+            // The CMS writes this label under either key: older gallery rows use
+            // "title", newer ones "caption". Both mean the tile caption, so read
+            // both rather than dropping the label on half the galleries.
+            const caption = img.caption || img.title;
             const imageSrc = getImageSrc(img.image);
             return (
               <SwiperSlide key={idx}>
@@ -116,12 +120,12 @@ export function GalleryWithPopup({ data }) {
                 >
                   <SafeImage
                     src={imageSrc}
-                    alt={img.caption || "gallery"}
+                    alt={caption || "gallery"}
                     className="gallery-image"
                     loading="lazy"
                   />
-                  {img.caption && (
-                    <p className="gallery-image-title">{img.caption}</p>
+                  {caption && (
+                    <p className="gallery-image-title">{caption}</p>
                   )}
                 </div>
               </SwiperSlide>
@@ -133,6 +137,10 @@ export function GalleryWithPopup({ data }) {
         <div className="gallery-grid">
           {(gridPages[gridPageIndex] || []).map((img, localIdx) => {
             const absoluteIdx = gridPageIndex * PAGE_SIZE + localIdx;
+            // The CMS writes this label under either key: older gallery rows use
+            // "title", newer ones "caption". Both mean the tile caption, so read
+            // both rather than dropping the label on half the galleries.
+            const caption = img.caption || img.title;
             const imageSrc = getImageSrc(img.image);
             return (
               <div
@@ -142,12 +150,12 @@ export function GalleryWithPopup({ data }) {
               >
                 <SafeImage
                   src={imageSrc}
-                  alt={img.caption || "gallery"}
+                  alt={caption || "gallery"}
                   className="gallery-image"
                   loading="lazy"
                 />
-                {img.caption && (
-                  <p className="gallery-image-title">{img.caption}</p>
+                {caption && (
+                  <p className="gallery-image-title">{caption}</p>
                 )}
               </div>
             );

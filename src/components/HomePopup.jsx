@@ -51,6 +51,10 @@ export default function HomePopup() {
     wasSeen() ? seenImage() : null
   );
 
+  // The close × darkens on hover. Tracked in state because the styles here
+  // are inline, which cannot express :hover.
+  const [hoverClose, setHoverClose] = useState(false);
+
   const open = enabled && isHome && popup.media !== dismissedMedia;
 
   const close = useCallback(() => {
@@ -82,7 +86,11 @@ export default function HomePopup() {
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        background: "rgba(0,0,0,0.55)",
+        // Blurred backdrop rather than a dark scrim, matching the live site:
+        // the page stays recognisable behind the card while the blur gives
+        // the popup enough separation to read as a modal.
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -94,15 +102,15 @@ export default function HomePopup() {
         style={{
           position: "relative",
           background: "#fff",
-          borderRadius: "10px",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
-          padding: "40px 24px 24px",
+          borderRadius: "8px",
+          boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+          // A thin 8px frame, not a wide one: the artwork is the popup, and
+          // the old 40px top inset left a band of empty white above it.
+          padding: "8px",
           maxWidth: "560px",
           width: "100%",
-          maxHeight: "85vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          maxHeight: "90vh",
+          overflow: "hidden",
         }}
       >
         <button
@@ -111,26 +119,33 @@ export default function HomePopup() {
           aria-label="Close popup"
           style={{
             position: "absolute",
-            top: "10px",
-            right: "12px",
+            top: "8px",
+            right: "8px",
+            zIndex: 10,
             border: "none",
             background: "transparent",
-            fontSize: "26px",
+            fontSize: "30px",
             lineHeight: 1,
             cursor: "pointer",
-            color: "#444",
-            padding: "4px",
+            color: hoverClose ? "#000" : "#6a7282",
+            padding: 0,
           }}
+          onMouseEnter={() => setHoverClose(true)}
+          onMouseLeave={() => setHoverClose(false)}
         >
           ×
         </button>
-        {/* width:100% (not just max-width) so the media FILLS the card —
-            like the live site's popup — instead of floating small inside
-            the white panel while the video's own size is unknown/small. */}
+        {/* The media fills the card and sets its height (height:auto), so the
+            card wraps the artwork instead of the artwork floating inside a
+            fixed-size white panel. */}
         {isVideo ? (
           <video
             src={popup.media}
-            controls
+            // No `controls`: this is an announcement, not a player. The
+            // scrubber, timer, mute and fullscreen buttons were the chrome
+            // that made the popup look unfinished — the live site has none.
+            // It is muted so autoplay is allowed, and loops because an
+            // announcement clip is short.
             autoPlay
             muted
             loop
@@ -140,10 +155,9 @@ export default function HomePopup() {
             onError={close}
             style={{
               width: "100%",
-              maxHeight: "calc(85vh - 64px)",
+              height: "auto",
               display: "block",
               borderRadius: "6px",
-              background: "#000",
             }}
           />
         ) : (
@@ -153,9 +167,9 @@ export default function HomePopup() {
             onError={close}
             style={{
               width: "100%",
-              maxHeight: "calc(85vh - 64px)",
-              objectFit: "contain",
+              height: "auto",
               display: "block",
+              borderRadius: "6px",
             }}
           />
         )}

@@ -1,13 +1,32 @@
 /**
- * The CMS keys the "intro" and "difference" header blocks by the
- * campus tab index, e.g. `"0"` for tab 1 and `"1"` for tab 2.
- * We can't rely on a fixed `"0"` lookup — pick the first numeric
- * key in the object instead so any tab works.
+ * Flattens the header fields of an "intro" / "difference" block.
+ *
+ * These are non-repeatable groups, so the dashboard reads and writes their
+ * scalar fields directly on the group (`intro.heading`). Older stored content
+ * had them one level deeper, under a numeric key, and sometimes split across
+ * SEVERAL numeric keys — on the off-campus tab `"0"` held heading+description
+ * while `"1"` held bg_color. Picking just the first numeric block, as this
+ * helper used to, silently dropped the rest.
+ *
+ * So: merge every numeric sub-block, then let the group's own scalar fields
+ * win, which keeps both the current and the legacy shape rendering.
  */
 export function pickIndexedBlock(obj) {
   if (!obj || typeof obj !== "object" || Array.isArray(obj)) return {};
-  for (const key of Object.keys(obj)) {
-    if (/^\d+$/.test(key)) return obj[key] || {};
+
+  const out = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (/^\d+$/.test(key) && value && typeof value === "object" && !Array.isArray(value)) {
+      Object.assign(out, value);
+    }
   }
-  return {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (!/^\d+$/.test(key) && (value === null || typeof value !== "object")) {
+      out[key] = value;
+    }
+  }
+
+  return out;
 }

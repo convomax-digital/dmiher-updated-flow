@@ -10,6 +10,7 @@ import useSiteSettings from "./hooks/useSiteSettings";
 import NiaaChatbot from "./components/NiaaChatbot";
 import HomePopup from "./components/HomePopup";
 import ThemeStyles from "./components/ThemeStyles";
+import GoogleTag from "./components/GoogleTag";
 
 // Route-level code splitting: these page types are only needed when the user
 // navigates to them, so they're loaded on demand instead of bloating the
@@ -27,6 +28,9 @@ function App() {
   return (
     <>
       <ThemeStyles />
+      {/* Dashboard-managed Google Analytics / Tag Manager. Renders nothing;
+          mounted above the routes so it sees every navigation. */}
+      <GoogleTag />
       <Navbar />
       <ScrollToTop />
 
