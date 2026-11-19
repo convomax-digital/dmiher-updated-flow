@@ -5,35 +5,18 @@ import useSiteSettings from "../hooks/useSiteSettings";
 /**
  * Dashboard-managed homepage popup (Widget Settings → Home Page Popup).
  *
- * Shows the configured image/GIF centered over the homepage with a close
- * button, once per browser session. Uploading a NEW image resets the
- * "seen" flag (the flag is keyed by the image URL), so a fresh campaign
- * shows again even to visitors who closed the previous one.
+ * Shows the configured image/GIF/video centered over the homepage with a
+ * close button, on EVERY page load. Closing hides it for the rest of that
+ * page view only — reloading the homepage, or returning to it later, shows
+ * it again.
  *
- * Renders nothing when disabled, when no image is set, or on any route
- * other than the homepage — existing widgets are untouched.
+ * It deliberately keeps no "already seen" flag. An earlier version stored one
+ * in sessionStorage so the popup appeared once per browser session; that was
+ * removed on request, so nothing here reads or writes storage.
+ *
+ * Renders nothing when disabled, when no media is set, or on any route other
+ * than the homepage — existing widgets are untouched.
  */
-
-const SEEN_KEY = "dm_home_popup_seen";
-
-/** URL of the image dismissed earlier this session, or null. */
-const seenImage = () => {
-  try {
-    return sessionStorage.getItem(SEEN_KEY);
-  } catch {
-    return null; // storage blocked → just show it
-  }
-};
-
-const wasSeen = () => seenImage() !== null;
-
-const markSeen = (image) => {
-  try {
-    sessionStorage.setItem(SEEN_KEY, image);
-  } catch {
-    /* best effort */
-  }
-};
 
 export default function HomePopup() {
   const location = useLocation();
@@ -44,25 +27,18 @@ export default function HomePopup() {
   const isHome = location.pathname === "/";
   const isVideo = popup?.type === "video";
 
-  // Visibility is fully DERIVED (no setState-in-effect): the popup shows
-  // while enabled, on the homepage, and its media hasn't been dismissed
-  // this session. Closing records the dismissed media URL.
-  const [dismissedMedia, setDismissedMedia] = useState(() =>
-    wasSeen() ? seenImage() : null
-  );
+  // Dismissal lives in component state only, so it lasts exactly as long as
+  // this page view. A reload mounts a fresh component with dismissed=false
+  // and the popup is back.
+  const [dismissed, setDismissed] = useState(false);
 
   // The close × darkens on hover. Tracked in state because the styles here
   // are inline, which cannot express :hover.
   const [hoverClose, setHoverClose] = useState(false);
 
-  const open = enabled && isHome && popup.media !== dismissedMedia;
+  const open = enabled && isHome && !dismissed;
 
-  const close = useCallback(() => {
-    if (popup?.media) {
-      markSeen(popup.media);
-      setDismissedMedia(popup.media);
-    }
-  }, [popup]);
+  const close = useCallback(() => setDismissed(true), []);
 
   // Close on Escape while open.
   useEffect(() => {
